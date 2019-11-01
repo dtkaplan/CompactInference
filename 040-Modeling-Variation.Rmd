@@ -27,13 +27,30 @@ Galton %>%
 ```
 
 ```{r}
-Galton  %>%
-  gf_jitter(height ~ mother, data = Galton, alpha = 0.15, width = 0.05) %>%
+gf_jitter(height ~ mother, data = Galton, alpha = 0.15, width = 0.05) %>%
   gf_lm(size =  1.5) %>%
-  gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches")
+  gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches)")
 ```
 
-A function that turns inputs into an output. The inputs are values for the explanatory variables, the output is a value for the response variable. 
+You can pretty much draw functions like this by hand. Mathematically, though,  there are some restrictions. First, the function has to stay as close to the data as possible.  Second, the function has to stay centered on the data. (Technically, the function form has to include an intercept.) It might be easiest to understand these restrictions by looking at some crazy bad functions that don't honor the restrictions.
+
+```{r}
+gf_jitter(height ~ mother, data = Galton, alpha = 0.15) %>%
+  gf_abline(slope = 0.32, intercept = 49,  color = "red", size = 1.5) %>%
+  gf_lm(color = "blue", width = 0.5) %>%
+  gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches)",
+          title = "A crazy bad function that is unnecessarily far from the center of the data.")
+gf_jitter(height ~ mother, data = Galton, alpha = 0.15) %>%
+  gf_abline(slope = 1.03, intercept = 0,  color = "red", size = 1.5) %>%
+  gf_lm(size = 0.5, color = "blue") %>%
+  gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches)",
+          title = "A crazy bad function that strays  from the data at the extremes.")
+```
+
+Caption: Some crazy bad functions (in  red) compared to the same  form  of function  matched legitimately to  the data (in blue).  
+
+Note that the blue functions are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below  the function. The red functions don't accomplish this.
+
 
 ```{r}
 load("data/Punnet.rda")
@@ -165,10 +182,4 @@ gf_jitter(Petal.Width ~ Species, data = iris,
 
 Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
 
-## Indicator variables
 
-How to change a categorical variable with any number of levels into a set of simple 0/1 variables.
-
-## Model vectors, linear combinations, and degrees of flexibility
-
-Count the model vectors. Discard any that are linear combinations of the others.
