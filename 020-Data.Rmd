@@ -50,6 +50,7 @@ Punnet <- Punnet[expand, c(1,2)] %>%
   mutate(ID = paste0("SP", row_number() * 10)) %>%
   shuffle() %>%
   select(ID, flower_color, pollen_shape)
+# save(Punnet, file =  "data/Punnet.rda")
 sds_table(Punnet, caption = "Figure 4: Punnet's data in a contemporary format")
 ```
 

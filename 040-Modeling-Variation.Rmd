@@ -1,12 +1,130 @@
 # Modeling variation
 
-## Statistical model
+```{r include=FALSE}
+SDSdata::sds_setup()
+knitr::opts_knit$set('bookdown.internal.label' = FALSE)
+library(splines)
+```
+The point of statistics is to understand how things vary. For instance, human height varies from on person to another. Some of that variation is associated with the sex  of the person: women *tend to be* slightly shorter than men. Some of  the variation in  height relates to genes and genetic variation. Some to differing nutrition and general health.
+
+Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer  a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not; it varies. What's behind the variation? It could be the weather conditions at  the time. It could also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
+
+## Statistical models
+
+For our purposes, a statistical model is a mathematical function that takes values of the explanatory variables as input and  produces a corresponding output. For instance, a model of a person's height might take the person's age, sex, mother's height and father's height as inputs and give as output a specific number that we interpret as a kind of idealization of the height of all  the people who have the same values for those inputs. It might happen, by accident, that the model is exactly on target for our particular person. More likely, though, the model output will be somewhat off: the person is somewhat shorter or taller than the model says. This is to be expected since the model can't take into account every factor that influences height and because chance also  plays a role.
+
+```{r }
+Galton %>%
+  gf_jitter(height ~ sex, alpha  =  0.25, width = 0.2)
+```
+
+```{r}
+Stats <- df_stats(height ~ sex, data = Galton, mean)
+Galton %>%
+  gf_jitter(height ~ sex, alpha  =  0.125, width = 0.2)  %>%
+  gf_errorbar(mean_height + mean_height ~ sex, data =Stats, 
+              inherit=FALSE, size = 1.5, color = "blue")
+```
+
+```{r}
+Galton  %>%
+  gf_jitter(height ~ mother, data = Galton, alpha = 0.15, width = 0.05) %>%
+  gf_lm(size =  1.5) %>%
+  gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches")
+```
 
 A function that turns inputs into an output. The inputs are values for the explanatory variables, the output is a value for the response variable. 
+
+```{r}
+load("data/Punnet.rda")
+Stats <- df_stats(flower_color == "white" ~ pollen_shape, 
+                  data = Punnet, value = mean) 
+Punnet %>%
+  gf_jitter(as.numeric(flower_color == "white") ~ pollen_shape, alpha  =  0.15, 
+            width = 0.2, height  =  0.1, seed = 101) %>%
+  gf_errorbar(value + value ~ pollen_shape, data = Stats,
+              inherit = FALSE, size = 1.5) %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "flower color")
+```
+```{r}
+mod <- glm(sex == "F" ~ height, data  = Galton,  family  = "binomial")
+
+mod_plot(mod, size = 1.5) %>%
+gf_jitter(as.numeric(sex == "F") ~ height, data = Galton, 
+            alpha  =  0.15, 
+            width = 0.2, height  =  0.1) %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "Child's heigth (inches)", x = "Mother's height (inches)")
+```
 
 ## Model values
 
 And the variance of the model values, $v_m$.
+
+```{r}
+mod <- lm(height ~ mother, data = Galton)
+mod_values <- mod_eval(mod, data = Galton)
+gf_jitter(model_output ~ mother, data = mod_values, seed = 101,
+          height=0, width = 0.05) %>%
+  gf_jitter(height ~ mother, data = Galton, seed = 101,
+            width = 0.05, alpha = 0.10) %>%
+  gf_lm(color = "blue") %>%
+  gf_labs(y = "Child's height (inches)", x = "Mother's height (inches")
+```
+
+
+```{r}
+load("data/Punnet.rda")
+Stats <- df_stats(flower_color == "white" ~ pollen_shape, 
+                  data = Punnet, value = mean) 
+Punnet <- Punnet %>% left_join(Stats)
+Punnet %>%
+  gf_jitter(as.numeric(flower_color == "white") ~ pollen_shape, alpha  =  0.1, 
+            width = 0.2, height  =  0.1, seed = 101) %>%
+  gf_jitter(value ~ pollen_shape, alpha = 0.15, seed = 101, 
+            width = 0.2, height = 0, color = "blue") %>%
+  gf_errorbar(value + value ~ pollen_shape, data = Stats,
+              inherit = FALSE, size = .5) %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "Flower color")
+```
+
+
+
+```{r}
+mod <- glm(sex == "F" ~ height, data  = Galton,  family  = "binomial")
+mod_values <- mod_eval(mod, data = Galton)
+mod_plot(mod, size = 0.5) %>%
+gf_jitter(as.numeric(sex == "F") ~ height, data = Galton, 
+            alpha  =  0.1, seed = 101,
+            width = 0.2, height  =  0.1) %>%
+  gf_jitter(model_output ~ height, data = mod_values,
+            height = 0, width = 0.05, color = "blue") %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "Child's heigth (inches)", x = "Mother's height (inches)")
+```
+
 
 ## Probability as the model output
 
@@ -18,6 +136,30 @@ Show some models of increasing flexibility
 
 - continuous explanatory variable
 - categorical variable with multiple levels
+
+
+
+
+```{r}
+mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
+```
+
+```{r}
+mod <- lm(height ~ mother + sex,  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
+```
+
+```{r}
+iris$Species <- relevel(iris$Species, "virginica")
+Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
+gf_jitter(Petal.Width ~ Species, data = iris, 
+          width = 0.2, alpha = 0.15) %>%
+  gf_errorbar(value + value ~ Species, data = Stats,  
+              inherit = FALSE, size = 1.5)
+```
 
 ## Too much explanation
 
