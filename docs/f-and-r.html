@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 F and R | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 6 F and R | A Compact Guide to Classical Inference" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 F and R | A Compact Guide to Classical Inference" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 F and R | A Compact Guide to Classical Inference" />
+  
+  
+  
+
+<meta name="author" content="Daniel Kaplan" />
+
+
+<meta name="date" content="2019-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="effect-size.html"/>
+<link rel="next" href="confidence-intervals.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Compact Guide to Classical Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> What is classical inference?</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#and-why-should-i-read-this-book"><i class="fa fa-check"></i>… and why should I read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#indicator-variables"><i class="fa fa-check"></i><b>2.4</b> Indicator variables</a></li>
+<li class="chapter" data-level="2.5" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.5</b> Response and explanatory variables</a></li>
+<li class="chapter" data-level="2.6" data-path="data-and-variables.html"><a href="data-and-variables.html#other-data-sets.-just-for-my-notes."><i class="fa fa-check"></i><b>2.6</b> OTHER DATA SETS. Just for my notes.</a></li>
+<li class="chapter" data-level="2.7" data-path="data-and-variables.html"><a href="data-and-variables.html#gosset"><i class="fa fa-check"></i><b>2.7</b> Gosset</a></li>
+<li class="chapter" data-level="2.8" data-path="data-and-variables.html"><a href="data-and-variables.html#cushny-and-peeples"><i class="fa fa-check"></i><b>2.8</b> Cushny and Peeples</a></li>
+<li class="chapter" data-level="2.9" data-path="data-and-variables.html"><a href="data-and-variables.html#hooker-and-yule"><i class="fa fa-check"></i><b>2.9</b> Hooker and Yule</a></li>
+<li class="chapter" data-level="2.10" data-path="data-and-variables.html"><a href="data-and-variables.html#punnett"><i class="fa fa-check"></i><b>2.10</b> Punnett</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a></li>
+<li class="chapter" data-level="5" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>5</b> Effect size</a></li>
+<li class="chapter" data-level="6" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>6</b> F and R</a><ul>
+<li class="chapter" data-level="6.1" data-path="f-and-r.html"><a href="f-and-r.html#how-much-is-explained"><i class="fa fa-check"></i><b>6.1</b> How much is explained</a></li>
+<li class="chapter" data-level="6.2" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>6.2</b> F in statistics books</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>7</b> Confidence intervals</a></li>
+<li class="chapter" data-level="8" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html"><i class="fa fa-check"></i><b>8</b> So-called “statistical significance”</a></li>
+<li class="chapter" data-level="9" data-path="simple-means.html"><a href="simple-means.html"><i class="fa fa-check"></i><b>9</b> Simple means</a></li>
+<li class="chapter" data-level="10" data-path="covariates.html"><a href="covariates.html"><i class="fa fa-check"></i><b>10</b> Covariates</a></li>
+<li class="chapter" data-level="11" data-path="covariates-1.html"><a href="covariates-1.html"><i class="fa fa-check"></i><b>11</b> Covariates</a></li>
+<li class="chapter" data-level="12" data-path="outside-the-normal-situation.html"><a href="outside-the-normal-situation.html"><i class="fa fa-check"></i><b>12</b> Outside the normal situation</a><ul>
+<li class="chapter" data-level="12.1" data-path="outside-the-normal-situation.html"><a href="outside-the-normal-situation.html#remember-inference-isnt-everything"><i class="fa fa-check"></i><b>12.1</b> Remember, inference isn’t everything</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Compact Guide to Classical Inference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="f-and-r" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> F and R</h1>
+<p>We now have the pieces we need to assemble the central quantity which informs statistical inference. These are:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(n\)</span>, the sample size (or, more concretely, the number of rows in out data frame)</li>
+<li><span class="math inline">\(v_r\)</span>, the variance of the response variable. <span class="math inline">\(v_r\)</span> for binary categorical response variables is based on the 0-1 encoding.</li>
+<li><span class="math inline">\(v_m\)</span>, the variance of the model values.</li>
+<li><span class="math inline">\(df\)</span>, the <em>degree of flexibility</em> or, to stick to the conventional naming, the <em>degrees of freedom</em>.</li>
+</ol>
+<p>We’ll put these together to form a quantity called F. (The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th.) The formula for F is pretty simple, so I’ll present it right here for ready reference.</p>
+<p><span class="math display">\[F \equiv \frac{n - (1 + df)}{df} \frac{v_m}{v_r - v_m}\]</span>
+For almost all the settings considered in introductory statistics courses, <span class="math inline">\(df\)</span> is 1, so the formula simplifies to:
+<span class="math display">\[F =  (n-1) \frac{v_m}{v_r - v_m}\]</span></p>
+<div id="how-much-is-explained" class="section level2">
+<h2><span class="header-section-number">6.1</span> How much is explained</h2>
+<p><span class="math display">\[R^2 = v_m / v_r\]</span></p>
+<ul>
+<li>Biggest possible <span class="math inline">\(R^2\)</span> is 1, which can only occur when the model values are exactly the same as the values of the response variable.</li>
+</ul>
+<p><span class="math inline">\(R^2\)</span> is, literally, the faction of the variation in the response variable that has been captured by the model.</p>
+<ul>
+<li><span class="math inline">\(R^2\)</span> is never negative. This is part of the reason why keeping track of <span class="math inline">\(df\)</span> is important when there are multiple explanatory variables, or, to be more precise, multiple explanatory vectors.</li>
+</ul>
+</div>
+<div id="f-in-statistics-books" class="section level2">
+<h2><span class="header-section-number">6.2</span> F in statistics books</h2>
+<p>In most statistics book, F is not written in the form above but in one of a couple of alternative – but equivalent – forms. There’s no particular reason to use these forms. Knowing what they look like will help you make sense of traditional statistical reports.</p>
+<p>Since <span class="math inline">\(R^2\)</span> summarizes the relationship between <span class="math inline">\(v_m\)</span> and <span class="math inline">\(v_r\)</span>, the formula for F can be written in terms of <span class="math inline">\(R^2\)</span>. This is the first of the alternative forms.</p>
+<p><span class="math display">\[F = \frac{n - (1+df)}{df} \frac{R^2}{1 - R^2}\]</span></p>
+<p>Another alternative form comes from using an intermediate in the calculation of <span class="math inline">\(v_m\)</span> and <span class="math inline">\(v_r\)</span>. Recall how the variance is calculated by calculating square differences and averaging. To average, of course, you add together the quantities and then divide by the number of quantities being averaged.</p>
+<p>Suppose you didn’t bother to average, and stopped after adding up the square differences. The name for this intermediate is the <em>sum of squares</em>.
+F is often written in terms of the sum of squares of the response variable SS_r_ and of the model values SS_m_. Something like this:</p>
+<p><span class="math display">\[F = \frac{n - (1+df)}{df} \frac{\mbox{SS}_m}{\mbox{SS}_r - \mbox{SS}_m}\]</span></p>
+<p>More typically, instead instead of looking at the model values directly, the tradition in classical inference is to consider what’s called the <span class="math inline">\(sum of squares of the residuals\)</span>, which is simply SSR = <span class="math inline">\(\mbox{SS}_r - \mbox{SS}_m\)</span> and the formula is re-written like this:</p>
+<p><span class="math display">\[F = \frac{\mbox{SS}_m / df}{SSR / (n -  (1+df))}.\]</span>
+Both the numerator and the denominator of this ratio have the form of a sum of squares divided by a count. In the terminology of classical inference, such things are called <em>mean squares</em>.</p>
+<p>In this book, we’ll just use the formula for F given at the start of this chapter. The others give exactly the same value, but let’s avoid having ton work with potentially confusing vocabulary such as the mean square and sum of squares.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="effect-size.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="confidence-intervals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Compact_inference.pdf", "Compact_inference.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+# Outside the normal situation
+
+About ranks, transformations, ...
