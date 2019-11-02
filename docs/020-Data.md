@@ -9,37 +9,103 @@ Although this book is a guide to classical inference, we will work with data in 
 
 As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure \@ref{fig:galton-raw} shows part of the data frame.
 
-\begin{table}[t]
-
-\caption{\label{tab:unnamed-chunk-2}Figure 1: The `Galton` data frame containing Galtons measurements of 898 adult children.}
-\centering
-\begin{tabular}{l|r|r|l|r|r}
-\hline
-family & father & mother & sex & height & nkids\\
-\hline
-1 & 78.5 & 67.0 & M & 73.2 & 4\\
-\hline
-1 & 78.5 & 67.0 & F & 69.2 & 4\\
-\hline
-1 & 78.5 & 67.0 & F & 69.0 & 4\\
-\hline
-1 & 78.5 & 67.0 & F & 69.0 & 4\\
-\hline
-2 & 75.5 & 66.5 & M & 73.5 & 4\\
-\hline
-2 & 75.5 & 66.5 & M & 72.5 & 4\\
-\hline
-2 & 75.5 & 66.5 & F & 65.5 & 4\\
-\hline
-2 & 75.5 & 66.5 & F & 65.5 & 4\\
-\hline
-3 & 75.0 & 64.0 & M & 71.0 & 2\\
-\hline
-3 & 75.0 & 64.0 & F & 68.0 & 2\\
-\hline
-\multicolumn{6}{l}{... and so on for 898 rows altogether.}\\
-\end{tabular}
-\end{table}
+<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
+<caption>Figure 1: The `Galton` data frame containing Galtons measurements of 898 adult children.</caption>
+ <thead>
+  <tr>
+   <th> family </th>
+   <th> father </th>
+   <th> mother </th>
+   <th> sex </th>
+   <th> height </th>
+   <th> nkids </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td> 1 </td>
+   <td> 78.5 </td>
+   <td> 67.0 </td>
+   <td> M </td>
+   <td> 73.2 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 1 </td>
+   <td> 78.5 </td>
+   <td> 67.0 </td>
+   <td> F </td>
+   <td> 69.2 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 1 </td>
+   <td> 78.5 </td>
+   <td> 67.0 </td>
+   <td> F </td>
+   <td> 69.0 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 1 </td>
+   <td> 78.5 </td>
+   <td> 67.0 </td>
+   <td> F </td>
+   <td> 69.0 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 2 </td>
+   <td> 75.5 </td>
+   <td> 66.5 </td>
+   <td> M </td>
+   <td> 73.5 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 2 </td>
+   <td> 75.5 </td>
+   <td> 66.5 </td>
+   <td> M </td>
+   <td> 72.5 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 2 </td>
+   <td> 75.5 </td>
+   <td> 66.5 </td>
+   <td> F </td>
+   <td> 65.5 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 2 </td>
+   <td> 75.5 </td>
+   <td> 66.5 </td>
+   <td> F </td>
+   <td> 65.5 </td>
+   <td> 4 </td>
+  </tr>
+  <tr>
+   <td> 3 </td>
+   <td> 75.0 </td>
+   <td> 64.0 </td>
+   <td> M </td>
+   <td> 71.0 </td>
+   <td> 2 </td>
+  </tr>
+  <tr>
+   <td> 3 </td>
+   <td> 75.0 </td>
+   <td> 64.0 </td>
+   <td> F </td>
+   <td> 68.0 </td>
+   <td> 2 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> ... and so on for 898 rows altogether.</td></tr></tfoot>
+</table>
 
 Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man, in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
 
@@ -53,34 +119,57 @@ The `family` variable has been encoded as a number, but it is not really numeric
 
 Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as *tabulations*. For instance, one of the very early (Punnet 1905, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated. 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{images/Punnet-page-93} \caption{Figure 3: Genetics data from 1905}\label{fig:punnet-93}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="images/Punnet-page-93.png" alt="Figure 3: Genetics data from 1905" width="80%" />
+<p class="caption">Figure 3: Genetics data from 1905</p>
+</div>
 
 This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data table, this would look like:
 
-\begin{table}[t]
-
-\caption{\label{tab:punnet-raw}Figure 4: Punnet's data in a contemporary format}
-\centering
-\begin{tabular}{l|l|l}
-\hline
-ID & flower\_color & pollen\_shape\\
-\hline
-SP2760 & other & long\\
-\hline
-SP5930 & other & round\\
-\hline
-SP7510 & white & long\\
-\hline
-SP5820 & other & round\\
-\hline
-SP2070 & other & long\\
-\hline
-SP5350 & other & round\\
-\hline
-\multicolumn{3}{l}{... and so on for 801 rows altogether.}\\
-\end{tabular}
-\end{table}
+<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
+<caption>Figure 4: Punnet's data in a contemporary format</caption>
+ <thead>
+  <tr>
+   <th> ID </th>
+   <th> flower_color </th>
+   <th> pollen_shape </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td> SP1750 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP6070 </td>
+   <td> other </td>
+   <td> round </td>
+  </tr>
+  <tr>
+   <td> SP5790 </td>
+   <td> other </td>
+   <td> round </td>
+  </tr>
+  <tr>
+   <td> SP4530 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP6950 </td>
+   <td> white </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP1560 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> ... and so on for 801 rows altogether.</td></tr></tfoot>
+</table>
 
 Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905) p. 93.
 
@@ -117,8 +206,10 @@ Note on Estimating the Relative Influence of Two Variables upon a Third
 Author(s): R. H. Hooker and G. U. Yule
 Source: Journal of the Royal Statistical Society, Vol. 69, No. 1 (Mar., 1906), pp. 197-200 Published by: Wiley for the Royal Statistical Society
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{images/india-exports-yule} \caption{Figure 2: Wheat production and export in India, and prices in Britain}\label{yule-exports}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="images/india-exports-yule.png" alt="Figure 2: Wheat production and export in India, and prices in Britain" width="80%" />
+<p class="caption">Figure 2: Wheat production and export in India, and prices in Britain</p>
+</div>
 
 
 #### Punnett

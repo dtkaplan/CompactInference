@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-01" />
+<meta name="date" content="2019-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -85,13 +85,11 @@
 <li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
-<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-model"><i class="fa fa-check"></i><b>4.1</b> Statistical model</a></li>
+<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#model-values"><i class="fa fa-check"></i><b>4.2</b> Model values</a></li>
 <li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#probability-as-the-model-output"><i class="fa fa-check"></i><b>4.3</b> Probability as the model output</a></li>
 <li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#degrees-of-flexibility"><i class="fa fa-check"></i><b>4.4</b> Degrees of flexibility</a></li>
 <li class="chapter" data-level="4.5" data-path="modeling-variation.html"><a href="modeling-variation.html#too-much-explanation"><i class="fa fa-check"></i><b>4.5</b> Too much explanation</a></li>
-<li class="chapter" data-level="4.6" data-path="modeling-variation.html"><a href="modeling-variation.html#indicator-variables-1"><i class="fa fa-check"></i><b>4.6</b> Indicator variables</a></li>
-<li class="chapter" data-level="4.7" data-path="modeling-variation.html"><a href="modeling-variation.html#model-vectors-linear-combinations-and-degrees-of-flexibility"><i class="fa fa-check"></i><b>4.7</b> Model vectors, linear combinations, and degrees of flexibility</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>5</b> Effect size</a></li>
 <li class="chapter" data-level="6" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>6</b> F and R</a><ul>
@@ -139,7 +137,7 @@
 <div id="header">
 <h1 class="title">A Compact Guide to Classical Inference</h1>
 <p class="author"><em>Daniel Kaplan</em></p>
-<p class="date"><em>2019-11-01</em></p>
+<p class="date"><em>2019-11-02</em></p>
 </div>
 <div id="what-is-classical-inference" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> What is classical inference?</h1>
@@ -167,7 +165,7 @@
 </tbody>
 </table>
 <p>Just comparing the ages and running times of John and Abigail, you can see that John is 4 minutes (that is, 240 seconds) slower than Abigail in completing the 10 mile run. Their age difference is 8 years. This amounts to and additional 30 seconds of running time per year of age difference. (240 / 8 = 30.) Since you are uncertain – this is only one race, this is only two people, etc. – you decide to frame your findings this way: My data show that middle-aged runners slow down by 20-40 seconds/mile for every year additional age. That is a statistical claim.</p>
-<p>There are many problems with this statistical claim. First, it’s comparing people with more differences than 8 years of age. To judge from the names, John is a man and Abigail a woman. A different statistical statement prompted by the data is that women are faster than men by 30 seconds per mile. Or, it might be that Abigail is an experience runner and John is a formerly lethargic man who has been trying to build up to being able to run 10 miles. (Congratulations, John! A ten-mile time of 105 minutes is a pretty impressive accomplishment.)</p>
+<p>There are many problems with this statistical claim. First, it’s comparing people who differ in many ways, not just their 8-year spread in age. To judge from the names, John is a man and Abigail a woman. A different statistical statement prompted by the data is that women are faster than men by 30 seconds per mile. Or, it might be that Abigail is an experienced runner and John is a formerly lethargic man who has been trying to build up to being able to run 10 miles. (Congratulations, John! A ten-mile time of 105 minutes is a pretty impressive accomplishment.)</p>
 <p>Common sense – and good statistical practice – tells you to compare like with like. Wouldn’t it be better to compare men of different ages who are both running their first 10-mile race? Or, how about looking at Abigail’s past records from when she was younger? The failure to do things like this is reason enough to be skeptical about the 20-40 seconds/mile per year claim. But this is a flaw in study design and the collection of data. That is not the kind of flaw that statistical inference deals with.</p>
 <p>Statistical inference deals with one, and only one, source of uncertainty: that produced by the size of the sample, in this case 2 people. Again, common sense tells you that two is not a lot of data. So, how much would be enough? 10? 100? 1000? Or, put another way, how should you frame the uncertainty in your claim due to limited data? In the example, the 20-40 seconds/mile per year interval was made up to create an impression of scientific precision. Statistical inference techniques create a meaningful interval that stems from the data itself, rather than the imagination of the researcher.</p>
 <p>The need for statistical inference became important when it was realized, around 1900, that there was not yet a reliable way of knowing how much data – that is, how many rows of data – is sufficient. The founders of statistical inference found ways to frame the problem in terms of the mathematics of probability, and used algebra and other mathematical techniques to solve the problem. They summarized the process of statistical inference using formulas and tables of probabilities. This is <em>classical</em> inference.</p>
