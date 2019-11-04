@@ -1,0 +1,71 @@
+# Multiple explanatory variables
+
+```{r include=FALSE}
+SDSdata::sds_setup()
+knitr::opts_knit$set('bookdown.internal.label' = FALSE)
+library(splines)
+```
+
+## Covariates
+
+Degrees of flexibility
+
+Show some models of increasing flexibility
+
+- continuous explanatory variable
+- categorical variable with multiple levels
+
+```{r}
+mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
+```
+
+```{r}
+mod <- lm(height ~ mother + sex,  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
+```
+
+```{r}
+iris$Species <- relevel(iris$Species, "virginica")
+Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
+gf_jitter(Petal.Width ~ Species, data = iris, 
+          width = 0.2, alpha = 0.15) %>%
+  gf_errorbar(value + value ~ Species, data = Stats,  
+              inherit = FALSE, size = 1.5)
+```
+
+## Too much explanation
+
+Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
+
+
+
+
+```{r}
+mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
+```
+
+```{r}
+mod <- lm(height ~ mother + sex,  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
+```
+
+```{r}
+iris$Species <- relevel(iris$Species, "virginica")
+Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
+gf_jitter(Petal.Width ~ Species, data = iris, 
+          width = 0.2, alpha = 0.15) %>%
+  gf_errorbar(value + value ~ Species, data = Stats,  
+              inherit = FALSE, size = 1.5)
+```
+
+## Too much explanation
+
+Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
+
+

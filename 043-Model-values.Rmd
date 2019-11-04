@@ -1,0 +1,105 @@
+# Model values
+
+```{r include=FALSE}
+SDSdata::sds_setup()
+knitr::opts_knit$set('bookdown.internal.label' = FALSE)
+library(splines)
+```
+
+And the variance of the model values, $v_m$.
+
+```{r}
+mod <- lm(height ~ mother, data = Galton)
+mod_values <- mod_eval(mod, data = Galton)
+gf_jitter(model_output ~ mother, data = mod_values, seed = 101,
+          height=0, width = 0.05) %>%
+  gf_jitter(height ~ mother, data = Galton, seed = 101,
+            width = 0.05, alpha = 0.10) %>%
+  gf_lm(color = "blue") %>%
+  gf_labs(y = "Child's height (inches)", x = "Mother's height (inches")
+```
+
+
+```{r}
+load("data/Punnet.rda")
+Stats <- df_stats(flower_color == "white" ~ pollen_shape, 
+                  data = Punnet, value = mean) 
+Punnet <- Punnet %>% left_join(Stats)
+Punnet %>%
+  gf_jitter(as.numeric(flower_color == "white") ~ pollen_shape, alpha  =  0.1, 
+            width = 0.2, height  =  0.1, seed = 101) %>%
+  gf_jitter(value ~ pollen_shape, alpha = 0.15, seed = 101, 
+            width = 0.2, height = 0, color = "blue") %>%
+  gf_errorbar(value + value ~ pollen_shape, data = Stats,
+              inherit = FALSE, size = .5) %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "Flower color")
+```
+
+
+
+```{r}
+mod <- glm(sex == "F" ~ height, data  = Galton,  family  = "binomial")
+mod_values <- mod_eval(mod, data = Galton)
+mod_plot(mod, size = 0.5) %>%
+gf_jitter(as.numeric(sex == "F") ~ height, data = Galton, 
+            alpha  =  0.1, seed = 101,
+            width = 0.2, height  =  0.1) %>%
+  gf_jitter(model_output ~ height, data = mod_values,
+            height = 0, width = 0.05, color = "blue") %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "Child's heigth (inches)", x = "Mother's height (inches)")
+```
+
+## Training and testing
+
+Non-classical inference: Cross validation
+
+We use the same data for training and testing.  This creates a problem for inference and requires the introduction  of an apparatus to keep track of it.
+
+## Degrees of flexibility
+
+Show some models of increasing flexibility
+
+- continuous explanatory variable
+- categorical variable with multiple levels
+
+
+
+
+```{r}
+mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
+```
+
+```{r}
+mod <- lm(height ~ mother + sex,  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
+```
+
+```{r}
+iris$Species <- relevel(iris$Species, "virginica")
+Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
+gf_jitter(Petal.Width ~ Species, data = iris, 
+          width = 0.2, alpha = 0.15) %>%
+  gf_errorbar(value + value ~ Species, data = Stats,  
+              inherit = FALSE, size = 1.5)
+```
+
+## Too much explanation
+
+Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
+
+
