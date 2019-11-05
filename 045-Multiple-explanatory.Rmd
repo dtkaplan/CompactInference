@@ -6,26 +6,26 @@ knitr::opts_knit$set('bookdown.internal.label' = FALSE)
 library(splines)
 ```
 
+
+
+
+
+
+```{r mother-plus-sex, echo=FALSE, fig.cap = "(ref:mother-plus-sex-cap)"}
+mod <- lm(height ~ mother + sex,  data = Galton)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother  | sex, data = Galton, alpha = 0.15) 
+```
+
+(ref:mother-plus-sex-cap) A model of height with two explanatory variables: the mother's height and the child's sex. Each  explanatory variable added to a model makes it possible  for  the model more faithfully  to reproduce the response variable.
+
 ## Covariates
 
-Degrees of flexibility
+Hooker,  Yule data.
 
-Show some models of increasing flexibility
 
-- continuous explanatory variable
-- categorical variable with multiple levels
+## Multi-level categorical explanatory variables
 
-```{r}
-mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
-mod_plot(mod, size = 1.5) %>%
-  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
-```
-
-```{r}
-mod <- lm(height ~ mother + sex,  data = Galton)
-mod_plot(mod, size = 1.5) %>%
-  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
-```
 
 ```{r}
 iris$Species <- relevel(iris$Species, "virginica")
@@ -38,34 +38,44 @@ gf_jitter(Petal.Width ~ Species, data = iris,
 
 ## Too much explanation
 
-Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
+Chapter 5 imagined a contest between two students, Linus and Curly, for the best model. Let's return to that example, but now we'll construct some models that are more  *flexible* than a straight line.
 
+(ref:several-df-cap) Figure 1: (a) a flat model -- zero  degrees of flexibility; (b) a straight-line model -- one degree of flexibility;  (c)
+a  model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."
 
-
-
-```{r}
-mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
-mod_plot(mod, size = 1.5) %>%
-  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
+```{r several-df, echo = FALSE, fig.show = "keep", fig.cap = "(ref:several-df-cap)", out.width = "50%"}
+set.seed(103)
+Train <- Galton %>% sample_n(size = 6) %>% 
+  select(height, mother)
+mod <- P <- list()
+mod[[1]] <- lm(height ~ 1, data = Train)
+mod[[2]] <- lm(height ~ mother, data = Train)
+mod[[3]] <- lm(height ~ ns(mother, 2), data  = Train)
+mod[[4]] <- lm(height ~ ns(mother, 3), data  = Train)
+for (k in 1:4) {
+  vals <- mod_eval(mod[[k]], data = Train)
+  valsb  <- mod_eval(mod[[k]], 
+                     data = data.frame(mother = seq(63, 70, length = 100)))
+  
+  P[[k]] <- gf_point(height ~ mother,  data = vals, size = 3) %>%
+    gf_line(model_output ~ mother,  data = valsb, color = "blue")  %>%
+    gf_labs(title=glue::glue("({letters[k]}): {k-1} degrees of flexibility. v_m = {round(var(vals$model_output),1`)}"), 
+            x  = "Mother's height",  y = "Child's height") %>%
+    gf_segment(model_output + height ~ mother + mother, 
+                color = "red", size = 2, ,  alpha = 0.5) 
+}
+P[[1]]; 
+P[[2]]; 
+P[[3]]; 
+P[[4]]; 
 ```
 
-```{r}
-mod <- lm(height ~ mother + sex,  data = Galton)
-mod_plot(mod, size = 1.5) %>%
-  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
-```
+In the models in Figure 1, the degrees of flexibility indicates the shape of  the  function. A flat line  has no degrees of flexibility. A sloped line has one degree  of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
 
-```{r}
-iris$Species <- relevel(iris$Species, "virginica")
-Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
-gf_jitter(Petal.Width ~ Species, data = iris, 
-          width = 0.2, alpha = 0.15) %>%
-  gf_errorbar(value + value ~ Species, data = Stats,  
-              inherit = FALSE, size = 1.5)
-```
+Notice that as the degree  of flexibility goes up, the model function gets closer to  the data points. Correspondingly, the variance of the model values, $v_m$, goes up with increasing degrees of flexibility.
 
-## Too much explanation
+The point of counting degrees of flexibility is to be able to adjust $v_m$ to take into account the intrinsic nature of flexibility to  match more closely the response values. For sufficiently high degrees of flexibility, a model will be able almost perfectly to reproduce the response variable, even when there is *no relationship*  between the response and explanatory variables.
 
-Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
+
 
 

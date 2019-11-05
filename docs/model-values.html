@@ -89,15 +89,11 @@
 <li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
 <li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#categorical-response-variables"><i class="fa fa-check"></i><b>4.3</b> Categorical response variables</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
-<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#training-and-testing"><i class="fa fa-check"></i><b>5.1</b> Training and testing</a></li>
-<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#degrees-of-flexibility"><i class="fa fa-check"></i><b>5.2</b> Degrees of flexibility</a></li>
-<li class="chapter" data-level="5.3" data-path="model-values.html"><a href="model-values.html#too-much-explanation"><i class="fa fa-check"></i><b>5.3</b> Too much explanation</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a></li>
 <li class="chapter" data-level="6" data-path="multiple-explanatory-variables.html"><a href="multiple-explanatory-variables.html"><i class="fa fa-check"></i><b>6</b> Multiple explanatory variables</a><ul>
 <li class="chapter" data-level="6.1" data-path="multiple-explanatory-variables.html"><a href="multiple-explanatory-variables.html#covariates"><i class="fa fa-check"></i><b>6.1</b> Covariates</a></li>
-<li class="chapter" data-level="6.2" data-path="multiple-explanatory-variables.html"><a href="multiple-explanatory-variables.html#too-much-explanation-1"><i class="fa fa-check"></i><b>6.2</b> Too much explanation</a></li>
-<li class="chapter" data-level="6.3" data-path="multiple-explanatory-variables.html"><a href="multiple-explanatory-variables.html#too-much-explanation-2"><i class="fa fa-check"></i><b>6.3</b> Too much explanation</a></li>
+<li class="chapter" data-level="6.2" data-path="multiple-explanatory-variables.html"><a href="multiple-explanatory-variables.html#too-much-explanation"><i class="fa fa-check"></i><b>6.2</b> Too much explanation</a></li>
+<li class="chapter" data-level="6.3" data-path="multiple-explanatory-variables.html"><a href="multiple-explanatory-variables.html#too-much-explanation-1"><i class="fa fa-check"></i><b>6.3</b> Too much explanation</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a></li>
 <li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
@@ -143,31 +139,47 @@
             <section class="normal" id="section-">
 <div id="model-values" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Model values</h1>
-<p>And the variance of the model values, <span class="math inline">\(v_m\)</span>.</p>
-<p><img src="043-Model-values_files/figure-html/unnamed-chunk-2-1.png" width="80%" /></p>
-<p><img src="043-Model-values_files/figure-html/unnamed-chunk-3-1.png" width="80%" /></p>
-<p><img src="043-Model-values_files/figure-html/unnamed-chunk-4-1.png" width="80%" /></p>
-<div id="training-and-testing" class="section level2">
-<h2><span class="header-section-number">5.1</span> Training and testing</h2>
-<p>Non-classical inference: Cross validation</p>
-<p>We use the same data for training and testing. This creates a problem for inference and requires the introduction of an apparatus to keep track of it.</p>
+<p>It’s now time to talk a bit about the way that statistical models are constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the previous chapter and asked to draw a straight-line function relating the explanatory variable to the response variable. Naturally, some students’ models will be better than others. How can we determine which model is the best?</p>
+<p>To illustrate, let’s take a small data set and look at two models that students might draw.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" />
+<p class="caption">
+Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+</p>
 </div>
-<div id="degrees-of-flexibility" class="section level2">
-<h2><span class="header-section-number">5.2</span> Degrees of flexibility</h2>
-<p>Show some models of increasing flexibility</p>
-<ul>
-<li>continuous explanatory variable</li>
-<li>categorical variable with multiple levels</li>
-</ul>
-<p><img src="043-Model-values_files/figure-html/unnamed-chunk-5-1.png" width="80%" /></p>
-<p><img src="043-Model-values_files/figure-html/unnamed-chunk-6-1.png" width="80%" /></p>
-<p><img src="043-Model-values_files/figure-html/unnamed-chunk-7-1.png" width="80%" /></p>
+<p>Who has drawn the better model: Linus or Curly? The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother’s height) for that point. The position of each * on the vertical axis marks the <em>model value</em> for that data point.</p>
+<p>Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.</p>
+<p>Now, the instructor takes out her red pen to mark the “error.” The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins.</p>
+<p>This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and the shape of the function (here, a straight line), the computer tries out all the possibilities for straight-line models and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
+<p>In practice, for straight-line models (and more general forms, called “linear models”), there are equations that can be solved to find the best model, so there’s no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.</p>
+<p>There is something important to notice about the model values for the winning model:</p>
+<blockquote>
+<p><em>Model values will have a lower variance than the response variable.</em></p>
+</blockquote>
+<p>We’ll use the symbol <span class="math inline">\(v_m\)</span> to stand for the variance of the model values.</p>
+<p>To illustrate this, let’s look at a couple of models from the previous chapter. In each, you can see that the response values (black dots) are spread out, while the model values stay in toward the center of data. This is a natural consequence of our using <em>central</em> models, that is, models where the function has roughly equal numbers of data points above it and below it.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="043-Model-values_files/figure-html/unnamed-chunk-2-1.png" alt="Figure 2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
+<p class="caption">
+Figure 2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
+</p>
 </div>
-<div id="too-much-explanation" class="section level2">
-<h2><span class="header-section-number">5.3</span> Too much explanation</h2>
-<p>Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.</p>
 
+<div class="figure" style="text-align: FALSE">
+<img src="043-Model-values_files/figure-html/unnamed-chunk-3-1.png" alt="Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
+<p class="caption">
+Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
+</p>
 </div>
+
+<div class="figure" style="text-align: FALSE">
+<img src="043-Model-values_files/figure-html/unnamed-chunk-4-1.png" alt="Figure 4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
+<p class="caption">
+Figure 4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
+</p>
+</div>
+
+
 </div>
             </section>
 

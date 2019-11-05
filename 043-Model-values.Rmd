@@ -6,9 +6,57 @@ knitr::opts_knit$set('bookdown.internal.label' = FALSE)
 library(splines)
 ```
 
-And the variance of the model values, $v_m$.
+It's now time to talk a bit about the way that statistical models are  constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the  previous chapter and asked to draw a straight-line function relating the explanatory  variable to the response variable. Naturally, some students' models will be better than others. How can we determine which model is the best?
 
-```{r}
+To illustrate, let's take a small data set and look at two models that students might draw.
+
+(ref:drawn-train-cap)  Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+
+```{r drawn-train, echo = FALSE, fig.show = "keep", fig.cap = "(ref:drawn-train-cap)", out.width = "50%"}
+set.seed(103)
+Train <- Galton %>% sample_n(size = 6) %>% 
+  select(height, mother)
+set.seed(104)
+Bogus <- Galton %>% sample_n(size = 10)
+mod1 <- lm(height ~ mother, data = Train)
+mod2 <- lm(height ~ mother, data = Bogus)
+vals1 <- mod_eval(mod1, data = Train)
+vals1b  <- mod_eval(mod1, 
+                    data = data.frame(mother = seq(63, 70, length = 100)))
+vals2 <- mod_eval(mod2, data = Train)
+vals2b <- mod_eval(mod2, 
+                   data = data.frame(mother = seq(63, 70, length=1000)))
+gf_point(height ~ mother,  data = vals1, size = 3) %>%
+  gf_line(model_output ~ mother,  data = vals1b, color = "blue")  %>%
+  gf_labs(title="Linus's model", x  = "Mother's height",  y = "Child's height") %>%
+  gf_segment(model_output + height ~ mother + mother, color = "red", size = 2, ,  alpha = 0.5) %>%
+  gf_point(model_output ~ mother, data = vals1,  shape = 8, size = 3,  color  = "blue")
+gf_point(height ~ mother,  data = vals2, size = 3) %>%
+  gf_line(model_output ~ mother,  data = vals2b, color = "blue") %>%
+  gf_labs(title="Curly's model", x  = "Mother's height",  y = "Child's height") %>%
+  gf_segment(model_output + height ~ mother + mother, color = "red",size = 2, alpha = 0.5) %>%
+  gf_point(model_output ~ mother, data = vals2,  shape = 8, size = 3,  color  = "blue")
+```
+
+Who has drawn the better model: Linus or Curly?  The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother's height) for that  point. The position of each * on  the vertical axis marks the *model value* for that data point.
+
+Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.
+
+Now, the instructor takes out her red pen to mark the "error." The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins. 
+
+This is analogous to how statistical models are constructed. Once the explanatory and  response variables have been selected, and the shape of the function (here, a straight line), the computer tries out all the possibilities for straight-line models and picks the one that gives the least error between the *model values* and the actual response values.
+
+In practice, for straight-line models (and more general forms, called "linear models"), there are equations that can be solved to find the best model, so there's no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.
+
+There is something important to notice about the model values for the winning model:
+
+>  *Model values will have a lower variance than the response variable.*
+
+We'll use the symbol $v_m$ to stand for the variance of the model values.
+
+To illustrate this, let's look at a couple of models from the  previous chapter. In each, you can see that the response values (black dots) are spread out,  while the model  values stay in toward the center of data. This is a natural consequence of  our using *central* models, that is, models where the function has roughly equal numbers of data points above it and below it.
+
+```{r echo=FALSE, fig.cap="(ref:fig2-cap)"}
 mod <- lm(height ~ mother, data = Galton)
 mod_values <- mod_eval(mod, data = Galton)
 gf_jitter(model_output ~ mother, data = mod_values, seed = 101,
@@ -18,14 +66,14 @@ gf_jitter(model_output ~ mother, data = mod_values, seed = 101,
   gf_lm(color = "blue") %>%
   gf_labs(y = "Child's height (inches)", x = "Mother's height (inches")
 ```
+(ref:fig2-cap) Figure 2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: `r round(var(Galton$height), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
 
-
-```{r}
-load("data/Punnet.rda")
+```{r echo=FALSE, fig.cap="(ref:fig3-cap)"}
+load("data/Punnett.rda")
 Stats <- df_stats(flower_color == "white" ~ pollen_shape, 
-                  data = Punnet, value = mean) 
-Punnet <- Punnet %>% left_join(Stats)
-Punnet %>%
+                  data = Punnett, value = mean) 
+Punnett <- Punnett %>% left_join(Stats)
+Punnett %>%
   gf_jitter(as.numeric(flower_color == "white") ~ pollen_shape, alpha  =  0.1, 
             width = 0.2, height  =  0.1, seed = 101) %>%
   gf_jitter(value ~ pollen_shape, alpha = 0.15, seed = 101, 
@@ -40,10 +88,11 @@ Punnet %>%
                             )) ) %>%
   gf_labs(y = "Flower color")
 ```
+(ref:fig3-cap) Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: `r round(var(Punnett$flower_color=="white"), 2)`; Model value variance: `r sprintf("%1.6f", var(Punnett$value))`
 
 
 
-```{r}
+```{r echo = FALSE,  fig.cap = "(ref:fig4-cap)"}
 mod <- glm(sex == "F" ~ height, data  = Galton,  family  = "binomial")
 mod_values <- mod_eval(mod, data = Galton)
 mod_plot(mod, size = 0.5) %>%
@@ -55,51 +104,13 @@ gf_jitter(as.numeric(sex == "F") ~ height, data = Galton,
   gf_refine(
       scale_y_continuous(limits = c(-0.2,1.2),
         breaks = c(0,1),
-        labels = c("other", "white"),
+        labels = c("M", "F"),
         sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
                             )) ) %>%
-  gf_labs(y = "Child's heigth (inches)", x = "Mother's height (inches)")
+  gf_labs(y = "Sex", x = "Mother's height (inches)")
 ```
-
-## Training and testing
-
-Non-classical inference: Cross validation
-
-We use the same data for training and testing.  This creates a problem for inference and requires the introduction  of an apparatus to keep track of it.
-
-## Degrees of flexibility
-
-Show some models of increasing flexibility
-
-- continuous explanatory variable
-- categorical variable with multiple levels
+(ref:fig4-cap)  Figure 4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: `r round(var(Galton$sex == "F"), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
 
 
-
-
-```{r}
-mod <- lm(height ~ splines::ns(mother,2),  data = Galton)
-mod_plot(mod, size = 1.5) %>%
-  gf_jitter(height ~ mother, data = Galton, alpha = 0.15) 
-```
-
-```{r}
-mod <- lm(height ~ mother + sex,  data = Galton)
-mod_plot(mod, size = 1.5) %>%
-  gf_jitter(height ~ mother, data = Galton, color = "black", alpha = 0.15) 
-```
-
-```{r}
-iris$Species <- relevel(iris$Species, "virginica")
-Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
-gf_jitter(Petal.Width ~ Species, data = iris, 
-          width = 0.2, alpha = 0.15) %>%
-  gf_errorbar(value + value ~ Species, data = Stats,  
-              inherit = FALSE, size = 1.5)
-```
-
-## Too much explanation
-
-Show how the model exactly reproduces the response variable when there are sufficient degrees of freedom.
 
 

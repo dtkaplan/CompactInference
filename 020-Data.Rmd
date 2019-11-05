@@ -31,14 +31,14 @@ The `family` variable has been encoded as a number, but it is not really numeric
 
 Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as *tabulations*. For instance, one of the very early (Punnet 1905, p. 93) investigations of cross-linkage in genetics examined `r sum(c(480,144,132,43))` sweet pea plants, recording the color of the flower and whether the pollen was round or elongated. 
 
-```{r punnet-93, echo=FALSE, fig.cap="Figure 3: Genetics data from 1905"}
+```{r punnett-93, echo=FALSE, fig.cap="Figure 3: Genetics data from 1905"}
 knitr::include_graphics("images/Punnet-page-93.png")
 ```
 
 This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data table, this would look like:
 
 ```{r punnet-raw, echo = FALSE}
-Punnet <- tibble::tribble(
+Punnett <- tibble::tribble(
   ~ flower_color, ~ pollen_shape, ~ count,
   "other", "long", 480,
   "other", "round", 144,
@@ -46,12 +46,12 @@ Punnet <- tibble::tribble(
   "white", "round", 45,
 )
 expand <- rep(c(1,2,3,4), c(480,144,132,45))
-Punnet <- Punnet[expand, c(1,2)] %>% 
+Punnett <- Punnett[expand, c(1,2)] %>% 
   mutate(ID = paste0("SP", row_number() * 10)) %>%
   shuffle() %>%
   select(ID, flower_color, pollen_shape)
-# save(Punnet, file =  "data/Punnet.rda")
-sds_table(Punnet, caption = "Figure 4: Punnet's data in a contemporary format")
+ # save(Punnett, file =  "data/Punnett.rda")
+sds_table(Punnett, caption = "Figure 4: Punnet's data in a contemporary format")
 ```
 
 Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905) p. 93.
