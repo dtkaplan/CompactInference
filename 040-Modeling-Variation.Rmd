@@ -64,14 +64,14 @@ To illustrate, consider some data from another approach to quantifying genetics 
 In one experiment, Punnett cross bred sweet peas and observed the flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 4 in Chapter 1. The complete data  are graphed in Figure 3, below. 
 
 ```{r punnett-1, echo=FALSE, fig.cap = "Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape."}
-load("data/Punnet.rda")
+load("data/Punnett.rda")
 Stats <- df_stats(flower_color == "white" ~ pollen_shape, 
-                  data = Punnet, value = mean) 
-Punnet %>%
+                  data = Punnett, value = mean) 
+Punnett %>%
   gf_jitter(as.numeric(flower_color == "white") ~ pollen_shape, alpha  =  0.15, 
             width = 0.2, height  =  0.1, seed = 101) %>%
   gf_errorbar(value + value ~ pollen_shape, data = Stats,
-              inherit = FALSE, size = 1.5) %>%
+              inherit = FALSE, size = 1.5, color="blue") %>%
   gf_refine(
       scale_y_continuous(limits = c(-0.2,1.2),
         breaks = c(0,1),

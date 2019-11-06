@@ -5,7 +5,7 @@ We now have the pieces we need to assemble the central quantity which informs st
 1. $n$, the sample size (or, more concretely, the number of rows in out data frame)
 2. $v_r$, the variance of the response variable. $v_r$ for binary categorical response variables is based on the 0-1 encoding.
 3. $v_m$, the variance of the model values.
-4. $df$, the *degree of flexibility* or, to stick to the conventional naming, the *degrees of freedom*.
+4. $df$, the *degree of flexibility*.^[This is a non-standard name. The convention is to refer to the quantity $n - (df + 1)$ as the *degrees of **freedom***.]
 
 We'll put these together to form a quantity called F. (The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th.) The formula for F is pretty simple, so I'll present it right here for ready reference.  
 
@@ -56,7 +56,7 @@ F is often written in terms of the sum of squares of the response variable SS_r_
 
 $$F = \frac{n - (1+df)}{df} \frac{\mbox{SS}_m}{\mbox{SS}_r - \mbox{SS}_m}$$
 
-More typically, instead instead  of  looking at the model  values directly,  the tradition  in  classical inference is to consider what's called the  $sum of squares of the residuals$, which is simply SSR = $\mbox{SS}_r - \mbox{SS}_m$ and the  formula is re-written like this:
+More typically, instead instead  of  looking at the model  values directly,  the tradition  in  classical inference is to consider what's called the  *sum of squares of the residuals*, which is simply SSR = $\mbox{SS}_r - \mbox{SS}_m$ and the  formula is re-written like this:
 
 $$F = \frac{\mbox{SS}_m / df}{SSR / (n -  (1+df))}.$$
 Both the numerator and the denominator of this ratio have the form of a sum  of squares divided by a count. In the terminology of classical inference, such things are called *mean squares*. 

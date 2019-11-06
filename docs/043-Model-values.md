@@ -6,9 +6,11 @@ It's now time to talk a bit about the way that statistical models are  construct
 
 To illustrate, let's take a small data set and look at two models that students might draw.
 
+(ref:drawn-train-cap)  Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" />
-<p class="caption">Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.</p>
+<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="(ref:drawn-train-cap)" width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="(ref:drawn-train-cap)" width="50%" />
+<p class="caption">(ref:drawn-train-cap)</p>
 </div>
 
 Who has drawn the better model: Linus or Curly?  The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother's height) for that  point. The position of each * on  the vertical axis marks the *model value* for that data point.
