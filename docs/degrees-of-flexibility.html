@@ -192,9 +192,9 @@ Figure 3: A model of height with two explanatory variables: the mother’s heigh
 <p>It takes just the most basic notion of biology to realize that when it comes to the relationship between mother’s and child’s height another potentially important covariate is the height of the father. Figure 4 shows two such models. The model in 4(a) was constructed to have 3 degrees of freedom; 4(b) has 7 degrees of freedom.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-1.png" alt="Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" /><img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-2.png" alt="Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" />
+<img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-1.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" /><img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-2.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" />
 <p class="caption">
-Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
+Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 </p>
 </div>
 <p>Comparing the two models, you might see how a larger df corresponds to increased flexibility.</p>
@@ -203,7 +203,7 @@ Two models of child’s height versus mother’s height. Father’s height and c
 <div id="flexibility-literally" class="section level2">
 <h2><span class="header-section-number">6.4</span> Flexibility, literally</h2>
 <p>Chapter 5 imagined a contest between two students, Linus and Curly, for the best model. Let’s return to that example, but now we’ll construct some models that are more <em>flexible</em> than a straight line.</p>
-<p>(ref:several-df-cap) Figure 1: (a) a flat model – zero degrees of flexibility; (b) a straight-line model – one degree of flexibility; (c)
+<p>(ref:several-df-cap) Figure 5: (a) a flat model – zero degrees of flexibility; (b) a straight-line model – one degree of flexibility; (c)
 a model with one bend – two degrees of flexibility; (d) a model with two bends – three degrees of flexibility.&quot;</p>
 <div class="figure" style="text-align: FALSE">
 <img src="045-Multiple-explanatory_files/figure-html/several-df-1.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-2.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-3.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-4.png" alt="(ref:several-df-cap)" width="50%" />
@@ -211,7 +211,7 @@ a model with one bend – two degrees of flexibility; (d) a model with two bends
 (ref:several-df-cap)
 </p>
 </div>
-<p>In the models in Figure 1, the degrees of flexibility indicates the shape of the function. A flat line has no degrees of flexibility. A sloped line has one degree of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.</p>
+<p>In the models in Figure 5, the degrees of flexibility indicate the shape of the function. A flat line has no degrees of flexibility. A sloped line has one degree of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.</p>
 <p>Notice that as the degree of flexibility goes up, the model function gets closer to the data points. Correspondingly, the variance of the model values, <span class="math inline">\(v_m\)</span>, goes up with increasing degrees of flexibility.</p>
 <p>The point of counting degrees of flexibility is to be able to adjust <span class="math inline">\(v_m\)</span> to take into account the intrinsic nature of flexibility to match more closely the response values. For sufficiently high degrees of flexibility, a model will be able almost perfectly to reproduce the response variable, even when there is <em>no relationship</em> between the response and explanatory variables.</p>
 

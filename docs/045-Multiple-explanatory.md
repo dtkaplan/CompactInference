@@ -66,7 +66,7 @@ The factors that the modeler wants to hold constant are called *covariates*.  Re
 
 It takes just the most basic notion of biology to realize that when it comes to the relationship between mother's and child's height another potentially important covariate is the height of the father. Figure 4 shows two such models. The model in 4(a) was constructed to have 3 degrees of freedom; 4(b) has 7 degrees of freedom.
 
-(ref:mother-plus-sex-father-cap) Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
+(ref:mother-plus-sex-father-cap) Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 
 <div class="figure" style="text-align: FALSE">
 <img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-1.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" /><img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-2.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" />
@@ -81,7 +81,7 @@ You might also note from Figure 4 that the model with 8 degrees of freedom  sugg
 
 Chapter 5 imagined a contest between two students, Linus and Curly, for the best model. Let's return to that example, but now we'll construct some models that are more  *flexible* than a straight line.
 
-(ref:several-df-cap) Figure 1: (a) a flat model -- zero  degrees of flexibility; (b) a straight-line model -- one degree of flexibility;  (c)
+(ref:several-df-cap) Figure 5: (a) a flat model -- zero  degrees of flexibility; (b) a straight-line model -- one degree of flexibility;  (c)
 a  model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."
 
 <div class="figure" style="text-align: FALSE">
@@ -89,7 +89,7 @@ a  model with one bend -- two degrees of flexibility; (d) a model with two bends
 <p class="caption">(ref:several-df-cap)</p>
 </div>
 
-In the models in Figure 1, the degrees of flexibility indicates the shape of  the  function. A flat line  has no degrees of flexibility. A sloped line has one degree  of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
+In the models in Figure 5, the degrees of flexibility indicate the shape of  the  function. A flat line  has no degrees of flexibility. A sloped line has one degree  of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
 
 Notice that as the degree  of flexibility goes up, the model function gets closer to  the data points. Correspondingly, the variance of the model values, $v_m$, goes up with increasing degrees of flexibility.
 
