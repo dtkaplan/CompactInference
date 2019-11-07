@@ -5,7 +5,8 @@ language:
     chapter_name: "Chapter "
 output_dir: "docs"
 new_session: yes
-rmd_files: ["index.Rmd", # Chapter 1
+rmd_files: ["index.Rmd", 
+            "010-Classical-inference.Rmd", # Chapter 1
             "020-Data.Rmd",
             "030-Variation.Rmd",
             "040-Modeling-Variation.Rmd",

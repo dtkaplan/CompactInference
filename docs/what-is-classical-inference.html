@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Data and variables | A Compact Guide to Classical Inference</title>
-  <meta name="description" content="Chapter 2 Data and variables | A Compact Guide to Classical Inference" />
+  <title>Chapter 1 What is classical inference? | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 1 What is classical inference? | A Compact Guide to Classical Inference" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Data and variables | A Compact Guide to Classical Inference" />
+  <meta property="og:title" content="Chapter 1 What is classical inference? | A Compact Guide to Classical Inference" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Data and variables | A Compact Guide to Classical Inference" />
+  <meta name="twitter:title" content="Chapter 1 What is classical inference? | A Compact Guide to Classical Inference" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="what-is-classical-inference.html"/>
-<link rel="next" href="measuring-variation.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="data-and-variables.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -143,407 +143,49 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-and-variables" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Data and variables</h1>
-<div id="data-frames" class="section level2">
-<h2><span class="header-section-number">2.1</span> Data frames</h2>
-<p>Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into <em>data frames</em>, which are more-or-less spreadsheets. The columns of the data frame are <em>variables</em>, the rows of the data frame are <em>units of observation</em>.</p>
-<p>As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure @ref{fig:galton-raw} shows part of the data frame.</p>
-<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>
-Figure 1: The <code>Galton</code> data frame containing Galtons measurements of 898 adult children.
-</caption>
+<div id="what-is-classical-inference" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> What is classical inference?</h1>
+<p>Statistical inference is the logic and methods for creating statistical claims that are justified by data. A <em>statistical claim</em> is a statement like this: My data show that taking aspirin is associated with a reduction in fever. Or this: My data show that for every year of age, middle-aged runners slow down, on average, by 20-40 seconds per mile.</p>
+<p>Statistical inference was invented to guard against spurious claims. For instance, suppose you had these data on age and running times (in minutes) in a 10-mile road race:</p>
+<table>
 <thead>
-<tr>
-<th>
-family
-</th>
-<th>
-father
-</th>
-<th>
-mother
-</th>
-<th>
-sex
-</th>
-<th>
-height
-</th>
-<th>
-nkids
-</th>
+<tr class="header">
+<th>Person</th>
+<th>Age</th>
+<th>Running Time</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-M
-</td>
-<td>
-73.2
-</td>
-<td>
-4
-</td>
+<tr class="odd">
+<td>John</td>
+<td>48</td>
+<td>105</td>
 </tr>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-F
-</td>
-<td>
-69.2
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-F
-</td>
-<td>
-69.0
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-F
-</td>
-<td>
-69.0
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-M
-</td>
-<td>
-73.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-M
-</td>
-<td>
-72.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-F
-</td>
-<td>
-65.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-F
-</td>
-<td>
-65.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-3
-</td>
-<td>
-75.0
-</td>
-<td>
-64.0
-</td>
-<td>
-M
-</td>
-<td>
-71.0
-</td>
-<td>
-2
-</td>
-</tr>
-<tr>
-<td>
-3
-</td>
-<td>
-75.0
-</td>
-<td>
-64.0
-</td>
-<td>
-F
-</td>
-<td>
-68.0
-</td>
-<td>
-2
-</td>
+<tr class="even">
+<td>Abigail</td>
+<td>40</td>
+<td>101</td>
 </tr>
 </tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> … and so on for 898 rows altogether.
-</td>
-</tr>
-</tfoot>
 </table>
-<p>Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man, in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today’s standards: 6 feet 6.5 inches.</p>
-<p>The family is designated with a number. So all four of the first rows are kids in family one, while rows 5 and 6 come from family two.</p>
-<p>Most of the variables are <em>numeric</em>, as appropriate for height and the number of kids. One variable, <code>sex</code>, has values that are labels, M and F here, standing for male and female. Such variables are called <em>categorical</em>; the possible labels are the <em>levels</em> of the variable. In this book, categorical variables with <em>two levels</em> will play a very important role, but certainly there are categorical variables with more than two levels, as we shall see.</p>
-<p>The <code>family</code> variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not “between” families 1 and 2 in any genuinely numerical sense.</p>
-</div>
-<div id="tabulations" class="section level2">
-<h2><span class="header-section-number">2.2</span> Tabulations</h2>
-<p>Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as <em>tabulations</em>. For instance, one of the very early (Punnet 1905, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.</p>
-<div class="figure" style="text-align: FALSE">
-<img src="images/Punnet-page-93.png" alt="Figure 3: Genetics data from 1905" width="80%" />
-<p class="caption">
-Figure 3: Genetics data from 1905
-</p>
-</div>
-<p>This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data table, this would look like:</p>
-<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>
-Figure 4: Punnet’s data in a contemporary format
-</caption>
-<thead>
-<tr>
-<th>
-ID
-</th>
-<th>
-flower_color
-</th>
-<th>
-pollen_shape
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-SP6520
-</td>
-<td>
-white
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP1050
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP4010
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP6620
-</td>
-<td>
-white
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP3570
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP1740
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> … and so on for 801 rows altogether.
-</td>
-</tr>
-</tfoot>
-</table>
-<p>Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905) p. 93.</p>
-<p>You may well wonder what benefit there is to working with an 801-row data frame rather than the simple tabulation in the original publication. First, giving the variables names allows us to distinguish between the variable being measured and the level of the measurement. Second, the table makes clear that both variables <code>flower_color</code> and <code>pollen_shape</code> are categorical. Third, suppose there was some other aspect being recorded about the plants, for instance the plant’s height or how much water the plant was given or the name of the technician who recorded the data. Using a data frame, these new variables can easily be added as additional columns. There’s no space in the tabulation for these additional measurements.</p>
-<p>A fourth reason to prefer the data-frame format for the genetics data is subtle. Most often, you will be using software to analyze data. Storing data in a consistent way – data frames – makes it much easier to use standard software than if the data are stored in a (pointless) variety of formats. Even in classical days, the variety of formats used to store data resulted in the creation of “new” statistical methods that were set up to deal with the special format in which data was presented.</p>
-</div>
-<div id="quantitative-and-categorical" class="section level2">
-<h2><span class="header-section-number">2.3</span> Quantitative and categorical</h2>
-</div>
-<div id="indicator-variables" class="section level2">
-<h2><span class="header-section-number">2.4</span> Indicator variables</h2>
-<p>For a categorical variable: is it level X?</p>
-</div>
-<div id="response-and-explanatory-variables" class="section level2">
-<h2><span class="header-section-number">2.5</span> Response and explanatory variables</h2>
-<div id="other-data-sets.-just-for-my-notes." class="section level4 unnumbered">
-<h4>OTHER DATA SETS. Just for my notes.</h4>
-</div>
-<div id="gosset" class="section level4">
-<h4><span class="header-section-number">2.5.0.1</span> Gosset</h4>
-<p><code>datasets::crimtab</code>, maybe use dichotimization of data to illustrate other points.</p>
-</div>
-<div id="cushny-and-peeples" class="section level4">
-<h4><span class="header-section-number">2.5.0.2</span> Cushny and Peeples</h4>
-<p><code>psych::cushny</code></p>
-<p>Look at the fractional change in sleep time from control, not the time difference. (There are a lot of people getting very little sleep!)</p>
-</div>
-<div id="hooker-and-yule" class="section level4">
-<h4><span class="header-section-number">2.5.0.3</span> Hooker and Yule</h4>
-<p>Note on Estimating the Relative Influence of Two Variables upon a Third
-Author(s): R. H. Hooker and G. U. Yule
-Source: Journal of the Royal Statistical Society, Vol. 69, No. 1 (Mar., 1906), pp. 197-200 Published by: Wiley for the Royal Statistical Society</p>
-<div class="figure" style="text-align: FALSE">
-<img src="images/india-exports-yule.png" alt="Figure 2: Wheat production and export in India, and prices in Britain" width="80%" />
-<p class="caption">
-Figure 2: Wheat production and export in India, and prices in Britain
-</p>
-</div>
-</div>
-<div id="punnett" class="section level4">
-<h4><span class="header-section-number">2.5.0.4</span> Punnett</h4>
-<p>Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905)
-The following is a summary of the fully recorded plants : (page 93)
-Coloured long. Coloured round. White long. White round. 480 144 132 45</p>
-<p>Wikipedia and textbooks give these data
-Bateson and Punnett experiment
-Phenotype and genotype Observed Expected from 9:3:3:1 ratio
-Purple, long (P_L_) 284 216
-Purple, round (P_ll) 21 72
-Red, long (ppL_) 21 72
-Red, round (ppll) 55 24</p>
+<p>Just comparing the ages and running times of John and Abigail, you can see that John is 4 minutes (that is, 240 seconds) slower than Abigail in completing the 10 mile run. Their age difference is 8 years. This amounts to and additional 30 seconds of running time per year of age difference. (240 / 8 = 30.) Since you are uncertain – this is only one race, this is only two people, etc. – you decide to frame your findings this way: My data show that middle-aged runners slow down by 20-40 seconds/mile for every year additional age. That is a statistical claim.</p>
+<p>There are many problems with this statistical claim. First, it’s comparing people who differ in many ways, not just their 8-year spread in age. To judge from the names, John is a man and Abigail a woman. A different statistical statement prompted by the data is that women are faster than men by 30 seconds per mile. Or, it might be that Abigail is an experienced runner and John is a formerly lethargic man who has been trying to build up to being able to run 10 miles. (Congratulations, John! A ten-mile time of 105 minutes is a pretty impressive accomplishment.)</p>
+<p>Common sense – and good statistical practice – tells you to compare like with like. Wouldn’t it be better to compare men of different ages who are both running their first 10-mile race? Or, how about looking at Abigail’s past records from when she was younger? The failure to do things like this is reason enough to be skeptical about the 20-40 seconds/mile per year claim. But this is a flaw in study design and the collection of data. That is not the kind of flaw that statistical inference deals with.</p>
+<p>Statistical inference deals with one, and only one, source of uncertainty: that produced by the size of the sample, in this case 2 people. Again, common sense tells you that two is not a lot of data. So, how much would be enough? 10? 100? 1000? Or, put another way, how should you frame the uncertainty in your claim due to limited data? In the example, the 20-40 seconds/mile per year interval was made up to create an impression of scientific precision. Statistical inference techniques create a meaningful interval that stems from the data itself, rather than the imagination of the researcher.</p>
+<p>The need for statistical inference became important when it was realized, around 1900, that there was not yet a reliable way of knowing how much data – that is, how many rows of data – is sufficient. The founders of statistical inference found ways to frame the problem in terms of the mathematics of probability, and used algebra and other mathematical techniques to solve the problem. They summarized the process of statistical inference using formulas and tables of probabilities. This is <em>classical</em> inference.</p>
+<p>Algeba and other mathematical arguments can be difficult and subtle. In the early days of classical inference there were disagreements about what formulas would be best. To develop ideas and confirm that their formulas gave reasonable results, some of the founders of classical inference used <em>simulations</em>. One simulation, for instance, involved writing down data for 3000 individual people on index cards, shuffling the cards, then dealing out hands of 4 cards each. With 1000 such events, it was straightforward – but extremely tedious – to see what results were likely and which not.</p>
+<p>The algebraic techniques were pretty much the only way to conduct statistical inference until the 1970s. Then, as computing became available at research institutions, the simulation technique became easy enough to be practical for routine problems in statistical inference. Simulation on computers became a potential substitute for algebra.</p>
+<p>Perhaps many students would agree that anything that reduces the amount of algebra needed to solve a problem is worthwhile. But this is not the fundamental reason why simulation is an important technique. Yes, simulation is easy, but because it’s easy it can be applied to situations which were too complicated to handle reliably with algebra, even by the best of mathematicians. The simulation approach to statistical inference has been called <em>computer-age statistical inference</em> to distinguish it from <em>classical statistical inference</em>.</p>
+<div id="and-why-should-i-read-this-book" class="section level2 unnumbered">
+<h2>… and why should I read this book?</h2>
+<p>We live in the computer age, so you might suppose that statistics courses would use computer-age statistical inference. By and large they do not. Why not? There is one good reason and several bad reasons for this. And these reasons – good and bad – determine whether you should read this book.</p>
+<p>Classical inference is the only way to conduct statistical inference for very small data, say with 10 or fewer rows of data. So if you are working with small data, you need to learn classical inference.</p>
+<p>And even if you don’t need to work with such small data, there may be reasons for you to learn something about classical inference. One is that, if you are taking an introductory course, chances are a substantial part of the course is about classical inference. This is more or less a “because I said so” justification for studying a topic.</p>
+<p>Putting aside the matter of small data, instructors use classical inference because that is what they were taught. They don’t use simulation for a variety of reasons: they may not know about the computer-age techniques, they may not be comfortable teaching how to use a computer, they may see algebra as prestigious and computing as low-class, they may think their students don’t have access to computing (and in some places, this might be right), they may have been forced to use the n<sup>th</sup> edition of a textbook originally written before computer-age inference was accessible and which continues to use classical inference because it’s hard for an instructor to change textbooks.</p>
+<p>My personal view is that everyone studying statistics should learn computer-age statistical inference. First, most students find it much easier, so they can spend their mental energy to understand the purpose of statistical inference rather than the mechanics of it. Second, it makes it straightforward to move away from the classical settings (e.g. the difference in two proportions, straight-line models) and toward settings that are more important today (e.g. risk ratios, machine learning models). Third, learning to use a computer is itself a valuable objective. In my view, it’s only worthwhile to learn classical inference when you are confronted with small-data situations or when your interest in statistics is deep.</p>
+<p>But if you <em>have to</em> study classical inference, you might as well study it in a concise way. The traditional classical inference curriculum uses a large amount of confusing terminology and splits the subject into several different topics even though they are all very much the same thing. Also, if you are studying statistical inference you are learning how to express uncertainty. Ironically, the textbook description of classical inference involves detailed calculations of great precision. That precision is unjustified. The needless precision is in the textbooks because that’s what happens when you translate a real-world problem into deterministic mathematics and because the culture of mathematics education is that of exactitude and proof. Exactitude and proof are valuable things in the proper setting. But in statistical inference, rough answers are good enough. Indeed, the leading professional organization of statisticians, the American Statistical Association, has explicitly called for practitioners of statistical inference to <em>stop</em> suggesting that the precision of classical textbook answers is meaningful.</p>
+<p>In order to write a compact guide to statistical inference, I’ve translated the classical texts into a modern statistical language and computer oriented notation. We’ll be using models and effect sizes. All the different settings of textbook classical inference can be expressed in the same way, so we’ll work with this one way rather than the six or seven found in textbooks. We’ll dispense with unnecessary intermediates such as the “standard error” and dodge the doubtful digressions into misleading exactitude that unnecessarily increases the difficulty of learning and understanding classical inference.</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -551,8 +193,8 @@ Red, round (ppll) 55 24</p>
           </div>
         </div>
       </div>
-<a href="what-is-classical-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="measuring-variation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-and-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
