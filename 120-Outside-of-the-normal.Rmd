@@ -1,3 +1,62 @@
-# Outside the normal situation
+# Outside of the normal
 
+```{r include=FALSE}
+SDSdata::sds_setup()
+knitr::opts_knit$set('bookdown.internal.label' = FALSE)
+```
 About ranks, transformations, ...
+
+Hooker and Yule paper, 1906
+
+```{r}
+load("data/Wheat_export.rda")
+
+cor(export ~ price, data = Wheat_export)
+cor(export ~ production, data = Wheat_export)
+cor(rank(export)  ~ rank(price),  data = Wheat_export )
+cor(rank(export)  ~ rank(production),  data = Wheat_export )
+cor(diff(export)  ~ diff(price),  data = Wheat_export)
+cor(diff(export)  ~ diff(production),  data = Wheat_export)
+gf_point(export ~ price, data = Wheat_export)
+gf_point(export ~ production, data = Wheat_export)
+plot(diff(export)  ~ diff(price),  data = Wheat_export)
+plot(diff(export)  ~ diff(production),  data = Wheat_export)
+lm(diff(export)  ~ diff(production) + diff(price),  data = Wheat_export) %>%
+  summary()
+plot(rank(diff(export))  ~ rank(diff(price)),  data = Wheat_export)
+plot(rank(diff(export))  ~ rank(diff(production)),  data = Wheat_export)
+```
+
+They computed indices, which seem to be the standardized annual differences.
+
+```{r}
+
+Indices  <- 
+  with(Wheat_export,
+       data.frame(export = diff(export),
+                  price = diff(price),
+                  production = diff(production))) %>%
+  mutate(export = (export - mean(export))/sd(export),
+         price = (price - mean(price))/sd(price),
+         production = 
+           (production - mean(production))/sd(production))
+gf_point(export ~ price, data = Indices)
+gf_point(export ~ production, data = Indices)
+summary(lm(export  ~ price + production, data = Indices))
+```
+
+What if we do it with log  proportional change ...
+```{r}
+Deltas  <- with(Wheat_export,
+  
+  data.frame(delta_export = diff(log(export)),
+         delta_price = diff(log(price)),
+         delta_production = diff(log(production))
+  )
+)
+cor(delta_export ~ delta_price, data = Deltas)
+cor(delta_export ~ delta_production, data = Deltas)
+gf_point(delta_export ~ delta_price, data = Deltas)
+gf_point(delta_export ~ delta_production, data = Deltas)
+summary(lm(delta_export ~ delta_price + delta_production, data = Deltas))
+```
