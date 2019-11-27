@@ -142,32 +142,32 @@ This style of presentation is perfectly understandable, but it is not in the mod
  </thead>
 <tbody>
   <tr>
-   <td> SP730 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP5190 </td>
+   <td> SP5610 </td>
    <td> other </td>
    <td> round </td>
   </tr>
   <tr>
-   <td> SP3200 </td>
+   <td> SP1750 </td>
    <td> other </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP4830 </td>
+   <td> SP1890 </td>
    <td> other </td>
-   <td> round </td>
-  </tr>
-  <tr>
-   <td> SP7370 </td>
-   <td> white </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP1290 </td>
+   <td> SP3980 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP2180 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP3040 </td>
    <td> other </td>
    <td> long </td>
   </tr>
@@ -192,13 +192,13 @@ Much later in the book, we will translate categorical variables into a set of ve
 
 Obviously, with just zero and one as possible values, a single indicator variable is not able to represent completely a categorical variable with three or more levels. In such situations, a *set of indicator variables* is used. If there  are k different levels for the  categorical variable, the equivalent  set of indicator variables will have  k - 1 members. For instance, a variable `fruit` with three levels "apple," "blueberry," and "cherry," will correspond to two indicator variables. The first one might be whether the fruit is apple or not. The second would be  whether the fruit is blueberry or not. When both the first and second take on the value zero, we know that the fruit must be the remaining level, cherry. Figure 5 shows the example on a case by case basis.
 
-`fruit` | $\rightarrow$ | indicator apple | indicator  blueberry
---------|--------|--------|--------
-cherry  |    | 0  |  0
-apple   |    | 1  |  0
-blueberry  | | 0  |  1
-apple   |    | 1  |  0
-cherry  |    | 0  |  0
+`fruit` | $\rightarrow$ | indicator apple | & | indicator  blueberry
+--------|:--------:|--------|------|:--------:
+cherry  |    | 0  | | 0
+apple   |    | 1  | | 0
+blueberry  | | 0  | | 1
+apple   |    | 1  | | 0
+cherry  |    | 0  | | 0
 
 Figure 5: An example of how  a categorical  variable ('fruit') can be translated into simple indicator  variables. Note that there is always at  most a single 1 in each row of the table. 
 

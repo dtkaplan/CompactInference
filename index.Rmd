@@ -26,7 +26,7 @@ For the "non-traditional" instructor who embraces modern computing, there is an 
 
 In many traditional, formula-based curricula, computers are not used: a calculator and a set of printed probability tables are sufficient to the task. This is only tenable because the task has been defined in a narrow way. It excludes modern data graphics. And it precludes any careful examination of confounding and the recognition that many important questions can only be addressed by considering the relationships among multiple variables. 
 
-I hope that this little book can help instructors see that statistical inference can be handled as one topic among the many needed for modern statistics. Inference, important though it be, does not need to be such a sprawling set of methods and details that other essential topics get neglected.
+I hope that this little book can help instructors see that statistical inference can be handled as one topic among the many needed for modern statistics. Inference, important though it be, does not need to be such a sprawling set of methods and details taking  up  so much of the introductory  course that other essential topics get neglected.
 
 *Daniel Kaplan, December 2019, Saint Paul, Minnesota*
  
