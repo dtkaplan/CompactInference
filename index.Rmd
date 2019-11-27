@@ -14,7 +14,7 @@ description: ""
 
 # Preface {-}
 
-Statistical inference is the heart of many contemporary college-level statistics courses. For an introductory course, inference is generally taught in one of two ways. By far the most common uses algebraic formulas for *standard errors* and test statistics. Probability tables are then used to turn  standard errors into confidence intervals and turn test statistics into p-values. 
+Statistical inference is the heart of many contemporary college-level statistics courses. For an introductory course, inference is generally taught in one of two ways. By far the most common uses algebraic formulas for *standard errors* and test statistics. Probability tables are then used to scale  standard errors into confidence intervals and translate test statistics into p-values. 
 
 Generations of students have been taught using the standard-error curriculum. Its difficulties and pedagogical shortcomings are well known, the common experience of every instructor using the curriculum. In response, an important alternative approach to inference has been developed based on simulation, randomization, and statistical bootstrapping. (See, e.g., @lock5, @ISRS, @tintle-investigations, @modern-dive.) 
 

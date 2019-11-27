@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-07" />
+<meta name="date" content="2019-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -77,13 +77,13 @@
 <li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
 <li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
 <li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
-<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical</a></li>
-<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#indicator-variables"><i class="fa fa-check"></i><b>2.4</b> Indicator variables</a></li>
-<li class="chapter" data-level="2.5" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.5</b> Response and explanatory variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
 <li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
+<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
@@ -121,10 +121,10 @@
 <li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
-<li class="chapter" data-level="13" data-path="outside-the-normal-situation.html"><a href="outside-the-normal-situation.html"><i class="fa fa-check"></i><b>13</b> Outside the normal situation</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
 </ul>
 
@@ -145,9 +145,9 @@
             <section class="normal" id="section-">
 <div id="effect-size" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Effect size</h1>
-<p>An <em>effect size</em> tells how the output of a model changes when a simple change is made to the input. Many statistical claims are made in terms of an effect size. For instance, according to the <a href="https://www.nhtsa.gov/risky-driving/seat-belts">US National Highway Traffic Safety Administration (NHTSA)</a>, wearing seat belts reduces the risk of fatal injury to passenger-vehicle occupants by about 50%. This is an effect size.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>An <em>effect size</em> tells how the output of a model changes when a simple change is made to the input. Many statistical claims are made in terms of an effect size. For instance, according to the <a href="https://www.nhtsa.gov/risky-driving/seat-belts">US National Highway Traffic Safety Administration (NHTSA)</a>, wearing seat belts reduces the risk of fatal injury to passenger-vehicle occupants by about 50%. This is an effect size.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>But this related fact from NHTSA is <em>not</em> an effect size: 51% of male passenger-vehicle occupants killed in 2017 were not wearing seat belts.</p>
-<p>An effect size summarizes a comparison between two different conditions. In the first example, those two conditions are 1) wearing a seat belt and 2) not wearing a seat belt. In the second example, however, there is just one condition: being a male passenger-vehicle occupant who died in a car accident in 2017.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>An effect size summarizes a comparison between two different conditions. In the first example, those two conditions are 1) wearing a seat belt and 2) not wearing a seat belt. In the second example, however, there is just one condition: being a male passenger-vehicle occupant who died in a car accident in 2017.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <div id="slopes-and-differences" class="section level2">
 <h2><span class="header-section-number">7.1</span> Slopes and differences</h2>
 <p>Consider two models introduced in Chapter 5. Figure 5.1 shows child’s height versus mother’s height in Galton’s data. The straight-line model shows a slight upward slope. To calculate the effect size of child’s height <em>with respect to</em> mother’s height, pick two values of mother’s height: say 60 and 68 inches. From the graph you can read the output of the model at these two values of the input. At an input of 60 inches, the output is 65.5 inches. At an input of 68 inches, the output is (coincidentally) 68 inches. The effect size is the slope of the model: rise over run. Here, the “run” is 68 - 60 = 8 inches. The “rise” is 68 - 65.5 = 2.5 inches. So the slope is 2.5 / 8 = 0.31.</p>
@@ -174,9 +174,9 @@
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>I’m using “about” here since we haven’t yet introduced confidence intervals. That will happen in Chapter 9. It took some work to chase down the confidence intervals on the relative risk of fatal injury: it is 40% to 60%.<a href="effect-size.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>What to call a descriptive quantity like 51%. It’s not an effect size. One word used is “statistic,” which is simply a number calculated from data. But “statistic” has other meanings as well. An effect size is also a statistic. I suggest simply using “proportion” for the 51%. Chapter 11 looks at confidence intervals on means and proportions. The confidence interval for the 51% proportion is 50-52%.<a href="effect-size.html#fnref2" class="footnote-back">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p>I’m using “about” here since we haven’t yet introduced confidence intervals. That will happen in Chapter 9. It took some work to chase down the confidence intervals on the relative risk of fatal injury: it is 40% to 60%.<a href="effect-size.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>What to call a descriptive quantity like 51%. It’s not an effect size. One word used is “statistic,” which is simply a number calculated from data. But “statistic” has other meanings as well. An effect size is also a statistic. I suggest simply using “proportion” for the 51%. Chapter 11 looks at confidence intervals on means and proportions. The confidence interval for the 51% proportion is 50-52%.<a href="effect-size.html#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

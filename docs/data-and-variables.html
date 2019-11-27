@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-07" />
+<meta name="date" content="2019-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -77,13 +77,13 @@
 <li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
 <li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
 <li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
-<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical</a></li>
-<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#indicator-variables"><i class="fa fa-check"></i><b>2.4</b> Indicator variables</a></li>
-<li class="chapter" data-level="2.5" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.5</b> Response and explanatory variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
 <li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
+<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
@@ -121,10 +121,10 @@
 <li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
-<li class="chapter" data-level="13" data-path="outside-the-normal-situation.html"><a href="outside-the-normal-situation.html"><i class="fa fa-check"></i><b>13</b> Outside the normal situation</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
 </ul>
 
@@ -145,13 +145,16 @@
             <section class="normal" id="section-">
 <div id="data-and-variables" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Data and variables</h1>
+<p>Only in the second half of the twentieth century was the organization of data treated as a serious topic. Classical inference, emerging mainly in the period 1880-1925, was developed without reference to standard formats for data. Without automated methods of data handling, each researcher was confronted with the “oppressive necessity of reducing his results to a more convenient bulk.”<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Although this book is a guide to classical inference, we will work with data in a contemporary, standard format. This simplifies inference since we do not need to develop different statistical methodologies to deal with the diverse ways in which raw data can be reduced to a “convenient bulk.”</p>
+<p>This chapter is about the organization of data. Later, we’ll work with a standard form for reducing data: statistical model functions.</p>
 <div id="data-frames" class="section level2">
 <h2><span class="header-section-number">2.1</span> Data frames</h2>
-<p>Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into <em>data frames</em>, which are more-or-less spreadsheets. The columns of the data frame are <em>variables</em>, the rows of the data frame are <em>units of observation</em>.</p>
-<p>As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure @ref{fig:galton-raw} shows part of the data frame.</p>
+<p>The data we use is organized into <em>data frames</em>, which are more or less spreadsheets. The columns of the data frame are <em>variables</em>, the rows of the data frame are <em>units of observation</em>.</p>
+<p>As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.</p>
 <table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
 <caption>
-Figure 1: The <code>Galton</code> data frame containing Galtons measurements of 898 adult children.
+Figure 2.1: The <code>Galton</code> data frame containing Gallon’s measurements of 898 adult children.
 </caption>
 <thead>
 <tr>
@@ -385,24 +388,23 @@ F
 </tr>
 </tfoot>
 </table>
-<p>Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man, in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today’s standards: 6 feet 6.5 inches.</p>
+<p>Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today’s standards: 6 feet 6.5 inches.</p>
 <p>The family is designated with a number. So all four of the first rows are kids in family one, while rows 5 and 6 come from family two.</p>
 <p>Most of the variables are <em>numeric</em>, as appropriate for height and the number of kids. One variable, <code>sex</code>, has values that are labels, M and F here, standing for male and female. Such variables are called <em>categorical</em>; the possible labels are the <em>levels</em> of the variable. In this book, categorical variables with <em>two levels</em> will play a very important role, but certainly there are categorical variables with more than two levels, as we shall see.</p>
-<p>The <code>family</code> variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not “between” families 1 and 2 in any genuinely numerical sense.</p>
 </div>
 <div id="tabulations" class="section level2">
 <h2><span class="header-section-number">2.2</span> Tabulations</h2>
-<p>Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as <em>tabulations</em>. For instance, one of the very early (Punnet 1905, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.</p>
+<p>Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as <em>tabulations</em>. For instance, one of the very early (<span class="citation">Bateson, Saunders, and Punnett (<a href="#ref-punnett-1905">1905</a>)</span>, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="images/Punnet-page-93.png" alt="Figure 3: Genetics data from 1905" width="80%" />
+<img src="images/Punnet-page-93.png" alt="Figure 2.2: Genetics data from 1905" width="80%" />
 <p class="caption">
-Figure 3: Genetics data from 1905
+Figure 2.2: Genetics data from 1905
 </p>
 </div>
-<p>This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data table, this would look like:</p>
+<p>This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data frame, the observations underlying Figure 2.2 would look like Figure 2.3:</p>
 <table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
 <caption>
-Figure 4: Punnet’s data in a contemporary format
+Figure 2.3: Punnett’s data in a contemporary format
 </caption>
 <thead>
 <tr>
@@ -420,7 +422,51 @@ pollen_shape
 <tbody>
 <tr>
 <td>
-SP6520
+SP730
+</td>
+<td>
+other
+</td>
+<td>
+long
+</td>
+</tr>
+<tr>
+<td>
+SP5190
+</td>
+<td>
+other
+</td>
+<td>
+round
+</td>
+</tr>
+<tr>
+<td>
+SP3200
+</td>
+<td>
+other
+</td>
+<td>
+long
+</td>
+</tr>
+<tr>
+<td>
+SP4830
+</td>
+<td>
+other
+</td>
+<td>
+round
+</td>
+</tr>
+<tr>
+<td>
+SP7370
 </td>
 <td>
 white
@@ -431,51 +477,7 @@ long
 </tr>
 <tr>
 <td>
-SP1050
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP4010
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP6620
-</td>
-<td>
-white
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP3570
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP1740
+SP1290
 </td>
 <td>
 other
@@ -493,58 +495,79 @@ long
 </tr>
 </tfoot>
 </table>
-<p>Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905) p. 93.</p>
 <p>You may well wonder what benefit there is to working with an 801-row data frame rather than the simple tabulation in the original publication. First, giving the variables names allows us to distinguish between the variable being measured and the level of the measurement. Second, the table makes clear that both variables <code>flower_color</code> and <code>pollen_shape</code> are categorical. Third, suppose there was some other aspect being recorded about the plants, for instance the plant’s height or how much water the plant was given or the name of the technician who recorded the data. Using a data frame, these new variables can easily be added as additional columns. There’s no space in the tabulation for these additional measurements.</p>
-<p>A fourth reason to prefer the data-frame format for the genetics data is subtle. Most often, you will be using software to analyze data. Storing data in a consistent way – data frames – makes it much easier to use standard software than if the data are stored in a (pointless) variety of formats. Even in classical days, the variety of formats used to store data resulted in the creation of “new” statistical methods that were set up to deal with the special format in which data was presented.</p>
+<p>A fourth reason to prefer the data-frame format for the genetics data is subtle. Most often, you will be using software to analyze data. Storing data in a consistent way – data frames – makes it much easier to use standard software than if the data are stored in a (pointless) variety of formats.</p>
 </div>
-<div id="quantitative-and-categorical" class="section level2">
-<h2><span class="header-section-number">2.3</span> Quantitative and categorical</h2>
-</div>
-<div id="indicator-variables" class="section level2">
-<h2><span class="header-section-number">2.4</span> Indicator variables</h2>
-<p>For a categorical variable: is it level X?</p>
+<div id="quantitative-and-categorical-variables" class="section level2">
+<h2><span class="header-section-number">2.3</span> Quantitative and categorical variables</h2>
+<p>The fundamental distinction to be made between types of variables is whether they are quantitative – a number – or categorical. Categorical variables are those where the possible values come from a set of discrete categories and are typically represented by text labels.</p>
+<p>In the Galton data (Figure 1), height is a quantitative variable. Sex is a categorical variable. The <code>family</code> variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not “between” families 1 and 2 in any genuinely numerical sense. So <code>family</code> is a categorical variable.</p>
+<p>Much later in the book, we will translate categorical variables into a set of very simple numerical variables, each of which is called an <em>indicator variable</em>. In an indicator variable, the only allowed values are zero and one.</p>
+<p>Obviously, with just zero and one as possible values, a single indicator variable is not able to represent completely a categorical variable with three or more levels. In such situations, a <em>set of indicator variables</em> is used. If there are k different levels for the categorical variable, the equivalent set of indicator variables will have k - 1 members. For instance, a variable <code>fruit</code> with three levels “apple,” “blueberry,” and “cherry,” will correspond to two indicator variables. The first one might be whether the fruit is apple or not. The second would be whether the fruit is blueberry or not. When both the first and second take on the value zero, we know that the fruit must be the remaining level, cherry. Figure 5 shows the example on a case by case basis.</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>fruit</code></th>
+<th><span class="math inline">\(\rightarrow\)</span></th>
+<th>indicator apple</th>
+<th>indicator blueberry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cherry</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>apple</td>
+<td></td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>blueberry</td>
+<td></td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>apple</td>
+<td></td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>cherry</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 5: An example of how a categorical variable (‘fruit’) can be translated into simple indicator variables. Note that there is always at most a single 1 in each row of the table.</p>
 </div>
 <div id="response-and-explanatory-variables" class="section level2">
-<h2><span class="header-section-number">2.5</span> Response and explanatory variables</h2>
-<div id="other-data-sets.-just-for-my-notes." class="section level4 unnumbered">
-<h4>OTHER DATA SETS. Just for my notes.</h4>
-</div>
-<div id="gosset" class="section level4">
-<h4><span class="header-section-number">2.5.0.1</span> Gosset</h4>
-<p><code>datasets::crimtab</code>, maybe use dichotimization of data to illustrate other points.</p>
-</div>
-<div id="cushny-and-peeples" class="section level4">
-<h4><span class="header-section-number">2.5.0.2</span> Cushny and Peeples</h4>
-<p><code>psych::cushny</code></p>
-<p>Look at the fractional change in sleep time from control, not the time difference. (There are a lot of people getting very little sleep!)</p>
-</div>
-<div id="hooker-and-yule" class="section level4">
-<h4><span class="header-section-number">2.5.0.3</span> Hooker and Yule</h4>
-<p>Note on Estimating the Relative Influence of Two Variables upon a Third
-Author(s): R. H. Hooker and G. U. Yule
-Source: Journal of the Royal Statistical Society, Vol. 69, No. 1 (Mar., 1906), pp. 197-200 Published by: Wiley for the Royal Statistical Society</p>
-<div class="figure" style="text-align: FALSE">
-<img src="images/india-exports-yule.png" alt="Figure 2: Wheat production and export in India, and prices in Britain" width="80%" />
-<p class="caption">
-Figure 2: Wheat production and export in India, and prices in Britain
-</p>
-</div>
-</div>
-<div id="punnett" class="section level4">
-<h4><span class="header-section-number">2.5.0.4</span> Punnett</h4>
-<p>Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905)
-The following is a summary of the fully recorded plants : (page 93)
-Coloured long. Coloured round. White long. White round. 480 144 132 45</p>
-<p>Wikipedia and textbooks give these data
-Bateson and Punnett experiment
-Phenotype and genotype Observed Expected from 9:3:3:1 ratio
-Purple, long (P_L_) 284 216
-Purple, round (P_ll) 21 72
-Red, long (ppL_) 21 72
-Red, round (ppll) 55 24</p>
+<h2><span class="header-section-number">2.4</span> Response and explanatory variables</h2>
+<p>Starting in Chapter 4, we will work with a standard format for reducing the potentially many rows and variables of a data frame into a single compact object: a <em>statistical model</em>. For our purposes, a statistical model will be a <em>function</em> that takes inputs and produces an output. In particular, the inputs to each statistical model will be the values of selected variables in the data frame generically called <em>explanatory variables</em>. The output of the statistical model will be in terms of the values of a single, selected variable generically called the <em>response variable</em>.</p>
+<p>The appropriate choice of a response variable and explanatory variables for a model depends on the question that you, the statistical investigator seek to address. Often, to address a broad question, you will use several different statistical models based on the same data frame.</p>
+<p>Once you have selected the response and explanatory variables (and a few other details) the process of constructing the corresponding statistical model is a matter of routine calculation, which is always automated. Many people find they can anticipate the results of the calculation for simple models by sketching the graph of a function on a plot of the variables. We delegate the “oppressive necessity” of the exact calculations to a computer, leaving our role to give the computer an order: “Fit the model to the data.”</p>
+<p>Keep in mind that response and explanatory variables are not <em>types</em> of variables, they are <em>choices</em> that we make in building a model. This not withstanding, in this book <em>all models will have a response variable that is quantitative</em>. If a categorical variable is to be involved in the response, it will have to be in the form of an indicator variable. On the other hand, explanatory variables can be either quantitative or categorical in any combination.</p>
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-punnett-1905">
+<p>Bateson, W., E.R. Saunders, and R.C. Punnett. 1905. “Experimental Studies in the Physiology of Heredity.” <em>Reports to the Evolution Committee of the Royal Society</em> 2: 1–55, 80–99.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Fisher (1934) p.6<a href="data-and-variables.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

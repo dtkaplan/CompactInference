@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-07" />
+<meta name="date" content="2019-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -77,13 +77,13 @@
 <li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
 <li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
 <li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
-<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical</a></li>
-<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#indicator-variables"><i class="fa fa-check"></i><b>2.4</b> Indicator variables</a></li>
-<li class="chapter" data-level="2.5" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.5</b> Response and explanatory variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
 <li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
+<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
@@ -121,10 +121,10 @@
 <li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
-<li class="chapter" data-level="13" data-path="outside-the-normal-situation.html"><a href="outside-the-normal-situation.html"><i class="fa fa-check"></i><b>13</b> Outside the normal situation</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
 </ul>
 
@@ -146,18 +146,18 @@
 <div id="model-values" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Model values</h1>
 <p>It’s now time to talk a bit about the way that statistical models are constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the previous chapter and asked to draw a straight-line function relating the explanatory variable to the response variable. Naturally, some students’ models will be better than others. How can we determine which model is the best?</p>
-<p>To illustrate, let’s take a small data set and look at two models that students might draw.</p>
+<p>To illustrate, let’s take a small data set and look at two models that students might draw. (Figure 5.1)</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" />
+<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" />
 <p class="caption">
-Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
 </p>
 </div>
 <p>Who has drawn the better model: Linus or Curly? The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother’s height) for that point. The position of each * on the vertical axis marks the <em>model value</em> for that data point.</p>
 <p>Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.</p>
 <p>Now, the instructor takes out her red pen to mark the “error.” The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins.</p>
-<p>This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and the shape of the function (here, a straight line), the computer tries out all the possibilities for straight-line models and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
+<p>This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
 <p>In practice, for straight-line models (and more general forms, called “linear models”), there are equations that can be solved to find the best model, so there’s no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.</p>
 <p>There is something important to notice about the model values for the winning model:</p>
 <blockquote>
@@ -166,23 +166,23 @@ Figure 1: Comparing two possible straight-line models. In constructing a model, 
 <p>We’ll use the symbol <span class="math inline">\(v_m\)</span> to stand for the variance of the model values.</p>
 <p>To illustrate this, let’s look at a couple of models from the previous chapter. In each, you can see that the response values (black dots) are spread out, while the model values stay in toward the center of data. This is a natural consequence of our using <em>central</em> models, that is, models where the function has roughly equal numbers of data points above it and below it.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-2-1.png" alt="Figure 2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
+<img src="043-Model-values_files/figure-html/unnamed-chunk-2-1.png" alt="Figure 5.2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
 <p class="caption">
-Figure 2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
+Figure 5.2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
 </p>
 </div>
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-3-1.png" alt="Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
+<img src="043-Model-values_files/figure-html/unnamed-chunk-3-1.png" alt="Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
 <p class="caption">
-Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
+Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
 </p>
 </div>
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-4-1.png" alt="Figure 4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
+<img src="043-Model-values_files/figure-html/unnamed-chunk-4-1.png" alt="Figure 5.4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
 <p class="caption">
-Figure 4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
+Figure 5.4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
 </p>
 </div>
 

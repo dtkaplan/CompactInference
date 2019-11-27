@@ -1,0 +1,36 @@
+## OTHER DATA SETS. Just for my notes. {-}
+
+## Gosset
+
+`datasets::crimtab`, maybe use dichotimization of data to illustrate other points.
+
+## Cushny and Peeples
+
+`psych::cushny`
+
+Look at the fractional change in sleep time from control, not the time difference. (There are a lot of people getting very little sleep!)
+
+## Hooker and Yule
+
+Note on Estimating the Relative Influence of Two Variables upon a Third
+Author(s): R. H. Hooker and G. U. Yule
+Source: Journal of the Royal Statistical Society, Vol. 69, No. 1 (Mar., 1906), pp. 197-200 Published by: Wiley for the Royal Statistical Society
+
+```{r yule-exports, echo=FALSE, fig.lp=NULL, fig.cap="Figure 2: Wheat production and export in India, and prices in Britain"}
+knitr::include_graphics("images/india-exports-yule.png")
+```
+
+
+## Punnett
+
+Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905)
+The following is a summary of the fully recorded plants : (page 93)
+Coloured long. Coloured round. White long. White round. 480 144 132 45
+
+Wikipedia and textbooks give these data
+Bateson and Punnett experiment
+Phenotype and genotype	Observed	Expected from 9:3:3:1 ratio
+Purple, long (P_L_)	284	216
+Purple, round (P_ll)	21	72
+Red, long (ppL_)	21	72
+Red, round (ppll)	55	24

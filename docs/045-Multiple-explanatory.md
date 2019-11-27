@@ -18,14 +18,10 @@ Each of the models presented in Chapter 4 has a single *degree of flexibility*, 
 
 (ref:four-settings-cap) Figure 1: Four settings for modeling presented in Chapter 4. All of  these have *one degree of flexibility*, written $df=1$.
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-1} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-2} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-3} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-4} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="045-Multiple-explanatory_files/figure-html/four-settings-1.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/four-settings-2.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/four-settings-3.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/four-settings-4.png" alt="(ref:four-settings-cap" width="50%" />
+<p class="caption">(ref:four-settings-cap</p>
+</div>
 
 In talking about descriptions of models, rather than using the  word *number*, we use *coefficient*. This is no big deal, but when you see the word *coefficient* you'll have a distinct hint that we are talking about  the shape of a model. And we'll be able to say things like "the *number*  of *coefficients*" to refer to how many coefficients are needed to specify the model.
 
@@ -35,8 +31,10 @@ The degree of flexibility of a model is defined to be the number  of coefficient
 
 Let's look at some examples of models where there is more than one degree of freedom. To start, Figure 2 shows a model with two degrees of freedom.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/two-df-1} \caption[(ref:two-df-cap)]{(ref:two-df-cap)}\label{fig:two-df}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="045-Multiple-explanatory_files/figure-html/two-df-1.png" alt="(ref:two-df-cap)" width="80%" />
+<p class="caption">(ref:two-df-cap)</p>
+</div>
 
 The data in Figure 2 are from a classic study involving the differences and similarities among three species of iris plants. The response variable is the flower petal width (quantitative) and the explanatory variable is the species of the plant (categorical). A complete description  of the model would involve three coefficients, one for each of the species of iris. Three coefficients corresponds to $df = 2$.
 
@@ -49,8 +47,10 @@ The model in Figure 3 consists of two straight lines. Each line is specified by 
 You may notice that the two lines in Figure 3 have slightly different slopes. Often, modelers try to economize with degrees of flexibility by using the same slope for each line. This would reduce the degrees of freedom to  $df = 2$. (The decision of whether to use a common slope or two potentially different slopes is often made using the tools of statistical inference, but we are getting ahead of the story.)
 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1} \caption[(ref:mother-plus-sex-cap)]{(ref:mother-plus-sex-cap)}\label{fig:mother-plus-sex}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-1.png" alt="(ref:mother-plus-sex-cap)" width="80%" />
+<p class="caption">(ref:mother-plus-sex-cap)</p>
+</div>
 
 (ref:mother-plus-sex-cap) Figure 3: A model of height with two explanatory variables: the mother's height and the child's sex. Each  explanatory variable added to a model makes it possible  for  the model more faithfully to reproduce the response variable.
 
@@ -68,10 +68,10 @@ It takes just the most basic notion of biology to realize that when it comes to 
 
 (ref:mother-plus-sex-father-cap) Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1} \caption[(ref:mother-plus-sex-father-cap)]{(ref:mother-plus-sex-father-cap)}\label{fig:mother-plus-sex-father}
-\end{figure}
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2} \caption[(ref:mother-plus-sex-father-cap)]{(ref:mother-plus-sex-father-cap)}\label{fig:mother-plus-sex-father}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-1.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" /><img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-2.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" />
+<p class="caption">(ref:mother-plus-sex-father-cap)</p>
+</div>
 
 Comparing the two models, you might see how a larger df corresponds to increased flexibility. 
 
@@ -84,14 +84,10 @@ Chapter 5 imagined a contest between two students, Linus and Curly, for the best
 (ref:several-df-cap) Figure 5: (a) a flat model -- zero  degrees of flexibility; (b) a straight-line model -- one degree of flexibility;  (c)
 a  model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-1} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-2} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-3} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-4} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="045-Multiple-explanatory_files/figure-html/several-df-1.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-2.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-3.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-4.png" alt="(ref:several-df-cap)" width="50%" />
+<p class="caption">(ref:several-df-cap)</p>
+</div>
 
 In the models in Figure 5, the degrees of flexibility indicate the shape of  the  function. A flat line  has no degrees of flexibility. A sloped line has one degree  of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
 

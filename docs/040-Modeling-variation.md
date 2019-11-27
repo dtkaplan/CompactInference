@@ -14,8 +14,10 @@ For our purposes, a statistical model is a mathematical function that takes valu
 
 Consider the model (and data) shown in Figure 4.1. These are Galton's records on the heights of adult children in London families. In Figure 4.1, `height` has been selected as the response variable. To keep the example simple, the role of explanatory variable has been assigned to `sex`. The statistical model takes as input a level of  `sex` and  produces as output a numerical value for the response variable. 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-0-1} \caption[Figure 4.1]{Figure 4.1: Galton's height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level  of  the explanatory variable.}\label{fig:galton-0}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/galton-0-1.png" alt="Figure 4.1: Galton's height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level  of  the explanatory variable." width="80%" />
+<p class="caption">Figure 4.1: Galton's height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level  of  the explanatory variable.</p>
+</div>
 
 As you can see, the output of the model is about 64 inches when sex is F, and 69 inches when sex is M. The preceeding sentence uses stilted language. A straightforward rendering would be something like this: According to the model, women are 64 inches tall and men are 69 inches. But the straightforward account is misleading. While some women are 64 inches tall, the large majority are not,  and similarly for men. Neither would it be correct to say that women are shorter than men. Some are and some aren't.
 
@@ -28,8 +30,10 @@ How were the model outputs determined? Or, in other words, what method was used 
 The model in Figure 4.1 has an explanatory variable that is categorical. Figure 4.2 is an example where the explanatory variable is numeric. The question that motivated Galton to collect  the height data in the first place was to characterize the genetics of height: the extent to which it's fair to say that a child inherits the height of his or her parents.
 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-2-1} \caption[Figure 4.2]{Figure 4.2:  Child's height versus the mother's height. A conventional form of model is a straight line.}\label{fig:galton-2}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/galton-2-1.png" alt="Figure 4.2:  Child's height versus the mother's height. A conventional form of model is a straight line." width="80%" />
+<p class="caption">Figure 4.2:  Child's height versus the mother's height. A conventional form of model is a straight line.</p>
+</div>
 
 Consider first the model as a function. The input is the explanatory variable, mother's height. The output is a number. So, for an input of 60 inches, the output is about 66 inches. For an input  of 68 inches, the output is somewhat higher: about 68 inches.
 
@@ -51,8 +55,10 @@ To illustrate, consider some data from another approach to quantifying genetics 
 
 In one experiment, Punnett cross bred sweet peas and observed the flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data  are graphed in Figure 4.3, below. 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/punnett-1-1} \caption[Figure 4.3]{Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape.}\label{fig:punnett-1}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/punnett-1-1.png" alt="Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape." width="80%" />
+<p class="caption">Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape.</p>
+</div>
 
 There are only four possible combinations of white/other and long/round. To avoid plotting  the rows directly on top of one another, the dots have been *jittered*. You can see that peas with "other" color and long pollen grains are the most common.
 
@@ -60,18 +66,23 @@ The model here is very similar to that of Figure 4.1.  The response variable, fl
 
 You can pretty much draw functions like this by hand. Mathematically, though, there are some restrictions. First, the function has to stay as close to the data as possible.  Second, the function has to stay centered on the data. (Technically, the function form has to include an intercept.) It might be easiest to understand these restrictions by looking at some crazy bad functions that don't honor the restrictions, like the one in Figure 4.3.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/fig-4-3-1} \caption[Figure 4.3]{Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.}\label{fig:fig-4-31}
-\end{figure}
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/fig-4-3-2} \caption[Figure 4.3]{Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.}\label{fig:fig-4-32}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
+<p class="caption">Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.</p>
+</div><div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/fig-4-3-2.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
+<p class="caption">Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.</p>
+</div>
   
 
 Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
 
 The previous examples have all involved a response variable and a *single* explanatory variable. Since variables can be either numerical or quantitative, logic suggests there are four possible settings for models, of which we've seen three.  Figure 4.4 shows the fourth setting,  a categorical response variable and a numerical explanatory variable.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-logistic-1} \caption[Figure 4.4]{Figure 4.4: A model with a binary categorical response variable and a numerical explanatory variable.}\label{fig:galton-logistic}
-\end{figure}
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.4: A model with a binary categorical response variable and a numerical explanatory variable." width="80%" />
+<p class="caption">Figure 4.4: A model with a binary categorical response variable and a numerical explanatory variable.</p>
+</div>
 
 Again, the model output is numeric, in the form of the probability  that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. As  you  might expect, the model output is around 50% regardless of the mother's height.  
 

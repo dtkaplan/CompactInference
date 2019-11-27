@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-07" />
+<meta name="date" content="2019-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -77,13 +77,13 @@
 <li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
 <li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
 <li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
-<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical</a></li>
-<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#indicator-variables"><i class="fa fa-check"></i><b>2.4</b> Indicator variables</a></li>
-<li class="chapter" data-level="2.5" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.5</b> Response and explanatory variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
 <li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
+<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
@@ -121,10 +121,10 @@
 <li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
-<li class="chapter" data-level="13" data-path="outside-the-normal-situation.html"><a href="outside-the-normal-situation.html"><i class="fa fa-check"></i><b>13</b> Outside the normal situation</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
 </ul>
 
@@ -150,7 +150,7 @@
 <li><span class="math inline">\(n\)</span>, the sample size (or, more concretely, the number of rows in out data frame)</li>
 <li><span class="math inline">\(v_r\)</span>, the variance of the response variable. <span class="math inline">\(v_r\)</span> for binary categorical response variables is based on the 0-1 encoding.</li>
 <li><span class="math inline">\(v_m\)</span>, the variance of the model values.</li>
-<li><span class="math inline">\(df\)</span>, the <em>degree of flexibility</em>.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+<li><span class="math inline">\(df\)</span>, the <em>degree of flexibility</em>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
 </ol>
 <p>We’ll put these together to form a quantity called F. (The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th.) The formula for F is pretty simple, so I’ll present it right here for ready reference.</p>
 <p><span class="math display">\[F \equiv \frac{n - (1 + df)}{df} \frac{v_m}{v_r - v_m}\]</span>
@@ -199,8 +199,8 @@ Both the numerator and the denominator of this ratio have the form of a sum of s
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p>This is a non-standard name. The convention is to refer to the quantity <span class="math inline">\(n - (df + 1)\)</span> as the <em>degrees of <strong>freedom</strong></em>.<a href="f-and-r.html#fnref3" class="footnote-back">↩</a></p></li>
+<ol start="4">
+<li id="fn4"><p>This is a non-standard name. The convention is to refer to the quantity <span class="math inline">\(n - (df + 1)\)</span> as the <em>degrees of <strong>freedom</strong></em>.<a href="f-and-r.html#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

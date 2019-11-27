@@ -47,7 +47,7 @@ What happens if -- to do a thought experiment -- the response variable is comple
 
 This question was asked, and answered, early in the 1900s. In one specific case, it was asked by a man named Dr Shaw at the January 15, 1907 meeting of the Royal Statistical Society in the UK. The context was a discussion of a paper by [Reginald Hooker](https://en.wikipedia.org/wiki/Reginald_Hawthorn_Hooker) who had studied the correlation between weather and crops. In Table 1 of his paper, part of which  is reproduced in Figure 1, Hooker presented the correlation between amount of wheat harvested and the amount of rain accumulated over the previous seasons. He also looked at the correlation of wheat  harvest and temperature  -- that's the second numerical column in Figure 2.
 
-\includegraphics[width=0.8\linewidth]{images/Hooker-correlations} 
+<img src="images/Hooker-correlations.png" width="80%" />
 
 Now to quote from the recollections published in 1908 by [William Seely Gossett](https://en.wikipedia.org/wiki/William_Sealy_Gosset), writing anonymously as "Student": 
 
