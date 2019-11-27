@@ -12,3 +12,10 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default
+bookdown::tufte_book2:
+  keep_tex: yes
+  toc_depth: 1
+bookdown::tufte_html_book:
+  toc: yes
+  toc_depth: 1
+  margin_references: yes

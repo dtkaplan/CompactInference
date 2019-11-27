@@ -9,17 +9,17 @@ knitr::opts_knit$set('bookdown.internal.label' = FALSE)
 
 ## Data frames
 
-Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into *data frames*, which are more-or-less spreadsheets. The columns of the data frame are *variables*, the rows of the data frame are *units of observation*.
+Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into *data frames*, which are more or less spreadsheets. The columns of the data frame are *variables*, the rows of the data frame are *units of observation*.
 
-As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure \@ref{fig:galton-raw} shows part of the data frame.
+As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.
 
 ```{r galton-raw, echo=FALSE, label=""}
 sds_table(Galton, show_n = 10,
-          caption="Figure 1: The `Galton` data frame containing Galtons measurements of 898 adult children.") %>%
+          caption="Figure 2.1: The `Galton` data frame containing Galtons measurements of 898 adult children.") %>%
   knitr::asis_output()
 ```
 
-Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man, in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
+Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
 
 The family is designated with a number. So all four of the first rows are kids in family one, while rows 5 and 6 come from family two.
 
@@ -29,9 +29,9 @@ The `family` variable has been encoded as a number, but it is not really numeric
 
 ## Tabulations
 
-Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as *tabulations*. For instance, one of the very early (Punnet 1905, p. 93) investigations of cross-linkage in genetics examined `r sum(c(480,144,132,43))` sweet pea plants, recording the color of the flower and whether the pollen was round or elongated. 
+Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as *tabulations*. For instance, one of the very early (@punnett-1905, p. 93) investigations of cross-linkage in genetics examined `r sum(c(480,144,132,43))` sweet pea plants, recording the color of the flower and whether the pollen was round or elongated. 
 
-```{r punnett-93, echo=FALSE, fig.cap="Figure 3: Genetics data from 1905"}
+```{r punnett-93, echo=FALSE, fig.cap="Figure 2.2: Genetics data from 1905"}
 knitr::include_graphics("images/Punnet-page-93.png")
 ```
 
@@ -51,10 +51,10 @@ Punnett <- Punnett[expand, c(1,2)] %>%
   shuffle() %>%
   select(ID, flower_color, pollen_shape)
  # save(Punnett, file =  "data/Punnett.rda")
-sds_table(Punnett, caption = "Figure 4: Punnet's data in a contemporary format")
+sds_table(Punnett, caption = "Figure 2.3: Punnet's data in a contemporary format")
 ```
 
-Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905) p. 93.
+
 
 You may well wonder what benefit there is to working with an 801-row data frame rather than the simple tabulation in the original publication. First, giving the variables names allows us to distinguish between the variable being measured and the level of the measurement. Second, the table makes clear that both variables `flower_color` and `pollen_shape` are categorical. Third, suppose there was some other aspect being recorded about the plants, for instance the plant's height or how much water the plant was given or the name of the technician who recorded the data. Using a data frame, these new variables can easily be added as additional columns. There's no space in the tabulation for these additional measurements.
 
@@ -71,19 +71,19 @@ For a categorical variable: is it level X?
 
 
 
-#### OTHER DATA SETS. Just for my notes. {-}
+## OTHER DATA SETS. Just for my notes. {-}
 
-#### Gosset
+## Gosset
 
 `datasets::crimtab`, maybe use dichotimization of data to illustrate other points.
 
-#### Cushny and Peeples
+## Cushny and Peeples
 
 `psych::cushny`
 
 Look at the fractional change in sleep time from control, not the time difference. (There are a lot of people getting very little sleep!)
 
-#### Hooker and Yule
+## Hooker and Yule
 
 Note on Estimating the Relative Influence of Two Variables upon a Third
 Author(s): R. H. Hooker and G. U. Yule
@@ -94,7 +94,7 @@ knitr::include_graphics("images/india-exports-yule.png")
 ```
 
 
-#### Punnett
+## Punnett
 
 Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905)
 The following is a summary of the fully recorded plants : (page 93)

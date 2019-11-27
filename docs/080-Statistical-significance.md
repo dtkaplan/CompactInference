@@ -47,7 +47,7 @@ What happens if -- to do a thought experiment -- the response variable is comple
 
 This question was asked, and answered, early in the 1900s. In one specific case, it was asked by a man named Dr Shaw at the January 15, 1907 meeting of the Royal Statistical Society in the UK. The context was a discussion of a paper by [Reginald Hooker](https://en.wikipedia.org/wiki/Reginald_Hawthorn_Hooker) who had studied the correlation between weather and crops. In Table 1 of his paper, part of which  is reproduced in Figure 1, Hooker presented the correlation between amount of wheat harvested and the amount of rain accumulated over the previous seasons. He also looked at the correlation of wheat  harvest and temperature  -- that's the second numerical column in Figure 2.
 
-<img src="images/Hooker-correlations.png" width="80%" />
+\includegraphics[width=0.8\linewidth]{images/Hooker-correlations} 
 
 Now to quote from the recollections published in 1908 by [William Seely Gossett](https://en.wikipedia.org/wiki/William_Sealy_Gosset), writing anonymously as "Student": 
 
@@ -81,7 +81,7 @@ It's worse than this. Even when variables are unrelated, the p-value will be sma
 
 After decades of researchers mis-using p-values, in 2019 the American Statistical Association, a leading professional  organization world-wide, issued a statement worth quoting in length:
 
-> *It is time to stop using the term 'statistically significant"  entirely. Nor should variants such as "significantly different," "p < 0.05," and "nonsignificant" survive, whether expressed in words, by asterisks in a table, or in some other way.*
+> *It is time to stop using the term 'statistically significant"  entirely. Nor should variants such as "significantly different," "p < 0.05," and "nonsignificant" survive, whether expressed in words, by asterisks in a table, or in some other way.*
 >   
 > *Regardless of whether it was ever useful, a declaration of "statistical significance" has today become meaningless. Made broadly known by Fisher’s use of the phrase (1925), Edgeworth’s (1885) original intention for statistical significance was simply as a tool to indicate when a result warrants further scrutiny. But that idea has been irretrievably lost. Statistical significance was never meant to imply scientific importance, and the confusion of the two was decried soon after its widespread use (Boring 1919). Yet a full century later the confusion persists.*
 >

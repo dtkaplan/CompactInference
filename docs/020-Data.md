@@ -5,109 +5,43 @@
 
 ## Data frames
 
-Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into *data frames*, which are more-or-less spreadsheets. The columns of the data frame are *variables*, the rows of the data frame are *units of observation*.
+Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into *data frames*, which are more or less spreadsheets. The columns of the data frame are *variables*, the rows of the data frame are *units of observation*.
 
-As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure \@ref{fig:galton-raw} shows part of the data frame.
+As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.
 
-<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>Figure 1: The `Galton` data frame containing Galtons measurements of 898 adult children.</caption>
- <thead>
-  <tr>
-   <th> family </th>
-   <th> father </th>
-   <th> mother </th>
-   <th> sex </th>
-   <th> height </th>
-   <th> nkids </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td> 1 </td>
-   <td> 78.5 </td>
-   <td> 67.0 </td>
-   <td> M </td>
-   <td> 73.2 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 1 </td>
-   <td> 78.5 </td>
-   <td> 67.0 </td>
-   <td> F </td>
-   <td> 69.2 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 1 </td>
-   <td> 78.5 </td>
-   <td> 67.0 </td>
-   <td> F </td>
-   <td> 69.0 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 1 </td>
-   <td> 78.5 </td>
-   <td> 67.0 </td>
-   <td> F </td>
-   <td> 69.0 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 2 </td>
-   <td> 75.5 </td>
-   <td> 66.5 </td>
-   <td> M </td>
-   <td> 73.5 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 2 </td>
-   <td> 75.5 </td>
-   <td> 66.5 </td>
-   <td> M </td>
-   <td> 72.5 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 2 </td>
-   <td> 75.5 </td>
-   <td> 66.5 </td>
-   <td> F </td>
-   <td> 65.5 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 2 </td>
-   <td> 75.5 </td>
-   <td> 66.5 </td>
-   <td> F </td>
-   <td> 65.5 </td>
-   <td> 4 </td>
-  </tr>
-  <tr>
-   <td> 3 </td>
-   <td> 75.0 </td>
-   <td> 64.0 </td>
-   <td> M </td>
-   <td> 71.0 </td>
-   <td> 2 </td>
-  </tr>
-  <tr>
-   <td> 3 </td>
-   <td> 75.0 </td>
-   <td> 64.0 </td>
-   <td> F </td>
-   <td> 68.0 </td>
-   <td> 2 </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> ... and so on for 898 rows altogether.</td></tr></tfoot>
-</table>
+\begin{table}
 
-Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man, in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
+\caption{\label{tab:unnamed-chunk-2}Figure 2.1: The `Galton` data frame containing Galtons measurements of 898 adult children.}
+\centering
+\begin{tabular}[t]{l|r|r|l|r|r}
+\hline
+family & father & mother & sex & height & nkids\\
+\hline
+1 & 78.5 & 67.0 & M & 73.2 & 4\\
+\hline
+1 & 78.5 & 67.0 & F & 69.2 & 4\\
+\hline
+1 & 78.5 & 67.0 & F & 69.0 & 4\\
+\hline
+1 & 78.5 & 67.0 & F & 69.0 & 4\\
+\hline
+2 & 75.5 & 66.5 & M & 73.5 & 4\\
+\hline
+2 & 75.5 & 66.5 & M & 72.5 & 4\\
+\hline
+2 & 75.5 & 66.5 & F & 65.5 & 4\\
+\hline
+2 & 75.5 & 66.5 & F & 65.5 & 4\\
+\hline
+3 & 75.0 & 64.0 & M & 71.0 & 2\\
+\hline
+3 & 75.0 & 64.0 & F & 68.0 & 2\\
+\hline
+\multicolumn{6}{l}{... and so on for 898 rows altogether.}\\
+\end{tabular}
+\end{table}
+
+Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
 
 The family is designated with a number. So all four of the first rows are kids in family one, while rows 5 and 6 come from family two.
 
@@ -117,61 +51,38 @@ The `family` variable has been encoded as a number, but it is not really numeric
 
 ## Tabulations
 
-Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as *tabulations*. For instance, one of the very early (Punnet 1905, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated. 
+Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as *tabulations*. For instance, one of the very early (@punnett-1905, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated. 
 
-<div class="figure" style="text-align: FALSE">
-<img src="images/Punnet-page-93.png" alt="Figure 3: Genetics data from 1905" width="80%" />
-<p class="caption">Figure 3: Genetics data from 1905</p>
-</div>
+\begin{figure}\includegraphics[width=0.8\linewidth]{images/Punnet-page-93} \caption[Figure 2.2]{Figure 2.2: Genetics data from 1905}\label{fig:punnett-93}
+\end{figure}
 
 This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data table, this would look like:
 
-<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>Figure 4: Punnet's data in a contemporary format</caption>
- <thead>
-  <tr>
-   <th> ID </th>
-   <th> flower_color </th>
-   <th> pollen_shape </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td> SP6520 </td>
-   <td> white </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP1050 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP4010 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP6620 </td>
-   <td> white </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP3570 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP1740 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> ... and so on for 801 rows altogether.</td></tr></tfoot>
-</table>
+\begin{table}
 
-Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905) p. 93.
+\caption{\label{tab:punnet-raw}Figure 2.3: Punnet's data in a contemporary format}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+ID & flower\_color & pollen\_shape\\
+\hline
+SP6170 & other & round\\
+\hline
+SP4820 & other & round\\
+\hline
+SP7280 & white & long\\
+\hline
+SP3550 & other & long\\
+\hline
+SP140 & other & long\\
+\hline
+SP2990 & other & long\\
+\hline
+\multicolumn{3}{l}{... and so on for 801 rows altogether.}\\
+\end{tabular}
+\end{table}
+
+
 
 You may well wonder what benefit there is to working with an 801-row data frame rather than the simple tabulation in the original publication. First, giving the variables names allows us to distinguish between the variable being measured and the level of the measurement. Second, the table makes clear that both variables `flower_color` and `pollen_shape` are categorical. Third, suppose there was some other aspect being recorded about the plants, for instance the plant's height or how much water the plant was given or the name of the technician who recorded the data. Using a data frame, these new variables can easily be added as additional columns. There's no space in the tabulation for these additional measurements.
 
@@ -188,31 +99,29 @@ For a categorical variable: is it level X?
 
 
 
-#### OTHER DATA SETS. Just for my notes. {-}
+## OTHER DATA SETS. Just for my notes. {-}
 
-#### Gosset
+## Gosset
 
 `datasets::crimtab`, maybe use dichotimization of data to illustrate other points.
 
-#### Cushny and Peeples
+## Cushny and Peeples
 
 `psych::cushny`
 
 Look at the fractional change in sleep time from control, not the time difference. (There are a lot of people getting very little sleep!)
 
-#### Hooker and Yule
+## Hooker and Yule
 
 Note on Estimating the Relative Influence of Two Variables upon a Third
 Author(s): R. H. Hooker and G. U. Yule
 Source: Journal of the Royal Statistical Society, Vol. 69, No. 1 (Mar., 1906), pp. 197-200 Published by: Wiley for the Royal Statistical Society
 
-<div class="figure" style="text-align: FALSE">
-<img src="images/india-exports-yule.png" alt="Figure 2: Wheat production and export in India, and prices in Britain" width="80%" />
-<p class="caption">Figure 2: Wheat production and export in India, and prices in Britain</p>
-</div>
+\begin{figure}\includegraphics[width=0.8\linewidth]{images/india-exports-yule} \caption[Figure 2]{Figure 2: Wheat production and export in India, and prices in Britain}\label{yule-exports}
+\end{figure}
 
 
-#### Punnett
+## Punnett
 
 Punnett from Bateson, W., et al. Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1–55, 80–99 (1905)
 The following is a summary of the fully recorded plants : (page 93)

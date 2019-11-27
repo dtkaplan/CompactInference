@@ -1,7 +1,7 @@
 --- 
 title: "A Compact Guide to Classical Inference"
 author: "Daniel Kaplan"
-date: "2019-11-07"
+date: "2019-11-27"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -10,19 +10,30 @@ link-citations: yes
 description: ""
 ---
 
+\Large
+
 # Preface {-}
 
-This book has a specific purpose: to help statistics instructors see that the kind of statistical inference usually taught in introductory statistics courses is unnecessarily complex. It introduces too much statistical terminology, it divides the subject into distinct methods when one method will do. It neglects to make simplifying assumptions that have miniscule effect and are completely justified by the intrinsic *imprecision* of useful statements in statistical inference.
+Statistical inference is the heart of many contemporary college-level statistics courses. For an introductory course, inference is generally taught in one of two ways. By far the most common uses algebraic formulas for *standard errors* and test statistics. Probability tables are then used to turn  standard errors into confidence intervals and turn test statistics into p-values. 
 
-By streamlining statistical inference, we make more room in our courses for important topics that have traditionally been ignored or treated too brusquely. Among these are covariates and causal inference. Streamlining  may help students achieve a healthier attitude toward inferential structures such as the p-value and statistical "significance" that have long been subject to criticism and, recently, calls from journals and professional societies to "abandon statistical significance." 
+Generations of students have been taught using the standard-error curriculum. Its difficulties and pedagogical shortcomings are well known, the common experience of every instructor using the curriculum. In response, an important alternative approach to inference has been developed based on simulation, randomization, and statistical bootstrapping. (See, e.g., @lock5, @ISRS, @tintle-investigations, @modern-dive.) 
 
-In the computer era, I believe that the central approach  to statistical inference should be *via* simulation. But this book is not at all about simulation. It's about the classical, pre-computer-era inference concepts and techniques that dominate today's (and yesteryear's) introductory statistics. Or, more precisely, it's about a way to teach the classical simple statistical settings -- difference between two means, difference between two proportions, slope of a regression line -- that unifies them and smooths the path to more general techniques such as multiple regression and ANOVA.
+For many instructors, particularly those strongly oriented toward mathematics rather than computing, the formula-based line of attack seems natural. With formulas, there is a unique correct answer, while with randomization there is a process generating answers that differ (somewhat) from one realization to another. The formulas build on the strong mathematics tradition of using algebraic notation; they look like math. Computers are not needed; a calculator and a set of printed probability tables are sufficient to the task. The point about computers is particularly salient, since many instructors work in environments with insufficient support for computing infrastructure and lack experience with a computer-oriented pedagogy.
 
-The primary innovation of this book is to use the F statistic as the basis for inference. Historically, F was  preceded by z and t. But, in most circumstances of interest today, z and t are effectively the same. And F is a generalization of t. Teaching t requires introducing standard errors, the idea of sampling distributions, and standard deviations. Teaching F does not.
+Still, students in general have a hard time with algebra. Even for those select students who are confident reading and interpreting formulas, the tractable formulas for inference work only with simple statistics -- means, proportions, slopes -- in settings with at most two variables. When it comes time to deal with other statistical settings, new and seemingly unrelated methods are introduced. For instance, inference on tables of counts or on multiple means does not involve calculating a standard error, but uses other statistical procedures such as $\chi^2$ and ANOVA, each of which comes with a new table for the corresponding probability distributions. 
 
-To the experienced statistics teacher, many things will seem odd. I don't start with means and proportions. The variance is used extensively, but the standard deviation is not mentioned until Chapter 11 and, even then, it's an aside. The variance is defined using differences between pairs of data values rather than differences from the sample mean. In short, I'm not treating classical inference in a classical manner.
+For multiple regression, inferential formulas are not readily available to students. So students in introductory statistics do not have access to powerful methods that are mainstream in statistical investigations, that take on the challenge of confounding, and that help to reveal the relationships *among* multiple variables.
 
-I hope that this short book will help instructors see a way forward to teaching a version of statistics more closely related to practice in today's world. Ironically, for a book about classical inference, that involves appropriate simplification and streamlining of topics that today consume disproportionate amounts of course time and student interest and energy.
+Both students and instructors perceive standard-error statistics as a confusing collection of specialized tools. To improve student learning, instructors long for a reduction in the number of topics needed to support statistical thinking. This book is a roadmap for instructors who wish to streamline inference while continuing to teach using traditional tools.
 
-*Daniel Kaplan, November 2019, Saint Paul, Minnesota*
+Simplified does not mean simplistic. The strategy for teaching provided by this book produces answers that fully comply with legitimate uses of statistical inference. How? Conventionally, the logic of introductory inference recapitulates the historical route to the development of statistical concepts from  1880 to 1910. Instead of following every twist and turn in that path, this book uses modern modeling terminology -- response and explanatory variables, functions, model output -- and the concepts of analysis of variance developed around 1925. 
+
+I believe that randomization is an excellent conceptual framework for an introduction to statistics and that exposure to computational tools should be an important component of every student's education. But for those who are not ready to embrace computation, or not in a situation where they can do so, the strategy introduced in this book can, I hope, improve student understanding. Beyond that, the simplifications can provide curricular space for the methods of statistics and data science needed to make sense of modern data in contemporary settings.
+
+
+*Daniel Kaplan, December 2019, Saint Paul, Minnesota*
  
+
+
+
+

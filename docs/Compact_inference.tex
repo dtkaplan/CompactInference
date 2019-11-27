@@ -1,93 +1,71 @@
-\documentclass[]{book}
-\usepackage{lmodern}
+\documentclass[]{tufte-book}
+
+% ams
 \usepackage{amssymb,amsmath}
+
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \makeatletter
+  \@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+  \makeatother
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \makeatletter
+  \@ifpackageloaded{soul}{
+     \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+     \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+   }{}
+  \makeatother
+
 \fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
+
+% graphix
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+% booktabs
+\usepackage{booktabs}
+
+% url
+\usepackage{url}
+
+% hyperref
 \usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdftitle={A Compact Guide to Classical Inference},
-            pdfauthor={Daniel Kaplan},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
+
+% units.
+\usepackage{units}
+
+
+\setcounter{secnumdepth}{2}
+
+% citations
+
+% pandoc syntax highlighting
+
+% longtable
 \usepackage{longtable,booktabs}
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% multiplecol
+\usepackage{multicol}
+
+% strikeout
 \usepackage[normalem]{ulem}
-% avoid problems with \sout in headers with hyperref:
-\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+% morefloats
+\usepackage{morefloats}
+
+
+% tightlist macro required by pandoc >= 1.14
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
 
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{A Compact Guide to Classical Inference}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{Daniel Kaplan}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{2019-11-06}
+% title / author / date
+\title{A Compact Guide to Classical Inference}
+\author{Daniel Kaplan}
+\date{2019-11-27}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -105,12 +83,40 @@
 \usepackage{xcolor}
 
 \begin{document}
+
 \maketitle
 
+
+
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{0}
 \tableofcontents
 }
+
+\Large
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+Statistical inference is the heart of many contemporary college-level statistics courses. For an introductory course, inference is generally taught in one of two ways. By far the most common uses algebraic formulas for \emph{standard errors} and test statistics. Probability tables are then used to turn standard errors into confidence intervals and turn test statistics into p-values.
+
+Generations of students have been taught using the standard-error curriculum. Its difficulties and pedagogical shortcomings are well known, the common experience of every instructor using the curriculum. In response, an important alternative approach to inference has been developed based on simulation, randomization, and statistical bootstrapping. (See, e.g., Lock et al. (\protect\hyperlink{ref-lock5}{2017}), Diez, Barr, and Çetinkaya-Rundel (\protect\hyperlink{ref-ISRS}{2014}), Tintle et al. (\protect\hyperlink{ref-tintle-investigations}{2016}), Ismay and Kim (\protect\hyperlink{ref-modern-dive}{2019}).)
+
+For many instructors, particularly those strongly oriented toward mathematics rather than computing, the formula-based line of attack seems natural. With formulas, there is a unique correct answer, while with randomization there is a process generating answers that differ (somewhat) from one realization to another. The formulas build on the strong mathematics tradition of using algebraic notation; they look like math. Computers are not needed; a calculator and a set of printed probability tables are sufficient to the task. The point about computers is particularly salient, since many instructors work in environments with insufficient support for computing infrastructure and lack experience with a computer-oriented pedagogy.
+
+Still, students in general have a hard time with algebra. Even for those select students who are confident reading and interpreting formulas, the tractable formulas for inference work only with simple statistics -- means, proportions, slopes -- in settings with at most two variables. When it comes time to deal with other statistical settings, new and seemingly unrelated methods are introduced. For instance, inference on tables of counts or on multiple means does not involve calculating a standard error, but uses other statistical procedures such as \(\chi^2\) and ANOVA, each of which comes with a new table for the corresponding probability distributions.
+
+For multiple regression, inferential formulas are not readily available to students. So students in introductory statistics do not have access to powerful methods that are mainstream in statistical investigations, that take on the challenge of confounding, and that help to reveal the relationships \emph{among} multiple variables.
+
+Both students and instructors perceive standard-error statistics as a confusing collection of specialized tools. To improve student learning, instructors long for a reduction in the number of topics needed to support statistical thinking. This book is a roadmap for instructors who wish to streamline inference while continuing to teach using traditional tools.
+
+Simplified does not mean simplistic. The strategy for teaching provided by this book produces answers that fully comply with legitimate uses of statistical inference. How? Conventionally, the logic of introductory inference recapitulates the historical route to the development of statistical concepts from 1880 to 1910. Instead of following every twist and turn in that path, this book uses modern modeling terminology -- response and explanatory variables, functions, model output -- and the concepts of analysis of variance developed around 1925.
+
+I believe that randomization is an excellent conceptual framework for an introduction to statistics and that exposure to computational tools should be an important component of every student's education. But for those who are not ready to embrace computation, or not in a situation where they can do so, the strategy introduced in this book can, I hope, improve student understanding. Beyond that, the simplifications can provide curricular space for the methods of statistics and data science needed to make sense of modern data in contemporary settings.
+
+\emph{Daniel Kaplan, December 2019, Saint Paul, Minnesota}
+
 \hypertarget{what-is-classical-inference}{%
 \chapter{What is classical inference?}\label{what-is-classical-inference}}
 
@@ -128,13 +134,13 @@ Abigail & 40 & 101\tabularnewline
 \bottomrule
 \end{longtable}
 
-Just comparing the ages and running times of John and Abigail, you can see that John is 4 minutes (that is, 240 seconds) slower than Abigail in completing the 10 mile run. Their age difference is 8 years. This amounts to and additional 30 seconds of running time per year of age difference. (240 / 8 = 30.) Since you are uncertain -- this is only one race, this is only two people, etc. -- you decide to frame your findings this way: My data show that middle-aged runners slow down by 20-40 seconds/mile for every year additional age. That is a statistical claim.
+Just comparing the ages and running times of John and Abigail, you can see that John is 4 minutes (that is, 240 seconds) slower than Abigail in completing the 10 mile run. Their age difference is 8 years. This amounts to an additional 30 seconds of running time per year of age difference. (240 / 8 = 30.) Since you are uncertain -- this is only one race, this is only two people, etc. -- you decide to frame your findings this way: ``My data show that middle-aged runners slow down by 20-40 seconds/mile for every year additional age.'' That is a statistical claim.
 
 There are many problems with this statistical claim. First, it's comparing people who differ in many ways, not just their 8-year spread in age. To judge from the names, John is a man and Abigail a woman. A different statistical statement prompted by the data is that women are faster than men by 30 seconds per mile. Or, it might be that Abigail is an experienced runner and John is a formerly lethargic man who has been trying to build up to being able to run 10 miles. (Congratulations, John! A ten-mile time of 105 minutes is a pretty impressive accomplishment.)
 
 Common sense -- and good statistical practice -- tells you to compare like with like. Wouldn't it be better to compare men of different ages who are both running their first 10-mile race? Or, how about looking at Abigail's past records from when she was younger? The failure to do things like this is reason enough to be skeptical about the 20-40 seconds/mile per year claim. But this is a flaw in study design and the collection of data. That is not the kind of flaw that statistical inference deals with.
 
-Statistical inference deals with one, and only one, source of uncertainty: that produced by the size of the sample, in this case 2 people. Again, common sense tells you that two is not a lot of data. So, how much would be enough? 10? 100? 1000? Or, put another way, how should you frame the uncertainty in your claim due to limited data? In the example, the 20-40 seconds/mile per year interval was made up to create an impression of scientific precision. Statistical inference techniques create a meaningful interval that stems from the data itself, rather than the imagination of the researcher.
+Statistical inference deals with one, and only one, source of uncertainty: that produced by the size of the sample, in this case 2 people. Again, common sense tells you that two is not a lot of data. So, how much would be enough? 10? 100? 1000? Or, put another way, how should you frame the uncertainty in your claim due to limited data? In the example, the 20-40 seconds/mile per year interval was made up to create an impression of scientific precision. Statistical inference techniques create meaningful intervals that stem from the data itself, rather than the imagination of the researcher.
 
 The need for statistical inference became important when it was realized, around 1900, that there was not yet a reliable way of knowing how much data -- that is, how many rows of data -- is sufficient. The founders of statistical inference found ways to frame the problem in terms of the mathematics of probability, and used algebra and other mathematical techniques to solve the problem. They summarized the process of statistical inference using formulas and tables of probabilities. This is \emph{classical} inference.
 
@@ -142,7 +148,7 @@ Algeba and other mathematical arguments can be difficult and subtle. In the earl
 
 The algebraic techniques were pretty much the only way to conduct statistical inference until the 1970s. Then, as computing became available at research institutions, the simulation technique became easy enough to be practical for routine problems in statistical inference. Simulation on computers became a potential substitute for algebra.
 
-Perhaps many students would agree that anything that reduces the amount of algebra needed to solve a problem is worthwhile. But this is not the fundamental reason why simulation is an important technique. Yes, simulation is easy, but because it's easy it can be applied to situations which were too complicated to handle reliably with algebra, even by the best of mathematicians. The simulation approach to statistical inference has been called \emph{computer-age statistical inference} to distinguish it from \emph{classical statistical inference}.
+Perhaps many students would agree that anything that reduces the amount of algebra needed to solve a problem is worthwhile. But this is not the fundamental reason why simulation is an important technique. Yes, simulation is easy, but because it's easy it can be applied to situations that were too complicated to handle reliably with algebra, even by the best of mathematicians. The simulation approach to statistical inference has been called \emph{computer-age statistical inference} to distinguish it from \emph{classical statistical inference}.
 
 \hypertarget{and-why-should-i-read-this-book}{%
 \section*{\ldots{} and why should I read this book?}\label{and-why-should-i-read-this-book}}
@@ -154,13 +160,13 @@ Classical inference is the only way to conduct statistical inference for very sm
 
 And even if you don't need to work with such small data, there may be reasons for you to learn something about classical inference. One is that, if you are taking an introductory course, chances are a substantial part of the course is about classical inference. This is more or less a ``because I said so'' justification for studying a topic.
 
-Putting aside the matter of small data, instructors use classical inference because that is what they were taught. They don't use simulation for a variety of reasons: they may not know about the computer-age techniques, they may not be comfortable teaching how to use a computer, they may see algebra as prestigious and computing as low-class, they may think their students don't have access to computing (and in some places, this might be right), they may have been forced to use the n\textsuperscript{th} edition of a textbook originally written before computer-age inference was accessible and which continues to use classical inference because it's hard for an instructor to change textbooks.
+Putting aside the matter of small data, instructors use classical inference because that is what they were taught. They don't use simulation for a variety of reasons: they may not know about the computer-age techniques, they may not be comfortable teaching how to use a computer, they may see algebra as prestigious and computing as low-class, they may think their students don't have access to computing (and in some places, this might be right), they may have been forced to use the n\textsuperscript{th} edition of a textbook originally written before computer-age inference was accessible and which continues to use classical inference to retain established clients.
 
 My personal view is that everyone studying statistics should learn computer-age statistical inference. First, most students find it much easier, so they can spend their mental energy to understand the purpose of statistical inference rather than the mechanics of it. Second, it makes it straightforward to move away from the classical settings (e.g.~the difference in two proportions, straight-line models) and toward settings that are more important today (e.g.~risk ratios, machine learning models). Third, learning to use a computer is itself a valuable objective. In my view, it's only worthwhile to learn classical inference when you are confronted with small-data situations or when your interest in statistics is deep.
 
 But if you \emph{have to} study classical inference, you might as well study it in a concise way. The traditional classical inference curriculum uses a large amount of confusing terminology and splits the subject into several different topics even though they are all very much the same thing. Also, if you are studying statistical inference you are learning how to express uncertainty. Ironically, the textbook description of classical inference involves detailed calculations of great precision. That precision is unjustified. The needless precision is in the textbooks because that's what happens when you translate a real-world problem into deterministic mathematics and because the culture of mathematics education is that of exactitude and proof. Exactitude and proof are valuable things in the proper setting. But in statistical inference, rough answers are good enough. Indeed, the leading professional organization of statisticians, the American Statistical Association, has explicitly called for practitioners of statistical inference to \emph{stop} suggesting that the precision of classical textbook answers is meaningful.
 
-In order to write a compact guide to statistical inference, I've translated the classical texts into a modern statistical language and computer oriented notation. We'll be using models and effect sizes. All the different settings of textbook classical inference can be expressed in the same way, so we'll work with this one way rather than the six or seven found in textbooks. We'll dispense with unnecessary intermediates such as the ``standard error'' and dodge the doubtful digressions into misleading exactitude that unnecessarily increases the difficulty of learning and understanding classical inference.
+In order to write a compact guide to statistical inference, I've translated the classical texts into a modern statistical language and notation. We'll be using models and effect sizes. All the different settings of textbook classical inference can be expressed in the same way, so we'll work with this one way rather than the six or seven found in textbooks. We'll dispense with unnecessary intermediates such as the ``standard error'' and dodge the doubtful digressions into misleading exactitude that unnecessarily increases the difficulty of learning and understanding classical inference.
 
 \hypertarget{data-and-variables}{%
 \chapter{Data and variables}\label{data-and-variables}}
@@ -168,15 +174,15 @@ In order to write a compact guide to statistical inference, I've translated the 
 \hypertarget{data-frames}{%
 \section{Data frames}\label{data-frames}}
 
-Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into \emph{data frames}, which are more-or-less spreadsheets. The columns of the data frame are \emph{variables}, the rows of the data frame are \emph{units of observation}.
+Although this book is a guide to classical inference, we will work with data in a contemporary format. The data we use is organized into \emph{data frames}, which are more or less spreadsheets. The columns of the data frame are \emph{variables}, the rows of the data frame are \emph{units of observation}.
 
-As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure @ref\{fig:galton-raw\} shows part of the data frame.
+As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.
 
-\begin{table}[t]
+\begin{table}
 
-\caption{\label{tab:unnamed-chunk-2}Figure 1: The `Galton` data frame containing Galtons measurements of 898 adult children.}
+\caption{\label{tab:unnamed-chunk-2}Figure 2.1: The `Galton` data frame containing Galtons measurements of 898 adult children.}
 \centering
-\begin{tabular}{l|r|r|l|r|r}
+\begin{tabular}[t]{l|r|r|l|r|r}
 \hline
 family & father & mother & sex & height & nkids\\
 \hline
@@ -204,7 +210,7 @@ family & father & mother & sex & height & nkids\\
 \end{tabular}
 \end{table}
 
-Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man, in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
+Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today's standards: 6 feet 6.5 inches.
 
 The family is designated with a number. So all four of the first rows are kids in family one, while rows 5 and 6 come from family two.
 
@@ -215,38 +221,36 @@ The \texttt{family} variable has been encoded as a number, but it is not really 
 \hypertarget{tabulations}{%
 \section{Tabulations}\label{tabulations}}
 
-Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as \emph{tabulations}. For instance, one of the very early (Punnet 1905, p.~93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.
+Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as \emph{tabulations}. For instance, one of the very early (Bateson, Saunders, and Punnett (\protect\hyperlink{ref-punnett-1905}{1905}), p.~93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{images/Punnet-page-93} \caption{Figure 3: Genetics data from 1905}\label{fig:punnett-93}
+\begin{figure}\includegraphics[width=0.8\linewidth]{images/Punnet-page-93} \caption[Figure 2.2]{Figure 2.2: Genetics data from 1905}\label{fig:punnett-93}
 \end{figure}
 
 This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data table, this would look like:
 
-\begin{table}[t]
+\begin{table}
 
-\caption{\label{tab:punnet-raw}Figure 4: Punnet's data in a contemporary format}
+\caption{\label{tab:punnet-raw}Figure 2.3: Punnet's data in a contemporary format}
 \centering
-\begin{tabular}{l|l|l}
+\begin{tabular}[t]{l|l|l}
 \hline
 ID & flower\_color & pollen\_shape\\
 \hline
-SP4730 & other & long\\
+SP6170 & other & round\\
 \hline
-SP4780 & other & long\\
+SP4820 & other & round\\
 \hline
-SP4630 & other & long\\
+SP7280 & white & long\\
 \hline
-SP20 & other & long\\
+SP3550 & other & long\\
 \hline
-SP2120 & other & long\\
+SP140 & other & long\\
 \hline
-SP2580 & other & long\\
+SP2990 & other & long\\
 \hline
 \multicolumn{3}{l}{... and so on for 801 rows altogether.}\\
 \end{tabular}
 \end{table}
-
-Punnett from Bateson, W., et al.~Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1--55, 80--99 (1905) p.~93.
 
 You may well wonder what benefit there is to working with an 801-row data frame rather than the simple tabulation in the original publication. First, giving the variables names allows us to distinguish between the variable being measured and the level of the measurement. Second, the table makes clear that both variables \texttt{flower\_color} and \texttt{pollen\_shape} are categorical. Third, suppose there was some other aspect being recorded about the plants, for instance the plant's height or how much water the plant was given or the name of the technician who recorded the data. Using a data frame, these new variables can easily be added as additional columns. There's no space in the tabulation for these additional measurements.
 
@@ -264,33 +268,33 @@ For a categorical variable: is it level X?
 \section{Response and explanatory variables}\label{response-and-explanatory-variables}}
 
 \hypertarget{other-data-sets.-just-for-my-notes.}{%
-\subsubsection*{OTHER DATA SETS. Just for my notes.}\label{other-data-sets.-just-for-my-notes.}}
-\addcontentsline{toc}{subsubsection}{OTHER DATA SETS. Just for my notes.}
+\section*{OTHER DATA SETS. Just for my notes.}\label{other-data-sets.-just-for-my-notes.}}
+\addcontentsline{toc}{section}{OTHER DATA SETS. Just for my notes.}
 
 \hypertarget{gosset}{%
-\subsubsection{Gosset}\label{gosset}}
+\section{Gosset}\label{gosset}}
 
 \texttt{datasets::crimtab}, maybe use dichotimization of data to illustrate other points.
 
 \hypertarget{cushny-and-peeples}{%
-\subsubsection{Cushny and Peeples}\label{cushny-and-peeples}}
+\section{Cushny and Peeples}\label{cushny-and-peeples}}
 
 \texttt{psych::cushny}
 
 Look at the fractional change in sleep time from control, not the time difference. (There are a lot of people getting very little sleep!)
 
 \hypertarget{hooker-and-yule}{%
-\subsubsection{Hooker and Yule}\label{hooker-and-yule}}
+\section{Hooker and Yule}\label{hooker-and-yule}}
 
 Note on Estimating the Relative Influence of Two Variables upon a Third
 Author(s): R. H. Hooker and G. U. Yule
 Source: Journal of the Royal Statistical Society, Vol. 69, No.~1 (Mar., 1906), pp.~197-200 Published by: Wiley for the Royal Statistical Society
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{images/india-exports-yule} \caption{Figure 2: Wheat production and export in India, and prices in Britain}\label{yule-exports}
+\begin{figure}\includegraphics[width=0.8\linewidth]{images/india-exports-yule} \caption[Figure 2]{Figure 2: Wheat production and export in India, and prices in Britain}\label{yule-exports}
 \end{figure}
 
 \hypertarget{punnett}{%
-\subsubsection{Punnett}\label{punnett}}
+\section{Punnett}\label{punnett}}
 
 Punnett from Bateson, W., et al.~Experimental studies in the physiology of heredity. Reports to the Evolution Committee of the Royal Society 2, 1--55, 80--99 (1905)
 The following is a summary of the fully recorded plants : (page 93)
@@ -309,9 +313,9 @@ Red, round (ppll) 55 24
 
 Recall that the purpose of statistical inference is to determine which statistical claims are justified by the data. This amounts to asking whether the data provide enough evidence to support a claim. How can we quantify ``how much is enough.''
 
-An obvious, and important way to quantify how much evidence the data provide is the number of rows in the data frame, that is, the \emph{sample size} \(n\). Perhaps it's intuitive that more data constitutes more evidence. A little care is required here, since we want to avoid phony creation of large sample sizes by copying earlier rows to make new rows in the data frame. A simple way to describe a proper procedure is to insist that each unit of analysis be grabbed at random from the \emph{population} of all the possible units. A data frame constructed by such a procedure is called a \emph{sample of the population}, which is why the number of rows \(n\) is called the sample size.
+An obvious, and important way to quantify how much evidence data provides is the number of rows in the data frame, that is, the \emph{sample size} \(n\). Perhaps it's intuitive that more data constitutes more evidence. A little care is required here, since we want to avoid phony creation of large sample sizes by copying earlier rows to make new rows in the data frame. A simple way to describe a proper procedure is to insist that each unit of analysis be grabbed at random from the \emph{population} of all the possible units. A data frame constructed by such a procedure is called a \emph{sample of the population}, which is why the number of rows \(n\) is called the sample size.
 
-It's tempting way elaborate \emph{how much} evidence we have by counting the number of variables in the data frame. But there is a serious problem here. When grabbing a unit from the population, we have a real thing. But there is no such thing as the ``set of possible variables.'' It's the researcher who determines what will be a variable, and you can in principle make up as many as you like. In the running example from Chapter 1, the variables were age and running time. Sensible. But we might also have recorded the runner's favorite number, or the time the runner's brother had breakfast the Tuesday before the race, or anything else, relevant or not. Common sense tells you to avoid such silliness. But what one person considers silly might be sensible to someone else. For instance, many people take seriously astrological signs, but others don't. Should we count astrological sign as a genuine variable? As it happens, birth month accounts for some of the observed differences in performance of professional athletes. (The reason appears to be that children who are the oldest in their school grade do better as kids in athletics, which leads to them developing confidence and interest in sports and receiving extra attention from coaches.)
+It's tempting to elaborate on \emph{how much} evidence we have by counting the number of variables in the data frame. But there is a serious problem here. When grabbing a unit from the population, we have a real thing. But there is no such thing as the ``set of possible variables.'' It's the researcher who determines what will be a variable, and you can in principle make up as many as you like. In the running example from Chapter 1, the variables were age and running time. Sensible. But we might also have recorded the runner's favorite number, or the time the runner's brother had breakfast the Tuesday before the race, or anything else, relevant or not. Common sense tells you to avoid such silliness. But what one person considers silly might be sensible to someone else. For instance, many people take seriously astrological signs, but others don't. Should we count astrological sign as a genuine variable? As it happens, birth month accounts for some of the observed differences in performance of professional athletes. (The reason appears to be that children who are the oldest in their school grade do better as kids in athletics, which leads to them developing confidence and interest in sports and receiving extra attention from coaches.)
 
 The key to measuring \emph{how much} evidence the data provides lies in the sentence, ``Birth month accounts for some of the observed differences in performance.'' What matters is whether a variable can \emph{explain} or \emph{account} for the variation in a outcome of interest (like athletic performance). In quantifying this, we need to be able to say how much variation there is in the outcome -- which we'll select as the response variable -- and compare this to how much of that variation is accounted for by the explanatory variable(s).
 
@@ -323,6 +327,7 @@ We can quantify the amount of variation in a response variable in many different
 There are different ways to calculate the variance of a variable. Most textbooks give a formula that can be used efficiently by a computer. For the purpose of explaining the variance to another person, I like another way.
 
 The starting point is the quantitative variable for which you want to know the variance. Usually, we organize variables into data frames, but for the moment imagine that the individual numbers, \(n\) of them, have been spilled out on the surface of a table. Take two of the numbers at random. Chances are, the two numbers are different but they might, by luck, be exactly the same. Doesn't matter. To measure the variation of these two numbers, simply subtract one from the other to get the difference, then square the difference. Because of the squaring, it doesn't matter whether you subtract the first number from the second or \emph{vice versa}. For historical reasons, the variance is the square difference divided by two. But if history had worked out differently, the square difference would have been a fine measure of variation itself.
+
 The square difference measures the variation between two numbers. But we want to measure the variation of the whole set of numbers. To do this, repeat the calculation of the square difference for \emph{every possible pair of numbers on the table}. For instance, if there were \(n=3\) numbers, say
 
 \[5, 9,  3\]
@@ -338,11 +343,9 @@ the pairs would be
   3 - 9 giving a difference of -6, which squares to 36
 \end{itemize}
 
-Now average all the square differences, in this example 16, 4, 36. The average is 56 / 3 = 18.67. The variance, by historical convention, is half this number, or 9.33.
+Now average all the square differences. Averaging 16, 4, 36 gives 18.67. The variance, by historical convention, is half this number, or 9.33.
 
 When \(n\) is big, there are a lot of possible pairs of numbers. For instance, when \(n = 100\), there are 4950 pairs. That's why we leave it to the computer to do the calculation, and even then the calculation is re-arranged so that there are only 100 square differences involved.
-
-{[}INCLUDE THIS{]} But sometimes you might want to estimate the variance by eye from a graphic showing the values. Use 80\% summary interval and square, then divide by 2.
 
 If you like, you can think of the reason why we square the difference as a convenience to avoid having to worry about whether the difference is positive or negative (which depends only on which of the pair of values you put first in the subtraction). But there is some profound thinking behind the use of squares, which reflects the nature of randomness and, believe it or not, the Pythagorean theorem.
 
@@ -359,18 +362,23 @@ Sometimes it's sensible to translate the levels of a categorical variable into n
 
 Without a sense of \emph{inbetweenness} of levels, it's arbitrary to assign numbers to the various levels. Except \ldots{} in one situation.
 
-Often, categorical variables have only two levels. Yes or no. Dead or alive. Accepted or rejected. Treatment and control. Such variables are sometimes called \emph{binary} (like the 0/1 of computer bits) or \emph{dicotomous} or \emph{binomial} (meaning, having two names) or even \emph{two-level}. When dealing with a binary variable, there's no level to be inbetween; there's only two levels and the idea of ``in between'' requires at least three distinct things. So we can easily agree, regardless of our opinions about how the world works, that the difference is zero between labels that are the same (say, \emph{yes} and \emph{yes} or between \emph{no} and \emph{no}). And when the labels are different (say, \emph{yes} and \emph{no}) we just need to assign a non-zero number to the difference.
+Often, categorical variables have only two levels. Yes or no. Dead or alive. Accepted or rejected. Treatment and control. Such variables are sometimes called \emph{binary} (like the 0/1 of computer bits) or \emph{dicotomous} or \emph{binomial} (meaning, having two names) or even \emph{two-level}. When dealing with a binary variable, there's no level to be inbetween; there are only two levels and the idea of ``in between'' requires at least three distinct things. So we can easily agree, regardless of our opinions about how the world works, that the difference is zero between labels that are the same (say, \emph{yes} and \emph{yes} or between \emph{no} and \emph{no}). And when the labels are different (say, \emph{yes} and \emph{no}) we just need to assign a non-zero number to the difference.
 
 Which number? Should the square-difference between \emph{yes} and \emph{no} be 17, or 328, or 0.3? By convention, we use the number 1 for the square-difference between the two levels of a binary variable. This convention has the advantage of simplifying calculations. But there is another important advantage of the simple choice: any average of a 0/1 variable must always be somewhere in the range from 0 to 1, which is exactly the same scale we use for describing \emph{probability}.
 
-The simplicity of dealing with binary variables means that the techniques of statistical inference with a binary, categorical response variable are much easier than for non-binary, categorical response variables. This is also the most common setting for classical inference. We'll deal with statistical inference on numeric and 0/1 variables (which are effectively numeric) in this book, leaving questions of inference on non-binary categorical response variables for another time.
+The simplicity of dealing with binary variables means that the techniques of statistical inference with a binary categorical response variable are much easier than for non-binary categorical response variables. This is also the most common setting for classical inference. We'll deal with statistical inference on numeric and 0/1 variables (which are effectively numeric) in this book, leaving questions of inference on non-binary categorical response variables for another time.
+
+\hypertarget{exercises}{%
+\section{Exercises}\label{exercises}}
+
+{[}INCLUDE THIS{]} But sometimes you might want to estimate the variance by eye from a graphic showing the values. Use 80\% summary interval and square, then divide by 2.
 
 \hypertarget{modeling-variation}{%
 \chapter{Modeling variation}\label{modeling-variation}}
 
-The point of statistics is to understand how things vary. For instance, human height varies from on person to another. Some of that variation is associated with the sex of the person: women \emph{tend to be} slightly shorter than men. Some of the variation in height relates to genes and genetic variation. Some to differing nutrition and general health.
+The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex of the person: women \emph{tend to be} slightly shorter than men. Some of the variation in height relates to genes and genetic variation. Some to differing nutrition and general health.
 
-Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not; it varies. What's behind the variation? It could be the weather conditions at the time. It could also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.
+Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at the time. It could also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.
 
 \hypertarget{statistical-models}{%
 \section{Statistical models}\label{statistical-models}}
@@ -380,9 +388,9 @@ For our purposes, a statistical model is a mathematical function that takes valu
 \hypertarget{quantitative-response-variables}{%
 \section{Quantitative response variables}\label{quantitative-response-variables}}
 
-Consider the model (and data) shown in Figure 1. These are Galton's records on the heights of adult children in London families. In Figure 1, \texttt{height} has been selected as the response variable. To keep the example simple, the role of explanatory variable has been assigned to \texttt{sex}. The statistical model takes as input a level of \texttt{sex} and produces as output a numerical value for the response variable.
+Consider the model (and data) shown in Figure 4.1. These are Galton's records on the heights of adult children in London families. In Figure 4.1, \texttt{height} has been selected as the response variable. To keep the example simple, the role of explanatory variable has been assigned to \texttt{sex}. The statistical model takes as input a level of \texttt{sex} and produces as output a numerical value for the response variable.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-0-1} \caption{Figure 1: Galton's height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level  of  the explanatory variable.}\label{fig:galton-0}
+\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-0-1} \caption[Figure 4.1]{Figure 4.1: Galton's height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level  of  the explanatory variable.}\label{fig:galton-0}
 \end{figure}
 
 As you can see, the output of the model is about 64 inches when sex is F, and 69 inches when sex is M. The preceeding sentence uses stilted language. A straightforward rendering would be something like this: According to the model, women are 64 inches tall and men are 69 inches. But the straightforward account is misleading. While some women are 64 inches tall, the large majority are not, and similarly for men. Neither would it be correct to say that women are shorter than men. Some are and some aren't.
@@ -393,9 +401,9 @@ If your goal is to describe the relative heights of men and women, better a stat
 
 How were the model outputs determined? Or, in other words, what method was used to construct the model? For now, the details are unimportant. The primary point is that the kind of model being shown describes the \emph{center} of the distribution of individuals. A secondary point is that the model methodology is standard and automatic; the model outputs were established strictly using \texttt{sex} as the explanatory variable without consideration of anything else and without room for a human to manipulate the numbers or shade them into a preferred direction.
 
-The model in Figure 1 has an explanatory variable that is categorical. Figure 2 is an example where the explanatory variable is numeric. The question that motivated Galton to collect the height data in the first place was to characterize the genetics of height: the extent to which it's fair to say that a child inherits the height of his or her parents.
+The model in Figure 4.1 has an explanatory variable that is categorical. Figure 4.2 is an example where the explanatory variable is numeric. The question that motivated Galton to collect the height data in the first place was to characterize the genetics of height: the extent to which it's fair to say that a child inherits the height of his or her parents.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-2-1} \caption{Child's height versus the mother's height. A conventional form of model is a straight line.}\label{fig:galton-2}
+\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-2-1} \caption[Figure 4.2]{Figure 4.2:  Child's height versus the mother's height. A conventional form of model is a straight line.}\label{fig:galton-2}
 \end{figure}
 
 Consider first the model as a function. The input is the explanatory variable, mother's height. The output is a number. So, for an input of 60 inches, the output is about 66 inches. For an input of 68 inches, the output is somewhat higher: about 68 inches.
@@ -417,26 +425,27 @@ Things are particularly straightforward when the categorical response variable h
 
 To illustrate, consider some data from another approach to quantifying genetics by \emph{experimental manipulation}. This tradition started with Gregor Mendel in the 1860s, who famously cross bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.
 
-In one experiment, Punnett cross bred sweet peas and observed the flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 4 in Chapter 1. The complete data are graphed in Figure 3, below.
+In one experiment, Punnett cross bred sweet peas and observed the flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data are graphed in Figure 4.3, below.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/punnett-1-1} \caption{Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape.}\label{fig:punnett-1}
+\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/punnett-1-1} \caption[Figure 4.3]{Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape.}\label{fig:punnett-1}
 \end{figure}
 
 There are only four possible combinations of white/other and long/round. To avoid plotting the rows directly on top of one another, the dots have been \emph{jittered}. You can see that peas with ``other'' color and long pollen grains are the most common.
 
-The model here is very similar to that of Figure 1. The response variable, flower color, has been translated into 0/1. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number. The model output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is just under 0.25, meaning that about a quarter of the plants had white flowers. When the pollen is round, the model value is a little heigher but not much. Again about a quarter of the plants with round pollen had white flowers. (Is the claim justified by the data that the probability is higher for round-pollen plants than for long-pollen plants? Statistical inference provides an answer to this question.)
+The model here is very similar to that of Figure 4.1. The response variable, flower color, has been translated into 0/1. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number. The model output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is just under 0.25, meaning that about a quarter of the plants had white flowers. When the pollen is round, the model value is a little heigher but not much. Again about a quarter of the plants with round pollen had white flowers. (Is the claim justified by the data that the probability is higher for round-pollen plants than for long-pollen plants? Statistical inference provides an answer to this question.)
 
-You can pretty much draw functions like this by hand. Mathematically, though, there are some restrictions. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data. (Technically, the function form has to include an intercept.) It might be easiest to understand these restrictions by looking at some crazy bad functions that don't honor the restrictions.
+You can pretty much draw functions like this by hand. Mathematically, though, there are some restrictions. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data. (Technically, the function form has to include an intercept.) It might be easiest to understand these restrictions by looking at some crazy bad functions that don't honor the restrictions, like the one in Figure 4.3.
 
-\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/unnamed-chunk-2-2}
+\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/fig-4-3-1} \caption[Figure 4.3]{Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.}\label{fig:fig-4-31}
+\end{figure}
+\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/fig-4-3-2} \caption[Figure 4.3]{Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.}\label{fig:fig-4-32}
+\end{figure}
 
-Caption: Some crazy bad functions (in red) compared to the same form of function matched legitimately to the data (in blue).
+Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
 
-Note that the blue functions are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
+The previous examples have all involved a response variable and a \emph{single} explanatory variable. Since variables can be either numerical or quantitative, logic suggests there are four possible settings for models, of which we've seen three. Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.
 
-The previous examples have all involved a response variable and a \emph{single} explanatory variable. Since variables can be either numerical or quantitative, logic suggests there are four possible settings for models, of which we've seen three. Figure 4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.
-
-\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-logistic-1} \caption{A model with a binary categorical response variable and a numerical explanatory variable.}\label{fig:galton-logistic}
+\begin{figure}\includegraphics[width=0.8\linewidth]{040-Modeling-Variation_files/figure-latex/galton-logistic-1} \caption[Figure 4.4]{Figure 4.4: A model with a binary categorical response variable and a numerical explanatory variable.}\label{fig:galton-logistic}
 \end{figure}
 
 Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. As you might expect, the model output is around 50\% regardless of the mother's height.
@@ -467,7 +476,7 @@ quantitative\strut
 \end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
 categorical\strut
 \end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
-1\strut
+4.1\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
 groupwise means / t-test\strut
 \end{minipage}\tabularnewline
@@ -478,7 +487,7 @@ quantitative\strut
 \end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
 quantitative\strut
 \end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
-2\strut
+4.2\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
 linear regression / slope test\strut
 \end{minipage}\tabularnewline
@@ -489,7 +498,7 @@ categorical (binary)\strut
 \end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
 categorical\strut
 \end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
-3\strut
+4.3\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
 groupwise proportions / p-test\strut
 \end{minipage}\tabularnewline
@@ -500,7 +509,7 @@ categorical (binary)\strut
 \end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
 quantitative\strut
 \end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
-4\strut
+4.4\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
 not usually included in introductory statistics\strut
 \end{minipage}\tabularnewline
@@ -514,13 +523,13 @@ Recognizing that many readers have studied statistics before, I've added to the 
 
 It's now time to talk a bit about the way that statistical models are constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the previous chapter and asked to draw a straight-line function relating the explanatory variable to the response variable. Naturally, some students' models will be better than others. How can we determine which model is the best?
 
-To illustrate, let's take a small data set and look at two models that students might draw.
+To illustrate, let's take a small data set and look at two models that students might draw. (Figure 5.1)
 
 
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{043-Model-values_files/figure-latex/drawn-train-1} \caption{Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.}\label{fig:drawn-train}
+\begin{figure}\includegraphics[width=0.5\linewidth]{043-Model-values_files/figure-latex/drawn-train-1} \caption[Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.]{Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.}\label{fig:drawn-train}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{043-Model-values_files/figure-latex/drawn-train-2} \caption{Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.}\label{fig:drawn-train}
+\begin{figure}\includegraphics[width=0.5\linewidth]{043-Model-values_files/figure-latex/drawn-train-2} \caption[Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.]{Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.}\label{fig:drawn-train}
 \end{figure}
 
 Who has drawn the better model: Linus or Curly? The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother's height) for that point. The position of each * on the vertical axis marks the \emph{model value} for that data point.
@@ -529,7 +538,7 @@ Think of the model values as a kind of stand-in for the response variable, one t
 
 Now, the instructor takes out her red pen to mark the ``error.'' The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins.
 
-This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and the shape of the function (here, a straight line), the computer tries out all the possibilities for straight-line models and picks the one that gives the least error between the \emph{model values} and the actual response values.
+This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the \emph{model values} and the actual response values.
 
 In practice, for straight-line models (and more general forms, called ``linear models''), there are equations that can be solved to find the best model, so there's no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.
 
@@ -543,17 +552,17 @@ We'll use the symbol \(v_m\) to stand for the variance of the model values.
 
 To illustrate this, let's look at a couple of models from the previous chapter. In each, you can see that the response values (black dots) are spread out, while the model values stay in toward the center of data. This is a natural consequence of our using \emph{central} models, that is, models where the function has roughly equal numbers of data points above it and below it.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{043-Model-values_files/figure-latex/unnamed-chunk-2-1} \caption{Figure 2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52}\label{fig:unnamed-chunk-2}
+\begin{figure}\includegraphics[width=0.8\linewidth]{043-Model-values_files/figure-latex/unnamed-chunk-2-1} \caption[Figure 5.2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52]{Figure 5.2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52}\label{fig:unnamed-chunk-2}
 \end{figure}
 
 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{043-Model-values_files/figure-latex/unnamed-chunk-3-1} \caption{Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091}\label{fig:unnamed-chunk-3}
+\begin{figure}\includegraphics[width=0.8\linewidth]{043-Model-values_files/figure-latex/unnamed-chunk-3-1} \caption[Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091]{Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{043-Model-values_files/figure-latex/unnamed-chunk-4-1} \caption{Figure 4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14}\label{fig:unnamed-chunk-4}
+\begin{figure}\includegraphics[width=0.8\linewidth]{043-Model-values_files/figure-latex/unnamed-chunk-4-1} \caption[Figure 5.4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14]{Figure 5.4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 
@@ -584,25 +593,25 @@ Each of the models presented in Chapter 4 has a single \emph{degree of flexibili
 
 
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-1} \caption{(ref:four-settings-cap}\label{fig:four-settings}
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-1} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-2} \caption{(ref:four-settings-cap}\label{fig:four-settings}
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-2} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-3} \caption{(ref:four-settings-cap}\label{fig:four-settings}
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-3} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-4} \caption{(ref:four-settings-cap}\label{fig:four-settings}
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-4} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
 \end{figure}
 
 In talking about descriptions of models, rather than using the word \emph{number}, we use \emph{coefficient}. This is no big deal, but when you see the word \emph{coefficient} you'll have a distinct hint that we are talking about the shape of a model. And we'll be able to say things like ``the \emph{number} of \emph{coefficients}'' to refer to how many coefficients are needed to specify the model.
 
 The degree of flexibility of a model is defined to be the number of coefficients needed to completely specify the model \emph{minus one}. You might wonder, ``Why subtract one from the number of coefficients?'' Just a convention. You'll see some justification for it in Chapter 8, \emph{Simple means and proportions}, where we will work with models with \emph{zero degrees of freedom}, which is to say, one coefficient.
 
-\hypertarget{multiple-degrees-of-freedom}{%
-\section{Multiple degrees of freedom}\label{multiple-degrees-of-freedom}}
+\hypertarget{multiple-degrees-of-flexibility}{%
+\section{Multiple degrees of flexibility}\label{multiple-degrees-of-flexibility}}
 
 Let's look at some examples of models where there is more than one degree of freedom. To start, Figure 2 shows a model with two degrees of freedom.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/two-df-1} \caption{(ref:two-df-cap)}\label{fig:two-df}
+\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/two-df-1} \caption[(ref:two-df-cap)]{(ref:two-df-cap)}\label{fig:two-df}
 \end{figure}
 
 The data in Figure 2 are from a classic study involving the differences and similarities among three species of iris plants. The response variable is the flower petal width (quantitative) and the explanatory variable is the species of the plant (categorical). A complete description of the model would involve three coefficients, one for each of the species of iris. Three coefficients corresponds to \(df = 2\).
@@ -615,7 +624,7 @@ The model in Figure 3 consists of two straight lines. Each line is specified by 
 
 You may notice that the two lines in Figure 3 have slightly different slopes. Often, modelers try to economize with degrees of flexibility by using the same slope for each line. This would reduce the degrees of freedom to \(df = 2\). (The decision of whether to use a common slope or two potentially different slopes is often made using the tools of statistical inference, but we are getting ahead of the story.)
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1} \caption{Figure 3: A model of height with two explanatory variables: the mother's height and the child's sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable.}\label{fig:mother-plus-sex}
+\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1} \caption[Figure 3: A model of height with two explanatory variables: the mother's height and the child's sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable.]{Figure 3: A model of height with two explanatory variables: the mother's height and the child's sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable.}\label{fig:mother-plus-sex}
 \end{figure}
 
 
@@ -635,9 +644,9 @@ It takes just the most basic notion of biology to realize that when it comes to 
 
 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1} \caption{Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.}\label{fig:mother-plus-sex-father}
+\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1} \caption[Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.]{Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.}\label{fig:mother-plus-sex-father}
 \end{figure}
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2} \caption{Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.}\label{fig:mother-plus-sex-father}
+\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2} \caption[Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.]{Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.}\label{fig:mother-plus-sex-father}
 \end{figure}
 
 Comparing the two models, you might see how a larger df corresponds to increased flexibility.
@@ -652,20 +661,24 @@ Chapter 5 imagined a contest between two students, Linus and Curly, for the best
 
 
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-1} \caption{Figure 1: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-1} \caption[Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."]{Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
 a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."}\label{fig:several-df}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-2} \caption{Figure 1: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-2} \caption[Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."]{Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
 a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."}\label{fig:several-df}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-3} \caption{Figure 1: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-3} \caption[Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."]{Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
 a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."}\label{fig:several-df}
 \end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-4} \caption{Figure 1: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-4} \caption[Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
+a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."]{Figure 5: (a) a flat model -- zero degrees of flexibility; (b) a straight-line model -- one degree of flexibility; (c)
 a model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."}\label{fig:several-df}
 \end{figure}
 
-In the models in Figure 1, the degrees of flexibility indicates the shape of the function. A flat line has no degrees of flexibility. A sloped line has one degree of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
+In the models in Figure 5, the degrees of flexibility indicate the shape of the function. A flat line has no degrees of flexibility. A sloped line has one degree of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
 
 Notice that as the degree of flexibility goes up, the model function gets closer to the data points. Correspondingly, the variance of the model values, \(v_m\), goes up with increasing degrees of flexibility.
 
@@ -674,7 +687,46 @@ The point of counting degrees of flexibility is to be able to adjust \(v_m\) to 
 \hypertarget{effect-size}{%
 \chapter{Effect size}\label{effect-size}}
 
-The effect size tells how the output of the model changes when a simple change is made to the input. Many statistical claims are made in terms of an effect size \ldots{}. examples.
+An \emph{effect size} tells how the output of a model changes when a simple change is made to the input. Many statistical claims are made in terms of an effect size. For instance, according to the \href{https://www.nhtsa.gov/risky-driving/seat-belts}{US National Highway Traffic Safety Administration (NHTSA)}, wearing seat belts reduces the risk of fatal injury to passenger-vehicle occupants by about 50\%. This is an effect size.\footnote{I'm using ``about'' here since we haven't yet introduced confidence intervals. That will happen in Chapter 9. It took some work to chase down the confidence intervals on the relative risk of fatal injury: it is 40\% to 60\%.}
+
+But this related fact from NHTSA is \emph{not} an effect size: 51\% of male passenger-vehicle occupants killed in 2017 were not wearing seat belts.
+
+An effect size summarizes a comparison between two different conditions. In the first example, those two conditions are 1) wearing a seat belt and 2) not wearing a seat belt. In the second example, however, there is just one condition: being a male passenger-vehicle occupant who died in a car accident in 2017.\footnote{What to call a descriptive quantity like 51\%. It's not an effect size. One word used is ``statistic,'' which is simply a number calculated from data. But ``statistic'' has other meanings as well. An effect size is also a statistic. I suggest simply using ``proportion'' for the 51\%. Chapter 11 looks at confidence intervals on means and proportions. The confidence interval for the 51\% proportion is 50-52\%.}
+
+\hypertarget{slopes-and-differences}{%
+\section{Slopes and differences}\label{slopes-and-differences}}
+
+Consider two models introduced in Chapter 5. Figure 5.1 shows child's height versus mother's height in Galton's data. The straight-line model shows a slight upward slope. To calculate the effect size of child's height \emph{with respect to} mother's height, pick two values of mother's height: say 60 and 68 inches. From the graph you can read the output of the model at these two values of the input. At an input of 60 inches, the output is 65.5 inches. At an input of 68 inches, the output is (coincidentally) 68 inches. The effect size is the slope of the model: rise over run. Here, the ``run'' is 68 - 60 = 8 inches. The ``rise'' is 68 - 65.5 = 2.5 inches. So the slope is 2.5 / 8 = 0.31.
+
+The model in Figure 5.1 has a quantitative explanatory variable: mother's height. In constrast, the model in Figure 5.2 has a categorical explanatory variable: pollen shape. To calculate an effect size \emph{with respect to pollen shape} in Figure 5.2, follow much the same procedure. First, pick the two input levels you want to compare. Here, there are only two levels possible: long and round shapes. Next, look up the model output at each of the two inputs. The output of the model is framed as a probability. The probability of a white flower is 24\% for long pollen, and 25\% for round pollen.
+
+Since the explanatory variable is categorical, it doesn't mean much to look at the numerical difference in the input. The model output, on the other hand, is quantitative (as it is for all the models we consider in this book). The effect size is 25\% - 24\% = 1 percentage point.
+
+To recap, when the explanatory variable is \emph{quantitative}, the effect size is stated as a \emph{slope}: change in output divided by change in input. When the explanatory variable is \emph{categorical}, the effect size can be stated as a \emph{difference}.
+
+\hypertarget{risk}{%
+\section{Risk}\label{risk}}
+
+In the previous paragraph, I say ``\emph{can} be stated as a difference'' because there are other ways often used to compare the model output between two different levels of a categorical explanatory variable. For instance, when the output is interpreted as a ``risk,'' the two outputs might be compared as a \emph{ratio}, called the \emph{risk ratio}. It sounds odd when talking about flower color, but if we were thinking about the ``risk'' that a pea plant's flowers are white, then it would be appropriate to consider the effect size with respect to pollen shape as the ratio 25\% / 24\% = 1.04. Note that this 1.04 is not in percent. When writing about risk ratios, people often use percentage terms. The risk ratio of 1.04 might be described, ``The risk of a white flower increases by 4 percent.'' Were the risk ratio smaller than 1, say 0.87, we would speak of a risk \emph{decrease}: ``The risk of a white flower is 13\% lower for \ldots{}.''
+
+It's potentially confusing for us to report \emph{differences} of risk in ``percentage points'' and \emph{ratios} of risk as ``percent.'' Not everyone is sensitive to the distinction between ``percentage points'' and ``percent.'' Perhaps it would be helpful to report differences as an \emph{absolute} change in risk while ratios are a \emph{relative} change in risk.
+
+There's yet another way used to describe changes in risk: the \emph{odds ratio}. Odds are a different format for describing risk. If the probability of an outcome is \(p\), the odds are \(p/(1-p)\). So, the odds of a white flower in a plant which has round pollen is \(0.25/(1-0.25) = 0.25 / 0.75 = 1/3\). The use of odds, and its cousin, \emph{log odds}, is a genuine help when working with models with multiple explanatory variables.
+
+\hypertarget{simple-changes-in-input}{%
+\section{Simple changes in input}\label{simple-changes-in-input}}
+
+I'm using the word ``simple'' to refer to the change in input involved in an effect size. Several considerations motivate this:
+
+\begin{itemize}
+\tightlist
+\item
+  When looking at a categorical explanatory variable, and effect size is a comparison of just two of the levels.
+\item
+  When looking at a quantitative explanatory variable, I advocate using a \emph{finite} change in input, e.g.~the 60 inches to 68 inches in mother's height. That's simpler than the alternative, using an \emph{infinitesimal} change in input, and more appropriate for many machine-learning models where the output can vary discontinuously as the input changes.
+\end{itemize}
+
+But the main thing I want to emphasize with the word ``simple'' has to do with models with multiple explanatory variables. In such models, there are different effect sizes for the different explanatory variables. That is, an effect size reports the change in model output when a \emph{single} explanatory variable is changed, holding all the others constant. This is where the phrase ``with respect to'' comes into play. For instance, the model displayed in Figure 4 of Chapter 6, with child's height as the response variable, involves three explanatory variables: mother's height, father's height, and child's sex. An effect size in such a model refers to a specific explanatory variable. So it's meaningful to speak of the effect (on child's height) with respect to mother's height, or the effect with respect to father's height, or the effect with respect to child's sex. Which one is right for you depends on what you are investigating.
 
 \hypertarget{f-and-r}{%
 \chapter{F and R}\label{f-and-r}}
@@ -888,7 +940,7 @@ It's worse than this. Even when variables are unrelated, the p-value will be sma
 After decades of researchers mis-using p-values, in 2019 the American Statistical Association, a leading professional organization world-wide, issued a statement worth quoting in length:
 
 \begin{quote}
-\emph{It is time to stop using the term 'statistically significant" entirely. Nor should variants such as ``significantly different,'' ``p \textless{} 0.05,'' and ``nonsignificant'' survive, whether expressed in words, by asterisks in a table, or in some other way.}
+\emph{It is time to stop using the term 'statistically significant" entirely. Nor should variants such as ``significantly different,'' ``p \textless{} 0.05,'' and ``nonsignificant'' survive, whether expressed in words, by asterisks in a table, or in some other way.}
 
 \emph{Regardless of whether it was ever useful, a declaration of ``statistical significance'' has today become meaningless. Made broadly known by Fisher's use of the phrase (1925), Edgeworth's (1885) original intention for statistical significance was simply as a tool to indicate when a result warrants further scrutiny. But that idea has been irretrievably lost. Statistical significance was never meant to imply scientific importance, and the confusion of the two was decried soon after its widespread use (Boring 1919). Yet a full century later the confusion persists.}
 
@@ -972,17 +1024,144 @@ Hypothesis tests that were based on t were called ``t-tests,'' a name that will 
 
 Looking at \(\Delta F\).
 
-\hypertarget{outside-the-normal-situation}{%
-\chapter{Outside the normal situation}\label{outside-the-normal-situation}}
+\hypertarget{outside-of-the-normal}{%
+\chapter{Outside of the normal}\label{outside-of-the-normal}}
 
 About ranks, transformations, \ldots{}
+
+Hooker and Yule paper, 1906
+
+\begin{verbatim}
+## [1] 0.4264428
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.8429314
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.5326186
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.6714286
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.5811188
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.7782709
+\end{verbatim}
+
+\includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-2} \includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-3} \includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-4}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = diff(export) ~ diff(production) + diff(price), data = Wheat_export)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -438894 -139590   39148  188279  303853 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)      4.301e+04  7.106e+04   0.605 0.557241    
+## diff(production) 3.051e-01  5.672e-02   5.379 0.000224 ***
+## diff(price)      6.404e+04  1.792e+04   3.574 0.004362 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 259500 on 11 degrees of freedom
+## Multiple R-squared:  0.8176, Adjusted R-squared:  0.7844 
+## F-statistic: 24.65 on 2 and 11 DF,  p-value: 8.629e-05
+\end{verbatim}
+
+\includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5} \includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-6}
+
+They computed indices, which seem to be the standardized annual differences.
+
+\includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-1} \includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-2}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = export ~ price + production, data = Indices)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.78544 -0.24981  0.07006  0.33694  0.54378 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 2.083e-17  1.241e-01   0.000 1.000000    
+## price       4.665e-01  1.305e-01   3.574 0.004362 ** 
+## production  7.021e-01  1.305e-01   5.379 0.000224 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.4643 on 11 degrees of freedom
+## Multiple R-squared:  0.8176, Adjusted R-squared:  0.7844 
+## F-statistic: 24.65 on 2 and 11 DF,  p-value: 8.629e-05
+\end{verbatim}
+
+What if we do it with log proportional change \ldots{}
+
+\begin{verbatim}
+## [1] 0.09435189
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.740655
+\end{verbatim}
+
+\includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1} \includegraphics[width=0.8\linewidth]{120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-2}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = delta_export ~ delta_price + delta_production, data = Deltas)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -3.03150 -0.75490 -0.02567  1.22324  2.56527 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)       -0.1720     0.4365  -0.394  0.70114   
+## delta_price        0.3642     3.2910   0.111  0.91387   
+## delta_production   7.8920     2.1741   3.630  0.00396 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.607 on 11 degrees of freedom
+## Multiple R-squared:  0.5491, Adjusted R-squared:  0.4671 
+## F-statistic: 6.697 on 2 and 11 DF,  p-value: 0.01252
+\end{verbatim}
 
 \hypertarget{remember-inference-isnt-everything}{%
 \chapter{Remember, inference isn't everything}\label{remember-inference-isnt-everything}}
 
 Study design, sampling bias, etc.
 
-\bibliography{book.bib}
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-punnett-1905}{}%
+Bateson, W., E.R. Saunders, and R.C. Punnett. 1905. ``Experimental Studies in the Physiology of Heredity.'' \emph{Reports to the Evolution Committee of the Royal Society} 2: 1--55, 80--99.
+
+\leavevmode\hypertarget{ref-ISRS}{}%
+Diez, David, Christopher Barr, and Mine Çetinkaya-Rundel. 2014. \emph{Introductory Statistics with Randomization and Simulation}. OpenIntro.org. \url{https://www.openintro.org/download.php?file=isrs1_tablet\&referrer=/stat/textbook.php}.
+
+\leavevmode\hypertarget{ref-modern-dive}{}%
+Ismay, Chester, and Albert Y. Kim. 2019. \emph{Statistical Inference via Data Science: A Moderndive into R and the Tidyverse}. CRC Press. \url{https://moderndive.com}.
+
+\leavevmode\hypertarget{ref-lock5}{}%
+Lock, Robin H., Patti Frazer Lock, Kari Lock Morgan, Eric F. Lock, and Dennis F. Lock. 2017. \emph{Statistics: Unlocking the Power of Data}. 2nd ed. Wiley.
+
+\leavevmode\hypertarget{ref-tintle-investigations}{}%
+Tintle, Nathan, Beth L. Chance, Soma Roy, George W. Cobb, Allan J. Rossman, Todd Swanson, and Jill VanderStoep. 2016. \emph{Introduction to Statistical Investigations}. Wiley.
+
 
 
 \end{document}

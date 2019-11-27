@@ -8,9 +8,9 @@ library(splines)
 
 It's now time to talk a bit about the way that statistical models are  constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the  previous chapter and asked to draw a straight-line function relating the explanatory  variable to the response variable. Naturally, some students' models will be better than others. How can we determine which model is the best?
 
-To illustrate, let's take a small data set and look at two models that students might draw.
+To illustrate, let's take a small data set and look at two models that students might draw. (Figure 5.1)
 
-(ref:drawn-train-cap)  Figure 1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+(ref:drawn-train-cap)  Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
 
 ```{r drawn-train, echo = FALSE, fig.show = "keep", fig.cap = "(ref:drawn-train-cap)", out.width = "50%"}
 set.seed(103)
@@ -44,7 +44,7 @@ Think of the model values as a kind of stand-in for the response variable, one t
 
 Now, the instructor takes out her red pen to mark the "error." The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins. 
 
-This is analogous to how statistical models are constructed. Once the explanatory and  response variables have been selected, and the shape of the function (here, a straight line), the computer tries out all the possibilities for straight-line models and picks the one that gives the least error between the *model values* and the actual response values.
+This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the *model values* and the actual response values.
 
 In practice, for straight-line models (and more general forms, called "linear models"), there are equations that can be solved to find the best model, so there's no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.
 
@@ -66,7 +66,7 @@ gf_jitter(model_output ~ mother, data = mod_values, seed = 101,
   gf_lm(color = "blue") %>%
   gf_labs(y = "Child's height (inches)", x = "Mother's height (inches")
 ```
-(ref:fig2-cap) Figure 2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: `r round(var(Galton$height), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
+(ref:fig2-cap) Figure 5.2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: `r round(var(Galton$height), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
 
 ```{r echo=FALSE, fig.cap="(ref:fig3-cap)"}
 load("data/Punnett.rda")
@@ -88,7 +88,7 @@ Punnett %>%
                             )) ) %>%
   gf_labs(y = "Flower color")
 ```
-(ref:fig3-cap) Figure 3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: `r round(var(Punnett$flower_color=="white"), 2)`; Model value variance: `r sprintf("%1.6f", var(Punnett$value))`
+(ref:fig3-cap) Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: `r round(var(Punnett$flower_color=="white"), 2)`; Model value variance: `r sprintf("%1.6f", var(Punnett$value))`
 
 
 
@@ -109,7 +109,7 @@ gf_jitter(as.numeric(sex == "F") ~ height, data = Galton,
                             )) ) %>%
   gf_labs(y = "Sex", x = "Mother's height (inches)")
 ```
-(ref:fig4-cap)  Figure 4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: `r round(var(Galton$sex == "F"), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
+(ref:fig4-cap)  Figure 5.4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: `r round(var(Galton$sex == "F"), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
 
 
 
