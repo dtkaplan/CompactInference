@@ -7,17 +7,17 @@ output_dir: "docs"
 new_session: yes
 rmd_files: ["index.Rmd", 
             "010-Classical-inference.Rmd", # Chapter 1
-            "020-Data.Rmd",
-            "030-Variation.Rmd",
-            "040-Modeling-Variation.Rmd",
-            "043-Model-values.Rmd",
-            "045-Multiple-explanatory.Rmd",
-            "050-Effect-size.Rmd",
-            "060-FandR.Rmd",
-            "070-Confidence-intervals.Rmd",
-            "080-Statistical-significance.Rmd",
-            "090-Simple-means.Rmd",
-            "110-Comparing-models.Rmd",
-            "120-Outside-of-the-normal.Rmd",
-            "130-Inference-isnt-everything.Rmd"
+            "020-Data.Rmd",  #   hapter 2
+            "030-Variation.Rmd", # Chapter 3
+            "040-Modeling-Variation.Rmd", # Chapter 4
+            "043-Model-values.Rmd", # Chapter 5
+            "045-Degrees-of-flexibility.Rmd",  # Chapter 6
+            "050-Effect-size.Rmd", # Chapter 7
+            "060-FandR.Rmd", # Chapter 8
+            "070-Confidence-intervals.Rmd", # Chapter 9
+            "080-Statistical-significance.Rmd", # Chapter 10
+            "090-Simple-means.Rmd", # Chapter 11
+            "110-Comparing-models.Rmd", # Chapter 12
+            "120-Outside-of-the-normal.Rmd", # Chapter 13
+            "130-Inference-isnt-everything.Rmd" # Chapter 14
             ]

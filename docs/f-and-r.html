@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-27" />
+<meta name="date" content="2019-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,13 +82,13 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
-<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
-<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
-<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#categorical-response-variables"><i class="fa fa-check"></i><b>4.3</b> Categorical response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#a-taxonomy-of-simple-models"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a></li>
 <li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
@@ -150,7 +150,7 @@
 <li><span class="math inline">\(n\)</span>, the sample size (or, more concretely, the number of rows in out data frame)</li>
 <li><span class="math inline">\(v_r\)</span>, the variance of the response variable. <span class="math inline">\(v_r\)</span> for binary categorical response variables is based on the 0-1 encoding.</li>
 <li><span class="math inline">\(v_m\)</span>, the variance of the model values.</li>
-<li><span class="math inline">\(df\)</span>, the <em>degree of flexibility</em>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+<li><span class="math inline">\(df\)</span>, the <em>degree of flexibility</em>.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></li>
 </ol>
 <p>We’ll put these together to form a quantity called F. (The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th.) The formula for F is pretty simple, so I’ll present it right here for ready reference.</p>
 <p><span class="math display">\[F \equiv \frac{n - (1 + df)}{df} \frac{v_m}{v_r - v_m}\]</span>
@@ -170,16 +170,11 @@ way to quantify this closeness are with the difference <span class="math inline"
 <div id="r-squared" class="section level2">
 <h2><span class="header-section-number">8.2</span> R-squared</h2>
 <p>Many people prefer to look at a ratio <span class="math inline">\(v_m / v_r\)</span> to quantify how close the model values are to the values of the response variable. If the model does a good job accounting for the response variable, then <span class="math inline">\(v_m\)</span> will be close to <span class="math inline">\(v_r\)</span>. That is, the ratio will be close to 1. On the other hand, if the model tells us little or nothing about the response variable, <span class="math inline">\(v_m\)</span> will be close to zero and the ratio itself will be zero.</p>
-<p>The ratio has a famous name: *R-squared$, that is:</p>
+<p>The ratio has a famous name: <em>R-squared</em>, that is:</p>
 <p><span class="math display">\[R^2 = v_m / v_r\]</span>
-Another, more obscure name for <span class="math inline">\(R^2\)</span> is <em>coefficient of determination</em>, which is awkward but does express the point that <span class="math inline">\(R^2\)</span> is about the extent to which the explanatory variables, when passed through the model, determine the response variable.</p>
-<ul>
-<li>Biggest possible <span class="math inline">\(R^2\)</span> is 1, which can only occur when the model values are exactly the same as the values of the response variable.</li>
-</ul>
-<p><span class="math inline">\(R^2\)</span> is, literally, the faction of the variation in the response variable that has been captured by the model.</p>
-<ul>
-<li><span class="math inline">\(R^2\)</span> is never negative. This is part of the reason why keeping track of <span class="math inline">\(df\)</span> is important when there are multiple explanatory variables, or, to be more precise, multiple explanatory vectors.</li>
-</ul>
+A more obscure name for <span class="math inline">\(R^2\)</span> is <em>coefficient of determination</em>, which is awkward but does express the point that <span class="math inline">\(R^2\)</span> is about the extent to which the explanatory variables, when passed through the model, determine the response variable. <span class="math inline">\(R^2\)</span> is, literally, the faction of the variance of the response variable that has been captured by the model.</p>
+<p><span class="math inline">\(R^2\)</span> can never be bigger than one and can never be negative. When <span class="math inline">\(R^2 = 1\)</span>, the model values are exactly the same as the values of the response variable.</p>
+<p>When there is no connection between the r esponse and explanatory variables, <span class="math inline">\(R^2\)</span> will be small. Ideally, it would be zero, but the process of random sampling generally pushes it a little away from zero. One way to think about F is as indicating when there is so little data that a small but non-zero R<sup>2</sup> is consistent with the hypothesis that there is no connection between the response and explanatory variables.</p>
 </div>
 <div id="f-in-statistics-books" class="section level2">
 <h2><span class="header-section-number">8.3</span> F in statistics books</h2>
@@ -199,8 +194,8 @@ Both the numerator and the denominator of this ratio have the form of a sum of s
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>This is a non-standard name. The convention is to refer to the quantity <span class="math inline">\(n - (df + 1)\)</span> as the <em>degrees of <strong>freedom</strong></em>.<a href="f-and-r.html#fnref4" class="footnote-back">↩</a></p></li>
+<ol start="6">
+<li id="fn6"><p>If you are reading this book in conjunction with a conventional text, remember that such texts frame inference in terms of the <em>degrees of <strong>freedom</strong>,</em> which is equivalent to <span class="math inline">\(n - (df + 1)\)</span>.<a href="f-and-r.html#fnref6" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

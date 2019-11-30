@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 NOV 2019 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 NOV 2019 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1255,43 +1255,43 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 \openout4 = `Compact_inference.toc'.
 
 [4]
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 108
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 104
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 108
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 104
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 108
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 104
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 108
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 104
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 108
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 104
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 108.
+(Font)              scaled to size 12.50409pt on input line 104.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 108.
+(Font)              scaled to size 9.37807pt on input line 104.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 108.
+(Font)              scaled to size 7.29405pt on input line 104.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 108.
+(Font)              scaled to size 12.50409pt on input line 104.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 108.
+(Font)              scaled to size 9.37807pt on input line 104.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 108.
+(Font)              scaled to size 7.29405pt on input line 104.
 [5
 
 ]
@@ -1302,7 +1302,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 1.
 [9]
-Overfull \hbox (2.78395pt too wide) in paragraph at lines 143--144
+Overfull \hbox (2.78395pt too wide) in paragraph at lines 141--142
 []\T1/pplj/m/n/12 Statistical in-fer-ence deals with one, and only one, source 
 
  []
@@ -1310,754 +1310,742 @@ Overfull \hbox (2.78395pt too wide) in paragraph at lines 143--144
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[10] [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[12] [13] [14
-
-]
+[10] [11] [12]
 Chapter 2.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 185.
+(Font)              scaled to size 8.33606pt on input line 164.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 185.
+(Font)              scaled to size 6.25204pt on input line 164.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 185.
+(Font)              scaled to size 5.21004pt on input line 164.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 185.
+(Font)              scaled to size 8.33606pt on input line 164.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 185.
+(Font)              scaled to size 6.25204pt on input line 164.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 185.
+(Font)              scaled to size 5.21004pt on input line 164.
 
-Underfull \vbox (badness 3690) has occurred while \output is active []
+LaTeX Warning: Marginpar on page 13 moved.
 
-[15]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 217.
+[13
+
+]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 181.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 181.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 181.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 181.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 213.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 217.
-<images/Punnet-page-93.png, id=315, 269.71164pt x 24.5718pt>
+(Font)              scaled to size 10.20007pt on input line 213.
+[14] <images/Punnet-page-93.png, id=286, 269.71164pt x 24.5718pt>
 File: images/Punnet-page-93.png Graphic file (type png)
 <use images/Punnet-page-93.png>
-Package pdftex.def Info: images/Punnet-page-93.png used on input line 226.
+Package pdftex.def Info: images/Punnet-page-93.png used on input line 220.
 (pdftex.def)             Requested size: 249.60692pt x 22.74016pt.
-[16 <./images/Punnet-page-93.png>] [17] <images/india-exports-yule.png, id=334,
- 304.9794pt x 211.89565pt>
-File: images/india-exports-yule.png Graphic file (type png)
-<use images/india-exports-yule.png>
-Package pdftex.def Info: images/india-exports-yule.png used on input line 293.
-(pdftex.def)             Requested size: 249.60541pt x 173.42252pt.
-
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
-[18 <./images/india-exports-yule.png>] [19] [20
-
-]
+[15 <./images/Punnet-page-93.png>] [16] [17] [18]
 Chapter 3.
-[21] [22]
-LaTeX Font Info:    Try loading font information for TS1+pplj on input line 339
+[19
+
+] [20]
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 318
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )
-Overfull \hbox (3.14394pt too wide) in paragraph at lines 350--351
+Overfull \hbox (3.14394pt too wide) in paragraph at lines 329--330
 \T1/pplj/m/n/12 about whether the dif-fer-ence is pos-i-tive or neg-a-tive (whi
 ch 
  []
 
-[23]
-Overfull \hbox (79.60793pt too wide) in paragraph at lines 361--362
+[21]
+Overfull \hbox (79.60793pt too wide) in paragraph at lines 340--341
 \T1/pplj/m/n/12 gor-i-cal vari-able into num-bers. For in-stance, with \T1/pplj
 /m/it/12 agree\T1/pplj/m/n/12 /\T1/pplj/m/it/12 undecided\T1/pplj/m/n/12 /\T1/p
 plj/m/it/12 disagree 
  []
 
-
+[22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[24] [25] [26]
+[23] [24]
 Chapter 4.
-[27
+[25
 
 ]
-<040-Modeling-Variation_files/figure-latex/galton-0-1.pdf, id=392, 279.0425pt x
+<040-Modeling-Variation_files/figure-latex/galton-0-1.pdf, id=349, 279.0425pt x
  170.6375pt>
 File: 040-Modeling-Variation_files/figure-latex/galton-0-1.pdf Graphic file (ty
 pe pdf)
 <use 040-Modeling-Variation_files/figure-latex/galton-0-1.pdf>
 Package pdftex.def Info: 040-Modeling-Variation_files/figure-latex/galton-0-1.p
-df used on input line 393.
+df used on input line 367.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
-[28 <./040-Modeling-Variation_files/figure-latex/galton-0-1.pdf>]
-<040-Modeling-Variation_files/figure-latex/galton-2-1.pdf, id=410, 283.0575pt x
- 174.6525pt>
+[26 <./040-Modeling-Variation_files/figure-latex/galton-0-1.pdf>]
+<040-Modeling-Variation_files/figure-latex/galton-2-1.pdf, id=367, 283.0575pt x
+ 173.64874pt>
 File: 040-Modeling-Variation_files/figure-latex/galton-2-1.pdf Graphic file (ty
 pe pdf)
 <use 040-Modeling-Variation_files/figure-latex/galton-2-1.pdf>
 Package pdftex.def Info: 040-Modeling-Variation_files/figure-latex/galton-2-1.p
-df used on input line 406.
-(pdftex.def)             Requested size: 249.60965pt x 154.01447pt.
+df used on input line 380.
+(pdftex.def)             Requested size: 249.60965pt x 153.12932pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[29]
+[27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[30 <./040-Modeling-Variation_files/figure-latex/galton-2-1.pdf>]
-Overfull \hbox (12.51588pt too wide) in paragraph at lines 424--425
+[28 <./040-Modeling-Variation_files/figure-latex/galton-2-1.pdf>]
+Overfull \hbox (12.51588pt too wide) in paragraph at lines 398--399
 \T1/pplj/m/n/12 gor-i-cal re-sponse vari-able has two lev-els: yes/no, alive/de
 ad, 
  []
 
 
-<040-Modeling-Variation_files/figure-latex/punnett-1-1.pdf, id=431, 283.0575pt 
+<040-Modeling-Variation_files/figure-latex/punnett-1-1.pdf, id=388, 283.0575pt 
 x 170.6375pt>
 File: 040-Modeling-Variation_files/figure-latex/punnett-1-1.pdf Graphic file (t
 ype pdf)
 <use 040-Modeling-Variation_files/figure-latex/punnett-1-1.pdf>
 Package pdftex.def Info: 040-Modeling-Variation_files/figure-latex/punnett-1-1.
-pdf used on input line 430.
+pdf used on input line 404.
 (pdftex.def)             Requested size: 249.60965pt x 150.47389pt.
 
-Overfull \hbox (8.43588pt too wide) in paragraph at lines 433--434
+Overfull \hbox (8.43588pt too wide) in paragraph at lines 407--408
 []\T1/pplj/m/n/12 There are only four pos-si-ble com-bi-na-tions of white/other
  
  []
 
-[31]
-<040-Modeling-Variation_files/figure-latex/fig-4-3-1.pdf, id=438, 283.0575pt x 
+[29]
+<040-Modeling-Variation_files/figure-latex/fig-4-3-1.pdf, id=394, 283.0575pt x 
 173.64874pt>
 File: 040-Modeling-Variation_files/figure-latex/fig-4-3-1.pdf Graphic file (typ
 e pdf)
 <use 040-Modeling-Variation_files/figure-latex/fig-4-3-1.pdf>
 Package pdftex.def Info: 040-Modeling-Variation_files/figure-latex/fig-4-3-1.pd
-f used on input line 439.
+f used on input line 413.
 (pdftex.def)             Requested size: 249.60965pt x 153.12932pt.
 
-<040-Modeling-Variation_files/figure-latex/fig-4-3-2.pdf, id=439, 288.07625pt x
+<040-Modeling-Variation_files/figure-latex/fig-4-3-2.pdf, id=395, 288.07625pt x
  171.64125pt>
 File: 040-Modeling-Variation_files/figure-latex/fig-4-3-2.pdf Graphic file (typ
 e pdf)
 <use 040-Modeling-Variation_files/figure-latex/fig-4-3-2.pdf>
 Package pdftex.def Info: 040-Modeling-Variation_files/figure-latex/fig-4-3-2.pd
-f used on input line 441.
+f used on input line 415.
 (pdftex.def)             Requested size: 249.6089pt x 148.72166pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[32 <./040-Modeling-Variation_files/figure-latex/punnett-1-1.pdf>] [33 <./040-M
+[30 <./040-Modeling-Variation_files/figure-latex/punnett-1-1.pdf>] [31 <./040-M
 odeling-Variation_files/figure-latex/fig-4-3-1.pdf> <./040-Modeling-Variation_f
 iles/figure-latex/fig-4-3-2.pdf>]
-<040-Modeling-Variation_files/figure-latex/galton-logistic-1.pdf, id=485, 283.0
+<040-Modeling-Variation_files/figure-latex/galton-logistic-1.pdf, id=441, 283.0
 575pt x 171.64125pt>
 File: 040-Modeling-Variation_files/figure-latex/galton-logistic-1.pdf Graphic f
 ile (type pdf)
 <use 040-Modeling-Variation_files/figure-latex/galton-logistic-1.pdf>
 Package pdftex.def Info: 040-Modeling-Variation_files/figure-latex/galton-logis
-tic-1.pdf used on input line 448.
+tic-1.pdf used on input line 422.
 (pdftex.def)             Requested size: 249.60965pt x 151.35902pt.
 
-Overfull \hbox (1.55992pt too wide) in paragraph at lines 453--454
+Overfull \hbox (1.55992pt too wide) in paragraph at lines 427--428
 []\T1/pplj/m/n/12 Perhaps you're sur-prised to see that the mother's height 
  []
 
 
-Overfull \hbox (24.62415pt too wide) in paragraph at lines 468--469
+Overfull \hbox (24.62415pt too wide) in paragraph at lines 442--443
 []\T1/pplj/m/n/12 conventional 
  []
 
 
-Overfull \hbox (1.19714pt too wide) in alignment at lines 457--471
+Overfull \hbox (1.19714pt too wide) in alignment at lines 431--445
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.96016pt too wide) in paragraph at lines 481--482
+Overfull \hbox (12.96016pt too wide) in paragraph at lines 455--456
 []\T1/pplj/m/n/12 groupwise 
  []
 
 
-Overfull \hbox (12.96016pt too wide) in paragraph at lines 503--504
+Overfull \hbox (12.96016pt too wide) in paragraph at lines 477--478
 []\T1/pplj/m/n/12 groupwise 
  []
 
 
-Overfull \hbox (1.6322pt too wide) in paragraph at lines 514--515
+Overfull \hbox (1.6322pt too wide) in paragraph at lines 488--489
 \T1/pplj/m/n/12 statistics|  
  []
 
 
-Overfull \hbox (1.19714pt too wide) in alignment at lines 471--517
+Overfull \hbox (1.19714pt too wide) in alignment at lines 445--491
  [] [] [] [] [] 
  []
 
-[34 <./040-Modeling-Variation_files/figure-latex/galton-logistic-1.pdf>] [35] [
-36
+[32 <./040-Modeling-Variation_files/figure-latex/galton-logistic-1.pdf>] [33] [
+34
 
 ]
 Chapter 5.
 
-<043-Model-values_files/figure-latex/drawn-train-1.pdf, id=513, 283.0575pt x 17
+<043-Model-values_files/figure-latex/drawn-train-1.pdf, id=470, 283.0575pt x 17
 1.64125pt>
 File: 043-Model-values_files/figure-latex/drawn-train-1.pdf Graphic file (type 
 pdf)
 <use 043-Model-values_files/figure-latex/drawn-train-1.pdf>
 Package pdftex.def Info: 043-Model-values_files/figure-latex/drawn-train-1.pdf 
-used on input line 530.
+used on input line 504.
 (pdftex.def)             Requested size: 156.00171pt x 94.59677pt.
 
-<043-Model-values_files/figure-latex/drawn-train-2.pdf, id=514, 283.0575pt x 17
+<043-Model-values_files/figure-latex/drawn-train-2.pdf, id=471, 283.0575pt x 17
 1.64125pt>
 File: 043-Model-values_files/figure-latex/drawn-train-2.pdf Graphic file (type 
 pdf)
 <use 043-Model-values_files/figure-latex/drawn-train-2.pdf>
 Package pdftex.def Info: 043-Model-values_files/figure-latex/drawn-train-2.pdf 
-used on input line 532.
+used on input line 506.
 (pdftex.def)             Requested size: 156.00171pt x 94.59677pt.
-[37 <./043-Model-values_files/figure-latex/drawn-train-1.pdf> <./043-Model-valu
+[35 <./043-Model-values_files/figure-latex/drawn-train-1.pdf> <./043-Model-valu
 es_files/figure-latex/drawn-train-2.pdf>]
-Overfull \hbox (2.33992pt too wide) in paragraph at lines 553--554
+Overfull \hbox (2.33992pt too wide) in paragraph at lines 527--528
 \T1/pplj/m/n/12 sponse val-ues (black dots) are spread out, while the model 
  []
 
 
-<043-Model-values_files/figure-latex/unnamed-chunk-2-1.pdf, id=542, 283.0575pt 
+<043-Model-values_files/figure-latex/unnamed-chunk-2-1.pdf, id=498, 283.0575pt 
 x 173.64874pt>
 File: 043-Model-values_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (t
 ype pdf)
 <use 043-Model-values_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: 043-Model-values_files/figure-latex/unnamed-chunk-2-1.
-pdf used on input line 555.
+pdf used on input line 529.
 (pdftex.def)             Requested size: 249.60965pt x 153.12932pt.
 
-<043-Model-values_files/figure-latex/unnamed-chunk-3-1.pdf, id=543, 283.0575pt 
+<043-Model-values_files/figure-latex/unnamed-chunk-3-1.pdf, id=499, 283.0575pt 
 x 170.6375pt>
 File: 043-Model-values_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (t
 ype pdf)
 <use 043-Model-values_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: 043-Model-values_files/figure-latex/unnamed-chunk-3-1.
-pdf used on input line 560.
+pdf used on input line 534.
 (pdftex.def)             Requested size: 249.60965pt x 150.47389pt.
 
-<043-Model-values_files/figure-latex/unnamed-chunk-4-1.pdf, id=544, 279.0425pt 
+<043-Model-values_files/figure-latex/unnamed-chunk-4-1.pdf, id=500, 279.0425pt 
 x 171.64125pt>
 File: 043-Model-values_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (t
 ype pdf)
 <use 043-Model-values_files/figure-latex/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: 043-Model-values_files/figure-latex/unnamed-chunk-4-1.
-pdf used on input line 565.
+pdf used on input line 539.
 (pdftex.def)             Requested size: 249.60735pt x 153.53545pt.
-[38] [39 <./043-Model-values_files/figure-latex/unnamed-chunk-2-1.pdf> <./043-M
+[36] [37 <./043-Model-values_files/figure-latex/unnamed-chunk-2-1.pdf> <./043-M
 odel-values_files/figure-latex/unnamed-chunk-3-1.pdf> <./043-Model-values_files
-/figure-latex/unnamed-chunk-4-1.pdf>] [40
+/figure-latex/unnamed-chunk-4-1.pdf>] [38
 
 ]
 Chapter 6.
 
-Overfull \hbox (1.53595pt too wide) in paragraph at lines 584--585
+Overfull \hbox (1.53595pt too wide) in paragraph at lines 558--559
 \T1/pplj/m/n/12 ure 1(b) and 1(d) are re-placed with more flex-i-ble curves.  
  []
 
-[41]
-<045-Multiple-explanatory_files/figure-latex/four-settings-1.pdf, id=603, 284.0
+[39]
+<045-Multiple-explanatory_files/figure-latex/four-settings-1.pdf, id=559, 284.0
 6125pt x 168.63pt>
 File: 045-Multiple-explanatory_files/figure-latex/four-settings-1.pdf Graphic f
 ile (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/four-settings-1.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/four-setti
-ngs-1.pdf used on input line 596.
+ngs-1.pdf used on input line 570.
 (pdftex.def)             Requested size: 156.00443pt x 92.6104pt.
 
-<045-Multiple-explanatory_files/figure-latex/four-settings-2.pdf, id=604, 288.0
+<045-Multiple-explanatory_files/figure-latex/four-settings-2.pdf, id=560, 288.0
 7625pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/four-settings-2.pdf Graphic f
 ile (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/four-settings-2.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/four-setti
-ngs-2.pdf used on input line 598.
+ngs-2.pdf used on input line 572.
 (pdftex.def)             Requested size: 156.0028pt x 92.9494pt.
 
-<045-Multiple-explanatory_files/figure-latex/four-settings-3.pdf, id=605, 288.0
+<045-Multiple-explanatory_files/figure-latex/four-settings-3.pdf, id=561, 288.0
 7625pt x 170.6375pt>
 File: 045-Multiple-explanatory_files/figure-latex/four-settings-3.pdf Graphic f
 ile (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/four-settings-3.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/four-setti
-ngs-3.pdf used on input line 600.
+ngs-3.pdf used on input line 574.
 (pdftex.def)             Requested size: 156.0028pt x 92.40584pt.
 
-<045-Multiple-explanatory_files/figure-latex/four-settings-4.pdf, id=606, 288.0
+<045-Multiple-explanatory_files/figure-latex/four-settings-4.pdf, id=562, 288.0
 7625pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/four-settings-4.pdf Graphic f
 ile (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/four-settings-4.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/four-setti
-ngs-4.pdf used on input line 602.
+ngs-4.pdf used on input line 576.
 (pdftex.def)             Requested size: 156.0028pt x 92.9494pt.
-[42 <./045-Multiple-explanatory_files/figure-latex/four-settings-1.pdf> <./045-
+[40 <./045-Multiple-explanatory_files/figure-latex/four-settings-1.pdf> <./045-
 Multiple-explanatory_files/figure-latex/four-settings-2.pdf> <./045-Multiple-ex
 planatory_files/figure-latex/four-settings-3.pdf>]
-Overfull \hbox (1.97987pt too wide) in paragraph at lines 612--613
+Overfull \hbox (1.97987pt too wide) in paragraph at lines 586--587
 \T1/pplj/m/n/12 more than one de-gree of free-dom. To start, Fig-ure 2 shows 
  []
 
 
-<045-Multiple-explanatory_files/figure-latex/two-df-1.pdf, id=647, 279.0425pt x
+<045-Multiple-explanatory_files/figure-latex/two-df-1.pdf, id=604, 279.0425pt x
  170.6375pt>
 File: 045-Multiple-explanatory_files/figure-latex/two-df-1.pdf Graphic file (ty
 pe pdf)
 <use 045-Multiple-explanatory_files/figure-latex/two-df-1.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/two-df-1.p
-df used on input line 614.
+df used on input line 588.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
-[43 <./045-Multiple-explanatory_files/figure-latex/four-settings-4.pdf> <./045-
+[41 <./045-Multiple-explanatory_files/figure-latex/four-settings-4.pdf> <./045-
 Multiple-explanatory_files/figure-latex/two-df-1.pdf>]
-<045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1.pdf, id=679, 273
+<045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1.pdf, id=635, 273
 .02pt x 168.63pt>
 File: 045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1.pdf Graphic
  file (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/mother-plu
-s-sex-1.pdf used on input line 627.
+s-sex-1.pdf used on input line 601.
 (pdftex.def)             Requested size: 249.60255pt x 154.16628pt.
-[44 <./045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1.pdf>]
+[42 <./045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1.pdf>]
 <045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1.pdf, id=6
-98, 277.035pt x 171.64125pt>
+54, 277.035pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1.pdf 
 Graphic file (type pdf)
 
 <use 045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/mother-plu
-s-sex-father-1.pdf used on input line 647.
+s-sex-father-1.pdf used on input line 621.
 (pdftex.def)             Requested size: 249.59973pt x 154.6433pt.
 
 <045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2.pdf, id=6
-99, 259.97125pt x 171.64125pt>
+55, 259.97125pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2.pdf 
 Graphic file (type pdf)
 
 <use 045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/mother-plu
-s-sex-father-2.pdf used on input line 649.
+s-sex-father-2.pdf used on input line 623.
 (pdftex.def)             Requested size: 249.60129pt x 164.79465pt.
-[45 <./045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1.pdf
+[43 <./045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1.pdf
 >]
-<045-Multiple-explanatory_files/figure-latex/several-df-1.pdf, id=715, 283.0575
+<045-Multiple-explanatory_files/figure-latex/several-df-1.pdf, id=672, 283.0575
 pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/several-df-1.pdf Graphic file
  (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/several-df-1.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/several-df
--1.pdf used on input line 664.
+-1.pdf used on input line 638.
 (pdftex.def)             Requested size: 156.00171pt x 94.59677pt.
 
-<045-Multiple-explanatory_files/figure-latex/several-df-2.pdf, id=716, 283.0575
+<045-Multiple-explanatory_files/figure-latex/several-df-2.pdf, id=673, 283.0575
 pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/several-df-2.pdf Graphic file
  (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/several-df-2.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/several-df
--2.pdf used on input line 668.
+-2.pdf used on input line 642.
 (pdftex.def)             Requested size: 156.00171pt x 94.59677pt.
 
-<045-Multiple-explanatory_files/figure-latex/several-df-3.pdf, id=717, 283.0575
+<045-Multiple-explanatory_files/figure-latex/several-df-3.pdf, id=674, 283.0575
 pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/several-df-3.pdf Graphic file
  (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/several-df-3.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/several-df
--3.pdf used on input line 672.
+-3.pdf used on input line 646.
 (pdftex.def)             Requested size: 156.00171pt x 94.59677pt.
 
-<045-Multiple-explanatory_files/figure-latex/several-df-4.pdf, id=718, 283.0575
+<045-Multiple-explanatory_files/figure-latex/several-df-4.pdf, id=675, 283.0575
 pt x 171.64125pt>
 File: 045-Multiple-explanatory_files/figure-latex/several-df-4.pdf Graphic file
  (type pdf)
 <use 045-Multiple-explanatory_files/figure-latex/several-df-4.pdf>
 Package pdftex.def Info: 045-Multiple-explanatory_files/figure-latex/several-df
--4.pdf used on input line 676.
+-4.pdf used on input line 650.
 (pdftex.def)             Requested size: 156.00171pt x 94.59677pt.
-[46 <./045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2.pdf
+[44 <./045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2.pdf
 > <./045-Multiple-explanatory_files/figure-latex/several-df-1.pdf> <./045-Multi
-ple-explanatory_files/figure-latex/several-df-2.pdf>] [47 <./045-Multiple-expla
+ple-explanatory_files/figure-latex/several-df-2.pdf>] [45 <./045-Multiple-expla
 natory_files/figure-latex/several-df-3.pdf> <./045-Multiple-explanatory_files/f
-igure-latex/several-df-4.pdf>] [48
+igure-latex/several-df-4.pdf>] [46
 
 ]
 Chapter 7.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 690.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 690.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 690.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 690.
 
-LaTeX Warning: Marginpar on page 49 moved.
+LaTeX Warning: Marginpar on page 47 moved.
 
 
-LaTeX Warning: Marginpar on page 49 moved.
+LaTeX Warning: Marginpar on page 47 moved.
 
-[49] [50] [51] [52]
+[47] [48] [49] [50]
 Chapter 8.
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <8> not available
-(Font)              Font shape `T1/pplj/b/it' tried instead on input line 746.
+(Font)              Font shape `T1/pplj/b/it' tried instead on input line 720.
 
-LaTeX Warning: Marginpar on page 53 moved.
+LaTeX Warning: Marginpar on page 51 moved.
 
-[53
+[51
 
-] [54] [55] [56]
+] [52] [53] [54]
 Chapter 9.
-[57
+[55
 
-] [58
+] [56
 
 ]
 Chapter 10.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[59] [60] [61] <images/Hooker-correlations.png, id=871, 144.25092pt x 49.1436pt
+[57] [58] [59] <images/Hooker-correlations.png, id=825, 144.25092pt x 49.1436pt
 >
 File: images/Hooker-correlations.png Graphic file (type png)
 <use images/Hooker-correlations.png>
-Package pdftex.def Info: images/Hooker-correlations.png used on input line 902.
+Package pdftex.def Info: images/Hooker-correlations.png used on input line 876.
 
 (pdftex.def)             Requested size: 249.60126pt x 85.03447pt.
-[62 <./images/Hooker-correlations.png>] [63]
+[60 <./images/Hooker-correlations.png>] [61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[64] [65]
-Overfull \hbox (27.75598pt too wide) in alignment at lines 959--963
+[62] [63]
+Overfull \hbox (27.75598pt too wide) in alignment at lines 933--937
  [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (27.75598pt too wide) in alignment at lines 963--969
+Overfull \hbox (27.75598pt too wide) in alignment at lines 937--943
  [] [] [] [] [] [] [] [] [] [] 
  []
 
-[66] [67] [68
+[64] [65] [66
 
 ]
 Chapter 11.
-[69]
-Overfull \hbox (55.16362pt too wide) detected at line 997
+[67]
+Overfull \hbox (55.16362pt too wide) detected at line 971
 [] \OT1/zplm/m/n/12 = [][] \OMS/zplm/m/n/12 ^^Y []    []
  []
 
-[70] [71] [72
+[68] [69] [70
 
 ]
 Chapter 12.
-[73] [74
+[71] [72
 
 ]
 Chapter 13.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1.pdf, id=939, 27
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1.pdf, id=894, 27
 9.0425pt x 170.6375pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-2-1.pdf used on input line 1058.
+hunk-2-1.pdf used on input line 1032.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-2.pdf, id=940, 27
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-2.pdf, id=895, 27
 9.0425pt x 170.6375pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-2.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-2.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-2-2.pdf used on input line 1058.
+hunk-2-2.pdf used on input line 1032.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-3.pdf, id=941, 25
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-3.pdf, id=896, 25
 5.95625pt x 110.4125pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-3.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-3.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-2-3.pdf used on input line 1058.
+hunk-2-3.pdf used on input line 1032.
 (pdftex.def)             Requested size: 249.60124pt x 107.67111pt.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-4.pdf, id=942, 25
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-4.pdf, id=897, 25
 5.95625pt x 110.4125pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-4.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-4.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-2-4.pdf used on input line 1058.
+hunk-2-4.pdf used on input line 1032.
 (pdftex.def)             Requested size: 249.60124pt x 107.67111pt.
 
-Overfull \hbox (202.7067pt too wide) in paragraph at lines 1058--1059
+Overfull \hbox (202.7067pt too wide) in paragraph at lines 1032--1033
 [][] [] 
  []
 
 
-Overfull \hbox (190.69449pt too wide) in paragraph at lines 1058--1059
+Overfull \hbox (190.69449pt too wide) in paragraph at lines 1032--1033
 [] []  
  []
 
-[75 <./120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1.pdf> <./1
+[73 <./120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-1.pdf> <./1
 20-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-2.pdf> <./120-Outsi
 de-of-the-normal_files/figure-latex/unnamed-chunk-2-3.pdf> <./120-Outside-of-th
 e-normal_files/figure-latex/unnamed-chunk-2-4.pdf>]
-Overfull \hbox (197.65668pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (197.65668pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## lm(formula = diff(export) ~ diff(production) + diff(price),
  data = Wheat_export)[] 
  []
 
 
-Overfull \hbox (38.00519pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (38.00519pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ##                   Estimate Std. Error t value Pr(>|t|)[] 
  []
 
 
-Overfull \hbox (38.00519pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (38.00519pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## (Intercept)      4.301e+04  7.106e+04   0.605 0.557241[] 
  []
 
 
-Overfull \hbox (62.56696pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (62.56696pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## diff(production) 3.051e-01  5.672e-02   5.379 0.000224 ***[
 ] 
  []
 
 
-Overfull \hbox (56.42651pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (56.42651pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## diff(price)      6.404e+04  1.792e+04   3.574 0.004362 **[]
  
  []
 
 
-Overfull \hbox (87.12872pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (87.12872pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' 
 ' 1[] 
  []
 
 
-Overfull \hbox (50.28607pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (50.28607pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## Residual standard error: 259500 on 11 degrees of freedom[] 
 
  []
 
 
-Overfull \hbox (50.28607pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (50.28607pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## Multiple R-squared:  0.8176, Adjusted R-squared:  0.7844[] 
 
  []
 
 
-Overfull \hbox (38.00519pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (38.00519pt too wide) in paragraph at lines 1054--1054
 []\T1/fvm/m/n/12 ## F-statistic: 24.65 on 2 and 11 DF,  p-value: 8.629e-05[] 
  []
 
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5.pdf, id=976, 25
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5.pdf, id=931, 25
 5.95625pt x 125.46875pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-2-5.pdf used on input line 1082.
+hunk-2-5.pdf used on input line 1056.
 (pdftex.def)             Requested size: 249.60124pt x 122.35353pt.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-6.pdf, id=977, 25
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-6.pdf, id=932, 25
 5.95625pt x 125.46875pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-6.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-6.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-2-6.pdf used on input line 1082.
+hunk-2-6.pdf used on input line 1056.
 (pdftex.def)             Requested size: 249.60124pt x 122.35353pt.
 
-Overfull \hbox (202.69449pt too wide) in paragraph at lines 1082--1083
+Overfull \hbox (202.69449pt too wide) in paragraph at lines 1056--1057
 [][] []  
  []
 
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-1.pdf, id=978, 27
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-1.pdf, id=933, 27
 9.0425pt x 170.6375pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-1.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-3-1.pdf used on input line 1086.
+hunk-3-1.pdf used on input line 1060.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-2.pdf, id=979, 27
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-2.pdf, id=934, 27
 9.0425pt x 170.6375pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-2.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-3-2.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-3-2.pdf used on input line 1086.
+hunk-3-2.pdf used on input line 1060.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
 
-Overfull \hbox (202.7067pt too wide) in paragraph at lines 1086--1087
+Overfull \hbox (202.7067pt too wide) in paragraph at lines 1060--1061
 [][] []  
  []
 
-[76 <./120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5.pdf> <./1
+[74 <./120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-5.pdf> <./1
 20-Outside-of-the-normal_files/figure-latex/unnamed-chunk-2-6.pdf> <./120-Outsi
 de-of-the-normal_files/figure-latex/unnamed-chunk-3-1.pdf> <./120-Outside-of-th
 e-normal_files/figure-latex/unnamed-chunk-3-2.pdf>]
-Overfull \hbox (56.42651pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (56.42651pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## lm(formula = export ~ price + production, data = Indices)[]
  
  []
 
 
-Overfull \hbox (7.30298pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (7.30298pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ##              Estimate Std. Error t value Pr(>|t|)[] 
  []
 
 
-Overfull \hbox (7.30298pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (7.30298pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## (Intercept) 2.083e-17  1.241e-01   0.000 1.000000[] 
  []
 
 
-Overfull \hbox (25.7243pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (25.7243pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## price       4.665e-01  1.305e-01   3.574 0.004362 **[] 
  []
 
 
-Overfull \hbox (31.86475pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (31.86475pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## production  7.021e-01  1.305e-01   5.379 0.000224 ***[] 
  []
 
 
-Overfull \hbox (87.12872pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (87.12872pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' 
 ' 1[] 
  []
 
 
-Overfull \hbox (50.28607pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (50.28607pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## Residual standard error: 0.4643 on 11 degrees of freedom[] 
 
  []
 
 
-Overfull \hbox (50.28607pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (50.28607pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## Multiple R-squared:  0.8176, Adjusted R-squared:  0.7844[] 
 
  []
 
 
-Overfull \hbox (38.00519pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (38.00519pt too wide) in paragraph at lines 1082--1082
 []\T1/fvm/m/n/12 ## F-statistic: 24.65 on 2 and 11 DF,  p-value: 8.629e-05[] 
  []
 
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1.pdf, id=1012, 2
-79.0425pt x 170.6375pt>
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1.pdf, id=967, 27
+9.0425pt x 170.6375pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-4-1.pdf used on input line 1120.
+hunk-4-1.pdf used on input line 1094.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
 
-<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-2.pdf, id=1013, 2
-79.0425pt x 170.6375pt>
+<120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-2.pdf, id=968, 27
+9.0425pt x 170.6375pt>
 File: 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-2.pdf Graphi
 c file (type pdf)
 <use 120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-2.pdf>
 Package pdftex.def Info: 120-Outside-of-the-normal_files/figure-latex/unnamed-c
-hunk-4-2.pdf used on input line 1120.
+hunk-4-2.pdf used on input line 1094.
 (pdftex.def)             Requested size: 249.60735pt x 152.63757pt.
 
-Overfull \hbox (202.7067pt too wide) in paragraph at lines 1120--1121
+Overfull \hbox (202.7067pt too wide) in paragraph at lines 1094--1095
 [][] []  
  []
 
 
-Overfull \hbox (160.81403pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (160.81403pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## lm(formula = delta_export ~ delta_price + delta_production,
  data = Deltas)[] 
  []
 
-[77 <./120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1.pdf> <./1
+[75 <./120-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-1.pdf> <./1
 20-Outside-of-the-normal_files/figure-latex/unnamed-chunk-4-2.pdf>]
-Overfull \hbox (31.86475pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (31.86475pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ##                  Estimate Std. Error t value Pr(>|t|)[] 
  []
 
 
-Overfull \hbox (31.86475pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (31.86475pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## (Intercept)       -0.1720     0.4365  -0.394  0.70114[] 
  []
 
 
-Overfull \hbox (31.86475pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (31.86475pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## delta_price        0.3642     3.2910   0.111  0.91387[] 
  []
 
 
-Overfull \hbox (50.28607pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (50.28607pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## delta_production   7.8920     2.1741   3.630  0.00396 **[] 
 
  []
 
 
-Overfull \hbox (87.12872pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (87.12872pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' 
 ' 1[] 
  []
 
 
-Overfull \hbox (44.14563pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (44.14563pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## Residual standard error: 1.607 on 11 degrees of freedom[] 
  []
 
 
-Overfull \hbox (50.28607pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (50.28607pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## Multiple R-squared:  0.5491, Adjusted R-squared:  0.4671[] 
 
  []
 
 
-Overfull \hbox (25.7243pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (25.7243pt too wide) in paragraph at lines 1116--1116
 []\T1/fvm/m/n/12 ## F-statistic: 6.697 on 2 and 11 DF,  p-value: 0.01252[] 
  []
 
-[78]
+[76]
 Chapter 14.
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1167.
-[79
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1141.
+[77
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1167.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1141.
 (./Compact_inference.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1141.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1141.
 
 Package rerunfilecheck Info: File `Compact_inference.out' has not changed.
-(rerunfilecheck)             Checksum: 95EDB3CB36926395902BB81FF676459F;7963.
+(rerunfilecheck)             Checksum: F545A491EDF7AF335F4AE78C30E18C8B;7081.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1141.
  ) 
 Here is how much of TeX's memory you used:
- 15761 strings out of 492995
- 227317 string characters out of 6132704
- 325809 words of memory out of 5000000
- 18670 multiletter control sequences out of 15000+600000
+ 15727 strings out of 492995
+ 226783 string characters out of 6132704
+ 325604 words of memory out of 5000000
+ 18652 multiletter control sequences out of 15000+600000
  91841 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,12n,58p,1292b,530s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2075,10 +2063,10 @@ e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/
 palatino/uplbi8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palati
 no/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on Compact_inference.pdf (79 pages, 1537162 bytes).
+Output written on Compact_inference.pdf (77 pages, 1284795 bytes).
 PDF statistics:
- 1144 PDF objects out of 1200 (max. 8388607)
- 920 compressed objects within 10 object streams
- 218 named destinations out of 1000 (max. 500000)
- 3133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1092 PDF objects out of 1200 (max. 8388607)
+ 873 compressed objects within 9 object streams
+ 203 named destinations out of 1000 (max. 500000)
+ 3072 words of extra memory for PDF output out of 10000 (max. 10000000)
 

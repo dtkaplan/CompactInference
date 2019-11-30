@@ -1,50 +1,43 @@
 \contentsline {chapter}{Preface}{5}{chapter*.2}
 \contentsline {chapter}{\numberline {1}What is classical inference?}{9}{chapter.1}
 \contentsline {section}{\ldots {} and why should I read this book?}{11}{table.1.1}
-\contentsline {chapter}{\numberline {2}Data and variables}{15}{chapter.2}
-\contentsline {section}{\numberline {2.1}Data frames}{15}{section.2.1}
-\contentsline {section}{\numberline {2.2}Tabulations}{16}{section.2.2}
-\contentsline {section}{\numberline {2.3}Quantitative and categorical}{17}{section.2.3}
-\contentsline {section}{\numberline {2.4}Indicator variables}{17}{section.2.4}
-\contentsline {section}{\numberline {2.5}Response and explanatory variables}{18}{section.2.5}
-\contentsline {section}{OTHER DATA SETS. Just for my notes.}{18}{section.2.5}
-\contentsline {section}{\numberline {2.6}Gosset}{18}{section.2.6}
-\contentsline {section}{\numberline {2.7}Cushny and Peeples}{18}{section.2.7}
-\contentsline {section}{\numberline {2.8}Hooker and Yule}{18}{section.2.8}
-\contentsline {section}{\numberline {2.9}Punnett}{19}{section.2.9}
-\contentsline {chapter}{\numberline {3}Measuring variation}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Variance of a numerical variable}{22}{section.3.1}
-\contentsline {section}{\numberline {3.2}Variance of a categorical variable}{24}{section.3.2}
-\contentsline {section}{\numberline {3.3}Exercises}{25}{section.3.3}
-\contentsline {chapter}{\numberline {4}Modeling variation}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Statistical models}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Quantitative response variables}{28}{section.4.2}
-\contentsline {section}{\numberline {4.3}Categorical response variables}{31}{section.4.3}
-\contentsline {chapter}{\numberline {5}Model values}{37}{chapter.5}
-\contentsline {chapter}{\numberline {6}Degrees of flexibility}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}One degree of flexibility}{41}{section.6.1}
-\contentsline {section}{\numberline {6.2}Multiple degrees of flexibility}{43}{section.6.2}
-\contentsline {section}{\numberline {6.3}Covariates}{44}{section.6.3}
-\contentsline {section}{\numberline {6.4}Flexibility, literally}{46}{section.6.4}
-\contentsline {chapter}{\numberline {7}Effect size}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}Slopes and differences}{49}{section.7.1}
-\contentsline {section}{\numberline {7.2}Risk}{50}{section.7.2}
-\contentsline {section}{\numberline {7.3}Simple changes in input}{51}{section.7.3}
-\contentsline {chapter}{\numberline {8}F and R}{53}{chapter.8}
-\contentsline {section}{\numberline {8.1}What's the meaning of F?}{53}{section.8.1}
-\contentsline {section}{\numberline {8.2}R-squared}{54}{section.8.2}
-\contentsline {section}{\numberline {8.3}F in statistics books}{55}{section.8.3}
-\contentsline {chapter}{\numberline {9}Confidence intervals}{57}{chapter.9}
-\contentsline {section}{\numberline {9.1}Confidence intervals from F}{57}{section.9.1}
-\contentsline {section}{\numberline {9.2}Why 4?}{57}{section.9.2}
-\contentsline {section}{\numberline {9.3}Situations where F doesn't tell enough}{57}{section.9.3}
-\contentsline {chapter}{\numberline {10}So-called ``statistical significance''}{59}{chapter.10}
-\contentsline {section}{\numberline {10.1}Calculating a p-value}{60}{section.10.1}
-\contentsline {section}{\numberline {10.2}History and criticism}{61}{section.10.2}
-\contentsline {section}{\numberline {10.3}Appendix: When \(df \geq 2\)}{66}{section.10.3}
-\contentsline {chapter}{\numberline {11}Simple means and proportions}{69}{chapter.11}
-\contentsline {section}{\numberline {11.1}No flexibility: df = 0}{69}{section.11.1}
-\contentsline {chapter}{\numberline {12}Comparing models}{73}{chapter.12}
-\contentsline {chapter}{\numberline {13}Outside of the normal}{75}{chapter.13}
-\contentsline {chapter}{\numberline {14}Remember, inference isn't everything}{79}{chapter.14}
+\contentsline {chapter}{\numberline {2}Data and variables}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Data frames}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Tabulations}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Quantitative and categorical variables}{16}{section.2.3}
+\contentsline {section}{\numberline {2.4}Response and explanatory variables}{17}{section.2.4}
+\contentsline {chapter}{\numberline {3}Measuring variation}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Variance of a numerical variable}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}Variance of a categorical variable}{22}{section.3.2}
+\contentsline {chapter}{\numberline {4}Modeling variation}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Statistical models}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}Quantitative response variables}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Proportions and indicator variables}{29}{section.4.3}
+\contentsline {chapter}{\numberline {5}Model values}{35}{chapter.5}
+\contentsline {chapter}{\numberline {6}Degrees of flexibility}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}One degree of flexibility}{39}{section.6.1}
+\contentsline {section}{\numberline {6.2}Multiple degrees of flexibility}{41}{section.6.2}
+\contentsline {section}{\numberline {6.3}Covariates}{42}{section.6.3}
+\contentsline {section}{\numberline {6.4}Flexibility, literally}{44}{section.6.4}
+\contentsline {chapter}{\numberline {7}Effect size}{47}{chapter.7}
+\contentsline {section}{\numberline {7.1}Slopes and differences}{47}{section.7.1}
+\contentsline {section}{\numberline {7.2}Risk}{48}{section.7.2}
+\contentsline {section}{\numberline {7.3}Simple changes in input}{49}{section.7.3}
+\contentsline {chapter}{\numberline {8}F and R}{51}{chapter.8}
+\contentsline {section}{\numberline {8.1}What's the meaning of F?}{51}{section.8.1}
+\contentsline {section}{\numberline {8.2}R-squared}{52}{section.8.2}
+\contentsline {section}{\numberline {8.3}F in statistics books}{53}{section.8.3}
+\contentsline {chapter}{\numberline {9}Confidence intervals}{55}{chapter.9}
+\contentsline {section}{\numberline {9.1}Confidence intervals from F}{55}{section.9.1}
+\contentsline {section}{\numberline {9.2}Why 4?}{55}{section.9.2}
+\contentsline {section}{\numberline {9.3}Situations where F doesn't tell enough}{55}{section.9.3}
+\contentsline {chapter}{\numberline {10}So-called ``statistical significance''}{57}{chapter.10}
+\contentsline {section}{\numberline {10.1}Calculating a p-value}{58}{section.10.1}
+\contentsline {section}{\numberline {10.2}History and criticism}{59}{section.10.2}
+\contentsline {section}{\numberline {10.3}Appendix: When \(df \geq 2\)}{64}{section.10.3}
+\contentsline {chapter}{\numberline {11}Simple means and proportions}{67}{chapter.11}
+\contentsline {section}{\numberline {11.1}No flexibility: df = 0}{67}{section.11.1}
+\contentsline {chapter}{\numberline {12}Comparing models}{71}{chapter.12}
+\contentsline {chapter}{\numberline {13}Outside of the normal}{73}{chapter.13}
+\contentsline {chapter}{\numberline {14}Remember, inference isn't everything}{77}{chapter.14}
 \contentsfinish 

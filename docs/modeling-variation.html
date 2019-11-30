@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-27" />
+<meta name="date" content="2019-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,13 +82,13 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
-<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
-<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
-<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#categorical-response-variables"><i class="fa fa-check"></i><b>4.3</b> Categorical response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#a-taxonomy-of-simple-models"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a></li>
 <li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
@@ -145,11 +145,11 @@
             <section class="normal" id="section-">
 <div id="modeling-variation" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Modeling variation</h1>
-<p>The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex of the person: women <em>tend to be</em> slightly shorter than men. Some of the variation in height relates to genes and genetic variation. Some to differing nutrition and general health.</p>
-<p>Statistical models attempt to use the variation in explanatory variables – sex, genetic traits – to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What’s behind the variation? It could be the weather conditions at the time. It could also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.</p>
+<p>The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex of the person: women <em>tend to be</em> slightly shorter than men. Some of the variation in height relates to genes and genetic variation, some to differing nutrition and general health, etc.</p>
+<p>Statistical models attempt to use the variation in explanatory variables – sex, genetic traits – to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What’s behind the variation? It could be the weather conditions at the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.</p>
 <div id="statistical-models" class="section level2">
 <h2><span class="header-section-number">4.1</span> Statistical models</h2>
-<p>For our purposes, a statistical model is a mathematical function that takes values of the explanatory variables as input and produces a corresponding output. For instance, a model of a person’s height might take the person’s age, sex, mother’s height and father’s height as inputs and give as output a specific number that we interpret as a kind of idealization of the height of all the people who have the same values for those inputs. It might happen, by accident, that the model is exactly on target for our particular person. More likely, though, the model output will be somewhat off: the person is somewhat shorter or taller than the model says. This is to be expected since the model can’t take into account every factor that influences height and because chance also plays a role.</p>
+<p>For our purposes, a statistical model is a mathematical function that takes values of the explanatory variables as input and produces a corresponding output. For instance, a model of a person’s height might take the person’s age, sex, mother’s height and father’s height as inputs and give as output a specific number that we interpret as height. It might happen, by accident, that the model output is exactly on target for any particular person. More likely, though, the model output will be somewhat off: the person is somewhat shorter or taller than the model says. This is to be expected since the model can’t take into account every factor that influences height and because chance also plays a role.</p>
 </div>
 <div id="quantitative-response-variables" class="section level2">
 <h2><span class="header-section-number">4.2</span> Quantitative response variables</h2>
@@ -160,11 +160,9 @@
 Figure 4.1: Galton’s height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level of the explanatory variable.
 </p>
 </div>
-<p>As you can see, the output of the model is about 64 inches when sex is F, and 69 inches when sex is M. The preceeding sentence uses stilted language. A straightforward rendering would be something like this: According to the model, women are 64 inches tall and men are 69 inches. But the straightforward account is misleading. While some women are 64 inches tall, the large majority are not, and similarly for men. Neither would it be correct to say that women are shorter than men. Some are and some aren’t.</p>
-<p>Another mis-statement is that “the <em>average</em> woman is shorter than the <em>average</em> man.” Such language originates in the 1830s, when the idea was that there was an ideal type, from which the the individual might “deviate.”</p>
-<p>If your goal is to describe the relative heights of men and women, better a statement that incorporates the intrinsic variation in height between individuals. For instance, “The large majority of women fall into the range 60 to 68 inches, while the large majority of men are between 65 and 73 inches tall.”</p>
-<p>How were the model outputs determined? Or, in other words, what method was used to construct the model? For now, the details are unimportant. The primary point is that the kind of model being shown describes the <em>center</em> of the distribution of individuals. A secondary point is that the model methodology is standard and automatic; the model outputs were established strictly using <code>sex</code> as the explanatory variable without consideration of anything else and without room for a human to manipulate the numbers or shade them into a preferred direction.</p>
-<p>The model in Figure 4.1 has an explanatory variable that is categorical. Figure 4.2 is an example where the explanatory variable is numeric. The question that motivated Galton to collect the height data in the first place was to characterize the genetics of height: the extent to which it’s fair to say that a child inherits the height of his or her parents.</p>
+<p>As you can see from Figure 4.1, the output of the model is about 64 inches when sex is F, and 69 inches when sex is M.</p>
+<p>How are the model outputs determined? Or, in other words, what method is used to construct the model? The details will be covered in the next chapter. For now, the primary point is that the kind of model being shown describes the <em>center</em> of the distribution of individuals. A secondary point is that the model methodology is standard and automatic; the model outputs were established strictly using <code>sex</code> as the explanatory variable without consideration of anything else and without room for a human to manipulate the numbers or shade them into a preferred direction.</p>
+<p>Galton was not directly interested in sex-related traits. His primary interest was in parent’s height as the explanatory variable. He recorded parent’s height quantitatively: a number. Figure 4.2 shows an example where the explanatory variable is numeric, as opposed Figure 4.1 which uses a categorical explanatory variable. The question that motivated Galton to collect the height data in the first place was to characterize the genetics of height: the extent to which it’s fair to say that a child inherits the height of his or her parents.</p>
 <div class="figure" style="text-align: FALSE">
 <img src="040-Modeling-variation_files/figure-html/galton-2-1.png" alt="Figure 4.2:  Child's height versus the mother's height. A conventional form of model is a straight line." width="80%" />
 <p class="caption">
@@ -172,17 +170,17 @@ Figure 4.2: Child’s height versus the mother’s height. A conventional form o
 </p>
 </div>
 <p>Consider first the model as a function. The input is the explanatory variable, mother’s height. The output is a number. So, for an input of 60 inches, the output is about 66 inches. For an input of 68 inches, the output is somewhat higher: about 68 inches.</p>
-<p>The model output discribes the <em>center</em> of the distribution of adult-child heights. That center is somewhat lower among the children of relatively short mothers than it is among the children of relatively tall mothers. Note that hardly any individuals match the model output generated at their mother’s height; almost all are either shorter or taller.</p>
-<p>Some people mistakenly believe that the point of such a model is to <em>predict</em> the child’s height. Putting aside the question of why anyone would want to do this (perhaps you are wanting to buy a college graduation gown for your pregnant friend’s baby?), any meaningful prediction should be framed as an interval. So, for a 60-inch tall mother, a fair prediction would be for a child between 58 and 73 inches, while for a relatively tall 68-inch mother, the prediction would be 62 to 76 inches. What use is that?</p>
-<p>Galton’s objective in collecting the data was to say <em>how much</em> of the variation in height is attributable to genetics. For the record, Figure 2 would be interpreted as the mother’s height accounting for about 4% of the variation in height among children. (Note that it’s 4% of the <em>variation</em> in height among children, not 4% of the height of an individual child.)</p>
-<p>Four percent doesn’t seem like much. Indeed, looking at Figure 2 and asked to draw a <em>central</em> model, you couldn’t fault someone for drawing a level line, that is, one where the model output doesn’t change at all with mother’s height. This is where statistical inference can play an important scientific role. It allows us to detect in a justifiable way very small connections between variables. Key to detecting something small is to avoid false detections: claiming that there is a connection when the data provides little justification. So much of statistical inference has to do with avoiding such false claims.</p>
+<p>The model output describes the <em>center</em> of the distribution of adult-child heights. That center is somewhat lower among the children of relatively short mothers than it is among the children of relatively tall mothers. Note that hardly any individuals exactly match the model output generated when the input is set to their mother’s height; almost all are either shorter or taller.</p>
+<p>Some people mistakenly believe that the point of such a model is to <em>predict</em> the child’s height. Putting aside the question of why anyone would want to do this (perhaps you are wanting to buy a college graduation gown for your pregnant friend’s baby?), any meaningful prediction should be framed as an interval. So, for a 60-inch tall mother, a fair prediction would be for a child between 58 and 73 inches, while for a relatively tall 68-inch mother, the prediction would be 62 to 76 inches.</p>
+<p>There is so much overlap in the prediction intervals for children of mothers of very different height that the model tells us almost nothing about <em>individuals</em>. But this is not the purpose of the model. Galton’s objective in collecting the data was to say <em>how much</em> of the variation in height is attributable to genetics. The conventional measure of <em>how much</em>, introduced in Chapter 8, is that mother’s height accounts for about 4% of the variation in height among children. Note that it’s 4% of the <em>variation</em> in height among children, not 4% of the height of an individual child.</p>
+<p>Four percent doesn’t seem like much. Take way the line in Figure 4.2 and looking just at the data points, you couldn’t fault someone for modeling the data with a level line, that is, one where the model output doesn’t change at all with mother’s height. One role of statistical inference is to answer the following question: Is there good reason to claim that the evidence provided by the data rule out a level-line model?</p>
 </div>
-<div id="categorical-response-variables" class="section level2">
-<h2><span class="header-section-number">4.3</span> Categorical response variables</h2>
-<p>The previous examples involved models where the response variable is numeric. Statistical models are also appropriate for situations where the response variable is categorical.</p>
-<p>Things are particularly straightforward when the categorical response variable has two levels: yes/no, alive/dead, succeed/fail, etc. The reason this is straightforward is that a binary categorical variable can be translated without loss into a numerical encoding.</p>
-<p>To illustrate, consider some data from another approach to quantifying genetics by <em>experimental manipulation</em>. This tradition started with Gregor Mendel in the 1860s, who famously cross bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.</p>
-<p>In one experiment, Punnett cross bred sweet peas and observed the flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data are graphed in Figure 4.3, below.</p>
+<div id="proportions-and-indicator-variables" class="section level2">
+<h2><span class="header-section-number">4.3</span> Proportions and indicator variables</h2>
+<p>The previous examples involved models where the response variable is numeric. In this section, we look at the special case of the numerical response variable being an <em>indicator</em> variable.</p>
+<p>Recall that a single indicator variable can be used to encode a two-level categorical variable, for instance yes/no, alive/dead, succeed/fail, etc.</p>
+<p>To illustrate, consider some data from another approach to quantifying genetics by <em>experimental manipulation</em>. This tradition started with Gregor Mendel in the 1860s, who famously cross-bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.</p>
+<p>In one experiment, Punnett cross-bred sweet peas and observed the offspring’s flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data are graphed in Figure 4.3, below.</p>
 <div class="figure" style="text-align: FALSE">
 <img src="040-Modeling-variation_files/figure-html/punnett-1-1.png" alt="Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape." width="80%" />
 <p class="caption">
@@ -190,8 +188,9 @@ Figure 4.3: Punnett’s data from cross breeding peas, along with a model of flo
 </p>
 </div>
 <p>There are only four possible combinations of white/other and long/round. To avoid plotting the rows directly on top of one another, the dots have been <em>jittered</em>. You can see that peas with “other” color and long pollen grains are the most common.</p>
-<p>The model here is very similar to that of Figure 4.1. The response variable, flower color, has been translated into 0/1. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number. The model output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is just under 0.25, meaning that about a quarter of the plants had white flowers. When the pollen is round, the model value is a little heigher but not much. Again about a quarter of the plants with round pollen had white flowers. (Is the claim justified by the data that the probability is higher for round-pollen plants than for long-pollen plants? Statistical inference provides an answer to this question.)</p>
-<p>You can pretty much draw functions like this by hand. Mathematically, though, there are some restrictions. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data. (Technically, the function form has to include an intercept.) It might be easiest to understand these restrictions by looking at some crazy bad functions that don’t honor the restrictions, like the one in Figure 4.3.</p>
+<p>The model here is very similar to that of Figure 4.1. The response variable, flower color, has been translated into an indicator variable taking on only the values zero or one. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number between zero and one.</p>
+<p>For models with an indicator response variable, the output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is 0.24. When the pollen is round, the model output is 0.25. We interpret a model output of 0.25–that is, 25%– as meaning that a quarter of the offspring will have white flowers. Comparing the model-output for long-pollen plants to that for round-pollen plants suggests that the probability of white flowers might be somewhat higher for round-pollen plants than long-pollen plants. The previous sentence uses some qualifying word: “suggests,” “might be,” “somewhat.” That’s to indicate that the statistical claim has not yet been vetted using the tools of statistical inference.</p>
+<p>You can pretty much draw functions like this by hand if you keep in mind some simple rules. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> It might help to understand the impact of these rules by comparing functions that do and don’t follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.</p>
 <div class="figure" style="text-align: FALSE">
 <img src="040-Modeling-variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
 <p class="caption">
@@ -205,16 +204,10 @@ Figure 4.3: The function in red is a bad match to the data. It strays from the d
 </p>
 </div>
 <p>Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don’t accomplish this.</p>
-<p>The previous examples have all involved a response variable and a <em>single</em> explanatory variable. Since variables can be either numerical or quantitative, logic suggests there are four possible settings for models, of which we’ve seen three. Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.</p>
-<div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.4: A model with a binary categorical response variable and a numerical explanatory variable." width="80%" />
-<p class="caption">
-Figure 4.4: A model with a binary categorical response variable and a numerical explanatory variable.
-</p>
 </div>
-<p>Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. As you might expect, the model output is around 50% regardless of the mother’s height.</p>
-<p>Perhaps you’re surprised to see that the mother’s height is related to the sex of the baby. Don’t be surprised yet, because we haven’t shown that such a statement is justified by the data: we have a setting for inference but have not yet carried out the inference calculations to tell us if the statement is justified.</p>
-<p>In this section, I’ve sketched out four settings for statistical modeling with different combinations of categorical/numeric for the response and explanatory variables. In all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data. I’ll summarize this with a table that shows the four combinations and refers you to the corresponding table.</p>
+<div id="a-taxonomy-of-simple-models" class="section level2">
+<h2><span class="header-section-number">4.4</span> A taxonomy of simple models</h2>
+<p>Recall that the response variables covered in this book are quantitative, which includes both regular numerical variables (like height) and indicator variables (like that for sex). Explanatory variables can be either quantitative or categorical. This suggests that models with one response and one explanatory variables fall into one of four types:</p>
 <table>
 <colgroup>
 <col width="4%" />
@@ -225,11 +218,11 @@ Figure 4.4: A model with a binary categorical response variable and a numerical 
 </colgroup>
 <thead>
 <tr class="header">
-<th> </th>
-<th>response var</th>
-<th>explanatory var</th>
+<th>Setting</th>
+<th>response variable</th>
+<th>explanatory variable</th>
 <th>Figure</th>
-<th>conventional name</th>
+<th>conventional name</th>
 </tr>
 </thead>
 <tbody>
@@ -249,23 +242,41 @@ Figure 4.4: A model with a binary categorical response variable and a numerical 
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>categorical (binary)</td>
+<td>categorical (indicator)</td>
 <td>categorical</td>
 <td>4.3</td>
 <td>groupwise proportions / p-test</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>categorical (binary)</td>
+<td>categorical (indicator)</td>
 <td>quantitative</td>
 <td>4.4</td>
 <td>not usually included in introductory statistics</td>
 </tr>
 </tbody>
 </table>
-<p>Recognizing that many readers have studied statistics before, I’ve added to the table the conventional name assigned to the inferential test in that setting in introductory statistics. Also, for the conventionally-trained reader, I acknowledge that the term <em>linear regression</em> is conventionally applied only to setting 2. But there is no good reason for this: all four settings can be handled with exactly the same modeling process.</p>
+<p>Figures 4.1, 4.2, and 4.3 show the first three settings.
+Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.4: A model with an indicator response variable and a numerical explanatory variable." width="80%" />
+<p class="caption">
+Figure 4.4: A model with an indicator response variable and a numerical explanatory variable.
+</p>
+</div>
+<p>Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. Common sense suggests that a baby’s sex is not influenced by the mother’s height. Correspondingly, the model output is around 50% regardless of the mother’s height.</p>
+<p>Perhaps you’re surprised to see that there is any slope at all to the function. Don’t be surprised yet, because we haven’t shown that such a statement is justified by the data: we have a setting for inference but have not yet carried out the inference calculations to tell us if the statement is justified.</p>
+<p>For purposes of inference, conventional texts treat settings 1, 2, and 3 as different. (They don’t handle setting 4 at all.) I’ve added to the table the conventional name assigned to the different inferential tests in each setting.</p>
+<p>But in all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> In this book, rather than introduce four different inferential procedures, we’ll have just one. That’s a major factor behind the ability to describe classical inference concisely.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Technically, the function form has to include an intercept.<a href="modeling-variation.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>for the conventionally-trained reader, I acknowledge that the term <em>linear regression</em> is conventionally applied only to setting 2. But there is no good reason for this: all four settings can be handled with exactly the same modeling process. In some situations, setting 4 cannot be handled with linear regression. The problem with using linear regression to build a model with an indicator response variable is that a straight-line function, if not exactly level, will eventually extend outside the range zero to one. But it’s not meaningful to talk about probabilities greater than one or less than zero. A simple workaround is to treat any value greater than one as 1, and any value less than zero as 0. A refinement to this brusque treatment is accomplished by a technique called <em>logistic regression</em> which effectively turns the sharp bend into a gradual curve. See Figure 5.4 for an example.<a href="modeling-variation.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

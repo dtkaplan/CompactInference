@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-27" />
+<meta name="date" content="2019-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,13 +82,13 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
 <li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
-<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable</a></li>
-<li class="chapter" data-level="3.3" data-path="measuring-variation.html"><a href="measuring-variation.html#exercises"><i class="fa fa-check"></i><b>3.3</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
 <li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
-<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#categorical-response-variables"><i class="fa fa-check"></i><b>4.3</b> Categorical response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#a-taxonomy-of-simple-models"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a></li>
 <li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
@@ -158,7 +158,7 @@
 <p>Each of the models presented in Chapter 4 has a single <em>degree of flexibility</em>, that is, <span class="math inline">\(df = 1\)</span>. One way to think about degrees of flexibility is how many numbers are required to specify the model completely. For instance, the straight-line models in Figure 1(b) and 1(d) each can be specified by a <em>slope</em> and an <em>intercept</em>. The models in Figure 1(a) and 1(b) can be specified by two numbers: the value of the model for the left group and the value for the right group.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Multiple-explanatory_files/figure-html/four-settings-1.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/four-settings-2.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/four-settings-3.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/four-settings-4.png" alt="(ref:four-settings-cap" width="50%" />
+<img src="045-Degrees-of-flexibility_files/figure-html/four-settings-1.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-2.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-3.png" alt="(ref:four-settings-cap" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-4.png" alt="(ref:four-settings-cap" width="50%" />
 <p class="caption">
 (ref:four-settings-cap
 </p>
@@ -170,7 +170,7 @@
 <h2><span class="header-section-number">6.2</span> Multiple degrees of flexibility</h2>
 <p>Let’s look at some examples of models where there is more than one degree of freedom. To start, Figure 2 shows a model with two degrees of freedom.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="045-Multiple-explanatory_files/figure-html/two-df-1.png" alt="(ref:two-df-cap)" width="80%" />
+<img src="045-Degrees-of-flexibility_files/figure-html/two-df-1.png" alt="(ref:two-df-cap)" width="80%" />
 <p class="caption">
 (ref:two-df-cap)
 </p>
@@ -181,7 +181,7 @@
 <p>The model in Figure 3 consists of two straight lines. Each line is specified by a slope and an intercept, meaning that four coefficients are needed. Thus, <span class="math inline">\(df=3\)</span>.</p>
 <p>You may notice that the two lines in Figure 3 have slightly different slopes. Often, modelers try to economize with degrees of flexibility by using the same slope for each line. This would reduce the degrees of freedom to <span class="math inline">\(df = 2\)</span>. (The decision of whether to use a common slope or two potentially different slopes is often made using the tools of statistical inference, but we are getting ahead of the story.)</p>
 <div class="figure" style="text-align: FALSE">
-<img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-1.png" alt="Figure 3: A model of height with two explanatory variables: the mother’s height and the child’s sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable." width="80%" />
+<img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-1.png" alt="Figure 3: A model of height with two explanatory variables: the mother’s height and the child’s sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable." width="80%" />
 <p class="caption">
 Figure 3: A model of height with two explanatory variables: the mother’s height and the child’s sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable.
 </p>
@@ -197,7 +197,7 @@ Figure 3: A model of height with two explanatory variables: the mother’s heigh
 <p>It takes just the most basic notion of biology to realize that when it comes to the relationship between mother’s and child’s height another potentially important covariate is the height of the father. Figure 4 shows two such models. The model in 4(a) was constructed to have 3 degrees of freedom; 4(b) has 7 degrees of freedom.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-1.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" /><img src="045-Multiple-explanatory_files/figure-html/mother-plus-sex-father-2.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" />
+<img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-1.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" /><img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-2.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" />
 <p class="caption">
 Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 </p>
@@ -211,7 +211,7 @@ Figure 4. Two models of child’s height versus mother’s height. Father’s he
 <p>(ref:several-df-cap) Figure 5: (a) a flat model – zero degrees of flexibility; (b) a straight-line model – one degree of flexibility; (c)
 a model with one bend – two degrees of flexibility; (d) a model with two bends – three degrees of flexibility.&quot;</p>
 <div class="figure" style="text-align: FALSE">
-<img src="045-Multiple-explanatory_files/figure-html/several-df-1.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-2.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-3.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Multiple-explanatory_files/figure-html/several-df-4.png" alt="(ref:several-df-cap)" width="50%" />
+<img src="045-Degrees-of-flexibility_files/figure-html/several-df-1.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-2.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-3.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-4.png" alt="(ref:several-df-cap)" width="50%" />
 <p class="caption">
 (ref:several-df-cap)
 </p>

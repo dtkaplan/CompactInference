@@ -5,7 +5,7 @@ We now have the pieces we need to assemble the central quantity which informs st
 1. $n$, the sample size (or, more concretely, the number of rows in out data frame)
 2. $v_r$, the variance of the response variable. $v_r$ for binary categorical response variables is based on the 0-1 encoding.
 3. $v_m$, the variance of the model values.
-4. $df$, the *degree of flexibility*.^[This is a non-standard name. The convention is to refer to the quantity $n - (df + 1)$ as the *degrees of **freedom***.]
+4. $df$, the *degree of flexibility*.^[If  you are reading  this book in conjunction with a conventional text, remember  that such texts frame inference in terms of the *degrees of **freedom**,* which is equivalent to $n -  (df +  1)$.]
 
 We'll put these together to form a quantity called F. (The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th.) The formula for F is pretty simple, so I'll present it right here for ready reference.  
 
@@ -29,17 +29,16 @@ way to quantify this closeness are with the difference $v_r - v_m$. We want the 
 
 Many people prefer to look at a ratio $v_m  / v_r$ to quantify how close the model values are to  the values of the response variable. If the model does a good job accounting for the response variable, then $v_m$ will be close to $v_r$. That is, the ratio will  be close to 1. On the other hand, if the model tells us little or nothing about  the response variable, $v_m$ will  be close to zero and the ratio itself  will be zero.
 
-The  ratio has a famous name: *R-squared$,  that  is:
+The ratio has a famous name: *R-squared*,  that  is:
 
 $$R^2 = v_m / v_r$$
-Another, more  obscure name for $R^2$ is *coefficient of determination*, which is awkward but  does express the point  that $R^2$ is about  the extent to  which the explanatory variables, when  passed  through the model, determine the response variable.
+A more  obscure name for $R^2$ is *coefficient of determination*, which is awkward but  does express the point  that $R^2$ is about  the extent to  which the explanatory variables, when  passed  through the model, determine the response variable. $R^2$ is, literally, the faction of  the variance of the response variable that has been captured by the model. 
+
+$R^2$ can never be bigger than one and can never be negative. When $R^2 = 1$,  the model  values are  exactly the same as the values of  the response variable. 
+
+When there is no connection between the r esponse and explanatory variables, $R^2$ will be  small. Ideally, it  would be zero, but the process of random sampling generally pushes it a little away from zero. One way to think about F is as indicating  when there is so little  data that a small but non-zero R^2^ is consistent with the hypothesis that there is no connection between the response and explanatory variables.
 
 
-- Biggest possible $R^2$ is 1,  which can only occur when the model values are exactly the same as the values of the  response variable.
-
-$R^2$ is, literally, the faction of  the variation in the response variable that has been captured by the model. 
-
-- $R^2$ is never negative. This is part of the reason why keeping  track of $df$ is important when there are multiple explanatory  variables, or, to be  more precise, multiple explanatory vectors. 
 
 ## F in statistics books
 

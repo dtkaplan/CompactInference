@@ -1,6 +1,10 @@
 # Degrees of flexibility
 
-
+```{r include=FALSE}
+SDSdata::sds_setup()
+knitr::opts_knit$set('bookdown.internal.label' = FALSE)
+library(splines)
+```
 
 Chapter 4 introduced four different *settings* for models. (For easy reference, Figure 1 redraws the examples from Chapter 4.) Remember that the word "settings" is *not* about the situation that produced  the data or the names of the variables being displayed. "Settings" refers to the kind of response variable and explanatory variable -- categorical or numerical -- begin used in the model.
 
@@ -18,25 +22,71 @@ Each of the models presented in Chapter 4 has a single *degree of flexibility*, 
 
 (ref:four-settings-cap) Figure 1: Four settings for modeling presented in Chapter 4. All of  these have *one degree of flexibility*, written $df=1$.
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-1} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-2} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-3} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/four-settings-4} \caption[(ref:four-settings-cap]{(ref:four-settings-cap}\label{fig:four-settings}
-\end{figure}
+```{r four-settings, echo = FALSE, fig.show = "keep", out.width = "50%", fig.cap="(ref:four-settings-cap"}
+Stats <- df_stats(height ~ sex, data = Galton, mean)
+P1 <- Galton %>%
+  gf_jitter(height ~ sex, alpha  =  0.125, width = 0.2)  %>%
+  gf_errorbar(mean_height + mean_height ~ sex, data =Stats, 
+              inherit=FALSE, size = 1.5, color = "blue")
+P2 <- gf_jitter(height ~ mother, data = Galton, 
+                alpha = 0.15, width = 0.05) %>%
+  gf_lm(size =  1.5) %>%
+  gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches)")
+load("data/Punnett.rda")
+Stats <- df_stats(flower_color == "white" ~ pollen_shape, 
+                  data = Punnett, value = mean) 
+P3 <- Punnett %>%
+  gf_jitter(as.numeric(flower_color == "white") ~ pollen_shape, alpha  =  0.15, 
+            width = 0.2, height  =  0.1, seed = 101) %>%
+  gf_errorbar(value + value ~ pollen_shape, data = Stats,
+              inherit = FALSE, size = 1.5,  color="blue") %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("other", "white"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_labs(y = "flower color")
+mod <- glm(sex == "F" ~ mother, data  = Galton,  family  = "binomial")
+
+P4 <- mod_plot(mod, size = 1.5) %>%
+gf_jitter(as.numeric(sex == "F") ~ mother, data = Galton, 
+            alpha  =  0.15, 
+            width = 0.2, height  =  0.1) %>%
+  gf_refine(
+      scale_y_continuous(limits = c(-0.2,1.2),
+        breaks = c(0,1),
+        labels = c("M", "F"),
+        sec.axis = sec_axis(trans = ~ ., breaks = c(0, .25, .50, .75, 1.00),
+                            )) ) %>%
+  gf_lm(color = "blue") %>%
+  gf_labs(y = "Child's sex", x = "Mother's height (inches)")
+P1 %>% 
+  gf_labs(title = "(a) Quantitative response; categorical explanatory")
+P2 %>% 
+  gf_labs(title = "(b) Quantitative response; quantitative explanatory")
+P3 %>% 
+  gf_labs(title = "(c) Categorical response; categorical explanatory")
+P4 %>% 
+  gf_labs(title = "(d) Categorical response; quantitative explanatory")
+```
 
 In talking about descriptions of models, rather than using the  word *number*, we use *coefficient*. This is no big deal, but when you see the word *coefficient* you'll have a distinct hint that we are talking about  the shape of a model. And we'll be able to say things like "the *number*  of *coefficients*" to refer to how many coefficients are needed to specify the model.
 
-The degree of flexibility of a model is defined to be the number  of coefficients needed to completely specify the model *minus one*. You might wonder, "Why subtract one from the number of coefficients?" Just a convention. You'll see some justification for it in Chapter 8, *Simple means and proportions*, where we will work with models with *zero degrees of freedom*, which is to say, one coefficient. 
+The degree of flexibility of a model is defined to be the number  of coefficients needed to completely specify the model *minus one*. You might wonder, "Why subtract one from the number of coefficients?" Just a convention. You'll see some justification for it in Chapter 8, *Simple means and proportions*, where we will work with models with *zero degrees of freedom*, which is to say, one coefficient.
 
 ## Multiple degrees of flexibility
 
 Let's look at some examples of models where there is more than one degree of freedom. To start, Figure 2 shows a model with two degrees of freedom.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/two-df-1} \caption[(ref:two-df-cap)]{(ref:two-df-cap)}\label{fig:two-df}
-\end{figure}
+```{r two-df, echo=FALSE, fig.cap="(ref:two-df-cap)"}
+iris$Species <- relevel(iris$Species, "virginica")
+Stats <- df_stats(Petal.Width ~ Species,  data = iris, value=mean)
+gf_jitter(Petal.Width ~ Species, data = iris, 
+          width = 0.2, alpha = 0.15) %>%
+  gf_errorbar(value + value ~ Species, data = Stats,  
+              inherit = FALSE, size = 1.5)
+```
 
 The data in Figure 2 are from a classic study involving the differences and similarities among three species of iris plants. The response variable is the flower petal width (quantitative) and the explanatory variable is the species of the plant (categorical). A complete description  of the model would involve three coefficients, one for each of the species of iris. Three coefficients corresponds to $df = 2$.
 
@@ -49,8 +99,14 @@ The model in Figure 3 consists of two straight lines. Each line is specified by 
 You may notice that the two lines in Figure 3 have slightly different slopes. Often, modelers try to economize with degrees of flexibility by using the same slope for each line. This would reduce the degrees of freedom to  $df = 2$. (The decision of whether to use a common slope or two potentially different slopes is often made using the tools of statistical inference, but we are getting ahead of the story.)
 
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-1} \caption[(ref:mother-plus-sex-cap)]{(ref:mother-plus-sex-cap)}\label{fig:mother-plus-sex}
-\end{figure}
+```{r mother-plus-sex, echo=FALSE, fig.cap = "(ref:mother-plus-sex-cap)"}
+Galton2 <- Galton %>% 
+  mutate(sex = relevel(sex, "M"))
+
+mod <- lm(height ~ mother * sex,  data = Galton2)
+mod_plot(mod, size = 1.5) %>%
+  gf_jitter(height ~ mother  | sex, data = Galton2, alpha = 0.15) 
+```
 
 (ref:mother-plus-sex-cap) Figure 3: A model of height with two explanatory variables: the mother's height and the child's sex. Each  explanatory variable added to a model makes it possible  for  the model more faithfully to reproduce the response variable.
 
@@ -68,10 +124,14 @@ It takes just the most basic notion of biology to realize that when it comes to 
 
 (ref:mother-plus-sex-father-cap) Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-1} \caption[(ref:mother-plus-sex-father-cap)]{(ref:mother-plus-sex-father-cap)}\label{fig:mother-plus-sex-father}
-\end{figure}
-\begin{figure}\includegraphics[width=0.8\linewidth]{045-Multiple-explanatory_files/figure-latex/mother-plus-sex-father-2} \caption[(ref:mother-plus-sex-father-cap)]{(ref:mother-plus-sex-father-cap)}\label{fig:mother-plus-sex-father}
-\end{figure}
+```{r mother-plus-sex-father, echo=FALSE, fig.cap = "(ref:mother-plus-sex-father-cap)", fig.show="keep"}
+mod1 <- lm(height ~ mother + father + sex,  data = Galton2)
+mod_plot(mod1, ~ mother + father + sex) %>%
+  gf_labs(title="(a) df = 3", y = "Child's height", x = "Mother's height")
+mod2 <- lm(height ~ mother * sex * father*sex,  data = Galton2)
+mod_plot(mod2, ~ mother + father + sex) %>%
+  gf_labs(title="(b) df = 8", y = "", x = "Mother's height")
+```
 
 Comparing the two models, you might see how a larger df corresponds to increased flexibility. 
 
@@ -84,14 +144,32 @@ Chapter 5 imagined a contest between two students, Linus and Curly, for the best
 (ref:several-df-cap) Figure 5: (a) a flat model -- zero  degrees of flexibility; (b) a straight-line model -- one degree of flexibility;  (c)
 a  model with one bend -- two degrees of flexibility; (d) a model with two bends -- three degrees of flexibility."
 
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-1} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-2} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-3} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
-\begin{figure}\includegraphics[width=0.5\linewidth]{045-Multiple-explanatory_files/figure-latex/several-df-4} \caption[(ref:several-df-cap)]{(ref:several-df-cap)}\label{fig:several-df}
-\end{figure}
+```{r several-df, echo = FALSE, fig.show = "keep", fig.cap = "(ref:several-df-cap)", out.width = "50%"}
+set.seed(103)
+Train <- Galton %>% sample_n(size = 6) %>% 
+  select(height, mother)
+mod <- P <- list()
+mod[[1]] <- lm(height ~ 1, data = Train)
+mod[[2]] <- lm(height ~ mother, data = Train)
+mod[[3]] <- lm(height ~ ns(mother, 2), data  = Train)
+mod[[4]] <- lm(height ~ ns(mother, 3), data  = Train)
+for (k in 1:4) {
+  vals <- mod_eval(mod[[k]], data = Train)
+  valsb  <- mod_eval(mod[[k]], 
+                     data = data.frame(mother = seq(63, 70, length = 100)))
+  
+  P[[k]] <- gf_point(height ~ mother,  data = vals, size = 3) %>%
+    gf_line(model_output ~ mother,  data = valsb, color = "blue")  %>%
+    gf_labs(title=glue::glue("({letters[k]}): {k-1} degrees of flexibility. v_m = {round(var(vals$model_output),1`)}"), 
+            x  = "Mother's height",  y = "Child's height") %>%
+    gf_segment(model_output + height ~ mother + mother, 
+                color = "red", size = 2, ,  alpha = 0.5) 
+}
+P[[1]]; 
+P[[2]]; 
+P[[3]]; 
+P[[4]]; 
+```
 
 In the models in Figure 5, the degrees of flexibility indicate the shape of  the  function. A flat line  has no degrees of flexibility. A sloped line has one degree  of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.
 
