@@ -1,7 +1,7 @@
 --- 
 title: "A Compact Guide to Classical Inference"
 author: "Daniel Kaplan"
-date: "2019-11-30"
+date: "2019-12-01"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]

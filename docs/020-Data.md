@@ -142,32 +142,32 @@ This style of presentation is perfectly understandable, but it is not in the mod
  </thead>
 <tbody>
   <tr>
-   <td> SP1220 </td>
+   <td> SP5100 </td>
    <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP7930 </td>
-   <td> white </td>
    <td> round </td>
   </tr>
   <tr>
-   <td> SP3890 </td>
+   <td> SP5480 </td>
+   <td> other </td>
+   <td> round </td>
+  </tr>
+  <tr>
+   <td> SP670 </td>
    <td> other </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP7150 </td>
-   <td> white </td>
-   <td> long </td>
+   <td> SP6010 </td>
+   <td> other </td>
+   <td> round </td>
   </tr>
   <tr>
-   <td> SP4670 </td>
+   <td> SP2570 </td>
    <td> other </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP7050 </td>
+   <td> SP7030 </td>
    <td> white </td>
    <td> long </td>
   </tr>

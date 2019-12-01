@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-11-30" />
+<meta name="date" content="2019-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -90,7 +90,10 @@
 <li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
 <li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#a-taxonomy-of-simple-models"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#model-fitting-a-contest-between-candidate-models"><i class="fa fa-check"></i><b>5.1</b> Model fitting: A contest between candidate models</a></li>
+<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#variance-of-model-values"><i class="fa fa-check"></i><b>5.2</b> Variance of model values</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
 <li class="chapter" data-level="6.1" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#one-degree-of-flexibility"><i class="fa fa-check"></i><b>6.1</b> One degree of flexibility</a></li>
 <li class="chapter" data-level="6.2" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#multiple-degrees-of-flexibility"><i class="fa fa-check"></i><b>6.2</b> Multiple degrees of flexibility</a></li>
@@ -146,19 +149,50 @@
 <div id="model-values" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Model values</h1>
 <p>It’s now time to talk a bit about the way that statistical models are constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the previous chapter and asked to draw a straight-line function relating the explanatory variable to the response variable. Naturally, some students’ models will be better than others. How can we determine which model is the best?</p>
+<div id="model-fitting-a-contest-between-candidate-models" class="section level2">
+<h2><span class="header-section-number">5.1</span> Model fitting: A contest between candidate models</h2>
 <p>To illustrate, let’s take a small data set and look at two models that students might draw. (Figure 5.1)</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error." width="50%" />
+<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 5.1: Two candidates for straight-line models of a handful of data points." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 5.1: Two candidates for straight-line models of a handful of data points." width="50%" />
 <p class="caption">
-Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+Figure 5.1: Two candidates for straight-line models of a handful of data points.
 </p>
 </div>
-<p>Who has drawn the better model: Linus or Curly? The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother’s height) for that point. The position of each * on the vertical axis marks the <em>model value</em> for that data point.</p>
+<p>Who has drawn the better model: Linus or Curly?</p>
+<p>The instructor takes out a blue pen and draws a * for every data point, as in Figure 5.2. The star marks the output of the model when given the input (mother’s height) for that point. The position of each * on the vertical axis marks the <em>model value</em> for that data point.</p>
+
+<div class="figure" style="text-align: FALSE">
+<img src="043-Model-values_files/figure-html/drawn-train2-1.png" alt="Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the model values, marked with a \(\star\).." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train2-2.png" alt="Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the model values, marked with a \(\star\).." width="50%" />
+<p class="caption">
+Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the <em>model values</em>, marked with a <span class="math inline">\(\star\)</span>..
+</p>
+</div>
 <p>Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.</p>
-<p>Now, the instructor takes out her red pen to mark the “error.” The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins.</p>
-<p>This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
+<p>Now to determine whether Linus or Curly has the better model. The instructor takes out her red pen to mark the “error,” as in Figure 5.3. The error (marked as a red line) is the difference between the actual value of the response variable (vertical position of black dot) and the model value (blue <span class="math inline">\(\star\)</span>).</p>
+
+<div class="figure" style="text-align: FALSE">
+<img src="043-Model-values_files/figure-html/drawn-train3-1.png" alt="Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue \(\star\))." width="50%" /><img src="043-Model-values_files/figure-html/drawn-train3-2.png" alt="Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue \(\star\))." width="50%" />
+<p class="caption">
+Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue <span class="math inline">\(\star\)</span>).
+</p>
+</div>
+<p>The magnitude of the error is the length of the red line. In statistics, model candidates are graded according to the sum of square errorsk, as in Figure 5.4. (There is a good reason for this, analogous to the Pythagorean Theorem for the sides of a right triangle, but that needn’t concern us here.)</p>
+<p>So Linus’s and Curly’s models are graded according to the total amount of red ink used in drawing the squares.</p>
+
+<div class="figure" style="text-align: FALSE">
+<img src="images/linus-squares.png" alt="Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink." width="50%" />
+<p class="caption">
+Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink.
+</p>
+</div>
+<p><img src="images/curly-squares.png" alt="Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink." width="50%" /></p>
+<p>The less red ink, the better. Linus wins.</p>
+<p>The process of constructing a statistical model reflects the contest just described between Linus and Curly and the judgement made by the teacher. But rather than looking at just two candidates, grades are assigned to a very large set of candidate models. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
 <p>In practice, for straight-line models (and more general forms, called “linear models”), there are equations that can be solved to find the best model, so there’s no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.</p>
+</div>
+<div id="variance-of-model-values" class="section level2">
+<h2><span class="header-section-number">5.2</span> Variance of model values</h2>
 <p>There is something important to notice about the model values for the winning model:</p>
 <blockquote>
 <p><em>Model values will have a lower variance than the response variable.</em></p>
@@ -166,27 +200,28 @@ Figure 5.1: Comparing two possible straight-line models. In constructing a model
 <p>We’ll use the symbol <span class="math inline">\(v_m\)</span> to stand for the variance of the model values.</p>
 <p>To illustrate this, let’s look at a couple of models from the previous chapter. In each, you can see that the response values (black dots) are spread out, while the model values stay in toward the center of data. This is a natural consequence of our using <em>central</em> models, that is, models where the function has roughly equal numbers of data points above it and below it.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-2-1.png" alt="Figure 5.2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
+<img src="043-Model-values_files/figure-html/unnamed-chunk-5-1.png" alt="Figure 5.5: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
 <p class="caption">
-Figure 5.2: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
+Figure 5.5: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
 </p>
 </div>
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-3-1.png" alt="Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
+<img src="043-Model-values_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
 <p class="caption">
-Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
+Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
 </p>
 </div>
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-4-1.png" alt="Figure 5.4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
+<img src="043-Model-values_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 5.7: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
 <p class="caption">
-Figure 5.4: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
+Figure 5.7: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
 </p>
 </div>
 
 
+</div>
 </div>
             </section>
 

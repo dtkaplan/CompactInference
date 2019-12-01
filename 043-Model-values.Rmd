@@ -8,11 +8,13 @@ library(splines)
 
 It's now time to talk a bit about the way that statistical models are  constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the  previous chapter and asked to draw a straight-line function relating the explanatory  variable to the response variable. Naturally, some students' models will be better than others. How can we determine which model is the best?
 
+## Model fitting: A contest between candidate models
+
 To illustrate, let's take a small data set and look at two models that students might draw. (Figure 5.1)
 
-(ref:drawn-train-cap)  Figure 5.1: Comparing two possible straight-line models. In constructing a model, we choose the candidate with the least error.
+(ref:drawn-train-cap)  Figure 5.1: Two candidates for straight-line models of a handful of data points.
 
-```{r drawn-train, echo = FALSE, fig.show = "keep", fig.cap = "(ref:drawn-train-cap)", out.width = "50%"}
+```{r echo=FALSE}
 set.seed(103)
 Train <- Galton %>% sample_n(size = 6) %>% 
   select(height, mother)
@@ -26,27 +28,78 @@ vals1b  <- mod_eval(mod1,
 vals2 <- mod_eval(mod2, data = Train)
 vals2b <- mod_eval(mod2, 
                    data = data.frame(mother = seq(63, 70, length=1000)))
-gf_point(height ~ mother,  data = vals1, size = 3) %>%
-  gf_line(model_output ~ mother,  data = vals1b, color = "blue")  %>%
-  gf_labs(title="Linus's model", x  = "Mother's height",  y = "Child's height") %>%
-  gf_segment(model_output + height ~ mother + mother, color = "red", size = 2, ,  alpha = 0.5) %>%
-  gf_point(model_output ~ mother, data = vals1,  shape = 8, size = 3,  color  = "blue")
-gf_point(height ~ mother,  data = vals2, size = 3) %>%
+Linus <-
+  gf_point(height ~ mother,  data = vals1, size = 3) %>%
+  gf_line(model_output ~ mother,  data = vals1b, 
+          color = "blue")  %>%
+  gf_labs(title="Linus's model", x  = "Mother's height",  y = "Child's height") 
+Curly <-
+  gf_point(height ~ mother,  data = vals2, size = 3) %>%
   gf_line(model_output ~ mother,  data = vals2b, color = "blue") %>%
-  gf_labs(title="Curly's model", x  = "Mother's height",  y = "Child's height") %>%
-  gf_segment(model_output + height ~ mother + mother, color = "red",size = 2, alpha = 0.5) %>%
+  gf_labs(title="Curly's model", x  = "Mother's height",  y = "Child's height") 
+```
+
+```{r drawn-train, echo = FALSE, fig.show = "keep", fig.cap = "(ref:drawn-train-cap)", out.width = "50%", fig.fullwidth=TRUE}
+Linus
+Curly
+```
+Who has drawn the better model: Linus or Curly?  
+
+The instructor takes out a blue pen and draws a * for every data point, as in Figure 5.2. The star marks the output of the model when given the input (mother's height) for that  point. The position of each * on  the vertical axis marks the *model value* for that data point.
+
+```{r echo = FALSE}
+Linus <- 
+  Linus  %>%
+  gf_point(model_output ~ mother, data = vals1,  
+           shape = 8, size = 3,  color  = "blue")
+Curly <- Curly  %>%
   gf_point(model_output ~ mother, data = vals2,  shape = 8, size = 3,  color  = "blue")
 ```
 
-Who has drawn the better model: Linus or Curly?  The instructor takes out a blue pen and draws a * for every data point. The star marks the output of the model when given the input (mother's height) for that  point. The position of each * on  the vertical axis marks the *model value* for that data point.
+(ref:drawn-train2-cap)  Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother's height, on the horizontal axis) produces the *model values*, marked with a $\star$..
+
+```{r drawn-train2, echo=FALSE,fig.show = "keep", fig.cap = "(ref:drawn-train2-cap)", out.width = "50%", fig.fullwidth=TRUE}
+Linus
+Curly
+```
 
 Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.
 
-Now, the instructor takes out her red pen to mark the "error." The error is the difference between the value of the response variable (black dot) and the model value. The less red ink, the better. Linus wins. 
+Now to determine whether Linus or Curly has the better model. The instructor takes out her red pen to mark the "error," as in Figure 5.3. The error (marked as a red line) is the difference between the actual value of the response variable (vertical position of black dot) and the model value (blue  $\star$).
 
-This is analogous to how statistical models are constructed. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the *model values* and the actual response values.
+(ref:drawn-train3-cap)  Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value  (vertical position of black dot) and the corresponding model value (blue $\star$). 
+
+```{r echo = FALSE}
+Linus <- Linus %>%
+  gf_segment(model_output + height ~ mother + mother, 
+             color = "red", size = 2,  alpha = 0.5)
+Curly <- Curly  %>% 
+  gf_segment(model_output + height ~ mother + mother, color = "red",size = 2, alpha = 0.5)
+```
+
+```{r drawn-train3, echo=FALSE,fig.show = "keep", fig.cap = "(ref:drawn-train3-cap)", out.width = "50%", fig.fullwidth=TRUE}
+Linus
+Curly
+```
+
+The magnitude of the error is the length of the red line. In statistics, model candidates are graded according to the sum of square errorsk,  as in Figure 5.4. (There is a good reason for this, analogous to the Pythagorean Theorem for the sides of a  right triangle, but that needn't concern us here.)
+
+So Linus's and Curly's  models are graded according to the total amount of red ink used in drawing the squares. 
+
+(ref:drawn-train4-cap) Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink.
+
+```{r drawn-train4, echo = FALSE, fig.show = "keep", fig.cap = "(ref:drawn-train4-cap)", out.width = "50%", fig.fullwidth=TRUE}
+knitr::include_graphics("images/linus-squares.png")
+knitr::include_graphics("images/curly-squares.png")
+```
+
+The less red ink, the better. Linus wins. 
+
+The process of constructing a statistical model reflects the contest just described between Linus and Curly and the judgement made by the teacher. But rather than looking at just two candidates, grades are assigned to a very large set of candidate models. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the *model values* and the actual response values.
 
 In practice, for straight-line models (and more general forms, called "linear models"), there are equations that can be solved to find the best model, so there's no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.
+
+## Variance of model values
 
 There is something important to notice about the model values for the winning model:
 
@@ -66,7 +119,7 @@ gf_jitter(model_output ~ mother, data = mod_values, seed = 101,
   gf_lm(color = "blue") %>%
   gf_labs(y = "Child's height (inches)", x = "Mother's height (inches")
 ```
-(ref:fig2-cap) Figure 5.2: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: `r round(var(Galton$height), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
+(ref:fig2-cap) Figure 5.5: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: `r round(var(Galton$height), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
 
 ```{r echo=FALSE, fig.cap="(ref:fig3-cap)"}
 load("data/Punnett.rda")
@@ -88,7 +141,7 @@ Punnett %>%
                             )) ) %>%
   gf_labs(y = "Flower color")
 ```
-(ref:fig3-cap) Figure 5.3: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: `r round(var(Punnett$flower_color=="white"), 2)`; Model value variance: `r sprintf("%1.6f", var(Punnett$value))`
+(ref:fig3-cap) Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: `r round(var(Punnett$flower_color=="white"), 2)`; Model value variance: `r sprintf("%1.6f", var(Punnett$value))`
 
 
 
@@ -109,7 +162,7 @@ gf_jitter(as.numeric(sex == "F") ~ height, data = Galton,
                             )) ) %>%
   gf_labs(y = "Sex", x = "Mother's height (inches)")
 ```
-(ref:fig4-cap)  Figure 5.4: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: `r round(var(Galton$sex == "F"), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
+(ref:fig4-cap)  Figure 5.7: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: `r round(var(Galton$sex == "F"), 2)`; Model value variance: `r round(var(mod_values$model_output),  2)`
 
 
 
