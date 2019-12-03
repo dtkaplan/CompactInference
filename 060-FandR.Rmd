@@ -68,45 +68,42 @@ In this book, we'll just use the formula for F given at the start of this chapte
 
 ## Another explanation of F
 
-R^2^ is an effective way of measuring how "close" the model values are  to the  response values. When R^2^ $= 1$, the model values are exactly equal to the values of the response variable.
+First, I'll give the explanation in the form of a parable. Imagine that your model is a automobile. You are going to drive it a distance of 100 miles. There are two gas companies, EXPLANATORY Fuel and RANDOM Fuel. You put in 2 liters of EXPLANATORY gas and drive as far as you can get, say 44 miles. Your fuel economy on the EXPLANATORY part of the trip  is  thus 22 miles per liter. You're out of fuel, but conveniently there is a RANDOM gas station close at hand. You fill up your  tank with  RANDOM gas and continue driving. You drive the rest of the way  using the random gas. Looking at the fuel  gauge, you  see that you have used up 8 liters of RANDOM gas,  the fuel economy is  56 miles (that is, 100-44) per  8 liters of RANDOM gas, so the fuel economy is only 7 miles per gallon of RANDOM gas.
 
-Now recall that  increasing the degrees of flexibility $\flex$ of a model--say be incorporating additional explanatory variables--enables the model values to come closer to the values of the response variable. With  the vocabulary of R^2^, we can express this as "increasing $\flex$ increases R^2^." 
+Now a skeptic asks you, "The EXPLANATORY gas company has a good name for marketing, but do you have any good reason to think that EXPLANATORY gas is better than RANDOM gas?" Of course, the answer is yes, but  how to summarize your findings? One way is to compare the  fuel economies of the different kinds of gas: 22 miles per gallon for EXPLANATORY and 7 for  RANDOM. More concisely, you could say that EXPLANATORY gas is more than 3 times (22/7) as efficient as RANDOM gas. 
 
-Common sense suggests that the explanatory variables used in a model should be somehow  connected  to the response variable; why else would you  use them? But, in fact, the statement "increasing $\flex$ increases R^2^" is true even if the increased flexibility comes from including completely bogus explanatory variables in the model. As $\flex \rightarrow n - 1$, regardless of the merit of the explanatory variables in the model, R^2^ $\rightarrow 1$.
+The miles travelled using EXPLANATORY gas corresponds to R^2^. The fuel itself is whatever explanatory variables (and nonlinearities and whatever) are in your model. The amount of EXPLANATORY gas is $\flex$. 
 
-So how to distinguish between a genuinely meaningful explanatory variable and a bogus, meaningless one? When you add either one to a model, R^2^ will increase. What we ask when deciding whether an explanatory variable is meaningful or meaningless is *how much* did R^2^ go up when the variable was added to the model. The sign that an explanatory variable is  meaningful is that R^2^ goes up by a lot, more than for a typical meaningless variable. 
+RANDOM gas is not manufactured from genuine explanatory variables. Instead it is synthesized purely from random numbers. You don't expect RANDOM gas to be very good. But it serves as a point of comparison for the effectiveness of EXPLANATORY gas.
 
-Let's do a numerical experiment about R^2^ and random, meaningless variables. Suppose we have a data frame with $n=50$. Each of the variables will be constructed by a random-number generator, that is, they are completely unconnected one from the other. Call one of the variables $y$  and the others  $x_1, x_2, x_3,  ...$, going up to, say,  $x_100$.
+To conduct the comparison, you'll look at the ratio of the fuel economies: EXPLANATORY  fuel economy divided  by RANDOM fuel economy. That ratio of fuel economies corresponds exactly to F.
 
-Setting  the response variable to be y,  we are going to fit a series of models with  these explanatory variables. The first model will have just  one explanatory variable: $x_1$. This model has $\flex = 1$. Fitting  the model, calculate R^2^. We'll want to  keep track of this, so let's label this $\mbox{R}^2_1$. The second model will  have two explanatory variables: $x_1$ and $x_2$ and therefore has $\flex = 2$. Again, calculate R^2^. We'll call this one $\mbox{R}^2_2$. From the nature of model fitting, we know that $\mbox{R}^2_1 \leq \mbox{R}^2_2$. Now fit a model with $\flex  = 3$  using as explanatory variables $x_1$, $x_2$, and $x_3$. The R^2^ for this model will  be called $\mbox{R}^2_3$. And so on, increasing $\flex$ one step at a time. In the end, we'll  have a sequence of R^2^ for the collection of models which must show a non-decreasing pattern:
+Perhaps you're thinking, "RANDOM gas won't get you anywhere." That's not true. You can confirm this by creating a dataset that consists only of random numbers then modeling one of the variables by the others. You'll find that R^2^ is not zero. Indeed, if you use $n-1$ random explanatory variables in your model, you're guaranteed to reach $\mbox{R}^2 = 1$.
 
-$$\mbox{R}^2_1 \leq \mbox{R}^2_2 \leq \mbox{R}^2_3 \leq \cdots \leq \mbox{R}^2_{100}$$
+Figure 6.13 shows simulations of R^2^ versus $\flex$ for RANDOM gas. (Not every gallon of RANDOM gas is the same, it's random!)
 
-Figure 6.13 plots out this sequence of $\mbox{R}^2_i$ against $\flex_i$. The sequence is shown as a dark black line. Note the steady (but somewhat random) increase until R^2^ reaches 1 when $\flex = n-1$. Figure 6.13 also shows several other similar trials, each  of which follows it's own random path up toward R^2^ = 1 when $\flex  = n-1$. This is the signature of meaningless,  bogus explanatory variables.
-
-(ref:R-path-cap) Figure 6.13: The dark path shows one trial in which  $\flex$ is steadily increased by using additional random explanatory variables. The other paths are for similar trials using new random data.
+(ref:R-path-cap) Figure 6.13: The dark path shows one trial in which the car is fueled entirely with 
+RANDOM gas. The graph shows how far the car gets (in terms of R^2^) as it uses more and more fuel (in terms of $\flex$).
 
 ```{r R-path, echo=FALSE, fig.cap="(ref:R-path-cap)"}
 knitr::include_graphics("images/14-R2-vs-m.png")
 ```
 
-IN DRAFT: Relabel x-axis as $\flex$.
+Figure 6.14 shows schematically the general form of distance R^2^ versus fuel consumption when the first 10 units of fuel (that is to say, $\flex = 10$) are EXPLANATORY gas. As you can see, the EXPLANATORY gas got you  to R^2^ = 65%. So the fuel economy for EXPLANATORY gas is about 6.5% per unit of fuel.
 
-In actual practice,  we're not interested in using  random explanatory variables.  In fact, we'd prefer to avoid such  bogus variables in  favor of ones that are genuinely connected to the response variable. The  picture we expect to see is shown in Figure 6.14.
-
-(ref:R-path2-cap) Figure 6.14: $\mbox{R}^2_i$ versus $\flex$. The blue dot shows $\mbox{R}^2_{i=10} for a model with $\flex  = 10$ where the explanatory variables have genuine explanatory power. Note that the path upward to the blue dot is much steeper than for the trials with random explanatory variables. Correspondingly, the path upward *from* the blue dot  is less steep than for the trials with random explanatory variables.
+(ref:R-path2-cap) Figure 6.14: $\mbox{R}^2$ versus $\flex$. For the first 10 units of fuel, EXPLANATORY gas was used. Then the car switched over to RANDOM fuel for the rest of the journey to $\mbox{R}^2 = 1$. Note that the path upward to the blue dot  (using EXPLANATORY gas) is much steeper than for the rest of the journey using RANDOM gas.  The slope of each segment is the fuel economy.
 
 ```{r R-path2, echo=FALSE, fig.cap="(ref:R-path2-cap)"}
 knitr::include_graphics("images/14-model-walk-example.png")
 ```
 
-The F statistic quantifies how much steeper is the path to  the blue dot than the paths of the trials with random variables. Specifically,  F is defined as a ratio of slopes: the slope upward to the blue dot divided by the slope upward *from* the blue dot.
+With enough RANDOM gas, you'll get the rest of the way to R^2^ = 100%. How much is enough? $n - (\flex + 1)$ units of fuel. Since $n=50$ and $\flex = 10$, the RANDOM gas fuel economy is 35% (that is, 100% - 65%) divided by 39, or just under 1% per unit of fuel. The F statistic is therefore 6.5% / 1% = 6.5.
 
-We can calculate these two slopes since we know $\flex$, R^2^, and $n$.
+Is 6.5 a big enough F to convince us that the EXPLANATORY gas is clearly not just RANDOM gas in disguise? We can find that out by doing a simulation where we use only RANDOM gas in the car, comparing how far we get with the first $\flex = 10$ liters to how much addition RANDOM fuel to get to our eventual destination of R^2^ = 100%. That's what Figure 6.13 is about. You can mark on any of those random paths the value of R^2^ reached with the first $\flex = 10$ liters of fuel. Then draw in the equivalent of the blue slope and the red slope. For the large majority of trials, the ratio of slopes will be less than 4. So $F = 6.5$ is not a plausible outcome when  using only RANDOM fuel in  the car. 
 
-* The slope *to* the blue dot is R^2^$/\flex$.
-* The slope  *from* the blue dot is (1-R^2^)$/(n - (\flex + 1))$.
+Note the expression for F in terms of R^2^:
 
-Taking the ratio, we have
+$$F \equiv \frac{\mbox{R}^2}{\flex} \div \frac{1 - \mbox{R}^2}{n - (\flex + 1)}$$
 
-$$F \equiv \frac{n - (\flex + 1)}{\flex} \frac{R^2}{1-R^2}$$.
+The first ratio in the above is the slope of the blue line segment in Figure 6.14. The second ratio in  the above is the slope of the red line segment in Figure  6.14.
+
