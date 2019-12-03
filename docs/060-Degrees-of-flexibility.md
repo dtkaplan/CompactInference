@@ -19,7 +19,7 @@ Each of the models presented in Chapter 4 has a single degree of flexibility, th
 (ref:four-settings-cap) Figure 1: Four settings for modeling presented in Chapter 4. All of  these have *one degree of flexibility*, written $\flex=1$.
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/four-settings-1.png" alt="(ref:four-settings-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-2.png" alt="(ref:four-settings-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-3.png" alt="(ref:four-settings-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-4.png" alt="(ref:four-settings-cap)" width="50%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/four-settings-1.png" alt="(ref:four-settings-cap)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/four-settings-2.png" alt="(ref:four-settings-cap)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/four-settings-3.png" alt="(ref:four-settings-cap)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/four-settings-4.png" alt="(ref:four-settings-cap)" width="50%" />
 <p class="caption">(ref:four-settings-cap)</p>
 </div>
 
@@ -34,7 +34,7 @@ Let's look at some examples of models where there is more than one degree of fre
 (ref:two-df-cap) Three coefficients are needed to specify the model  values for a model where the 3-level categorical variable `Species` is the explanatory variable.
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/two-df-1.png" alt="(ref:two-df-cap)" width="80%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/two-df-1.png" alt="(ref:two-df-cap)" width="80%" />
 <p class="caption">(ref:two-df-cap)</p>
 </div>
 
@@ -50,7 +50,7 @@ You may notice that the two lines in Figure 3 have slightly different slopes. Of
 
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-1.png" alt="(ref:mother-plus-sex-cap)" width="80%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/mother-plus-sex-1.png" alt="(ref:mother-plus-sex-cap)" width="80%" />
 <p class="caption">(ref:mother-plus-sex-cap)</p>
 </div>
 
@@ -71,7 +71,7 @@ It takes just the most basic notion of biology to realize that when it comes to 
 (ref:mother-plus-sex-father-cap) Figure 4. Two models of child's height versus mother's height. Father's height and child's sex are included as explanatory variables. Although father's height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-1.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" /><img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-2.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-1.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" /><img src="060-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-2.png" alt="(ref:mother-plus-sex-father-cap)" width="80%" />
 <p class="caption">(ref:mother-plus-sex-father-cap)</p>
 </div>
 
@@ -86,7 +86,7 @@ Chapter 5 imagined a contest between two students, Linus and Curly, for the best
 (ref:several-df-cap) Figure 5: (a) a flat model -- zero  degrees of flexibility, $\flex=0$; (b) a straight-line model -- one degree of flexibility,  $\flex = 1$;  (c) a  model with one bend -- two degrees of flexibility, $\flex  = 2$; (d) a model with two bends -- three degrees of flexibility, $\flex = 3$
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/several-df-1.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-2.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-3.png" alt="(ref:several-df-cap)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-4.png" alt="(ref:several-df-cap)" width="50%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/several-df-1.png" alt="(ref:several-df-cap)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/several-df-2.png" alt="(ref:several-df-cap)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/several-df-3.png" alt="(ref:several-df-cap)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/several-df-4.png" alt="(ref:several-df-cap)" width="50%" />
 <p class="caption">(ref:several-df-cap)</p>
 </div>
 

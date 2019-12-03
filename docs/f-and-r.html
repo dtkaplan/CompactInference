@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-12-01" />
+<meta name="date" content="2019-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -102,9 +102,10 @@
 <li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
-<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.1</b> Slopes and differences</a></li>
-<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.2</b> Risk</a></li>
-<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.3</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
 <li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
@@ -128,7 +129,9 @@
 </ul></li>
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
 <li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
-<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
@@ -156,7 +159,7 @@
 <li><span class="math inline">\(n\)</span>, the sample size (or, more concretely, the number of rows in out data frame)</li>
 <li><span class="math inline">\(v_r\)</span>, the variance of the response variable. <span class="math inline">\(v_r\)</span> for binary categorical response variables is based on the 0-1 encoding.</li>
 <li><span class="math inline">\(v_m\)</span>, the variance of the model values.</li>
-<li><span class="math inline">\(\flex\)</span>, the <em>degree of flexibility</em>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li><span class="math inline">\(\flex\)</span>, the <em>degree of flexibility</em>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
 </ol>
 <p>We’ll put these together to form a quantity called F.</p>
 <div id="the-f-statistic" class="section level2">
@@ -235,8 +238,8 @@ Figure 8.2: Figure 6.14: <span class="math inline">\(\mbox{R}^2\)</span> versus 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>If you are reading this book in conjunction with a conventional text, remember that such texts frame inference in terms of the <em>degrees of <strong>freedom</strong>,</em> df. The relationship is <span class="math inline">\(\mbox{df} \equiv n - (\flex + 1)\)</span>.<a href="f-and-r.html#fnref1" class="footnote-back">↩</a></p></li>
+<ol start="4">
+<li id="fn4"><p>If you are reading this book in conjunction with a conventional text, remember that such texts frame inference in terms of the <em>degrees of <strong>freedom</strong>,</em> df. The relationship is <span class="math inline">\(\mbox{df} \equiv n - (\flex + 1)\)</span>.<a href="f-and-r.html#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

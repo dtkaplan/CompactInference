@@ -5,19 +5,19 @@ language:
     chapter_name: "Chapter "
 output_dir: "docs"
 new_session: yes
-rmd_files: ["index.Rmd", 
+rmd_files: ["index.Rmd", # Preface
             "010-Classical-inference.Rmd", # Chapter 1
             "020-Data.Rmd",  #   hapter 2
             "030-Variation.Rmd", # Chapter 3
             "040-Modeling-Variation.Rmd", # Chapter 4
-            "043-Model-values.Rmd", # Chapter 5
-            "045-Degrees-of-flexibility.Rmd",  # Chapter 6
-            "050-Effect-size.Rmd", # Chapter 7
-            "060-FandR.Rmd", # Chapter 8
-            "070-Confidence-intervals.Rmd", # Chapter 9
-            "080-Statistical-significance.Rmd", # Chapter 10
-            "090-Simple-means.Rmd", # Chapter 11
-            "110-Comparing-models.Rmd", # Chapter 12
-            "120-Outside-of-the-normal.Rmd", # Chapter 13
-            "130-Inference-isnt-everything.Rmd" # Chapter 14
+            "050-Model-values.Rmd", # Chapter 5
+            "060-Degrees-of-flexibility.Rmd",  # Chapter 6
+            "070-Effect-size.Rmd", # Chapter 7
+            "080-FandR.Rmd", # Chapter 8
+            "090-Confidence-intervals.Rmd", # Chapter 9
+            "100-Statistical-significance.Rmd", # Chapter 10
+            "110-Simple-means.Rmd", # Chapter 11
+            "120-Comparing-models.Rmd", # Chapter 12
+            "130-Outside-of-the-normal.Rmd", # Chapter 13
+            "140-Inference-isnt-everything.Rmd" # Chapter 14
             ]

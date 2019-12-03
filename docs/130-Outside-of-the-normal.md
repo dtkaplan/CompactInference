@@ -30,7 +30,7 @@ Hooker and Yule paper, 1906
 ## [1] 0.7782709
 ```
 
-<img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-1.png" width="80%" /><img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-2.png" width="80%" /><img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-3.png" width="80%" /><img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-4.png" width="80%" />
+<img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-1.png" width="80%" /><img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-2.png" width="80%" /><img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-3.png" width="80%" /><img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-4.png" width="80%" />
 
 ```
 ## 
@@ -54,11 +54,11 @@ Hooker and Yule paper, 1906
 ## F-statistic: 24.65 on 2 and 11 DF,  p-value: 8.629e-05
 ```
 
-<img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-5.png" width="80%" /><img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-6.png" width="80%" />
+<img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-5.png" width="80%" /><img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-2-6.png" width="80%" />
 
 They computed indices, which seem to be the standardized annual differences.
 
-<img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-3-1.png" width="80%" /><img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-3-2.png" width="80%" />
+<img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-3-1.png" width="80%" /><img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-3-2.png" width="80%" />
 
 ```
 ## 
@@ -92,7 +92,7 @@ What if we do it with log  proportional change ...
 ## [1] 0.740655
 ```
 
-<img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-4-1.png" width="80%" /><img src="120-Outside-of-the-normal_files/figure-html/unnamed-chunk-4-2.png" width="80%" />
+<img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-4-1.png" width="80%" /><img src="130-Outside-of-the-normal_files/figure-html/unnamed-chunk-4-2.png" width="80%" />
 
 ```
 ## 

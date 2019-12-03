@@ -13,7 +13,7 @@ To illustrate, let's take a small data set and look at two models that students 
 
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/drawn-train-1.png" alt="(ref:drawn-train-cap)" width="50%" /><img src="043-Model-values_files/figure-html/drawn-train-2.png" alt="(ref:drawn-train-cap)" width="50%" />
+<img src="050-Model-values_files/figure-html/drawn-train-1.png" alt="(ref:drawn-train-cap)" width="50%" /><img src="050-Model-values_files/figure-html/drawn-train-2.png" alt="(ref:drawn-train-cap)" width="50%" />
 <p class="caption">(ref:drawn-train-cap)</p>
 </div>
 Who has drawn the better model: Linus or Curly?  
@@ -25,7 +25,7 @@ The instructor takes out a blue pen and draws a * for every data point, as in Fi
 (ref:drawn-train2-cap)  Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother's height, on the horizontal axis) produces the *model values*, marked with a $\star$..
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/drawn-train2-1.png" alt="(ref:drawn-train2-cap)" width="50%" /><img src="043-Model-values_files/figure-html/drawn-train2-2.png" alt="(ref:drawn-train2-cap)" width="50%" />
+<img src="050-Model-values_files/figure-html/drawn-train2-1.png" alt="(ref:drawn-train2-cap)" width="50%" /><img src="050-Model-values_files/figure-html/drawn-train2-2.png" alt="(ref:drawn-train2-cap)" width="50%" />
 <p class="caption">(ref:drawn-train2-cap)</p>
 </div>
 
@@ -38,7 +38,7 @@ Now to determine whether Linus or Curly has the better model. The instructor tak
 
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/drawn-train3-1.png" alt="(ref:drawn-train3-cap)" width="50%" /><img src="043-Model-values_files/figure-html/drawn-train3-2.png" alt="(ref:drawn-train3-cap)" width="50%" />
+<img src="050-Model-values_files/figure-html/drawn-train3-1.png" alt="(ref:drawn-train3-cap)" width="50%" /><img src="050-Model-values_files/figure-html/drawn-train3-2.png" alt="(ref:drawn-train3-cap)" width="50%" />
 <p class="caption">(ref:drawn-train3-cap)</p>
 </div>
 
@@ -70,13 +70,13 @@ We'll use the symbol $v_m$ to stand for the variance of the model values.
 To illustrate this, let's look at a couple of models from the  previous chapter. In each, you can see that the response values (black dots) are spread out,  while the model  values stay in toward the center of data. This is a natural consequence of  our using *central* models, that is, models where the function has roughly equal numbers of data points above it and below it.
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-5-1.png" alt="(ref:fig2-cap)" width="80%" />
+<img src="050-Model-values_files/figure-html/unnamed-chunk-5-1.png" alt="(ref:fig2-cap)" width="80%" />
 <p class="caption">(ref:fig2-cap)</p>
 </div>
 (ref:fig2-cap) Figure 5.5: Model values (blue dots) for a straight-line model of child's height with mother's height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-6-1.png" alt="(ref:fig3-cap)" width="80%" />
+<img src="050-Model-values_files/figure-html/unnamed-chunk-6-1.png" alt="(ref:fig3-cap)" width="80%" />
 <p class="caption">(ref:fig3-cap)</p>
 </div>
 (ref:fig3-cap) Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
@@ -84,7 +84,7 @@ To illustrate this, let's look at a couple of models from the  previous chapter.
 
 
 <div class="figure" style="text-align: FALSE">
-<img src="043-Model-values_files/figure-html/unnamed-chunk-7-1.png" alt="(ref:fig4-cap)" width="80%" />
+<img src="050-Model-values_files/figure-html/unnamed-chunk-7-1.png" alt="(ref:fig4-cap)" width="80%" />
 <p class="caption">(ref:fig4-cap)</p>
 </div>
 (ref:fig4-cap)  Figure 5.7: Model values for a model of sex, with mother's height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14

@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2019-12-01" />
+<meta name="date" content="2019-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -102,14 +102,17 @@
 <li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
-<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.1</b> Slopes and differences</a></li>
-<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.2</b> Risk</a></li>
-<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.3</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
-<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.1</b> What’s the meaning of F?</a></li>
-<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.2</b> R-squared</a></li>
-<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.3</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
+<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.2</b> What’s the meaning of F?</a></li>
+<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.3</b> R-squared</a></li>
+<li class="chapter" data-level="8.4" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.4</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.5" data-path="f-and-r.html"><a href="f-and-r.html#another-explanation-of-f"><i class="fa fa-check"></i><b>8.5</b> Another explanation of F</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence intervals</a><ul>
 <li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-intervals-from-f"><i class="fa fa-check"></i><b>9.1</b> Confidence intervals from F</a></li>
@@ -126,7 +129,9 @@
 </ul></li>
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
 <li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
-<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
@@ -162,7 +167,7 @@
 <p>Each of the models presented in Chapter 4 has a single degree of flexibility, that is, <span class="math inline">\(\flex = 1\)</span>. You can think about degrees of flexibility as how many numbers are required to specify the model completely. For instance, the straight-line models in Figure 1(b) and 1(d) each can be specified by a <em>slope</em> and an <em>intercept</em>. The models in Figure 1(a) and 1(b) can be specified by two numbers: the value of the model for the left group and the value for the right group.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/four-settings-1.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-2.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-3.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/four-settings-4.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/four-settings-1.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/four-settings-2.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/four-settings-3.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/four-settings-4.png" alt="Figure 1: Four settings for modeling presented in Chapter 4. All of these have one degree of flexibility, written \(\flex=1\)." width="50%" />
 <p class="caption">
 Figure 1: Four settings for modeling presented in Chapter 4. All of these have <em>one degree of flexibility</em>, written <span class="math inline">\(\flex=1\)</span>.
 </p>
@@ -175,7 +180,7 @@ Figure 1: Four settings for modeling presented in Chapter 4. All of these have <
 <p>Let’s look at some examples of models where there is more than one degree of freedom. To start, Figure 2 shows a model with two degrees of freedom: <span class="math inline">\(\flex = 2\)</span>.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/two-df-1.png" alt="Three coefficients are needed to specify the model values for a model where the 3-level categorical variable Species is the explanatory variable." width="80%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/two-df-1.png" alt="Three coefficients are needed to specify the model values for a model where the 3-level categorical variable Species is the explanatory variable." width="80%" />
 <p class="caption">
 Three coefficients are needed to specify the model values for a model where the 3-level categorical variable <code>Species</code> is the explanatory variable.
 </p>
@@ -186,7 +191,7 @@ Three coefficients are needed to specify the model values for a model where the 
 <p>The model in Figure 3 consists of two straight lines. Each line is specified by a slope and an intercept, meaning that four coefficients are needed. Thus, <span class="math inline">\(\flex=3\)</span>.</p>
 <p>You may notice that the two lines in Figure 3 have slightly different slopes. Often, modelers try to economize with degrees of flexibility by using the same slope for each line. This would reduce the degrees of freedom to <span class="math inline">\(\flex = 2\)</span>. (The decision of whether to use a common slope or two potentially different slopes is often made using the tools of statistical inference, but we are getting ahead of the story.)</p>
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-1.png" alt="Figure 3: A model of height with two explanatory variables: the mother’s height and the child’s sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable." width="80%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/mother-plus-sex-1.png" alt="Figure 3: A model of height with two explanatory variables: the mother’s height and the child’s sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable." width="80%" />
 <p class="caption">
 Figure 3: A model of height with two explanatory variables: the mother’s height and the child’s sex. Each explanatory variable added to a model makes it possible for the model more faithfully to reproduce the response variable.
 </p>
@@ -202,7 +207,7 @@ Figure 3: A model of height with two explanatory variables: the mother’s heigh
 <p>It takes just the most basic notion of biology to realize that when it comes to the relationship between mother’s and child’s height another potentially important covariate is the height of the father. Figure 4 shows two such models. The model in 4(a) was constructed to have 3 degrees of freedom; 4(b) has 7 degrees of freedom.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-1.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" /><img src="045-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-2.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-1.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" /><img src="060-Degrees-of-flexibility_files/figure-html/mother-plus-sex-father-2.png" alt="Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values." width="80%" />
 <p class="caption">
 Figure 4. Two models of child’s height versus mother’s height. Father’s height and child’s sex are included as explanatory variables. Although father’s height is a quantitative variable, the graph shows the model for only three, evenly spaced, discrete values.
 </p>
@@ -215,7 +220,7 @@ Figure 4. Two models of child’s height versus mother’s height. Father’s he
 <p>Chapter 5 imagined a contest between two students, Linus and Curly, for the best model. Let’s return to that example, but now we’ll construct some models that are more <em>flexible</em> than a straight line.</p>
 
 <div class="figure" style="text-align: FALSE">
-<img src="045-Degrees-of-flexibility_files/figure-html/several-df-1.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-2.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-3.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" /><img src="045-Degrees-of-flexibility_files/figure-html/several-df-4.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" />
+<img src="060-Degrees-of-flexibility_files/figure-html/several-df-1.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/several-df-2.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/several-df-3.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" /><img src="060-Degrees-of-flexibility_files/figure-html/several-df-4.png" alt="Figure 5: (a) a flat model – zero degrees of flexibility, \(\flex=0\); (b) a straight-line model – one degree of flexibility, \(\flex = 1\); (c) a model with one bend – two degrees of flexibility, \(\flex = 2\); (d) a model with two bends – three degrees of flexibility, \(\flex = 3\)" width="50%" />
 <p class="caption">
 Figure 5: (a) a flat model – zero degrees of flexibility, <span class="math inline">\(\flex=0\)</span>; (b) a straight-line model – one degree of flexibility, <span class="math inline">\(\flex = 1\)</span>; (c) a model with one bend – two degrees of flexibility, <span class="math inline">\(\flex = 2\)</span>; (d) a model with two bends – three degrees of flexibility, <span class="math inline">\(\flex = 3\)</span>
 </p>
