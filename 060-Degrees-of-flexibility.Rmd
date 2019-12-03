@@ -6,6 +6,8 @@ knitr::opts_knit$set('bookdown.internal.label' = FALSE)
 library(splines)
 ```
 
+`r  if(knitr::is_html_output()) "$\\newcommand{\\flex}[]{^\\circ\\!{\\cal{F}}}$"`
+
 Chapter 4 introduced four different *settings* for models. (For easy reference, Figure 6.1 redraws the examples from Chapter 4.) Remember that the word "settings" is *not* about the situation that produced  the data or the names of the variables being displayed. "Settings" refers to the kind of response variable and explanatory variable -- categorical or numerical -- begin used in the model.
 
 This chapter introduces some important new settings:
@@ -14,13 +16,13 @@ This chapter introduces some important new settings:
 - Settings where a categorical explanatory variable has more than two levels.
 - Settings where the straight-line functions seen in Figure 1(b) and 1(d) are replaced with more flexible curves.
 
-It's far from obvious, but these new kinds of settings are all the same kind of thing mathematically, so statistical inference can handle them in the same way. The central concept that links the new settings is called the *degrees of flexibility*. $\newcommand{\flex}[]{^\circ\!\cal{F}}$ For brevity, I'll use symbols rather than the whole phrase  "degrees of flexibility," a *degree* sign followed  by  a  flexible-looking F, that is: $\flex$.
+It's far from obvious, but these new kinds of settings are all the same kind of thing mathematically, so statistical inference can handle them in the same way. The central concept that links the new settings is called the *degrees of flexibility*.  For brevity, I'll use symbols rather than the whole phrase  "degrees of flexibility," a *degree* sign followed  by  a  flexible-looking F, that is: $\flex$.
 
 ## One degree of flexibility
 
-Each of the models presented in Chapter 4 has a single degree of flexibility, that is, $\flex = 1$. You can think about degrees of flexibility as how many numbers are required to specify the model completely. For instance, the straight-line models in Figure 1(b) and 1(d) each can be specified by a *slope* and an *intercept*. The models in Figure 1(a) and 1(b) can be specified by two numbers: the value of the model for the left group and the value for the right group.
+Each of the models presented in Chapter 4 has a single degree of flexibility, that is, $\flex = 1$. You can think about degrees of flexibility as how many numbers are required to specify the model completely. For instance, the straight-line models in Figure 6.1(b) and 6.1(d) each can be specified by a *slope* and an *intercept*. The models in Figure 6.1(a) and 6.1(b) can be specified by two numbers: the value of the model for the left group and the value for the right group.
 
-(ref:four-settings-cap) Figure 1: Four settings for modeling presented in Chapter 4. All of  these have *one degree of flexibility*, written $\flex=1$.
+(ref:four-settings-cap) Figure 6.1: Four settings for modeling presented in Chapter 4. All of  these have *one degree of flexibility*, written $\flex=1$.
 
 ```{r four-settings, echo = FALSE, fig.show = "keep", out.width = "50%", fig.cap="(ref:four-settings-cap)"}
 Stats <- df_stats(height ~ sex, data = Galton, mean)
@@ -143,7 +145,7 @@ You might also note from Figure 4 that the model with 8 degrees of freedom  sugg
 
 Chapter 5 imagined a contest between two students, Linus and Curly, for the best model. Let's return to that example, but now we'll construct some models that are more  *flexible* than a straight line.
 
-(ref:several-df-cap) Figure 5: (a) a flat model -- zero  degrees of flexibility, $\flex=0$; (b) a straight-line model -- one degree of flexibility,  $\flex = 1$;  (c) a  model with one bend -- two degrees of flexibility, $\flex  = 2$; (d) a model with two bends -- three degrees of flexibility, $\flex = 3$
+(ref:several-df-cap) Figure 5: (a) a flat model -- zero  degrees of flexibility, $\flex=0$; (b) a straight-line model -- one degree of flexibility,  $\flex = 1$;  (c) a  model with one bend -- two degrees of flexibility, $\flex  = 2$; (d) a model with two bends -- three degrees of flexibility, $\flex = 3$.
 
 ```{r several-df, echo = FALSE, fig.show = "keep", fig.cap = "(ref:several-df-cap)", out.width = "50%"}
 set.seed(103)
@@ -166,10 +168,10 @@ for (k in 1:4) {
     gf_segment(model_output + height ~ mother + mother, 
                 color = "red", size = 2, ,  alpha = 0.5) 
 }
-P[[1]]; 
-P[[2]]; 
-P[[3]]; 
-P[[4]]; 
+P[[1]] 
+P[[2]] 
+P[[3]] 
+P[[4]] 
 ```
 
 In the models in Figure 5, the degrees of flexibility indicate the shape of  the  function. A flat line  has no degrees of flexibility. A sloped line has one degree  of flexibility. Adding a bend adds another degree of flexibility, so 3 degrees of flexibility corresponds to two bends.

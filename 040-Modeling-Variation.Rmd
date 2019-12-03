@@ -100,7 +100,7 @@ gf_jitter(height ~ mother, data = Galton, alpha = 0.15) %>%
 
 Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
 
-## A taxonomy of simple models
+## A taxonomy of simple models {#taxonomy}
 
 Recall that the response variables covered in  this book are quantitative, which includes both regular numerical variables (like height) and indicator variables (like  that for  sex). Explanatory variables can be either quantitative  or categorical. This suggests that models with one response and one explanatory variables fall into one of four types:
 

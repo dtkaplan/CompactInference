@@ -3,7 +3,7 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
-output_dir: "docs"
+output_dir: "private/"
 new_session: yes
 rmd_files: ["index.Rmd", # Preface
             "010-Classical-inference.Rmd", # Chapter 1

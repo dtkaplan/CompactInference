@@ -11,10 +11,14 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+  includes:
+    in_header: tex-preamble.tex 
 bookdown::epub_book: default
 bookdown::tufte_book2:
   keep_tex: yes
   toc_depth: 1
+  includes:
+    in_header: tex-preamble.tex 
 bookdown::tufte_html_book:
   toc: yes
   toc_depth: 1

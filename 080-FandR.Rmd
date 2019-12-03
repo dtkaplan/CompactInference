@@ -1,6 +1,9 @@
 # F and R
 
-We now have the pieces we need to assemble the central quantity which informs statistical inference. These are:$\newcommand{\flex}[]{^\circ\!\cal{F}}$
+
+`r  if(knitr::is_html_output()) "$\\newcommand{\\flex}[]{^\\circ\\!{\\cal{F}}}$"`
+
+We now have the pieces we need to assemble the central quantity which informs statistical inference. These are:
 
 1. $n$, the sample size (or, more concretely, the number of rows in out data frame)
 2. $v_r$, the variance of the response variable. $v_r$ for binary categorical response variables is based on the 0-1 encoding.
@@ -16,7 +19,9 @@ The name, F, is in honor of Ronald Fisher, one of the leading statisticians of t
 $$F \equiv \frac{n - (1 + \flex)}{\flex} \frac{v_m}{v_r - v_m}$$
 For almost all the settings considered in introductory statistics courses, $\flex$ is 1, so the formula simplifies to:
 $$F =  (n-1) \frac{v_m}{v_r - v_m}$$
+Example: Figure 4.1 shows a model of child's height with respect to sex.  The variance of the response variable (child's height) is $v_r = $12.84 inches^2^. The variance of the model values is $v_m =$ 6.55 inches^2^. The data used to construct the model have $n = 898$  Thus:
 
+$$F = 897 \frac{6.55}{12.84-6.55} \approx 897 \times 1.04 \approx 934 .$$
 
 ## What's the meaning of F?
 
@@ -42,7 +47,8 @@ $R^2$ can never be bigger than one and can never be negative. When $R^2 = 1$,  t
 
 When there is no connection between the r esponse and explanatory variables, $R^2$ will be  small. Ideally, it  would be zero, but the process of random sampling generally pushes it a little away from zero. One way to think about F is as indicating  when there is so little  data that a small but non-zero R^2^ is consistent with the hypothesis that there is no connection between the response and explanatory variables.
 
-
+Example: Figure 4.1 shows a model of child's height with respect to sex. The variance of the response variable (child's height) is 12.84 inches^2^. The variance of the model values is 6.55 inches^2^. Thus:
+$$R^2 = 6.55 /  12.84 = 0.51 = 51\%$$
 
 ## F in statistics books
 
