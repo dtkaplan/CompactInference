@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Effect size | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 7 Effect size | A Compact Guide to Classical Inference" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Effect size | A Compact Guide to Classical Inference" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Effect size | A Compact Guide to Classical Inference" />
+  
+  
+  
+
+<meta name="author" content="Daniel Kaplan" />
+
+
+<meta name="date" content="2019-12-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="degrees-of-flexibility.html"/>
+<link rel="next" href="f-and-r.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Compact Guide to Classical Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html"><i class="fa fa-check"></i><b>1</b> What is classical inference?</a><ul>
+<li class="chapter" data-level="" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html#and-why-should-i-read-this-book"><i class="fa fa-check"></i>… and why should I read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
+<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
+<li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#taxonomy"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#model-fitting-a-contest-between-candidate-models"><i class="fa fa-check"></i><b>5.1</b> Model fitting: A contest between candidate models</a></li>
+<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#variance-of-model-values"><i class="fa fa-check"></i><b>5.2</b> Variance of model values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
+<li class="chapter" data-level="6.1" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#one-degree-of-flexibility"><i class="fa fa-check"></i><b>6.1</b> One degree of flexibility</a></li>
+<li class="chapter" data-level="6.2" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#multiple-degrees-of-flexibility"><i class="fa fa-check"></i><b>6.2</b> Multiple degrees of flexibility</a></li>
+<li class="chapter" data-level="6.3" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#covariates"><i class="fa fa-check"></i><b>6.3</b> Covariates</a></li>
+<li class="chapter" data-level="6.4" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#flexibility-literally"><i class="fa fa-check"></i><b>6.4</b> Flexibility, literally</a></li>
+<li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.5" data-path="effect-size.html"><a href="effect-size.html#reading-effect-size-from-a-graph"><i class="fa fa-check"></i><b>7.5</b> Reading effect size from a graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
+<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
+<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.2</b> What’s the meaning of F?</a></li>
+<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.3</b> R-squared</a></li>
+<li class="chapter" data-level="8.4" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.4</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.5" data-path="f-and-r.html"><a href="f-and-r.html#another-explanation-of-f"><i class="fa fa-check"></i><b>8.5</b> Another explanation of F</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence intervals</a><ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals-on-effect-size"><i class="fa fa-check"></i><b>9.1</b> Calculating confidence intervals on effect size</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-95"><i class="fa fa-check"></i><b>9.2</b> 4 and 95%</a></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-n"><i class="fa fa-check"></i><b>9.3</b> 4 and <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-versus-prediction-intervals"><i class="fa fa-check"></i><b>9.4</b> Confidence versus prediction intervals</a></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#for-the-conventionally-trained-reader"><i class="fa fa-check"></i><b>9.5</b> For the conventionally trained reader …</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html"><i class="fa fa-check"></i><b>10</b> So-called “statistical significance”</a><ul>
+<li class="chapter" data-level="10.1" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#calculating-a-p-value"><i class="fa fa-check"></i><b>10.1</b> Calculating a p-value</a></li>
+<li class="chapter" data-level="10.2" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#history-and-criticism"><i class="fa fa-check"></i><b>10.2</b> History and criticism</a></li>
+<li class="chapter" data-level="10.3" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#appendix-when-df-geq-2"><i class="fa fa-check"></i><b>10.3</b> Appendix: When <span class="math inline">\(df \geq 2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html"><i class="fa fa-check"></i><b>11</b> Simple means and proportions</a><ul>
+<li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Compact Guide to Classical Inference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="effect-size" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Effect size</h1>
+<p>An <em>effect size</em> tells how the output of a model changes when a simple change is made to the input. Many statistical claims are made in terms of an effect size. For instance, according to the <a href="https://www.nhtsa.gov/risky-driving/seat-belts">US National Highway Traffic Safety Administration (NHTSA)</a>, wearing seat belts reduces the risk of fatal injury to passenger-vehicle occupants by about 58%. <span class="citation">(Kahane <a href="#ref-kahane-2017">2017</a>)</span> This is an effect size.</p>
+<p>In contrast, this related fact from NHTSA is <em>not</em> an effect size: 51% of male passenger-vehicle occupants killed in 2017 were not wearing seat belts.</p>
+<p>An effect size summarizes a comparison between two different conditions. In the first example, those two conditions are 1) wearing a seat belt and 2) not wearing a seat belt. In the second example, however, there is just one condition: being a male passenger-vehicle occupant who died in a car accident in 2017.</p>
+<div id="with-respect-to" class="section level2">
+<h2><span class="header-section-number">7.1</span> With respect to …</h2>
+<p>Effect sizes always involve two variables: a response variable and a single explanatory variable. Effect size is always about a <em>model</em>. The model might have one explanatory variable or many explanatory variables. Each explanatory variable will have its own effect size, so a model with multiple explanatory variables will have multiple effect sizes.</p>
+<p>We use the phrase “with respect to” indicate which explanatory variable is involved in an effect size. For instance, in the previous example, the response variable is “risk of fatal injury” and the explanatory variable records whether the vehicle occupant was wearing a seat belt. So we would call the quoted 58% the “effect size on risk of fatal injury <em>with respect to</em> wearing seat belts.”</p>
+<p>Depending on the purpose of your work, you may want or need to include other explanatory variables in your model. For instance, the NHTSA gives a “safety star rating” to each year-make-model of vehicle. If this were included in the risk-of-fatal-injury statistical model, there will be an effect size of “risk of fatal injury <em>with respect to</em> safety-star rating.” Other explanatory variables might be speed of the vehicle at the time of the accident (though this can be difficult to measure), weight of the vehicle, the index of traction/slipperiness of the road surface, and so on.</p>
+<p>Depending on the variable selected to play the role of “with respect to,” an effect size can serve very different purposes. For instance, the quoted 50% reduction in risk of fatal accident with respect to wearing a seat belt, provides a good argument for wearing seat belts. The effect size of risk of fatal accident <em>with respect to</em> safety-star index could help people shopping for a car. It would also give an concrete sense of whether the difference between a four- and a five-star vehicle is substantial or trivial.</p>
+</div>
+<div id="slopes-and-differences" class="section level2">
+<h2><span class="header-section-number">7.2</span> Slopes and differences</h2>
+<p>Consider two models introduced in Chapter 5. Figure 5.1 shows child’s height versus mother’s height in Galton’s data. The straight-line model shows a slight upward slope. To calculate the effect size of child’s height <em>with respect to mother’s height</em>, pick two values of mother’s height: say 60 and 68 inches. From the graph you can read the output of the model at these two values of the input. At an input of 60 inches, the output is 65.5 inches. At an input of 68 inches, the output is (coincidentally) 68 inches. The effect size is the slope of the model: rise over run. Here, the “run” is 68 - 60 = 8 inches. The “rise” is 68 - 65.5 = 2.5 inches. So the slope is 2.5 / 8 = 0.31.</p>
+<p>The model in Figure 5.1 has a quantitative explanatory variable: mother’s height. In constrast, the model in Figure 5.2 has a categorical explanatory variable: pollen shape. To calculate an effect size <em>with respect to pollen shape</em> in Figure 5.2, follow much the same procedure. First, pick the two input levels you want to compare. Here, there are only two levels possible: long and round shapes. Next, look up the model output at each of the two inputs. The output of the model is framed as a probability. The probability of a white flower is 24% for long pollen, and 25% for round pollen.</p>
+<p>Since the explanatory variable is a categorical variable, it doesn’t mean much to look at the numerical difference in the input. The model output, on the other hand, is quantitative (as it is for all the models we consider in this book). The effect size is 25% - 24% = 1 percentage point.</p>
+<p>To recap, when the explanatory variable is <em>quantitative</em>, the effect size is stated as a <em>slope</em>: change in output divided by change in input. When the explanatory variable is <em>categorical</em>, the effect size can be stated as a <em>difference</em>. In this situation, it’s important to say which way the effect goes. For instance, the NHTSA risk of fatal injury with respect to wearing a seat belt was described as a <em>reduction</em> in risk when wearing a seat belt compared to not wearing one.</p>
+</div>
+<div id="risk" class="section level2">
+<h2><span class="header-section-number">7.3</span> Risk</h2>
+<p>In the previous paragraph, I say “<em>can</em> be stated as a difference” because there are other ways often used to compare the model output between two different levels of a categorical explanatory variable. For instance, when the output is interpreted as a “risk,” the two outputs might be compared as a <em>ratio</em>, called the <em>risk ratio</em>. It sounds odd when talking about flower color, but if we were thinking about the “risk” that a pea plant’s flowers are white, then it would be appropriate to consider the effect size with respect to pollen shape as the ratio 25% / 24% = 1.04. Note that this 1.04 is not in percent. When writing about risk ratios, people often use percentage terms. The risk ratio of 1.04 might be described, “The risk of a white flower increases by 4 percent.” Were the risk ratio smaller than 1, say 0.87, we would speak of a risk <em>decrease</em>: “The risk of a white flower is 13% lower for ….”</p>
+<p>It’s potentially confusing for us to report <em>differences</em> of risk in “percentage points” and <em>ratios</em> of risk as “percent.” Not everyone is sensitive to the distinction between “percentage points” and “percent.” Perhaps it would be helpful to report differences as an <em>absolute</em> change in risk while ratios are a <em>relative</em> change in risk.</p>
+<p>There’s yet another way used to describe changes in risk: the <em>odds ratio</em>. Odds are a different format for describing risk. If the probability of an outcome is <span class="math inline">\(p\)</span>, the odds are <span class="math inline">\(p/(1-p)\)</span>. So, the odds of a white flower in a plant which has round pollen is <span class="math inline">\(0.25/(1-0.25) = 0.25 / 0.75 = 1/3\)</span>. The use of odds, and its cousin, <em>log odds</em>, is a genuine help when working with models with multiple explanatory variables.</p>
+</div>
+<div id="simple-changes-in-input" class="section level2">
+<h2><span class="header-section-number">7.4</span> Simple changes in input</h2>
+<p>I’m using the word “simple” to refer to the change in input involved in an effect size. Several considerations motivate this:</p>
+<ul>
+<li>When looking at a categorical explanatory variable, an effect size is a comparison of just two of the levels.</li>
+<li>When looking at a quantitative explanatory variable, I advocate using a <em>finite</em> change in input, e.g. the 60 inches to 68 inches in mother’s height. That’s simpler than the alternative, using an <em>infinitesimal</em> change in input, and more appropriate for many machine-learning models where the output can vary discontinuously as the input changes.</li>
+</ul>
+<p>But the main thing I want to emphasize with the word “simple” has to do with models with multiple explanatory variables. In such models, there are different effect sizes for the different explanatory variables. That is, an effect size reports the change in model output when a <em>single</em> one of the explanatory variables is changed, holding all the others constant. This is where the phrase “with respect to” comes into play. For instance, the model displayed in Figure 6.4, with child’s height as the response variable, involves three explanatory variables: mother’s height, father’s height, and child’s sex. An effect size in such a model refers to a specific explanatory variable. So it’s meaningful to speak of the effect (on child’s height) with respect to mother’s height, or the effect with respect to father’s height, or the effect with respect to child’s sex. Which one is right for you depends on what you are investigating.</p>
+</div>
+<div id="reading-effect-size-from-a-graph" class="section level2">
+<h2><span class="header-section-number">7.5</span> Reading effect size from a graph</h2>
+<p>Chapter 6 introduced four simple settings for statistical inference that are at the core of conventional statistics books. In every setting, the response variable is quantitative. The single explanatory variable is either categorical (as in Figure 6.1(a) or quantitative (as in Figure 6.1(b)).</p>
+<p>For convenience, I’ll repeat those two figures here, with some annotation to show how to calculate the effect size.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="070-Effect-size_files/figure-html/fig6-1-redux-1.png" alt="Figure 7.1: A reproduction of Figure 6.1(a) with annotations to show the effect size." width="80%" />
+<p class="caption">
+Figure 7.1: A reproduction of Figure 6.1(a) with annotations to show the effect size.
+</p>
+</div>
+<p>The model in Figure 6.1 is height as a function of sex. The model values are marked as blue lines: 64.1 inches for “F” and 69.2 inches for “M”. Changing the input from F to M therefore brings about a change of <span class="math inline">\(69.2 - 64.1 = 5.1\)</span> inches. Since the explanatory variable is categorical, the effect size with respect to sex (“F” <span class="math inline">\(\rightarrow\)</span> “M”) is 5.1 inches.</p>
+<p>Less stilted language would be, “Men tend to be 5.1 inches taller than women.” But watch out. The “men tend to be …” statement is easily interpreted as being about men and women. In fact, as you can see from the dots in the graph, many women are taller than many men. Keep in mind that the 5.1 inches is an effect size.</p>
+When the explanatory variable is quantitative, the effect size is presented as a slope. To calculate the slope, select two different values of the explanatory variable, as with the ones marked with vertical lines in Figure 7.2 below.
+<div class="figure" style="text-align: FALSE">
+<img src="070-Effect-size_files/figure-html/fig6-2-redux-1.png" alt="Figure 7.2: A reproduction of Figure 6.1(b) with annotations to show the effect size." width="80%" />
+<p class="caption">
+Figure 7.2: A reproduction of Figure 6.1(b) with annotations to show the effect size.
+</p>
+</div>
+<p>The two values selected for the explanatory variable (mother’s height) are 60 and 68 inches, so the run is 8 inches. For an input of 60 inches the model output is 65.5 inches. For an input of 68 inches, the model output is 68.0 inches. thus, the run is 2.5 inches. The effect size is the ratio of rise to run: 2.5 inches / 8 inches = 0.31.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-kahane-2017">
+<p>Kahane, CJ. 2017. “Fatality Reduction by Seat Belts in the Center Rear Seat and Comparison of Occupants’ Relative Fatality Risk at Various Seating Positions.” DOT HS 812 369. US National Highway Traffic Safety Administration. <a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812369.pdf">https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812369.pdf</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="degrees-of-flexibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="f-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Compact_inference.pdf", "Compact_inference.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

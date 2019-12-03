@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 Simple means and proportions | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 11 Simple means and proportions | A Compact Guide to Classical Inference" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 Simple means and proportions | A Compact Guide to Classical Inference" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 Simple means and proportions | A Compact Guide to Classical Inference" />
+  
+  
+  
+
+<meta name="author" content="Daniel Kaplan" />
+
+
+<meta name="date" content="2019-12-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="so-called-statistical-significance.html"/>
+<link rel="next" href="comparing-models.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Compact Guide to Classical Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html"><i class="fa fa-check"></i><b>1</b> What is classical inference?</a><ul>
+<li class="chapter" data-level="" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html#and-why-should-i-read-this-book"><i class="fa fa-check"></i>… and why should I read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
+<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
+<li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#taxonomy"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#model-fitting-a-contest-between-candidate-models"><i class="fa fa-check"></i><b>5.1</b> Model fitting: A contest between candidate models</a></li>
+<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#variance-of-model-values"><i class="fa fa-check"></i><b>5.2</b> Variance of model values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
+<li class="chapter" data-level="6.1" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#one-degree-of-flexibility"><i class="fa fa-check"></i><b>6.1</b> One degree of flexibility</a></li>
+<li class="chapter" data-level="6.2" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#multiple-degrees-of-flexibility"><i class="fa fa-check"></i><b>6.2</b> Multiple degrees of flexibility</a></li>
+<li class="chapter" data-level="6.3" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#covariates"><i class="fa fa-check"></i><b>6.3</b> Covariates</a></li>
+<li class="chapter" data-level="6.4" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#flexibility-literally"><i class="fa fa-check"></i><b>6.4</b> Flexibility, literally</a></li>
+<li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.5" data-path="effect-size.html"><a href="effect-size.html#reading-effect-size-from-a-graph"><i class="fa fa-check"></i><b>7.5</b> Reading effect size from a graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
+<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
+<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.2</b> What’s the meaning of F?</a></li>
+<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.3</b> R-squared</a></li>
+<li class="chapter" data-level="8.4" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.4</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.5" data-path="f-and-r.html"><a href="f-and-r.html#another-explanation-of-f"><i class="fa fa-check"></i><b>8.5</b> Another explanation of F</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence intervals</a><ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals-on-effect-size"><i class="fa fa-check"></i><b>9.1</b> Calculating confidence intervals on effect size</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-95"><i class="fa fa-check"></i><b>9.2</b> 4 and 95%</a></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-n"><i class="fa fa-check"></i><b>9.3</b> 4 and <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-versus-prediction-intervals"><i class="fa fa-check"></i><b>9.4</b> Confidence versus prediction intervals</a></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#for-the-conventionally-trained-reader"><i class="fa fa-check"></i><b>9.5</b> For the conventionally trained reader …</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html"><i class="fa fa-check"></i><b>10</b> So-called “statistical significance”</a><ul>
+<li class="chapter" data-level="10.1" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#calculating-a-p-value"><i class="fa fa-check"></i><b>10.1</b> Calculating a p-value</a></li>
+<li class="chapter" data-level="10.2" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#history-and-criticism"><i class="fa fa-check"></i><b>10.2</b> History and criticism</a></li>
+<li class="chapter" data-level="10.3" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#appendix-when-df-geq-2"><i class="fa fa-check"></i><b>10.3</b> Appendix: When <span class="math inline">\(df \geq 2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html"><i class="fa fa-check"></i><b>11</b> Simple means and proportions</a><ul>
+<li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Compact Guide to Classical Inference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simple-means-and-proportions" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Simple means and proportions</h1>
+<p>The presentation of classical inferene in this compact guide does not follow the historical flow of how inferential concepts were developed, largely over the half century from 1880 to 1925. Instead we started with F, which dates from 1925, introducing it in the context of models, an even more recent concept. Models provide a means to address contemporary uses of data.</p>
+<p>Historically, inference started with very simple questions involving a single variable. For instance, after observing a mental-health patient’s sleep over several days, a reasonable presentation of how much sleep the patient got is the the mean over those days. Or, in a more contemporary context, imagine being interested in the trend toward self-driving cars. A reasonable summary of the deployment of the technology could be the proportion of cars on the road with self-driving features such as lane-keeping or automatic braking before a collision.</p>
+<p>Very often, behind the interest in a mean or proportion is a different interest: a change in mean or a change in proportion. For such questions, models and F are the way to go. But in this chapter we’ll journey into neans and proportions themselves.</p>
+<div id="no-flexibility-df-0" class="section level2">
+<h2><span class="header-section-number">11.1</span> No flexibility: df = 0</h2>
+<p>We seen that models can be constructed with more or less flexibility, e.g. more or fewer explanatory variables, more or fewer levels in a categorical variable. It is possible to think about a simple mean or a simple proportion in terms of a model, but it is a strange model with <em>no explanatory variables</em>. That is, it is a model with <span class="math inline">\(df = 0\)</span>.</p>
+<p>Consider the general formula for F:</p>
+<p><span class="math display">\[ \mbox{F} \equiv \frac{n - (1+df)}{df} \frac{v_m}{v_r - v_m}\]</span></p>
+<p>Since F involves division by <span class="math inline">\(df\)</span>, the ratio is indeterminate. Or, in the words of your third-grade teacher, “You’re not allowed to divide by zero.”</p>
+<p>But <span class="math inline">\(df=0\)</span> is not the only thing going on when doing inference on a mean or proportion. The model itself is unusual. Because there is no explanatory variable, the model has no input. A function with no input can, mathematically, have only one value for the output. And so the model values will always be the same. This implies <span class="math inline">\(v_m = 0\)</span>. As for the effect size of the model, there’s no changing output and no input to change, so the usual definition of change-in-output / change-in-input doesn’t apply.</p>
+<p>In the spirit of discussion (as opposed to mathematical proof), let’s imagine filling in the values <span class="math inline">\(df=0\)</span> and <span class="math inline">\(v_m=0\)</span> into the formula for F and let’s take the effect size B to be the (constant) model output itself. For F we get</p>
+<p><span class="math display">\[\mbox{F}  = \frac{n - 1}{0} \frac{0}{v_r} \approx \frac{n-1}{v_r}\ \ \ \ \mbox{WARNING: Cancelling out zeros is not legit.}\]</span></p>
+<p>Using that F, and ignoring its illegitimate derivation, we can find the CI with the usual CI formula,</p>
+<p><span class="math display">\[CI = B (1 \pm \sqrt{4/\mbox{F}}) = B (1 \pm 2 \sqrt{n-1} / s_r).\]</span>
+What’s <span class="math inline">\(s_r\)</span>. It’s simply <span class="math inline">\(s_r \equiv \sqrt{v_r}\)</span>.</p>
+<p>It turns out that this expression for CI, however sketchy the means of arriving at it, is correct. We got to the right answer by making two mistakes that cancelled out.</p>
+<p>In classical inference, the quantity</p>
+<p><span class="math display">\[\mbox{SE} = \frac{s_r}{\sqrt{n-1}}\]</span></p>
+<p>has a name: the standard error (SE) of the mean. And <span class="math inline">\(s_r\)</span> itself has a name: the standard deviation of the (response) variable.</p>
+<p>When it comes to interpreting the F value itself, the mistakes we made don’t cancel out. The correct value for F is</p>
+<p><span class="math display">\[\mbox{F} \equiv (B / \mbox{SE})^2 = (n-1) \frac{B^2}{v_r}\]</span></p>
+<p>This quantity was invented decades before F was introduced to statistics. Strictly speaking, the quantity that was invented is the square root of the above and it is given the name <em>t</em>:</p>
+<p><span class="math display">\[\mbox{t}  = B / SE.\]</span></p>
+<p>Hypothesis tests that were based on t were called “t-tests,” a name that will be familiar to anyone who took a conventional statistics course.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="so-called-statistical-significance.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="comparing-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Compact_inference.pdf", "Compact_inference.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

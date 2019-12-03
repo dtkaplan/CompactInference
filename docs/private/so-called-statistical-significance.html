@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 So-called “statistical significance” | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 10 So-called “statistical significance” | A Compact Guide to Classical Inference" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 So-called “statistical significance” | A Compact Guide to Classical Inference" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 So-called “statistical significance” | A Compact Guide to Classical Inference" />
+  
+  
+  
+
+<meta name="author" content="Daniel Kaplan" />
+
+
+<meta name="date" content="2019-12-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="confidence-intervals.html"/>
+<link rel="next" href="simple-means-and-proportions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Compact Guide to Classical Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html"><i class="fa fa-check"></i><b>1</b> What is classical inference?</a><ul>
+<li class="chapter" data-level="" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html#and-why-should-i-read-this-book"><i class="fa fa-check"></i>… and why should I read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
+<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
+<li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#taxonomy"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#model-fitting-a-contest-between-candidate-models"><i class="fa fa-check"></i><b>5.1</b> Model fitting: A contest between candidate models</a></li>
+<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#variance-of-model-values"><i class="fa fa-check"></i><b>5.2</b> Variance of model values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
+<li class="chapter" data-level="6.1" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#one-degree-of-flexibility"><i class="fa fa-check"></i><b>6.1</b> One degree of flexibility</a></li>
+<li class="chapter" data-level="6.2" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#multiple-degrees-of-flexibility"><i class="fa fa-check"></i><b>6.2</b> Multiple degrees of flexibility</a></li>
+<li class="chapter" data-level="6.3" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#covariates"><i class="fa fa-check"></i><b>6.3</b> Covariates</a></li>
+<li class="chapter" data-level="6.4" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#flexibility-literally"><i class="fa fa-check"></i><b>6.4</b> Flexibility, literally</a></li>
+<li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.5" data-path="effect-size.html"><a href="effect-size.html#reading-effect-size-from-a-graph"><i class="fa fa-check"></i><b>7.5</b> Reading effect size from a graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
+<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
+<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.2</b> What’s the meaning of F?</a></li>
+<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.3</b> R-squared</a></li>
+<li class="chapter" data-level="8.4" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.4</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.5" data-path="f-and-r.html"><a href="f-and-r.html#another-explanation-of-f"><i class="fa fa-check"></i><b>8.5</b> Another explanation of F</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence intervals</a><ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals-on-effect-size"><i class="fa fa-check"></i><b>9.1</b> Calculating confidence intervals on effect size</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-95"><i class="fa fa-check"></i><b>9.2</b> 4 and 95%</a></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-n"><i class="fa fa-check"></i><b>9.3</b> 4 and <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-versus-prediction-intervals"><i class="fa fa-check"></i><b>9.4</b> Confidence versus prediction intervals</a></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#for-the-conventionally-trained-reader"><i class="fa fa-check"></i><b>9.5</b> For the conventionally trained reader …</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html"><i class="fa fa-check"></i><b>10</b> So-called “statistical significance”</a><ul>
+<li class="chapter" data-level="10.1" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#calculating-a-p-value"><i class="fa fa-check"></i><b>10.1</b> Calculating a p-value</a></li>
+<li class="chapter" data-level="10.2" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#history-and-criticism"><i class="fa fa-check"></i><b>10.2</b> History and criticism</a></li>
+<li class="chapter" data-level="10.3" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#appendix-when-df-geq-2"><i class="fa fa-check"></i><b>10.3</b> Appendix: When <span class="math inline">\(df \geq 2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html"><i class="fa fa-check"></i><b>11</b> Simple means and proportions</a><ul>
+<li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Compact Guide to Classical Inference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="so-called-statistical-significance" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> So-called “statistical significance”</h1>
+<p>In this book we’ve used effect size as the basic measure of how a response variable is related to an explanatory variable. The confidence interval of an effect size tells what range of values are consistent with our data. When that interval includes zero, it’s fair to say that our data do not rule out the possibility that there is no effect at all, that is, that the response and explanatory variables are unrelated.</p>
+<p>For historical reasons, its common for researchers to present their results as “statistically significant.” The way a relationship between a respose and explanatory variable(s) can win the certificate of “statistical significance,” is by a process called <em>null hypothesis testing</em>. A null hypothesis test involves calculating a quantity known as the p-value, which is always between 0 and 1. When the p-value is smaller than 0.05 (by convention), the researcher is warranted in using the label “statistically significant.”</p>
+<p>First, I’ll handle the question of how the calculation is done. Then, I’ll give some history and recent professional recommendations that the result of the calculation has no meaning. Hopefully, despite the ubiquity of p-values in conventional statistics textbooks and in the research literature, you’ll be able to use more meaningful ways to describe the relationship, if any, between response and explanatory variables.</p>
+<div id="calculating-a-p-value" class="section level2">
+<h2><span class="header-section-number">10.1</span> Calculating a p-value</h2>
+<p>When you quantify the relationship between a response and explanatory variable(s), several inferential quantities are generated. In this book, we focus particularly on F and the degrees of flexibility <span class="math inline">\(df\)</span>, from which everything else flows.</p>
+<p>The p-value calculation takes F, <span class="math inline">\(df\)</span> and sample size <span class="math inline">\(n\)</span> as inputs and produces an output in the form of a probability, that is, a number between 0 and 1. The calculation from first principles is very difficult, so everyone builds on the earlier work of couragious statisticians and mathematicians who have simplifed it into looking up a number in a table, or, more conveniently, asking a computer to look up the number.</p>
+<p>For example, in the R computing language, the function <span class="math inline">\(pf()\)</span> does the calculation. Specifically, the p-value is <code>1 - pf(F, df, n -  df)</code>. In many software systems, such as Excel, all of the F, <span class="math inline">\(df\)</span> and p-value calculations are packaged together in functions that are often called “tests.” There are often many such “tests” provided for different settings like the difference between two means or the slope of a regression line. But the underlying principles are those presented here in a unified way, with <span class="math inline">\(v_r\)</span>, <span class="math inline">\(v_m\)</span>, <span class="math inline">\(df\)</span>, and F.</p>
+<p>Since what you do with a p-value is to compare it to 0.05, there is a remarkably simple way to go. instead of making the rule about the size of the p-value, we make it about the size of F. The value of F that corresponds to <span class="math inline">\(p = 0.05\)</span> is called the “95% critical value” of F. This is often written F<span class="math inline">\(^\star\)</span>. So long as you have <span class="math inline">\(n\)</span> moderately large, say <span class="math inline">\(n \gtrapprox 10\)</span>, the critical value is 4. That’s it. 4. If <span class="math inline">\(n \gtrapprox 10\)</span>, F=4 is the threshold for declaring a relationship “statistically significant.”</p>
+<p>For <span class="math inline">\(n\)</span> small, it’s no longer adequate to use 4 as the critical value. Instead, for all the situations encountered in an introductory statistics class, you have to look up the critical value in Figure 1.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample size <span class="math inline">\(n\)</span></th>
+<th>large</th>
+<th>10</th>
+<th>9</th>
+<th>8</th>
+<th>7</th>
+<th>6</th>
+<th>5</th>
+<th>4</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F<span class="math inline">\(^\star\)</span></td>
+<td>4</td>
+<td>5</td>
+<td>5.3</td>
+<td>5.6</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<p>**Figure 1: Critical values for F depend on the sample size <span class="math inline">\(n\)</span>, especially for small <span class="math inline">\(n\)</span>. These critical values are for <span class="math inline">\(df=1\)</span>.</p>
+<p>Do remember that the formula for F includes <span class="math inline">\(n\)</span>. One way to get a large F is to use data with large <span class="math inline">\(n\)</span>. So don’t mis-interpret the table as saying <del>“10 points is enough.”</del> It’s just that F<span class="math inline">\(^\star\)</span> doesn’t much depend on <span class="math inline">\(n\)</span> when <span class="math inline">\(n \gtrapprox 10\)</span>.</p>
+<p>Figure 1 is for <span class="math inline">\(df = 1\)</span>, which is the situation in most of the settings used in introductory statistics. For larger <span class="math inline">\(df\)</span>, the critical values of F are similar except for models where <span class="math inline">\(df \approx n\)</span>. See Figure 3, below.</p>
+</div>
+<div id="history-and-criticism" class="section level2">
+<h2><span class="header-section-number">10.2</span> History and criticism</h2>
+<p>In the 1880s a way of quantifying the relationship between two numerical variables was invented. It was called the <em>correlation coefficient</em> and it continues to be used to this day. Probably it should not be so widely used today as it is, because we now have effect sizes to work with and because of the challenges to interpreting the correlation coefficient, as you’ll see.</p>
+<p>The correlation coefficient from the 1880s is closely related to the <span class="math inline">\(R^2\)</span> statistic introduced in Chapter 6. Specifically, the size of the correlation coefficient is <span class="math inline">\(r = \sqrt{R^2} = R\)</span>. Recall that <span class="math inline">\(R^2\)</span> is the ratio of the variance of model values to the variance of the response variable:</p>
+<p><span class="math display">\[R^2 \equiv v_m / v_r.\]</span></p>
+<p>Recall as well that each of <span class="math inline">\(v_m\)</span> and <span class="math inline">\(v_r\)</span> are an average of square differences, and, of course, a square of a real number cannot be less than zero. Consequently, <span class="math inline">\(R^2\)</span> cannot be negative.</p>
+<p>If <span class="math inline">\(R^2\)</span> is exactly zero, it’s reasonable to conclude that the explanatory variable(s) cannot account for the response variable. Seen another way, if <span class="math inline">\(R^2\)</span> is zero then <span class="math inline">\(v_m\)</span> must also be zero. For <span class="math inline">\(v_m\)</span> to be zero, all of the model values must be exactly the same, so the effect size must also be zero.</p>
+<p>What happens if – to do a thought experiment – the response variable is completely unrelated to the explanatory variable? You might be anticipating that <span class="math inline">\(R^2\)</span> will be zero. In practice, however, it’s not. This comes about because there are almost always associations happening purely at random that, when quantified, produce <span class="math inline">\(R^2 &gt; 0\)</span>. So, in deciding whether the data indicate a relationship between the response and explanatory variable(s), we need to decide what value of <span class="math inline">\(R^2\)</span> is so close to zero as to be a sign that the response and explanatory variable(s) are related.</p>
+<p>This question was asked, and answered, early in the 1900s. In one specific case, it was asked by a man named Dr Shaw at the January 15, 1907 meeting of the Royal Statistical Society in the UK. The context was a discussion of a paper by <a href="https://en.wikipedia.org/wiki/Reginald_Hawthorn_Hooker">Reginald Hooker</a> who had studied the correlation between weather and crops. In Table 1 of his paper, part of which is reproduced in Figure 1, Hooker presented the correlation between amount of wheat harvested and the amount of rain accumulated over the previous seasons. He also looked at the correlation of wheat harvest and temperature – that’s the second numerical column in Figure 2.</p>
+<p><img src="images/Hooker-correlations.png" width="80%" /></p>
+<p>Now to quote from the recollections published in 1908 by <a href="https://en.wikipedia.org/wiki/William_Sealy_Gosset">William Seely Gossett</a>, writing anonymously as “Student”:</p>
+<blockquote>
+<p><em>Dr Shaw made an enquiry as to the significance of correlation coefficients derived fronm small numbers of cases.</em></p>
+</blockquote>
+<p>The small number here is 21: Hooker had worked with 21 years of crop and weather data. The plain meaning of “significance of” here is “the meaning carried by.” A modern person might have asked, “Some of those correlations are pretty small. And you don’t have much data. Do such small correlations mean anything?” To continue …</p>
+<blockquote>
+<p><em>His question was answered by Messrs <a href="https://en.wikipedia.org/wiki/Udny_Yule">Yule</a> and <a href="https://en.wikipedia.org/wiki/Reginald_Hawthorn_Hooker">Hooker</a> and Professor <a href="https://en.wikipedia.org/wiki/Francis_Ysidro_Edgeworth">Edgeworth</a>, all of whom considered that Mr Hooker was probably safe in taking .50 as his limit of significance for a sarnple of 21.</em></p>
+</blockquote>
+<p>In plainer language: don’t take as meaningful any correlation coefficient less than 0.50.</p>
+<blockquote>
+<p><em>They did not, however, answer Dr Shaw’s question in any more general way. Now Mr Hooker is not the only statistician who is forced to work with very small samples, and until Dr Shaw’s question has been properly answered the results of such investigations lack the criterion which would enable us to make full use of them. The present paper, which is an account of some sampling experimiients, has two objects: (1) to throw some light by empirical methods on the problem itself, (2) to endeavour to interest mathematicians who have both time and ability to solve it.</em></p>
+</blockquote>
+<p>A general solution was found, in part by Student but also by others such as Ronald Fisher. Key to setting up the solution was to define “significance” in mathematical terms. The setup was logically ingenious and a little hard to follow. It goes like this:</p>
+<p>Suppose we have two variables that have been generated entirely at random and independently of one another. We can calculate the correlation coefficient between them. The correlation coefficient will also be a random number, presumably near zero. If we perform the experiment many times and collect the set of random correlation coefficients produced, we will have an idea of what is the size of commonly encountered coefficients, and how big a correlation coefficient should be so that we can sensibly regard it as being unlikely to arise from random, independent variables.</p>
+<p>Doing the random-and-independent-variable simulation for the <span class="math inline">\(n = 21\)</span> situation of Hooker’s paper, indicates that a correlation coefficient at or above 0.50 will result about 1% of the time. That’s a small probability. So, as Messrs Yule, Hooker, and Edgeworth said, it seems “pretty safe” – 99%? – to conclude that <span class="math inline">\(r = 0.50\)</span> with <span class="math inline">\(n=21\)</span> means that there <em>is</em> an association between the two variables.</p>
+<p>Actually, the simulation only tells us about a hypothetical world – called the <em>Null Hypothesis</em> – in which variables are random and independent. The simulation doesn’t have anything to say about a world in which variables are related to one another. It’s legitimate to say that observing something that’s very unlikely – 1% chance of <span class="math inline">\(r \ge 0.5\)</span> – suggests that the data didn’t come from that world. But suppose data came from another hypothetical world – called the <em>Alternative Hypothesis</em> – where variables are related to one another. Such a world might easily generate a value <span class="math inline">\(r &lt; 0.5\)</span>. So seeing large r entitles us to “reject the null hypothesis,” but seeing small r doesn’t tell us about the alternative hypothesis. Small r just means that we can’t reject the null hypothesis. The formal language is “fail to reject the null hypothesis.”</p>
+<p>The probability that comes from the null hypothesis simulation has a name: the <em>p-value</em>.</p>
+<p>In 1925, Ronald Fisher suggested using a probability of 5% instead of 1% in lab work. This guideline was intended to help lab workers avoid making unwarranted claims that an experiment is showing a positive result. If the p-value is <span class="math inline">\(p &gt; 0.05\)</span>, you have nothing to say about your experiment, you <em>fail to</em> reject the null hypothesis.</p>
+<p>Over the years, this got turned around. When <span class="math inline">\(p &lt; 0.05\)</span> (by convention), you’re entitled to “reject the null hypothesis.” In order to publish a scientific report, researchers were obliged to have enough data to reject the null. This is a way of saying that <em>some</em> non-null claim is warranted. But which ones? Certainly the point is to show that there is some substantial relationship between the response and explanatory variable(s), a relationship that means something in the real world. Rejecting the null is not, on its own, a sign that the relationship is substantial and meaningful.</p>
+<p>Further confusing things was that little word used by Dr Shaw in 1907: <em>significance</em>. An equivalence developed between “reject the null” and “significance.” Claims that had a low p-value came to be described as “statistically significant.” In everyday speech, “significant” means substantial or meaningful or important. This is <em>not</em> the meaning of “statistically significant.” The importance or meaning of an association between a response and explanatory variables can be assessed by looking at the <em>effect size</em>, and checking whether the effect size is large enough to have practical meaning in the world. But even tiny effect sizes, without any practical implications, can generate small p-values. You just have to have enough data. With the phrase “statistically significant” attached to findings, people could publish their work even if there was no practical meaning.</p>
+<p>It’s worse than this. Even when variables are unrelated, the p-value will be smaller than 0.05 on five percent of occasions. When Fisher was writing in 1925, there weren’t many researchers and each lab experiment required a lot of work. And, in any event, “rejecting the null” was just an internal check on what lab work is worth following up and replicating. But today there are millions of researchers. And each researcher can easily look at dozens of variables. So, even if every researcher was working with unrelated variables, statistical significance will be found millions of times: enough to saturate the literature and effectively hide genuine findings with practical significance.</p>
+<p>After decades of researchers mis-using p-values, in 2019 the American Statistical Association, a leading professional organization world-wide, issued a statement worth quoting in length:</p>
+<blockquote>
+<p><em>It is time to stop using the term ’statistically significant&quot; entirely. Nor should variants such as “significantly different,” “p &lt; 0.05,” and “nonsignificant” survive, whether expressed in words, by asterisks in a table, or in some other way.</em></p>
+<p><em>Regardless of whether it was ever useful, a declaration of “statistical significance” has today become meaningless. Made broadly known by Fisher’s use of the phrase (1925), Edgeworth’s (1885) original intention for statistical significance was simply as a tool to indicate when a result warrants further scrutiny. But that idea has been irretrievably lost. Statistical significance was never meant to imply scientific importance, and the confusion of the two was decried soon after its widespread use (Boring 1919). Yet a full century later the confusion persists.</em></p>
+<p><em>And so the tool has become the tyrant. The problem is not simply use of the word “significant,” although the statistical and ordinary language meanings of the word are indeed now hopelessly confused (Ghose 2013); the term should be avoided for that reason alone. The problem is a larger one, however: using bright-line rules for justifying scientific claims or conclusions can lead to erroneous beliefs and poor decision making (ASA statement, Principle 3). A label of statistical significance adds nothing to what is already conveyed by the value of p; in fact, this dichotomization of p-values makes matters worse.</em></p>
+<p><em>For example, no p-value can reveal the plausibility, presence, truth, or importance of an association or effect. Therefore, a label of statistical significance does not mean or imply that an association or effect is highly probable, real, true, or important. Nor does a label of statistical nonsignificance lead to the association or effect being improbable, absent, false, or unimportant. Yet the dichotomization into “significant” and “not significant” is taken as an imprimatur of authority on these characteristics. In a world without bright lines, on the other hand, it becomes untenable to assert dramatic differences in interpretation from inconsequential differences in estimates. As Gelman and Stern (2006) famously observed, the difference between “significant” and “not significant” is not itself statistically significant.</em></p>
+<p><em>Furthermore, this false split into “worthy” and “unworthy” results leads to the selective reporting and publishing of results based on their statistical significance—the so-called “file drawer problem” (Rosenthal 1979). And the dichotomized reporting problem extends beyond just publication, notes Amrhein, Trafimow, and Greenland (2019): when authors use p-value thresholds to select which findings to discuss in their papers, “their conclusions and what is reported in subsequent news and reviews will be biased…Such selective attention based on study outcomes will therefore not only distort the literature but will slant published descriptions of study results—biasing the summary descriptions reported to practicing professionals and the general public.” For the integrity of scientific publishing and research dissemination, therefore, whether a p-value passes any arbitrary threshold should not be considered at all when deciding which results to present or highlight.</em></p>
+</blockquote>
+</div>
+<div id="appendix-when-df-geq-2" class="section level2">
+<h2><span class="header-section-number">10.3</span> Appendix: When <span class="math inline">\(df \geq 2\)</span></h2>
+<p>For models with multiple explanatory variables or categorical variables with more than two levels, the critical values of F differ substantially from the <span class="math inline">\(df = 1\)</span> case only for very small <span class="math inline">\(n\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample size <span class="math inline">\(n\)</span></th>
+<th>large</th>
+<th>10</th>
+<th>9</th>
+<th>8</th>
+<th>7</th>
+<th>6</th>
+<th>5</th>
+<th>4</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(df = 1\)</span></td>
+<td>4</td>
+<td>5</td>
+<td>5.3</td>
+<td>5.6</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(df = 2\)</span></td>
+<td>3</td>
+<td>4.5</td>
+<td>4.7</td>
+<td>5.1</td>
+<td>5.7</td>
+<td>7</td>
+<td>9.5</td>
+<td>19</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(df = 3\)</span></td>
+<td>2.7</td>
+<td>4.3</td>
+<td>4.8</td>
+<td>5.4</td>
+<td>6.6</td>
+<td>9.3</td>
+<td>19</td>
+<td>216</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(df = 4\)</span></td>
+<td>2.5</td>
+<td>4.5</td>
+<td>5.2</td>
+<td>6.4</td>
+<td>9.1</td>
+<td>19</td>
+<td>225</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<p><em>Figure 3: Critical values for F for small <span class="math inline">\(n\)</span> and a few different values of <span class="math inline">\(df\)</span>.</em></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="confidence-intervals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simple-means-and-proportions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Compact_inference.pdf", "Compact_inference.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

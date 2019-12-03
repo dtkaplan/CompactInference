@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Confidence intervals | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 9 Confidence intervals | A Compact Guide to Classical Inference" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Confidence intervals | A Compact Guide to Classical Inference" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Confidence intervals | A Compact Guide to Classical Inference" />
+  
+  
+  
+
+<meta name="author" content="Daniel Kaplan" />
+
+
+<meta name="date" content="2019-12-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="f-and-r.html"/>
+<link rel="next" href="so-called-statistical-significance.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Compact Guide to Classical Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html"><i class="fa fa-check"></i><b>1</b> What is classical inference?</a><ul>
+<li class="chapter" data-level="" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html#and-why-should-i-read-this-book"><i class="fa fa-check"></i>… and why should I read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
+<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
+<li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#taxonomy"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#model-fitting-a-contest-between-candidate-models"><i class="fa fa-check"></i><b>5.1</b> Model fitting: A contest between candidate models</a></li>
+<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#variance-of-model-values"><i class="fa fa-check"></i><b>5.2</b> Variance of model values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
+<li class="chapter" data-level="6.1" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#one-degree-of-flexibility"><i class="fa fa-check"></i><b>6.1</b> One degree of flexibility</a></li>
+<li class="chapter" data-level="6.2" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#multiple-degrees-of-flexibility"><i class="fa fa-check"></i><b>6.2</b> Multiple degrees of flexibility</a></li>
+<li class="chapter" data-level="6.3" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#covariates"><i class="fa fa-check"></i><b>6.3</b> Covariates</a></li>
+<li class="chapter" data-level="6.4" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#flexibility-literally"><i class="fa fa-check"></i><b>6.4</b> Flexibility, literally</a></li>
+<li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.5" data-path="effect-size.html"><a href="effect-size.html#reading-effect-size-from-a-graph"><i class="fa fa-check"></i><b>7.5</b> Reading effect size from a graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
+<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
+<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.2</b> What’s the meaning of F?</a></li>
+<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.3</b> R-squared</a></li>
+<li class="chapter" data-level="8.4" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.4</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.5" data-path="f-and-r.html"><a href="f-and-r.html#another-explanation-of-f"><i class="fa fa-check"></i><b>8.5</b> Another explanation of F</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence intervals</a><ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals-on-effect-size"><i class="fa fa-check"></i><b>9.1</b> Calculating confidence intervals on effect size</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-95"><i class="fa fa-check"></i><b>9.2</b> 4 and 95%</a></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-n"><i class="fa fa-check"></i><b>9.3</b> 4 and <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-versus-prediction-intervals"><i class="fa fa-check"></i><b>9.4</b> Confidence versus prediction intervals</a></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#for-the-conventionally-trained-reader"><i class="fa fa-check"></i><b>9.5</b> For the conventionally trained reader …</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html"><i class="fa fa-check"></i><b>10</b> So-called “statistical significance”</a><ul>
+<li class="chapter" data-level="10.1" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#calculating-a-p-value"><i class="fa fa-check"></i><b>10.1</b> Calculating a p-value</a></li>
+<li class="chapter" data-level="10.2" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#history-and-criticism"><i class="fa fa-check"></i><b>10.2</b> History and criticism</a></li>
+<li class="chapter" data-level="10.3" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#appendix-when-df-geq-2"><i class="fa fa-check"></i><b>10.3</b> Appendix: When <span class="math inline">\(df \geq 2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html"><i class="fa fa-check"></i><b>11</b> Simple means and proportions</a><ul>
+<li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#no-flexibility-df-0"><i class="fa fa-check"></i><b>11.1</b> No flexibility: df = 0</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Compact Guide to Classical Inference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="confidence-intervals" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Confidence intervals</h1>
+<p><span class="math inline">\(\newcommand{\flex}[]{^\circ\!{\cal{F}}}\)</span></p>
+<p>Chapter 7 started with an example of an effect size: the reduction in risk of fatal injury of vehicle occupants with respect to wearing a seat belt. That reduction is pretty impressive: <em>about</em> 58% according to a report <span class="citation">(Kahane <a href="#ref-kahane-2017">2017</a>)</span> from the <a href="https://www.nhtsa.gov/risky-driving/seat-belts">US National Highway Traffic Safety Administration (NHTSA)</a>.</p>
+<p>This chapter deals with the word “about” in the previous sentence. “About” is a statement about the precision of the effect size: how well we know it. It’s natural–but wrong–to assume that the precision can be sorted out from the effect size itself. For 58%, common sense suggests that about means something like “in the range from 56% to 60%.”</p>
+<p>In fact, the report <span class="citation">(Kahane <a href="#ref-kahane-2017">2017</a>)</span> explicitly states the precision as 41% to 69%. The format of this statement is an interval, the “confidence interval” on the effect size of risk reduction with respect to wearing a seat belt.</p>
+<div id="calculating-confidence-intervals-on-effect-size" class="section level2">
+<h2><span class="header-section-number">9.1</span> Calculating confidence intervals on effect size</h2>
+<p>Conventional textbooks have dozens of pages covering the calculation of confidence intervals for the four settings introduced in Chapter 4. Each of those settings involves a single explanatory variable and <span class="math inline">\(\flex = 1\)</span>. We can simplify a bit. The steps are:</p>
+<ol style="list-style-type: decimal">
+<li>Find the effect size itself, using the techniques in Chapter 7. We’ll call the effect size B and it will be a slope or a difference depending on whether the explanatory variable is quantitative or categorical.</li>
+<li>Find the F statistic for the model.</li>
+<li>Calculate the confidence interval (CI) on the effect size:</li>
+</ol>
+<p><span class="math display">\[CI = B (1 \pm \sqrt{4/F}).\]</span>
+Example: For the model shown in Figure 7.1, the effect with respect to sex of child’s height is found to be <span class="math inline">\(B = 5.1\)</span> inches. The F statistic is 933. So the confidence interval on the effect with respect to sex on child’s height is
+<span class="math display">\[5.1 (1 \pm \sqrt{4/933}) \approx 5.1 \pm 0.33 \approx 5.06\ \mbox{to}\ 5.13\ \mbox{inches}.\]</span></p>
+<p>Example: For the model shown in Figure 7.2, the effect of child’s height with respect to mother’s height is found to be B = 0.31. The F statistic is 34. So the confidence interval on the effect of child’s height is</p>
+<p><span class="math display">\[0.31(1 \pm \sqrt{4/34}) \approx 0.31 \pm 0.11 \approx 0.20\ \mbox{to}\ 0.42\]</span>.</p>
+<p>This simple method for finding the confidence interval on an effect size works only when <span class="math inline">\(\flex = 1\)</span>. For models with multiple explanatory variables, confidence intervals can be calculated, but not with this simple formula. A formula can be expressed using concepts from linear algebra, but in practice everyone relies on statistical software to do the calculations.</p>
+</div>
+<div id="and-95" class="section level2">
+<h2><span class="header-section-number">9.2</span> 4 and 95%</h2>
+<p>The confidence intervals described above are called “95% confidence intervals.” The 95% is called the “confidence level.” A precisely mathematical interpretation of that 95% is difficult for many people to follow and easy to get wrong.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> It suffices to say two things:</p>
+<ol style="list-style-type: decimal">
+<li>95% is the conventional confidence level, so use it.</li>
+<li>It’s common to hear this interpretation of the 95% confidence interval: “95% of the time, the true value of the effect size will be inside the interval.” This is not exactly right, in part because we would need to know what “true” means in order to operationalize the statement. But, even if the interpretation is not right, it gives a reasonable impression of the intent behind a 95% confidence interval.</li>
+<li>There is a small group of people who need to figure out how to calculate confidence intervals. For these people, it’s important to know exactly what a confidence interval is intended to mean. You’ll see the play out in the following explanation, which attempts to show how we know the formula for the CI produces an interval at a 95% confidence level.</li>
+</ol>
+<p>Notice that in the formula for the 95% confidence interval on the effect size
+<span class="math display">\[CI = B (1 \pm \sqrt{4/F})\]</span>
+the number 95% does not directly appear. What is it about this formula that makes the <span class="math inline">\(CI\)</span> at a 95% confidence level rather than some other level? It is the number 4, which can be seen as the result of an experiment.</p>
+<p>Here’s the experiment. Make some data where the variables are composed entirely of random numbers. It doesn’t really matter what the sample size <span class="math inline">\(n\)</span> is. For now, let’s assume <span class="math inline">\(n \gtrapprox 25.\)</span> Pick one of the variables as a response–it doesn’t matter which one. Then pick others as the explanatory variables–again, it doesn’t matter much which ones or how many. Let’s say you use <span class="math inline">\(\flex\)</span> of them, where you get to choose <span class="math inline">\(\flex\)</span>.</p>
+<p>Since we are making up the data, we know exactly the mechanism that is generating it, so we are in a good position to say what’s “true” about the mechanism. Since the response and every explanatory variable are random, the “true” effect size with respect to any of the explanatory variables is zero.</p>
+<p>Now construct a model of the response variable as a function of the explanatory variables, find the variance <span class="math inline">\(v_r\)</span> of the response variable and the variance <span class="math inline">\(v_m\)</span> of the model values. Use these along with <span class="math inline">\(n\)</span> and <span class="math inline">\(\flex\)</span> to find the F for the model. Since there is no connection between the response and the explanatory variables, we expect F to be small. Indeed, the typical F found by such an experiment is the very definition of “small” for F. Small F means that the random number variables hypothesis is consistent with the data seen through the lens of our model.</p>
+<p>Since the F from the experiment was generated using random numbers and random choices of variables and <span class="math inline">\(\flex\)</span> and <span class="math inline">\(n\)</span>, the F value is itself random.</p>
+<p>Now imagine that you repeat the experiment over and over with different random data, different choices of variables, and different <span class="math inline">\(\flex\)</span>. Remarkably, you will find a distribution of F that is centered more or less at 1 and which falls off with larger F. About 95% of the experimental trials, it turns out, will have <span class="math inline">\(F &lt; 4\)</span>.</p>
+<p>Look again at the formula for the confidence interval on the effect size,
+<span class="math display">\[CI = B (1 \pm \sqrt{4/F})\]</span>
+When <span class="math inline">\(F &lt; 4\)</span>, which happens 95% of the time, the confidence interval quantity under the radical, <span class="math inline">\(\sqrt{4/F}\)</span> will be greater than 1. So the interval <span class="math inline">\(1 \pm \sqrt{4/F}\)</span> will include B = 0 as a possibility. Thus, when the “true” effect size is zero, as implemented by the random generation of data, the confidence interval constructed using 4 as the number in <span class="math inline">\(\sqrt{4/F}\)</span> will include zero 95% of the time. That’s exactly what we want a confidence interval to do.</p>
+</div>
+<div id="and-n" class="section level2">
+<h2><span class="header-section-number">9.3</span> 4 and <span class="math inline">\(n\)</span></h2>
+<p>Very precise calculations of the 95% level of F for models fitted to completely random data can be made using advanced mathematics. Of course, such calculations make assumptions about the mechanism generating the random data, which is to say that the calculations are precise only in a specific made-up world. Calling this the “official” standard for the random data world, we can say that officially, the 95% level of F varies somewhat with the sample size <span class="math inline">\(n\)</span> and the model flexibility <span class="math inline">\(\flex\)</span>.</p>
+<p>This chapter is about confidence intervals on effect sizes from the single explanatory variable in models with <span class="math inline">\(\flex = 1\)</span>, so let’s focus on how official F varies with <span class="math inline">\(n\)</span> when <span class="math inline">\(\flex = 1\)</span>.</p>
+
+<div class="figure" style="text-align: FALSE">
+<img src="090-Confidence-intervals_files/figure-html/official-F-1.png" alt="Figure 9.1: The official 95% values of F to be used in confidence interval calculations are a function of \(n\). The blue line marks the value of 4, which is a good match to the official value when \(n &gt; 10\)." width="80%" />
+<p class="caption">
+Figure 9.1: The official 95% values of F to be used in confidence interval calculations are a function of <span class="math inline">\(n\)</span>. The blue line marks the value of 4, which is a good match to the official value when <span class="math inline">\(n &gt; 10\)</span>.
+</p>
+</div>
+<p>Let’s use the symbol <span class="math inline">\(F^\star\)</span> to label the “official” 95% values for F. An improved formula for the confidence interval of an effect size (when <span class="math inline">\(\flex = 1\)</span>) is</p>
+<p><span class="math display">\[CI = B (1 \pm \sqrt{F^\star/F}) .\]</span></p>
+<p>For a teacher, it’s worth asking whether to teach the “improved” formula first, or at all. One perspective is that it’s trivial to find <span class="math inline">\(F^\star\)</span>–just read it off the graph. So why not used the improved formula?</p>
+<p>There are a few reasons. First, every step in a procedure imposes some cognitive load on students which distracts them from other matters. Second, <span class="math inline">\(F^\star\)</span> doesn’t <em>explain</em> anything. The explanation of 4 is challenging enough and likely to be understood only by a small fraction of students (unless you spend time doing the simulation). But hardly any math or statistics faculty understand the origins of <span class="math inline">\(F^\star\)</span> and for students it’s just another mystery. Statistics calculations are always done in practice using software, so <span class="math inline">\(F^\star\)</span> is automatically included in the computation. More important, there is are issues that make the details of <span class="math inline">\(F^\star\)</span> relatively unimportant: the choice of measures, the shapes of distributions, and the role of covariates.</p>
+<p>Insofar as a desire to cover the details of <span class="math inline">\(F^\star\)</span> causes the instructor to use very small <span class="math inline">\(n\)</span> in examples, the statistics course is being pushed in bad direction. It’s much more important, in today’s world of data, to show how statistics can be applied to realistic problems, which always involve covariates. If you want to teach a unit on “small data,” do that. But it probably won’t be very interesting.</p>
+</div>
+<div id="confidence-versus-prediction-intervals" class="section level2">
+<h2><span class="header-section-number">9.4</span> Confidence versus prediction intervals</h2>
+<p>One of the common mistakes made by students in introductory statistics is to confuse a confidence interval with a prediction interval. For example, consider a confidence interval on the mean commuting time for workers in a city, say 35 to 42 minutes. Experience shows many well educated people will mistake this for a prediction of how long a person’s commute takes, that is, that 95% of people have commuting times in the range 35 to 42 minutes.</p>
+<p>It’s entirely possible to construct a proper prediction interval. It will typically involve a term in the form of <span class="math inline">\(\pm \sqrt{4 (v_r - v_m)}\)</span>, which, you should note, does not depend on <span class="math inline">\(n\)</span>. For large <span class="math inline">\(n\)</span>, the range <span class="math inline">\(\pm \sqrt{4 (v_r - v_m)}\)</span> is typically the biggest determinant of a prediction interval.</p>
+</div>
+<div id="for-the-conventionally-trained-reader" class="section level2">
+<h2><span class="header-section-number">9.5</span> For the conventionally trained reader …</h2>
+<p>The conventionally trained reader likely encountered confidence intervals in one of two settings: the CI on the sample mean or the CI on the sample proportion. Relatively simple formulas were presented for the standard error and then the standard error was scaled up by <span class="math inline">\(t^\star\)</span> or <span class="math inline">\(z^\star\)</span> to get a confidence interval.</p>
+<p>We’ll get to CIs on means and proportions in terms analogous to those used in this chapter only Chapter 11. The reason for the delay is that means and proportions are not effect sizes and that there is a mathematical difficulty using F when <span class="math inline">\(\flex = 0\)</span>.</p>
+<p>For completeness, a 95% confidence interval mean for a mean or proportion is</p>
+<p><span class="math display">\[CI  = B \pm \sqrt{4 / v_r}\]</span>
+where B is the point estimate for the mean or proportion and <span class="math inline">\(v_r\)</span> is the variance of the variable involved. For proportions, of course, the variable is an indicator: the mean of an indicator is exactly the proportion of 1s in the indicator.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-kahane-2017">
+<p>Kahane, CJ. 2017. “Fatality Reduction by Seat Belts in the Center Rear Seat and Comparison of Occupants’ Relative Fatality Risk at Various Seating Positions.” DOT HS 812 369. US National Highway Traffic Safety Administration. <a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812369.pdf">https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812369.pdf</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>Here is a more precise statement about the 95%. Imagine a world in which you know the “true” value of the effect size. In that world, you generate data, fit a model, and calculate an effect size from the model and data. Chances are, the effect size you calculate will not be exactly the “true” value, since the data are sampled at random. But you expect the value you calculate to be “close” to the “true” value. Confidence intervals are calculated according to a certain procedure. A proper procedure for a 95% confidence interval will be such that the confidence interval includes the “true” value 95% of the time. You could test out whether a proposed procedure is proper by generating many data sets and checking whether the many corresponding calculated confidence intervals on the effect sizes really do include zero 95% of the time.<a href="confidence-intervals.html#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="f-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="so-called-statistical-significance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Compact_inference.pdf", "Compact_inference.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
