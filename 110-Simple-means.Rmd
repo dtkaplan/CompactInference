@@ -1,48 +1,54 @@
 # Simple means and proportions
 
+
+`r  if(knitr::is_html_output()) "$\\newcommand{\\flex}[]{^\\circ\\!{\\cal{F}}}$"`
+
 The presentation  of classical inferene in this compact guide does not  follow the historical flow of how inferential concepts were developed, largely over  the half century from 1880 to 1925. Instead we started  with F, which dates from 1925, introducing it in the context of models, an even more recent concept. Models provide a means to address contemporary uses of data.
 
-Historically, inference started with very simple questions involving a single variable. For instance, after observing a mental-health patient's sleep over several days, a reasonable presentation of how much sleep the patient got is the the mean over those days. Or, in a more contemporary context, imagine being interested in the trend toward self-driving cars. A reasonable summary of the deployment of the technology could be the  proportion  of cars on  the road with self-driving features such as lane-keeping or automatic braking before a collision.
+Historically, inference started with very simple questions involving a single variable. For instance, after observing a mental-health patient's sleep over several days, a reasonable presentation of how much sleep the patient got is the the mean over those days. Or, in a more contemporary context, imagine being interested in the trend toward self-driving cars. A reasonable summary of the deployment of the technology could be the  proportion  of cars on  the road with self-driving features such as lane-keeping or automatic collision-avoidance braking.
 
-Very often, behind the interest in a mean or proportion is a different interest: a change in mean or a change in proportion. For such questions, models and F are the way to go. But in this chapter we'll journey into neans and proportions themselves.
+Very often, behind the interest in a mean or proportion is a different interest: a change in mean or a change in proportion. For such questions, models and F are the way to go. But in this chapter we'll journey into means and proportions themselves.
 
-##  No flexibility: df = 0
+## The standard error of the mean and the proportion
 
-We seen that models can be constructed with more or less flexibility, e.g.  more or fewer explanatory variables, more or fewer levels in a categorical variable. It is possible to think about a simple mean or a simple proportion in terms of a model, but it is a strange model with *no explanatory variables*. That is, it is a model with $df = 0$.
+We all learned early in our schooling that the mean is calculated by adding up the numbers and dividing by $n$. For instance, the mean of 6, 5, and 10 is 21/3 = 7.
 
-Consider the general formula for F:
+We also learned that if we have 15 pieces of fruit, of which 5 are oranges, the proportion of oranges is 5 / 15 = 1/3. But think about the fruit proportion using an indicator variable which will be 1 for oranges and 0 otherwise. The proportion of oranges will be exactly the mean of the indicator variable. In this sense, means and proportions are the same thing.
 
-$$ \mbox{F} \equiv \frac{n - (1+df)}{df} \frac{v_m}{v_r - v_m}$$
+So we'll focus on the standard error of the mean and not worry about proportions.
 
-Since F involves division by $df$, the ratio is indeterminate. Or, in the words of your third-grade teacher, "You're not allowed to divide by zero." 
+Every instructor of statistics knows the classical result: the standard error of the mean is $s / \sqrt{n}$, where $s$ is the standard deviation of the values. In this book we're not using  standard errors--instead we use margins of error, which for 95% confidence are just twice the standard error:
 
-But $df=0$ is not the only thing going on when doing inference on a mean or proportion. The model itself is unusual. Because there is no explanatory variable, the model has no input.  A function with no input can, mathematically, have only one value for the output. And so the model values will always be the same. This implies $v_m = 0$. As for  the  effect size of the model, there's no changing output and no input to change, so the usual definition of change-in-output / change-in-input doesn't  apply.
+$$\mbox{margin of error} = 2\frac{s}{\sqrt{n}}$$
 
-In the spirit of discussion (as  opposed to mathematical proof), let's imagine  filling in the values $df=0$ and $v_m=0$ into the formula for F  and let's take the effect size B to be the (constant) model output itself. For F we get
+Similarly, instructors know about a test statistic called t which is the mean divided by the standard error:
 
-$$\mbox{F}  = \frac{n - 1}{0} \frac{0}{v_r} \approx \frac{n-1}{v_r}\ \ \ \ \mbox{WARNING: Cancelling out zeros is not legit.}$$
+$$ t = \sqrt{n}\ \frac{m}{s}$$ 
+where $m$ is the mean.
 
+$|t| > 2$ is the threshold for rejecting the null hypothesis (at least for large $n$).
 
+These formulas seem completely different than the ones presented in earlier chapters for models. Traditionally, we teach the standard error of the mean first (with a special but equivalent version for the standard error of the probability).
 
-Using that F, and ignoring its illegitimate derivation, we can find the CI with the usual CI formula,
+I've done the opposite. Now I'm having to introduce special-purpose formula for the simplest of settings: inference on a single mean.
 
-$$CI = B (1 \pm \sqrt{4/\mbox{F}}) = B (1 \pm 2 \sqrt{n-1} / s_r).$$
-What's $s_r$. It's simply $s_r \equiv  \sqrt{v_r}$.
+I think the underlying problem is that calculations such as a single mean don't involve one of the basic components of modeling, explanatory variables. Or, if they did, the explanatory variable would be simply a constant; hardly a variable (and in modeling we even call it an "intercept").
 
-It turns out that this expression for CI, however sketchy the means of arriving  at it, is correct. We got to the right answer by making two  mistakes that cancelled out.
+## Equivalencies with B, F, and v_m
 
-In classical inference, the quantity
+There is a very strong connection between the classical formulas for t and the standard error and the formulas for F and the margin of error presented much earlier in the book. In particular:
 
-$$\mbox{SE} = \frac{s_r}{\sqrt{n-1}}$$ 
+$$t^2 = n \frac{m^2}{v_r} \equiv F \ \ \mbox{when}\ \flex = 0$$
+and 
 
-has a name: the standard error (SE) of the mean. And $s_r$ itself has a name: the standard deviation of the (response) variable.
+$$\mbox{margin of error} = 2 \frac{s}{n} = m \sqrt{4/F}$$
 
-When it comes to interpreting the F value itself, the mistakes we made don't cancel out. The correct value for F is
+In other words, there is an equivalence between the F & B formalism presented earlier and the t & standard error formalism classically developed for means.
 
-$$\mbox{F} \equiv (B / \mbox{SE})^2 = (n-1) \frac{B^2}{v_r}$$
+I doubt that these equivalences are helpful in teaching. So I think it is necessary to introduce new formulas to handle confidence intervals and hypothesis testing on the mean.
 
-This quantity was invented decades before F was introduced to statistics. Strictly speaking, the quantity that was invented is the square root of the above  and it is given the name *t*:
+## t and z
 
-$$\mbox{t}  = B / SE.$$
+Although the standard error of the mean of an indicator variable is the same  as the standard error of the corresponding  proportion, there is a slight difference in the critical values for very small $n$. 
 
-Hypothesis tests that were based on t were called "t-tests," a name that will  be familiar to anyone who took a conventional statistics course.
+I've been advocating using the simple critical value $F^\star =  4$. This, of course, corresponds to  $z^\star =  2$. So I think it's perfectly reasonable not  to  distinguish between  the  2  that comes from  $z^\star$ and the 2 that comes from $\sqrt{F^\star}$ for moderate and large n, even though there is a theoretical argument  to be made that the two 2s are different.

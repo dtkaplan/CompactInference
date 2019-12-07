@@ -1,0 +1,58 @@
+
+
+## Once again with modeling
+
+
+Since we have an  apparatus to thinking about  models, let's look at the problem in that way. As you'll see, we'll run into some problems. What effect size should we assign to a mean? How do we deal with the model values all being the same, hence $v_m = 0$?
+
+Consider this data frame, where y will  be the response variable and x the explanatory variable.
+
+y | x
+--|--
+6 | 1
+5 | 1
+10| 1
+
+You'll recognize the y values as being the same as in the arithmetic example. But what is x? Think of it as something we might have measured. If  we  had, we would have confirmed what we originally thought, that the units of  observation differ only in y  and are all the  same  with respect to all  imaginable x. So the x values are all the same. We might as well let them be 1.
+
+Finding the model of y as a function of x using the techniques of Chapter 5, we will get model values that are 7,  that is, exactly the same as the mean calculated arithmetically.
+
+Things start to fall about when we get to the effect size of this model? Recall that
+
+$$B \equiv \frac{\mbox{change in output}}{\mbox{change in input}} .$$
+
+We can't change x and we can't change the model output. If those changes are both zero, then perhaps it's reasonable to assert that $\mbox{B} = 1$.
+
+Next, let's find F. As with B, there is a problem. We can't directly use the formula for F presented in Chapter 8:
+
+$$ \mbox{F} \equiv \frac{n - (\flex + 1)}{\flex} \frac{v_m}{v_r - v_m}$$
+
+There are two problems to using the formula. First, since the model values are all the same (that is, 7) the variance of the  model values is zero: $v_m = 0$. On it's own that wouldn't  be a problem; plugging in $v_m = 0$ we would find that F is zero.
+
+But remember the definition  of $\flex$ introduced in Chapter 5: the number of coefficients in the model formula *minus* 1. There is only one coefficient, namely 7. So $\flex = 0$. This means  that in  the formula for F we will be dividing by $\flex$. Since F involves division by $\flex$, when $\flex = 0$ the ratio is indeterminate. Or, in the words of your third-grade teacher, "You're not allowed to divide by zero." 
+
+Since both $v_m$ and $\flex$ are zero, we actually have zeros on top and on the bottom in the formula for F. Now we'll do some algebra to try to simplify the formula and see if we can  squeeze the zeros out. This will be very much in the spirit of discussion (as opposed to mathematical proof or derivation).
+
+Expanding out F we get:
+
+$$F  = \left[\frac{n}{\flex} - \frac{\flex + 1}{\flex}\right] v_m / (v_r - v_m)$$
+
+The value in brackets has one term that is notionally infinite when  $\flex$ equals zero: $n / \flex$. In contrast, the other term in  the brackets is very well defined as $\flex \rightarrow 0$.  Applying l'Hopital's rule, it's limit is 1. With this simplification, we can write F as
+
+$$ F_\mbox{notional} = \left[\frac{n v_m}{\flex} - v_m\right] / (v_r - v_m) .$$
+
+Now a mathematical leap: We'll assume that the limit as $v_m$ and $\flex$ go to zero is $v_m / \flex \rightarrow 1$. Having eliminated all the divisions  by zero, we have
+
+$$ F_\mbox{notional} =  n / v_r .$$
+
+## Margin of error for the mean
+
+Recall that the margin of error is $B \sqrt{4 / F}$. Plugging in $F_\mbox{notional}$ we get
+
+$$\mbox{margin  of error} = B \sqrt{4 v_r / n} .$$ 
+
+Earlier, we made an argument that B = 1. Thus,
+
+$$\mbox{margin of error} = 2  \frac{s}{\sqrt{n}}$, since $s \equiv \sqrt{v_r}.$$
+
+

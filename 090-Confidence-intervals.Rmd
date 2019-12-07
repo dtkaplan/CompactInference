@@ -20,16 +20,29 @@ Conventional textbooks have dozens of pages covering the calculation of confiden
 
 1. Find the effect size itself, using the techniques in Chapter 7. We'll  call  the effect size B and it will be a slope or a difference depending on  whether the explanatory variable is quantitative or categorical.
 2. Find the F statistic for the model.
-3. Calculate the confidence interval (CI) on the effect size:
+3. Calculate the confidence interval (CI) on the effect size.
 
-$$CI = B (1 \pm \sqrt{4/F}).$$
-Example: For the model shown in Figure 7.1, the effect  with respect to sex of child's height  is found to  be $B = 5.1$ inches. The F statistic is 933. So the confidence interval on the effect with respect to sex on child's height is 
-$$5.1 (1 \pm \sqrt{4/933}) \approx 5.1 \pm 0.33 \approx 5.06\ \mbox{to}\ 5.13\ \mbox{inches}.$$
+Being an *interval*, a confidence interval is a range of values delimited by a lower and upper bound. But it's common to display the interval using plus-or-minus $\pm$ notation. In $\pm$  notation, the confidence interval on the effect size is written
 
-Example: For the model shown in Figure 7.2, the effect  of  child's height with respect to mother's height is found to be B = 0.31. The F statistic is 34. So the confidence interval on the effect of child's height is
+$$\mbox{B}  \pm \mbox{margin of error}$$
 
-$$0.31(1 \pm \sqrt{4/34}) \approx 0.31 \pm 0.11 \approx 0.20\ \mbox{to}\ 0.42$$.
+We already know B. The margin of error has a very simple formula involve both B and F:
 
+$$\mbox{margin of error} = \mbox{B}\sqrt{4 / \mbox{F}}.$$
+Example: For the model shown in Figure 7.1, the effect  with respect to sex of child's height  is found to  be $B = 5.1$ inches. The F statistic is 933. So the margin of error on the effect size is  
+$$5.1\ \mbox{inches}\sqrt{4/933}\ \ \ \approx\ \  0.33\ \mbox{inches}$$ 
+
+Correspondingly the confidence interval will be:
+
+$5.1 \pm 0.33$ inches, or, 4.77 to 5.43 inches
+
+
+Example: For the model shown in Figure 7.2, the effect  of  child's height with respect to mother's height is found to be B = 0.31. The F statistic is 34. So the margin of error is
+
+$$\mbox{margin of error} = 0.31 \sqrt{4/34}) \approx  0.11$$ 
+The confidence interval itself is
+
+$$0.31 \pm 0.11\ \ \ \mbox{or}\ \ \ 0.20\ \mbox{to}\ 0.42$$
 This simple method for finding the confidence interval on an effect size works only when $\flex = 1$.  For models with multiple explanatory variables, confidence intervals can be calculated, but not with this simple formula. A formula can be expressed using concepts from linear algebra, but in practice  everyone relies on statistical software to do the calculations. 
 
 ## 4 and 95%
@@ -40,9 +53,9 @@ The confidence intervals described above are called "95% confidence intervals." 
 2. It's common to hear this interpretation of the 95% confidence interval: "95% of the time, the true value of the effect size will be inside the interval." This  is not exactly right, in part because we would need to know what "true" means in order to operationalize the statement. But, even if the interpretation is not right, it gives a reasonable impression of the intent behind a 95% confidence interval.
 3. There is a small group of people who need to figure out how to calculate confidence intervals. For these people, it's important to know exactly what a confidence interval is intended to mean. You'll see the play out in the following explanation, which attempts to show how we know the formula for the CI produces an interval at a 95% confidence level.
 
-Notice that in the formula for the 95% confidence interval on the effect size
-$$CI = B (1 \pm \sqrt{4/F})$$
-the number 95% does not directly appear. What is it about this formula that makes the $CI$ at a 95% confidence level rather than some other level? It is the number 4, which can be seen as the result of an experiment.
+Notice that in the formula for the 95% margin of error on the effect size
+$$\mbox{margin of error} = B \sqrt{4/F}$$
+the number 95% does not directly appear. What is it about this formula that makes the margin of error at a 95% confidence level rather than some other level? It is the number 4, which can be seen as the result of an experiment.
 
 Here's the experiment. Make some data where the variables are composed entirely of random numbers. It doesn't really matter what the sample size $n$ is. For now, let's assume $n \gtrapprox 25.$ Pick one of the variables as a response--it doesn't matter which one. Then pick others as the explanatory variables--again, it doesn't matter much which ones or how many. Let's say you use $\flex$ of them, where you get to choose $\flex$. 
 
@@ -54,9 +67,9 @@ Since the F from the experiment was generated using random numbers and random ch
 
 Now imagine that you repeat the experiment over and over with different  random data, different choices of variables, and different $\flex$. Remarkably, you will find a distribution of  F  that is centered more or less at 1 and which falls off with larger F. About 95% of the experimental trials, it turns out, will have $F < 4$. 
 
-Look again at the formula for the confidence interval on the effect size,
-$$CI = B (1 \pm \sqrt{4/F})$$
-When $F < 4$, which happens 95% of the time, the confidence interval quantity  under the radical, $\sqrt{4/F}$ will be greater than 1. So the interval $1 \pm \sqrt{4/F}$ will include B = 0 as a possibility. Thus, when the "true" effect size is zero, as implemented by the random generation of data, the confidence interval constructed using 4 as the number in $\sqrt{4/F}$ will include zero 95% of the time. That's exactly what we want a confidence interval to do.
+Look again at the formula for the margin of error on the effect size,
+$$\mbox{margin of error} = B \sqrt{4/F}$$
+When $F < 4$, which happens 95% of the time, the confidence interval quantity  under the radical, $\sqrt{4/F}$ will be greater than 1. So the margin of interval has a magnitude larger than B itself, meaning  that the confidence interval must include zero. Thus, when the "true" effect size is zero, as implemented by the random generation of data, the confidence interval constructed using 4 as the number in $\sqrt{4/F}$ will include zero 95% of the time. That's exactly what we want a confidence interval to do.
 
 ## 4 and $n$
 
@@ -80,9 +93,9 @@ gf_point(f ~ n, data = Fvalues) %>%
   gf_text(f ~ 12, label=~label, data = head(Fvalues,3), hjust = 0)
 ```
 
-Let's use the symbol $F^\star$ to label the "official" 95% values for F. An improved formula for the  confidence interval of an effect size (when $\flex = 1$) is
+Let's use the symbol $F^\star$ to label the "official" 95% values for F. An improved formula for the margin of error of an effect size (when $\flex = 1$) is
 
-$$CI = B (1 \pm \sqrt{F^\star/F}) .$$
+$$\mbox{margin of error}  = B \sqrt{F^\star/F} .$$
 
 For a teacher, it's worth asking whether to teach  the "improved" formula first, or at all. One perspective is that it's trivial to find $F^\star$--just read it off the graph. So why not used the improved formula?
 
@@ -100,12 +113,15 @@ It's entirely possible to construct a proper prediction interval. It will typica
 ## For the conventionally trained reader ...
 
 The conventionally trained reader likely encountered confidence intervals in one of two settings: the CI on the sample mean or the CI on the sample proportion. Relatively simple formulas were presented for the standard error and then the standard error was scaled up by $t^\star$ or $z^\star$ to get a confidence interval. 
+We'll get to CIs on means and proportions in terms analogous to those used in this chapter only Chapter 11. The reason for the delay is that means and proportions are not effect sizes and that there is a mathematical difficulty using the formula for F when $\flex = 0$. 
 
-We'll get to CIs on means and proportions in terms analogous to those used in this chapter only Chapter 11. The reason for the delay is that means and proportions are not effect sizes and that there is a mathematical difficulty using F when $\flex = 0$. 
+Anticipating Chapter 11 here, a 95% margin of error for a mean or proportion is 
 
-For completeness, a 95% confidence interval mean for a mean or proportion is 
+$$\mbox{margin of error}  = \sqrt{4 v_r / n}$$
+where  $v_r$ is the variance of the variable involved. (For proportions, of course, the variable is an indicator: the mean of an indicator is exactly the proportion of 1s in the indicator.)
 
-$$CI  = B \pm \sqrt{4 / v_r}$$
-where  B is the point estimate for the mean or proportion and $v_r$ is the variance of the variable involved. For proportions, of course, the variable is an indicator: the mean of an indicator is exactly the proportion of 1s in the indicator.
+Recognizing that the $\sqrt{v_r}$ is the standard deviation $s_r$, we get a formula that is likely more familiar to experienced instructors:
+
+$$\mbox{margin of error}  = 2 s_r / \sqrt{n}$$
 
 
