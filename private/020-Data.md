@@ -15,7 +15,7 @@ The data we use is organized into *data frames*, which are more or less spreadsh
 As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.
 
 <table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>Figure 2.1: The `Galton` data frame containing Gallon's measurements of 898 adult children.</caption>
+<caption>Figure 2.1: The `Galton` data frame containing Galton's measurements of 898 adult children.</caption>
  <thead>
   <tr>
    <th> family </th>
@@ -142,32 +142,32 @@ This style of presentation is perfectly understandable, but it is not in the mod
  </thead>
 <tbody>
   <tr>
-   <td> SP4820 </td>
+   <td> SP780 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP3610 </td>
+   <td> other </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP5250 </td>
    <td> other </td>
    <td> round </td>
   </tr>
   <tr>
-   <td> SP1540 </td>
+   <td> SP7300 </td>
+   <td> white </td>
+   <td> long </td>
+  </tr>
+  <tr>
+   <td> SP430 </td>
    <td> other </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP5200 </td>
-   <td> other </td>
-   <td> round </td>
-  </tr>
-  <tr>
-   <td> SP1440 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP3430 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP160 </td>
+   <td> SP2710 </td>
    <td> other </td>
    <td> long </td>
   </tr>

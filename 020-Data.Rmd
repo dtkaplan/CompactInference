@@ -20,7 +20,7 @@ As an example, consider data collected by Francis Galton, one of the pioneers of
 
 ```{r galton-raw, echo=FALSE, label=""}
 sds_table(Galton, show_n = 10,
-          caption="Figure 2.1: The `Galton` data frame containing Gallon's measurements of 898 adult children.") %>%
+          caption="Figure 2.1: The `Galton` data frame containing Galton's measurements of 898 adult children.") %>%
   knitr::asis_output()
 ```
 

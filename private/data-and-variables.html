@@ -135,8 +135,10 @@
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
 <li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
-<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>14.1</b> Confounding</a></li>
+<li class="chapter" data-level="14.2" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.2</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
 </ul></li>
+<li class="chapter" data-level="15" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>15</b> Getting started in your classroom</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
@@ -168,7 +170,7 @@
 <p>As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.</p>
 <table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
 <caption>
-Figure 2.1: The <code>Galton</code> data frame containing Gallon’s measurements of 898 adult children.
+Figure 2.1: The <code>Galton</code> data frame containing Galton’s measurements of 898 adult children.
 </caption>
 <thead>
 <tr>
@@ -436,7 +438,29 @@ pollen_shape
 <tbody>
 <tr>
 <td>
-SP4820
+SP780
+</td>
+<td>
+other
+</td>
+<td>
+long
+</td>
+</tr>
+<tr>
+<td>
+SP3610
+</td>
+<td>
+other
+</td>
+<td>
+long
+</td>
+</tr>
+<tr>
+<td>
+SP5250
 </td>
 <td>
 other
@@ -447,7 +471,18 @@ round
 </tr>
 <tr>
 <td>
-SP1540
+SP7300
+</td>
+<td>
+white
+</td>
+<td>
+long
+</td>
+</tr>
+<tr>
+<td>
+SP430
 </td>
 <td>
 other
@@ -458,40 +493,7 @@ long
 </tr>
 <tr>
 <td>
-SP5200
-</td>
-<td>
-other
-</td>
-<td>
-round
-</td>
-</tr>
-<tr>
-<td>
-SP1440
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP3430
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP160
+SP2710
 </td>
 <td>
 other

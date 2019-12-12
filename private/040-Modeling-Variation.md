@@ -39,7 +39,7 @@ Some people mistakenly believe that the point of such a model is to *predict* th
 
 There is so much overlap in the prediction intervals for children of mothers of very different height that the model tells us almost nothing about *individuals*. But this is not the purpose of the model.  Galton's objective in collecting the data was to say *how much* of the variation in height is attributable to genetics. The conventional measure of *how much*, introduced in Chapter 8, is that mother's height accounts for about 4% of the variation in height among children. Note that it's 4% of the *variation* in height among children, not 4% of the height of an individual child.
 
-Four percent doesn't seem like much. Take way the line in Figure 4.2 and  looking just  at the data points, you couldn't fault someone for modeling the data with a level line, that is, one where the model output doesn't change at all with mother's height.  One role of  statistical inference is to answer the following question: Is there good reason to claim that the evidence provided by the data rule out a level-line model?
+Four percent doesn't seem like much. Taking away the line in Figure 4.2 and  looking just  at the data points, you couldn't fault someone for modeling the data with a level line, that is, one where the model output doesn't change at all with mother's height.  One role of  statistical inference is to answer the following question: Is there good reason to claim that the evidence provided by the data rule out a level-line model?
 
 ## Proportions and indicator variables
 
@@ -81,11 +81,11 @@ Note that the blue functions in Figure 4.3 are centered in the sense that whatev
 Recall that the response variables covered in  this book are quantitative, which includes both regular numerical variables (like height) and indicator variables (like  that for  sex). Explanatory variables can be either quantitative  or categorical. This suggests that models with one response and one explanatory variables fall into one of four types:
 
 Setting | response variable | explanatory variable | Figure  |  conventional name
---|--------------|-----------------|---------|--------
-1 | quantitative | categorical     |   4.1   | groupwise means / t-test
-2 | quantitative | quantitative    |   4.2   | linear regression / slope test
-3 | categorical (indicator) | categorical | 4.3  | groupwise proportions / p-test
-4 | categorical (indicator) | quantitative| 4.4 | not usually included in introductory statistics
+--:|--------------|-----------------|---------|--------
+1 | quantitative | categorical     |   4.1   | groupwise means / t-test
+2 | quantitative | quantitative    |   4.2   | linear regression / slope test
+3 | categorical (indicator) | categorical | 4.3  | groupwise proportions / p-test
+4 | categorical (indicator) | quantitative| 4.4 | not usually included in introductory statistics
 
 Figures 4.1, 4.2, and 4.3 show the first three settings.
  Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.

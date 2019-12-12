@@ -19,5 +19,6 @@ rmd_files: ["index.Rmd", # Preface
             "110-Simple-means.Rmd", # Chapter 11
             "120-Comparing-models.Rmd", # Chapter 12
             "130-Outside-of-the-normal.Rmd", # Chapter 13
-            "140-Inference-isnt-everything.Rmd" # Chapter 14
+            "140-Inference-isnt-everything.Rmd", # Chapter 14
+            "910-Getting-Started.Rmd"
             ]

@@ -135,7 +135,8 @@
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
 <li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
-<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>14.1</b> Confounding</a></li>
+<li class="chapter" data-level="14.2" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.2</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
@@ -187,7 +188,7 @@ Figure 4.2: Child’s height versus the mother’s height. A conventional form o
 <p>The model output describes the <em>center</em> of the distribution of adult-child heights. That center is somewhat lower among the children of relatively short mothers than it is among the children of relatively tall mothers. Note that hardly any individuals exactly match the model output generated when the input is set to their mother’s height; almost all are either shorter or taller.</p>
 <p>Some people mistakenly believe that the point of such a model is to <em>predict</em> the child’s height. Putting aside the question of why anyone would want to do this (perhaps you are wanting to buy a college graduation gown for your pregnant friend’s baby?), any meaningful prediction should be framed as an interval. So, for a 60-inch tall mother, a fair prediction would be for a child between 58 and 73 inches, while for a relatively tall 68-inch mother, the prediction would be 62 to 76 inches.</p>
 <p>There is so much overlap in the prediction intervals for children of mothers of very different height that the model tells us almost nothing about <em>individuals</em>. But this is not the purpose of the model. Galton’s objective in collecting the data was to say <em>how much</em> of the variation in height is attributable to genetics. The conventional measure of <em>how much</em>, introduced in Chapter 8, is that mother’s height accounts for about 4% of the variation in height among children. Note that it’s 4% of the <em>variation</em> in height among children, not 4% of the height of an individual child.</p>
-<p>Four percent doesn’t seem like much. Take way the line in Figure 4.2 and looking just at the data points, you couldn’t fault someone for modeling the data with a level line, that is, one where the model output doesn’t change at all with mother’s height. One role of statistical inference is to answer the following question: Is there good reason to claim that the evidence provided by the data rule out a level-line model?</p>
+<p>Four percent doesn’t seem like much. Taking away the line in Figure 4.2 and looking just at the data points, you couldn’t fault someone for modeling the data with a level line, that is, one where the model output doesn’t change at all with mother’s height. One role of statistical inference is to answer the following question: Is there good reason to claim that the evidence provided by the data rule out a level-line model?</p>
 </div>
 <div id="proportions-and-indicator-variables" class="section level2">
 <h2><span class="header-section-number">4.3</span> Proportions and indicator variables</h2>
@@ -204,7 +205,7 @@ Figure 4.3: Punnett’s data from cross breeding peas, along with a model of flo
 <p>There are only four possible combinations of white/other and long/round. To avoid plotting the rows directly on top of one another, the dots have been <em>jittered</em>. You can see that peas with “other” color and long pollen grains are the most common.</p>
 <p>The model here is very similar to that of Figure 4.1. The response variable, flower color, has been translated into an indicator variable taking on only the values zero or one. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number between zero and one.</p>
 <p>For models with an indicator response variable, the output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is 0.24. When the pollen is round, the model output is 0.25. We interpret a model output of 0.25–that is, 25%– as meaning that a quarter of the offspring will have white flowers. Comparing the model-output for long-pollen plants to that for round-pollen plants suggests that the probability of white flowers might be somewhat higher for round-pollen plants than long-pollen plants. The previous sentence uses some qualifying word: “suggests,” “might be,” “somewhat.” That’s to indicate that the statistical claim has not yet been vetted using the tools of statistical inference.</p>
-<p>You can pretty much draw functions like this by hand if you keep in mind some simple rules. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> It might help to understand the impact of these rules by comparing functions that do and don’t follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.</p>
+<p>You can pretty much draw functions like this by hand if you keep in mind some simple rules. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> It might help to understand the impact of these rules by comparing functions that do and don’t follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.</p>
 <div class="figure" style="text-align: FALSE">
 <img src="040-Modeling-variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
 <p class="caption">
@@ -224,15 +225,15 @@ Figure 4.3: The function in red is a bad match to the data. It strays from the d
 <p>Recall that the response variables covered in this book are quantitative, which includes both regular numerical variables (like height) and indicator variables (like that for sex). Explanatory variables can be either quantitative or categorical. This suggests that models with one response and one explanatory variables fall into one of four types:</p>
 <table>
 <colgroup>
-<col width="4%" />
-<col width="28%" />
-<col width="34%" />
-<col width="18%" />
-<col width="16%" />
+<col width="5%" />
+<col width="27%" />
+<col width="33%" />
+<col width="17%" />
+<col width="15%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Setting</th>
+<th align="right">Setting</th>
 <th>response variable</th>
 <th>explanatory variable</th>
 <th>Figure</th>
@@ -241,32 +242,32 @@ Figure 4.3: The function in red is a bad match to the data. It strays from the d
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td align="right">1</td>
 <td>quantitative</td>
 <td>categorical</td>
 <td>4.1</td>
-<td>groupwise means / t-test</td>
+<td>groupwise means / t-test</td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td align="right">2</td>
 <td>quantitative</td>
 <td>quantitative</td>
 <td>4.2</td>
-<td>linear regression / slope test</td>
+<td>linear regression / slope test</td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td align="right">3</td>
 <td>categorical (indicator)</td>
 <td>categorical</td>
 <td>4.3</td>
-<td>groupwise proportions / p-test</td>
+<td>groupwise proportions / p-test</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td align="right">4</td>
 <td>categorical (indicator)</td>
 <td>quantitative</td>
 <td>4.4</td>
-<td>not usually included in introductory statistics</td>
+<td>not usually included in introductory statistics</td>
 </tr>
 </tbody>
 </table>
@@ -281,15 +282,15 @@ Figure 4.4: A model with an indicator response variable and a numerical explanat
 <p>Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. Common sense suggests that a baby’s sex is not influenced by the mother’s height. Correspondingly, the model output is around 50% regardless of the mother’s height.</p>
 <p>Perhaps you’re surprised to see that there is any slope at all to the function. Don’t be surprised yet, because we haven’t shown that such a statement is justified by the data: we have a setting for inference but have not yet carried out the inference calculations to tell us if the statement is justified.</p>
 <p>For purposes of inference, conventional texts treat settings 1, 2, and 3 as different. (They don’t handle setting 4 at all.) I’ve added to the table the conventional name assigned to the different inferential tests in each setting.</p>
-<p>But in all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> In this book, rather than introduce four different inferential procedures, we’ll have just one. That’s a major factor behind the ability to describe classical inference concisely.</p>
+<p>But in all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> In this book, rather than introduce four different inferential procedures, we’ll have just one. That’s a major factor behind the ability to describe classical inference concisely.</p>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Technically, the function form has to include an intercept.<a href="modeling-variation.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>for the conventionally-trained reader, I acknowledge that the term <em>linear regression</em> is conventionally applied only to setting 2. But there is no good reason for this: all four settings can be handled with exactly the same modeling process. In some situations, setting 4 cannot be handled with linear regression. The problem with using linear regression to build a model with an indicator response variable is that a straight-line function, if not exactly level, will eventually extend outside the range zero to one. But it’s not meaningful to talk about probabilities greater than one or less than zero. A simple workaround is to treat any value greater than one as 1, and any value less than zero as 0. A refinement to this brusque treatment is accomplished by a technique called <em>logistic regression</em> which effectively turns the sharp bend into a gradual curve. See Figure 5.7 for an example.<a href="modeling-variation.html#fnref3" class="footnote-back">↩</a></p></li>
+<ol start="1">
+<li id="fn1"><p>Technically, the function form has to include an intercept.<a href="modeling-variation.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>for the conventionally-trained reader, I acknowledge that the term <em>linear regression</em> is conventionally applied only to setting 2. But there is no good reason for this: all four settings can be handled with exactly the same modeling process. In some situations, setting 4 cannot be handled with linear regression. The problem with using linear regression to build a model with an indicator response variable is that a straight-line function, if not exactly level, will eventually extend outside the range zero to one. But it’s not meaningful to talk about probabilities greater than one or less than zero. A simple workaround is to treat any value greater than one as 1, and any value less than zero as 0. A refinement to this brusque treatment is accomplished by a technique called <em>logistic regression</em> which effectively turns the sharp bend into a gradual curve. See Figure 5.7 for an example.<a href="modeling-variation.html#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
