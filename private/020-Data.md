@@ -142,34 +142,34 @@ This style of presentation is perfectly understandable, but it is not in the mod
  </thead>
 <tbody>
   <tr>
-   <td> SP780 </td>
+   <td> SP1500 </td>
    <td> other </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP3610 </td>
-   <td> other </td>
-   <td> long </td>
-  </tr>
-  <tr>
-   <td> SP5250 </td>
+   <td> SP5730 </td>
    <td> other </td>
    <td> round </td>
   </tr>
   <tr>
-   <td> SP7300 </td>
+   <td> SP6440 </td>
    <td> white </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP430 </td>
+   <td> SP3810 </td>
    <td> other </td>
    <td> long </td>
   </tr>
   <tr>
-   <td> SP2710 </td>
+   <td> SP3890 </td>
    <td> other </td>
    <td> long </td>
+  </tr>
+  <tr>
+   <td> SP6120 </td>
+   <td> other </td>
+   <td> round </td>
   </tr>
 </tbody>
 <tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
@@ -186,7 +186,7 @@ A fourth reason to prefer the data-frame format for the genetics data is subtle.
 
 The fundamental distinction to be made between types of  variables is whether they are quantitative -- a number -- or categorical. Categorical variables are those where  the possible values come from a set of discrete categories and are typically represented by text labels.
 
-In the Galton data (Figure  1), height is a quantitative variable. Sex is a categorical variable.  The `family` variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not "between" families 1 and 2 in any genuinely numerical sense. So `family` is a categorical variable.
+In the Galton data (Figure  1), height is a quantitative variable. Sex is a categorical variable.  The `family` variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not "between" families 1 and 3 in any genuinely numerical sense. So `family` is a categorical variable.
 
 Much later in the book, we will translate categorical variables into a set of very simple numerical variables, each of which is called an *indicator variable*. In an indicator variable, the only allowed values are zero and one. 
 

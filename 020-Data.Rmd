@@ -69,7 +69,7 @@ A fourth reason to prefer the data-frame format for the genetics data is subtle.
 
 The fundamental distinction to be made between types of  variables is whether they are quantitative -- a number -- or categorical. Categorical variables are those where  the possible values come from a set of discrete categories and are typically represented by text labels.
 
-In the Galton data (Figure  1), height is a quantitative variable. Sex is a categorical variable.  The `family` variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not "between" families 1 and 2 in any genuinely numerical sense. So `family` is a categorical variable.
+In the Galton data (Figure  1), height is a quantitative variable. Sex is a categorical variable.  The `family` variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not "between" families 1 and 3 in any genuinely numerical sense. So `family` is a categorical variable.
 
 Much later in the book, we will translate categorical variables into a set of very simple numerical variables, each of which is called an *indicator variable*. In an indicator variable, the only allowed values are zero and one. 
 

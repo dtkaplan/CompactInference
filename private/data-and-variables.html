@@ -438,7 +438,7 @@ pollen_shape
 <tbody>
 <tr>
 <td>
-SP780
+SP1500
 </td>
 <td>
 other
@@ -449,18 +449,7 @@ long
 </tr>
 <tr>
 <td>
-SP3610
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP5250
+SP5730
 </td>
 <td>
 other
@@ -471,7 +460,7 @@ round
 </tr>
 <tr>
 <td>
-SP7300
+SP6440
 </td>
 <td>
 white
@@ -482,7 +471,7 @@ long
 </tr>
 <tr>
 <td>
-SP430
+SP3810
 </td>
 <td>
 other
@@ -493,13 +482,24 @@ long
 </tr>
 <tr>
 <td>
-SP2710
+SP3890
 </td>
 <td>
 other
 </td>
 <td>
 long
+</td>
+</tr>
+<tr>
+<td>
+SP6120
+</td>
+<td>
+other
+</td>
+<td>
+round
 </td>
 </tr>
 </tbody>
@@ -517,7 +517,7 @@ long
 <div id="quantitative-and-categorical-variables" class="section level2">
 <h2><span class="header-section-number">2.3</span> Quantitative and categorical variables</h2>
 <p>The fundamental distinction to be made between types of variables is whether they are quantitative – a number – or categorical. Categorical variables are those where the possible values come from a set of discrete categories and are typically represented by text labels.</p>
-<p>In the Galton data (Figure 1), height is a quantitative variable. Sex is a categorical variable. The <code>family</code> variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not “between” families 1 and 2 in any genuinely numerical sense. So <code>family</code> is a categorical variable.</p>
+<p>In the Galton data (Figure 1), height is a quantitative variable. Sex is a categorical variable. The <code>family</code> variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not “between” families 1 and 3 in any genuinely numerical sense. So <code>family</code> is a categorical variable.</p>
 <p>Much later in the book, we will translate categorical variables into a set of very simple numerical variables, each of which is called an <em>indicator variable</em>. In an indicator variable, the only allowed values are zero and one.</p>
 <p>Obviously, with just zero and one as possible values, a single indicator variable is not able to represent completely a categorical variable with three or more levels. In such situations, a <em>set of indicator variables</em> is used. If there are k different levels for the categorical variable, the equivalent set of indicator variables will have k - 1 members. For instance, a variable <code>fruit</code> with three levels “apple,” “blueberry,” and “cherry,” will correspond to two indicator variables. The first one might be whether the fruit is apple or not. The second would be whether the fruit is blueberry or not. When both the first and second take on the value zero, we know that the fruit must be the remaining level, cherry. Figure 5 shows the example on a case by case basis.</p>
 <table>
