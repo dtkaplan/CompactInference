@@ -8,7 +8,7 @@ library(splines)
 
 The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex  of the person: women *tend to be* slightly shorter than men. Some of the variation in  height relates to genes and genetic variation, some to differing nutrition and general health, etc.
 
-Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at  the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
+Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at  the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuverability, braking power, physical wear, automatic braking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
 
 ## Statistical models
 
@@ -131,7 +131,7 @@ gf_jitter(as.numeric(sex == "F") ~ mother, data = Galton,
   gf_labs(y = "Child's sex", x = "Mother's height (inches)")
 ```
 
-Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. Common sense suggests that a baby's sex is not influenced by the mother's height. Correspondingly, the model output is around 50% regardless of the mother's height.  
+Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls than 68-inch tall mothers. Common sense suggests that a baby's sex is not influenced by the mother's height. Correspondingly, the model output is around 50% regardless of the mother's height.  
 
 Perhaps you're surprised to see that there is any slope at all to the function. Don't be surprised yet, because we haven't shown that such a statement is justified by the data: we have a setting for inference but have not yet carried out the inference calculations to tell us if the statement is justified.
 
