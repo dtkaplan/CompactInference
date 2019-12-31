@@ -18,10 +18,10 @@ The name, F, is in honor of Ronald Fisher, one of the leading statisticians of t
 
 $$F \equiv \frac{n - (1 + \flex)}{\flex} \frac{v_m}{v_r - v_m}$$
 For almost all the settings considered in introductory statistics courses, $\flex$ is 1, so the formula simplifies to:
-$$F =  (n-1) \frac{v_m}{v_r - v_m}$$
-Example: Figure 4.1 shows a model of child's height with respect to sex.  The variance of the response variable (child's height) is $v_r = $12.84 inches^2^. The variance of the model values is $v_m =$ 6.55 inches^2^. The data used to construct the model have $n = 898$  Thus:
+$$F =  (n-2) \frac{v_m}{v_r - v_m}$$
+Example: Figure 4.1 shows a model of child's height with respect to sex.  The variance of the response variable (child's height) is $v_r =$ 12.84 inches^2^. The variance of the model values is $v_m =$ 6.55 inches^2^. The data used to construct the model have $n = 898$, giving
 
-$$F = 897 \frac{6.55}{12.84-6.55} \approx 897 \times 1.04 \approx 934 .$$
+$$F = 896 \frac{6.55}{12.84-6.55} \approx 897 \times 1.04 \approx 934 .$$
 
 ## What's the meaning of F?
 

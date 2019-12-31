@@ -135,8 +135,10 @@
 <li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
 <li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
 <li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
-<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>14.1</b> Confounding</a></li>
+<li class="chapter" data-level="14.2" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>14.2</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
 </ul></li>
+<li class="chapter" data-level="15" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>15</b> Getting started in your classroom</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
@@ -165,7 +167,7 @@
 <li><span class="math inline">\(n\)</span>, the sample size (or, more concretely, the number of rows in out data frame)</li>
 <li><span class="math inline">\(v_r\)</span>, the variance of the response variable. <span class="math inline">\(v_r\)</span> for binary categorical response variables is based on the 0-1 encoding.</li>
 <li><span class="math inline">\(v_m\)</span>, the variance of the model values.</li>
-<li><span class="math inline">\(\flex\)</span>, the <em>degree of flexibility</em>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+<li><span class="math inline">\(\flex\)</span>, the <em>degree of flexibility</em>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 </ol>
 <p>We’ll put these together to form a quantity called F.</p>
 <div id="the-f-statistic" class="section level2">
@@ -173,9 +175,9 @@
 <p>The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th. The formula for F is pretty simple, so I’ll present it right here for ready reference.</p>
 <p><span class="math display">\[F \equiv \frac{n - (1 + \flex)}{\flex} \frac{v_m}{v_r - v_m}\]</span>
 For almost all the settings considered in introductory statistics courses, <span class="math inline">\(\flex\)</span> is 1, so the formula simplifies to:
-<span class="math display">\[F =  (n-1) \frac{v_m}{v_r - v_m}\]</span>
-Example: Figure 4.1 shows a model of child’s height with respect to sex. The variance of the response variable (child’s height) is $v_r = $12.84 inches<sup>2</sup>. The variance of the model values is <span class="math inline">\(v_m =\)</span> 6.55 inches<sup>2</sup>. The data used to construct the model have <span class="math inline">\(n = 898\)</span> Thus:</p>
-<p><span class="math display">\[F = 897 \frac{6.55}{12.84-6.55} \approx 897 \times 1.04 \approx 934 .\]</span></p>
+<span class="math display">\[F =  (n-2) \frac{v_m}{v_r - v_m}\]</span>
+Example: Figure 4.1 shows a model of child’s height with respect to sex. The variance of the response variable (child’s height) is <span class="math inline">\(v_r =\)</span> 12.84 inches<sup>2</sup>. The variance of the model values is <span class="math inline">\(v_m =\)</span> 6.55 inches<sup>2</sup>. The data used to construct the model have <span class="math inline">\(n = 898\)</span>, giving</p>
+<p><span class="math display">\[F = 896 \frac{6.55}{12.84-6.55} \approx 897 \times 1.04 \approx 934 .\]</span></p>
 </div>
 <div id="whats-the-meaning-of-f" class="section level2">
 <h2><span class="header-section-number">8.2</span> What’s the meaning of F?</h2>
@@ -248,8 +250,8 @@ Figure 8.2: Figure 6.14: <span class="math inline">\(\mbox{R}^2\)</span> versus 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>If you are reading this book in conjunction with a conventional text, remember that such texts frame inference in terms of the <em>degrees of <strong>freedom</strong>,</em> df. The relationship is <span class="math inline">\(\mbox{df} \equiv n - (\flex + 1)\)</span>.<a href="f-and-r.html#fnref4" class="footnote-back">↩</a></p></li>
+<ol start="1">
+<li id="fn1"><p>If you are reading this book in conjunction with a conventional text, remember that such texts frame inference in terms of the <em>degrees of <strong>freedom</strong>,</em> df. The relationship is <span class="math inline">\(\mbox{df} \equiv n - (\flex + 1)\)</span>.<a href="f-and-r.html#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
