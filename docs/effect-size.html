@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Data and variables | A Compact Guide to Classical Inference</title>
-  <meta name="description" content="Chapter 2 Data and variables | A Compact Guide to Classical Inference" />
+  <title>Chapter 7 Effect size | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 7 Effect size | A Compact Guide to Classical Inference" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Data and variables | A Compact Guide to Classical Inference" />
+  <meta property="og:title" content="Chapter 7 Effect size | A Compact Guide to Classical Inference" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Data and variables | A Compact Guide to Classical Inference" />
+  <meta name="twitter:title" content="Chapter 7 Effect size | A Compact Guide to Classical Inference" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="what-is-classical-inference.html"/>
-<link rel="next" href="measuring-variation.html"/>
+<link rel="prev" href="degrees-of-flexibility.html"/>
+<link rel="next" href="f-and-r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -161,445 +161,76 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-and-variables" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Data and variables</h1>
-<p>Only in the second half of the twentieth century was the organization of data treated as a serious topic. Classical inference, emerging mainly in the period 1880-1925, was developed without reference to standard formats for data. Without automated methods of data handling, each researcher was confronted with the “oppressive necessity of reducing his results to a more convenient bulk.”<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<p>Although this book is a guide to classical inference, we will work with data in a contemporary, standard format. This simplifies inference since we do not need to develop different statistical methodologies to deal with the diverse ways in which raw data can be reduced to a “convenient bulk.”</p>
-<p>This chapter is about the organization of data. Later, we’ll work with a standard form for reducing data: statistical model functions.</p>
-<div id="data-frames" class="section level2">
-<h2><span class="header-section-number">2.1</span> Data frames</h2>
-<p>The data we use is organized into <em>data frames</em>, which are more or less spreadsheets. The columns of the data frame are <em>variables</em>, the rows of the data frame are <em>units of observation</em>.</p>
-<p>As an example, consider data collected by Francis Galton, one of the pioneers of statistics. In the 1880s, seeking to understand genetic inheritance from parent to child, Galton visited almost 200 families in London with both parents living and children who had grown up. Galton recorded the height of the mother and father, and the height and sex of each of the adult children. Figure 2.1 shows part of the data frame.</p>
-<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>
-Figure 2.1: The <code>Galton</code> data frame containing Galton’s measurements of 898 adult children.
-</caption>
-<thead>
-<tr>
-<th>
-family
-</th>
-<th>
-father
-</th>
-<th>
-mother
-</th>
-<th>
-sex
-</th>
-<th>
-height
-</th>
-<th>
-nkids
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-M
-</td>
-<td>
-73.2
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-F
-</td>
-<td>
-69.2
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-F
-</td>
-<td>
-69.0
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-1
-</td>
-<td>
-78.5
-</td>
-<td>
-67.0
-</td>
-<td>
-F
-</td>
-<td>
-69.0
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-M
-</td>
-<td>
-73.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-M
-</td>
-<td>
-72.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-F
-</td>
-<td>
-65.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-2
-</td>
-<td>
-75.5
-</td>
-<td>
-66.5
-</td>
-<td>
-F
-</td>
-<td>
-65.5
-</td>
-<td>
-4
-</td>
-</tr>
-<tr>
-<td>
-3
-</td>
-<td>
-75.0
-</td>
-<td>
-64.0
-</td>
-<td>
-M
-</td>
-<td>
-71.0
-</td>
-<td>
-2
-</td>
-</tr>
-<tr>
-<td>
-3
-</td>
-<td>
-75.0
-</td>
-<td>
-64.0
-</td>
-<td>
-F
-</td>
-<td>
-68.0
-</td>
-<td>
-2
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> … and so on for 898 rows altogether.
-</td>
-</tr>
-</tfoot>
-</table>
-<p>Each row corresponds to a unit of analysis, in this case, a person. The first row is a 6 foot 1.2 inch man in a family with 4 kids altogether. Looking at the next three rows, you see his three sisters, who are quite tall for the time (5 foot 9 inches) but not as tall as their parents. Their mother was a bit shorter (5 foot 7) and their father was very tall even by today’s standards: 6 feet 6.5 inches.</p>
-<p>The family is designated with a number. So all four of the first rows are kids in family one, while rows 5 and 6 come from family two.</p>
-<p>Most of the variables are <em>numeric</em>, as appropriate for height and the number of kids. One variable, <code>sex</code>, has values that are labels, M and F here, standing for male and female. Such variables are called <em>categorical</em>; the possible labels are the <em>levels</em> of the variable. In this book, categorical variables with <em>two levels</em> will play a very important role, but certainly there are categorical variables with more than two levels, as we shall see.</p>
+<div id="effect-size" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Effect size</h1>
+<p>An <em>effect size</em> tells how the output of a model changes when a simple change is made to the input. Many statistical claims are made in terms of an effect size. For instance, according to the <a href="https://www.nhtsa.gov/risky-driving/seat-belts">US National Highway Traffic Safety Administration (NHTSA)</a>, wearing seat belts reduces the risk of fatal injury to passenger-vehicle occupants by about 58%. <span class="citation">(Kahane <a href="#ref-kahane-2017">2017</a>)</span> This is an effect size.</p>
+<p>In contrast, this related fact from NHTSA is <em>not</em> an effect size: 51% of male passenger-vehicle occupants killed in 2017 were not wearing seat belts.</p>
+<p>An effect size summarizes a comparison between two different conditions. In the first example, those two conditions are 1) wearing a seat belt and 2) not wearing a seat belt. In the second example, however, there is just one condition: being a male passenger-vehicle occupant who died in a car accident in 2017.</p>
+<div id="with-respect-to" class="section level2">
+<h2><span class="header-section-number">7.1</span> With respect to …</h2>
+<p>Effect sizes always involve two variables: a response variable and a single explanatory variable. Effect size is always about a <em>model</em>. The model might have one explanatory variable or many explanatory variables. Each explanatory variable will have its own effect size, so a model with multiple explanatory variables will have multiple effect sizes.</p>
+<p>We use the phrase “with respect to” indicate which explanatory variable is involved in an effect size. For instance, in the previous example, the response variable is “risk of fatal injury” and the explanatory variable records whether the vehicle occupant was wearing a seat belt. So we would call the quoted 58% the “effect size on risk of fatal injury <em>with respect to</em> wearing seat belts.”</p>
+<p>Depending on the purpose of your work, you may want or need to include other explanatory variables in your model. For instance, the NHTSA gives a “safety star rating” to each year-make-model of vehicle. If this were included in the risk-of-fatal-injury statistical model, there will be an effect size of “risk of fatal injury <em>with respect to</em> safety-star rating.” Other explanatory variables might be speed of the vehicle at the time of the accident (though this can be difficult to measure), weight of the vehicle, the index of traction/slipperiness of the road surface, and so on.</p>
+<p>Depending on the variable selected to play the role of “with respect to,” an effect size can serve very different purposes. For instance, the quoted 50% reduction in risk of fatal accident with respect to wearing a seat belt, provides a good argument for wearing seat belts. The effect size of risk of fatal accident <em>with respect to</em> safety-star index could help people shopping for a car. It would also give an concrete sense of whether the difference between a four- and a five-star vehicle is substantial or trivial.</p>
 </div>
-<div id="tabulations" class="section level2">
-<h2><span class="header-section-number">2.2</span> Tabulations</h2>
-<p>Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as <em>tabulations</em>. For instance, one of the very early (<span class="citation">Bateson, Saunders, and Punnett (<a href="#ref-punnett-1905">1905</a>)</span>, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.</p>
+<div id="slopes-and-differences" class="section level2">
+<h2><span class="header-section-number">7.2</span> Slopes and differences</h2>
+<p>Consider two models introduced in Chapter 5. Figure 5.1 shows child’s height versus mother’s height in Galton’s data. The straight-line model shows a slight upward slope. To calculate the effect size of child’s height <em>with respect to mother’s height</em>, pick two values of mother’s height: say 60 and 68 inches. From the graph you can read the output of the model at these two values of the input. At an input of 60 inches, the output is 65.5 inches. At an input of 68 inches, the output is (coincidentally) 68 inches. The effect size is the slope of the model: rise over run. Here, the “run” is 68 - 60 = 8 inches. The “rise” is 68 - 65.5 = 2.5 inches. So the slope is 2.5 / 8 = 0.31.</p>
+<p>The model in Figure 5.1 has a quantitative explanatory variable: mother’s height. In constrast, the model in Figure 5.2 has a categorical explanatory variable: pollen shape. To calculate an effect size <em>with respect to pollen shape</em> in Figure 5.2, follow much the same procedure. First, pick the two input levels you want to compare. Here, there are only two levels possible: long and round shapes. Next, look up the model output at each of the two inputs. The output of the model is framed as a probability. The probability of a white flower is 24% for long pollen, and 25% for round pollen.</p>
+<p>Since the explanatory variable is a categorical variable, it doesn’t mean much to look at the numerical difference in the input. The model output, on the other hand, is quantitative (as it is for all the models we consider in this book). The effect size is 25% - 24% = 1 percentage point.</p>
+<p>To recap, when the explanatory variable is <em>quantitative</em>, the effect size is stated as a <em>slope</em>: change in output divided by change in input. When the explanatory variable is <em>categorical</em>, the effect size can be stated as a <em>difference</em>. In this situation, it’s important to say which way the effect goes. For instance, the NHTSA risk of fatal injury with respect to wearing a seat belt was described as a <em>reduction</em> in risk when wearing a seat belt compared to not wearing one.</p>
+</div>
+<div id="risk" class="section level2">
+<h2><span class="header-section-number">7.3</span> Risk</h2>
+<p>In the previous paragraph, I say “<em>can</em> be stated as a difference” because there are other ways often used to compare the model output between two different levels of a categorical explanatory variable. For instance, when the output is interpreted as a “risk,” the two outputs might be compared as a <em>ratio</em>, called the <em>risk ratio</em>. It sounds odd when talking about flower color, but if we were thinking about the “risk” that a pea plant’s flowers are white, then it would be appropriate to consider the effect size with respect to pollen shape as the ratio 25% / 24% = 1.04. Note that this 1.04 is not in percent. When writing about risk ratios, people often use percentage terms. The risk ratio of 1.04 might be described, “The risk of a white flower increases by 4 percent.” Were the risk ratio smaller than 1, say 0.87, we would speak of a risk <em>decrease</em>: “The risk of a white flower is 13% lower for ….”</p>
+<p>It’s potentially confusing for us to report <em>differences</em> of risk in “percentage points” and <em>ratios</em> of risk as “percent.” Not everyone is sensitive to the distinction between “percentage points” and “percent.” Perhaps it would be helpful to report differences as an <em>absolute</em> change in risk while ratios are a <em>relative</em> change in risk.</p>
+<p>There’s yet another way used to describe changes in risk: the <em>odds ratio</em>. Odds are a different format for describing risk. If the probability of an outcome is <span class="math inline">\(p\)</span>, the odds are <span class="math inline">\(p/(1-p)\)</span>. So, the odds of a white flower in a plant which has round pollen is <span class="math inline">\(0.25/(1-0.25) = 0.25 / 0.75 = 1/3\)</span>. The use of odds, and its cousin, <em>log odds</em>, is a genuine help when working with models with multiple explanatory variables.</p>
+</div>
+<div id="simple-changes-in-input" class="section level2">
+<h2><span class="header-section-number">7.4</span> Simple changes in input</h2>
+<p>I’m using the word “simple” to refer to the change in input involved in an effect size. Several considerations motivate this:</p>
+<ul>
+<li>When looking at a categorical explanatory variable, an effect size is a comparison of just two of the levels.</li>
+<li>When looking at a quantitative explanatory variable, I advocate using a <em>finite</em> change in input, e.g. the 60 inches to 68 inches in mother’s height. That’s simpler than the alternative, using an <em>infinitesimal</em> change in input, and more appropriate for many machine-learning models where the output can vary discontinuously as the input changes.</li>
+</ul>
+<p>But the main thing I want to emphasize with the word “simple” has to do with models with multiple explanatory variables. In such models, there are different effect sizes for the different explanatory variables. That is, an effect size reports the change in model output when a <em>single</em> one of the explanatory variables is changed, holding all the others constant. This is where the phrase “with respect to” comes into play. For instance, the model displayed in Figure 6.4, with child’s height as the response variable, involves three explanatory variables: mother’s height, father’s height, and child’s sex. An effect size in such a model refers to a specific explanatory variable. So it’s meaningful to speak of the effect (on child’s height) with respect to mother’s height, or the effect with respect to father’s height, or the effect with respect to child’s sex. Which one is right for you depends on what you are investigating.</p>
+</div>
+<div id="reading-effect-size-from-a-graph" class="section level2">
+<h2><span class="header-section-number">7.5</span> Reading effect size from a graph</h2>
+<p>Chapter 6 introduced four simple settings for statistical inference that are at the core of conventional statistics books. In every setting, the response variable is quantitative. The single explanatory variable is either categorical (as in Figure 6.1(a) or quantitative (as in Figure 6.1(b)).</p>
+<p>For convenience, I’ll repeat those two figures here, with some annotation to show how to calculate the effect size.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="images/Punnet-page-93.png" alt="Figure 2.2: Genetics data from 1905" width="80%" />
+<img src="070-Effect-size_files/figure-html/fig6-1-redux-1.png" alt="Figure 7.1: A reproduction of Figure 6.1(a) with annotations to show the effect size." width="80%" />
 <p class="caption">
-Figure 2.2: Genetics data from 1905
+Figure 7.1: A reproduction of Figure 6.1(a) with annotations to show the effect size.
 </p>
 </div>
-<p>This style of presentation is perfectly understandable, but it is not in the modern format for data. As a data frame, the observations underlying Figure 2.2 would look like Figure 2.3:</p>
-<table class="table" style="width: auto !important; margin-left: 10%; margin-right: auto;">
-<caption>
-Figure 2.3: Punnett’s data in a contemporary format
-</caption>
-<thead>
-<tr>
-<th>
-ID
-</th>
-<th>
-flower_color
-</th>
-<th>
-pollen_shape
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-SP6460
-</td>
-<td>
-white
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP2200
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP4480
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP3370
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP1780
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP330
-</td>
-<td>
-other
-</td>
-<td>
-long
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> … and so on for 801 rows altogether.
-</td>
-</tr>
-</tfoot>
-</table>
-<p>You may well wonder what benefit there is to working with an 801-row data frame rather than the simple tabulation in the original publication. First, giving the variables names allows us to distinguish between the variable being measured and the level of the measurement. Second, the table makes clear that both variables <code>flower_color</code> and <code>pollen_shape</code> are categorical. Third, suppose there was some other aspect being recorded about the plants, for instance the plant’s height or how much water the plant was given or the name of the technician who recorded the data. Using a data frame, these new variables can easily be added as additional columns. There’s no space in the tabulation for these additional measurements.</p>
-<p>A fourth reason to prefer the data-frame format for the genetics data is subtle. Most often, you will be using software to analyze data. Storing data in a consistent way – data frames – makes it much easier to use standard software than if the data are stored in a (pointless) variety of formats.</p>
+<p>The model in Figure 6.1 is height as a function of sex. The model values are marked as blue lines: 64.1 inches for “F” and 69.2 inches for “M”. Changing the input from F to M therefore brings about a change of <span class="math inline">\(69.2 - 64.1 = 5.1\)</span> inches. Since the explanatory variable is categorical, the effect size with respect to sex (“F” <span class="math inline">\(\rightarrow\)</span> “M”) is 5.1 inches.</p>
+<p>Less stilted language would be, “Men tend to be 5.1 inches taller than women.” But watch out. The “men tend to be …” statement is easily interpreted as being about men and women. In fact, as you can see from the dots in the graph, many women are taller than many men. Keep in mind that the 5.1 inches is an effect size.</p>
+When the explanatory variable is quantitative, the effect size is presented as a slope. To calculate the slope, select two different values of the explanatory variable, as with the ones marked with vertical lines in Figure 7.2 below.
+<div class="figure" style="text-align: FALSE">
+<img src="070-Effect-size_files/figure-html/fig6-2-redux-1.png" alt="Figure 7.2: A reproduction of Figure 6.1(b) with annotations to show the effect size." width="80%" />
+<p class="caption">
+Figure 7.2: A reproduction of Figure 6.1(b) with annotations to show the effect size.
+</p>
 </div>
-<div id="quantitative-and-categorical-variables" class="section level2">
-<h2><span class="header-section-number">2.3</span> Quantitative and categorical variables</h2>
-<p>The fundamental distinction to be made between types of variables is whether they are quantitative – a number – or categorical. Categorical variables are those where the possible values come from a set of discrete categories and are typically represented by text labels.</p>
-<p>In the Galton data (Figure 1), height is a quantitative variable. Sex is a categorical variable. The <code>family</code> variable has been encoded as a number, but it is not really numerical. For instance, with numbers, 2 is half way between 1 and 3. But family 2 is not “between” families 1 and 3 in any genuinely numerical sense. So <code>family</code> is a categorical variable.</p>
-<p>Much later in the book, we will translate categorical variables into a set of very simple numerical variables, each of which is called an <em>indicator variable</em>. In an indicator variable, the only allowed values are zero and one.</p>
-<p>Obviously, with just zero and one as possible values, a single indicator variable is not able to represent completely a categorical variable with three or more levels. In such situations, a <em>set of indicator variables</em> is used. If there are k different levels for the categorical variable, the equivalent set of indicator variables will have k - 1 members. For instance, a variable <code>fruit</code> with three levels “apple,” “blueberry,” and “cherry,” will correspond to two indicator variables. The first one might be whether the fruit is apple or not. The second would be whether the fruit is blueberry or not. When both the first and second take on the value zero, we know that the fruit must be the remaining level, cherry. Figure 5 shows the example on a case by case basis.</p>
-<table>
-<thead>
-<tr class="header">
-<th><code>fruit</code></th>
-<th align="center"><span class="math inline">\(\rightarrow\)</span></th>
-<th>indicator apple</th>
-<th>&amp;</th>
-<th align="center">indicator blueberry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>cherry</td>
-<td align="center"></td>
-<td>0</td>
-<td></td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td>apple</td>
-<td align="center"></td>
-<td>1</td>
-<td></td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td>blueberry</td>
-<td align="center"></td>
-<td>0</td>
-<td></td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td>apple</td>
-<td align="center"></td>
-<td>1</td>
-<td></td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td>cherry</td>
-<td align="center"></td>
-<td>0</td>
-<td></td>
-<td align="center">0</td>
-</tr>
-</tbody>
-</table>
-<p>Figure 5: An example of how a categorical variable (‘fruit’) can be translated into simple indicator variables. Note that there is always at most a single 1 in each row of the table.</p>
-</div>
-<div id="response-and-explanatory-variables" class="section level2">
-<h2><span class="header-section-number">2.4</span> Response and explanatory variables</h2>
-<p>Starting in Chapter 4, we will work with a standard format for reducing the potentially many rows and variables of a data frame into a single compact object: a <em>statistical model</em>. For our purposes, a statistical model will be a <em>function</em> that takes inputs and produces an output. In particular, the inputs to each statistical model will be the values of selected variables in the data frame generically called <em>explanatory variables</em>. The output of the statistical model will be in terms of the values of a single, selected variable generically called the <em>response variable</em>.</p>
-<p>The appropriate choice of a response variable and explanatory variables for a model depends on the question that you, the statistical investigator seek to address. Often, to address a broad question, you will use several different statistical models based on the same data frame.</p>
-<p>Once you have selected the response and explanatory variables (and a few other details) the process of constructing the corresponding statistical model is a matter of routine calculation, which is always automated. Many people find they can anticipate the results of the calculation for simple models by sketching the graph of a function on a plot of the variables. We delegate the “oppressive necessity” of the exact calculations to a computer, leaving our role to give the computer an order: “Fit the model to the data.”</p>
-<p>Keep in mind that response and explanatory variables are not <em>types</em> of variables, they are <em>choices</em> that we make in building a model. This not withstanding, in this book <em>all models will have a response variable that is quantitative</em>. If a categorical variable is to be involved in the response, it will have to be in the form of an indicator variable. On the other hand, explanatory variables can be either quantitative or categorical in any combination.</p>
+<p>The two values selected for the explanatory variable (mother’s height) are 60 and 68 inches, so the run is 8 inches. For an input of 60 inches the model output is 65.5 inches. For an input of 68 inches, the model output is 68.0 inches. thus, the run is 2.5 inches. The effect size is the ratio of rise to run: 2.5 inches / 8 inches = 0.31.</p>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-punnett-1905">
-<p>Bateson, W., E.R. Saunders, and R.C. Punnett. 1905. “Experimental Studies in the Physiology of Heredity.” <em>Reports to the Evolution Committee of the Royal Society</em> 2: 1–55, 80–99.</p>
+<div id="ref-kahane-2017">
+<p>Kahane, CJ. 2017. “Fatality Reduction by Seat Belts in the Center Rear Seat and Comparison of Occupants’ Relative Fatality Risk at Various Seating Positions.” DOT HS 812 369. US National Highway Traffic Safety Administration. <a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812369.pdf">https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812369.pdf</a>.</p>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Fisher (1934) p.6<a href="data-and-variables.html#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="what-is-classical-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="measuring-variation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="degrees-of-flexibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="f-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

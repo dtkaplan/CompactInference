@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Modeling variation | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 4 Modeling variation | A Compact Guide to Classical Inference" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Modeling variation | A Compact Guide to Classical Inference" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Modeling variation | A Compact Guide to Classical Inference" />
+  
+  
+  
+
+<meta name="author" content="Daniel Kaplan" />
+
+
+<meta name="date" content="2020-01-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="measuring-variation.html"/>
+<link rel="next" href="model-values.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Compact Guide to Classical Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html"><i class="fa fa-check"></i><b>1</b> What is classical inference?</a><ul>
+<li class="chapter" data-level="" data-path="what-is-classical-inference.html"><a href="what-is-classical-inference.html#and-why-should-i-read-this-book"><i class="fa fa-check"></i>… and why should I read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-variables.html"><a href="data-and-variables.html"><i class="fa fa-check"></i><b>2</b> Data and variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-and-variables.html"><a href="data-and-variables.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data frames</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-variables.html"><a href="data-and-variables.html#tabulations"><i class="fa fa-check"></i><b>2.2</b> Tabulations</a></li>
+<li class="chapter" data-level="2.3" data-path="data-and-variables.html"><a href="data-and-variables.html#quantitative-and-categorical-variables"><i class="fa fa-check"></i><b>2.3</b> Quantitative and categorical variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-and-variables.html"><a href="data-and-variables.html#response-and-explanatory-variables"><i class="fa fa-check"></i><b>2.4</b> Response and explanatory variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-variation.html"><a href="measuring-variation.html"><i class="fa fa-check"></i><b>3</b> Measuring variation</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-numerical-variable"><i class="fa fa-check"></i><b>3.1</b> Variance of a numerical variable</a></li>
+<li class="chapter" data-level="3.2" data-path="measuring-variation.html"><a href="measuring-variation.html#variance-of-a-categorical-variable"><i class="fa fa-check"></i><b>3.2</b> Variance of a categorical variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modeling-variation.html"><a href="modeling-variation.html"><i class="fa fa-check"></i><b>4</b> Modeling variation</a><ul>
+<li class="chapter" data-level="4.1" data-path="modeling-variation.html"><a href="modeling-variation.html#statistical-models"><i class="fa fa-check"></i><b>4.1</b> Statistical models</a></li>
+<li class="chapter" data-level="4.2" data-path="modeling-variation.html"><a href="modeling-variation.html#quantitative-response-variables"><i class="fa fa-check"></i><b>4.2</b> Quantitative response variables</a></li>
+<li class="chapter" data-level="4.3" data-path="modeling-variation.html"><a href="modeling-variation.html#proportions-and-indicator-variables"><i class="fa fa-check"></i><b>4.3</b> Proportions and indicator variables</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-variation.html"><a href="modeling-variation.html#taxonomy"><i class="fa fa-check"></i><b>4.4</b> A taxonomy of simple models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model-values.html"><a href="model-values.html"><i class="fa fa-check"></i><b>5</b> Model values</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-values.html"><a href="model-values.html#model-fitting-a-contest-between-candidate-models"><i class="fa fa-check"></i><b>5.1</b> Model fitting: A contest between candidate models</a></li>
+<li class="chapter" data-level="5.2" data-path="model-values.html"><a href="model-values.html#variance-of-model-values"><i class="fa fa-check"></i><b>5.2</b> Variance of model values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html"><i class="fa fa-check"></i><b>6</b> Degrees of flexibility</a><ul>
+<li class="chapter" data-level="6.1" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#one-degree-of-flexibility"><i class="fa fa-check"></i><b>6.1</b> One degree of flexibility</a></li>
+<li class="chapter" data-level="6.2" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#multiple-degrees-of-flexibility"><i class="fa fa-check"></i><b>6.2</b> Multiple degrees of flexibility</a></li>
+<li class="chapter" data-level="6.3" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#covariates"><i class="fa fa-check"></i><b>6.3</b> Covariates</a></li>
+<li class="chapter" data-level="6.4" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#flexibility-literally"><i class="fa fa-check"></i><b>6.4</b> Flexibility, literally</a></li>
+<li class="chapter" data-level="6.5" data-path="degrees-of-flexibility.html"><a href="degrees-of-flexibility.html#degrees-of-flexibility-and-freedom"><i class="fa fa-check"></i><b>6.5</b> Degrees of flexibility and freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>7</b> Effect size</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-size.html"><a href="effect-size.html#with-respect-to"><i class="fa fa-check"></i><b>7.1</b> With respect to …</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-size.html"><a href="effect-size.html#slopes-and-differences"><i class="fa fa-check"></i><b>7.2</b> Slopes and differences</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-size.html"><a href="effect-size.html#risk"><i class="fa fa-check"></i><b>7.3</b> Risk</a></li>
+<li class="chapter" data-level="7.4" data-path="effect-size.html"><a href="effect-size.html#simple-changes-in-input"><i class="fa fa-check"></i><b>7.4</b> Simple changes in input</a></li>
+<li class="chapter" data-level="7.5" data-path="effect-size.html"><a href="effect-size.html#reading-effect-size-from-a-graph"><i class="fa fa-check"></i><b>7.5</b> Reading effect size from a graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="f-and-r.html"><a href="f-and-r.html"><i class="fa fa-check"></i><b>8</b> F and R</a><ul>
+<li class="chapter" data-level="8.1" data-path="f-and-r.html"><a href="f-and-r.html#the-f-statistic"><i class="fa fa-check"></i><b>8.1</b> The F statistic</a></li>
+<li class="chapter" data-level="8.2" data-path="f-and-r.html"><a href="f-and-r.html#whats-the-meaning-of-f"><i class="fa fa-check"></i><b>8.2</b> What’s the meaning of F?</a></li>
+<li class="chapter" data-level="8.3" data-path="f-and-r.html"><a href="f-and-r.html#r-squared"><i class="fa fa-check"></i><b>8.3</b> R-squared</a></li>
+<li class="chapter" data-level="8.4" data-path="f-and-r.html"><a href="f-and-r.html#f-in-statistics-books"><i class="fa fa-check"></i><b>8.4</b> F in statistics books</a></li>
+<li class="chapter" data-level="8.5" data-path="f-and-r.html"><a href="f-and-r.html#another-explanation-of-f"><i class="fa fa-check"></i><b>8.5</b> Another explanation of F</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence intervals</a><ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals-on-effect-size"><i class="fa fa-check"></i><b>9.1</b> Calculating confidence intervals on effect size</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-95"><i class="fa fa-check"></i><b>9.2</b> 4 and 95%</a></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#and-n"><i class="fa fa-check"></i><b>9.3</b> 4 and <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-versus-prediction-intervals"><i class="fa fa-check"></i><b>9.4</b> Confidence versus prediction intervals</a></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#for-the-conventionally-trained-reader"><i class="fa fa-check"></i><b>9.5</b> For the conventionally trained reader …</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html"><i class="fa fa-check"></i><b>10</b> So-called “statistical significance”</a><ul>
+<li class="chapter" data-level="10.1" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#calculating-a-p-value"><i class="fa fa-check"></i><b>10.1</b> Calculating a p-value</a></li>
+<li class="chapter" data-level="10.2" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#history-and-criticism"><i class="fa fa-check"></i><b>10.2</b> History and criticism</a></li>
+<li class="chapter" data-level="10.3" data-path="so-called-statistical-significance.html"><a href="so-called-statistical-significance.html#appendix-when-df-geq-2"><i class="fa fa-check"></i><b>10.3</b> Appendix: When <span class="math inline">\(df \geq 2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html"><i class="fa fa-check"></i><b>11</b> Simple means and proportions</a><ul>
+<li class="chapter" data-level="11.1" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#the-standard-error-of-the-mean-and-the-proportion"><i class="fa fa-check"></i><b>11.1</b> The standard error of the mean and the proportion</a></li>
+<li class="chapter" data-level="11.2" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#equivalencies-with-b-f-and-v_m"><i class="fa fa-check"></i><b>11.2</b> Equivalencies with B, F, and v_m</a></li>
+<li class="chapter" data-level="11.3" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#t-and-z"><i class="fa fa-check"></i><b>11.3</b> t and z</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
+<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
+<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>14.1</b> Confounding</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="some-history.html"><a href="some-history.html"><i class="fa fa-check"></i><b>15</b> Some history</a><ul>
+<li class="chapter" data-level="15.1" data-path="some-history.html"><a href="some-history.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>15.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>16</b> Getting started in your classroom</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Compact Guide to Classical Inference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="modeling-variation" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Modeling variation</h1>
+<p>The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex of the person: women <em>tend to be</em> slightly shorter than men. Some of the variation in height relates to genes and genetic variation, some to differing nutrition and general health, etc.</p>
+<p>Statistical models attempt to use the variation in explanatory variables – sex, genetic traits – to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What’s behind the variation? It could be the weather conditions at the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.</p>
+<div id="statistical-models" class="section level2">
+<h2><span class="header-section-number">4.1</span> Statistical models</h2>
+<p>For our purposes, a statistical model is a mathematical function that takes values of the explanatory variables as input and produces a corresponding output. For instance, a model of a person’s height might take the person’s age, sex, mother’s height and father’s height as inputs and give as output a specific number that we interpret as height. It might happen, by accident, that the model output is exactly on target for any particular person. More likely, though, the model output will be somewhat off: the person is somewhat shorter or taller than the model says. This is to be expected since the model can’t take into account every factor that influences height and because chance also plays a role.</p>
+</div>
+<div id="quantitative-response-variables" class="section level2">
+<h2><span class="header-section-number">4.2</span> Quantitative response variables</h2>
+<p>Consider the model (and data) shown in Figure 4.1. These are Galton’s records on the heights of adult children in London families. In Figure 4.1, <code>height</code> has been selected as the response variable. To keep the example simple, the role of explanatory variable has been assigned to <code>sex</code>. The statistical model takes as input a level of <code>sex</code> and produces as output a numerical value for the response variable.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/galton-0-1.png" alt="Figure 4.1: Galton's height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level  of  the explanatory variable." width="80%" />
+<p class="caption">
+Figure 4.1: Galton’s height measurements with height as the response variable and sex as the explanatory variable. The model gives a single output for each level of the explanatory variable.
+</p>
+</div>
+<p>As you can see from Figure 4.1, the output of the model is about 64 inches when sex is F, and 69 inches when sex is M.</p>
+<p>How are the model outputs determined? Or, in other words, what method is used to construct the model? The details will be covered in the next chapter. For now, the primary point is that the kind of model being shown describes the <em>center</em> of the distribution of individuals. A secondary point is that the model methodology is standard and automatic; the model outputs were established strictly using <code>sex</code> as the explanatory variable without consideration of anything else and without room for a human to manipulate the numbers or shade them into a preferred direction.</p>
+<p>Galton was not directly interested in sex-related traits. His primary interest was in parent’s height as the explanatory variable. He recorded parent’s height quantitatively: a number. Figure 4.2 shows an example where the explanatory variable is numeric, as opposed Figure 4.1 which uses a categorical explanatory variable. The question that motivated Galton to collect the height data in the first place was to characterize the genetics of height: the extent to which it’s fair to say that a child inherits the height of his or her parents.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/galton-2-1.png" alt="Figure 4.2:  Child's height versus the mother's height. A conventional form of model is a straight line." width="80%" />
+<p class="caption">
+Figure 4.2: Child’s height versus the mother’s height. A conventional form of model is a straight line.
+</p>
+</div>
+<p>Consider first the model as a function. The input is the explanatory variable, mother’s height. The output is a number. So, for an input of 60 inches, the output is about 66 inches. For an input of 68 inches, the output is somewhat higher: about 68 inches.</p>
+<p>The model output describes the <em>center</em> of the distribution of adult-child heights. That center is somewhat lower among the children of relatively short mothers than it is among the children of relatively tall mothers. Note that hardly any individuals exactly match the model output generated when the input is set to their mother’s height; almost all are either shorter or taller.</p>
+<p>Some people mistakenly believe that the point of such a model is to <em>predict</em> the child’s height. Putting aside the question of why anyone would want to do this (perhaps you are wanting to buy a college graduation gown for your pregnant friend’s baby?), any meaningful prediction should be framed as an interval. So, for a 60-inch tall mother, a fair prediction would be for a child between 58 and 73 inches, while for a relatively tall 68-inch mother, the prediction would be 62 to 76 inches.</p>
+<p>There is so much overlap in the prediction intervals for children of mothers of very different height that the model tells us almost nothing about <em>individuals</em>. But this is not the purpose of the model. Galton’s objective in collecting the data was to say <em>how much</em> of the variation in height is attributable to genetics. The conventional measure of <em>how much</em>, introduced in Chapter 8, is that mother’s height accounts for about 4% of the variation in height among children. Note that it’s 4% of the <em>variation</em> in height among children, not 4% of the height of an individual child.</p>
+<p>Four percent doesn’t seem like much. Taking away the line in Figure 4.2 and looking just at the data points, you couldn’t fault someone for modeling the data with a level line, that is, one where the model output doesn’t change at all with mother’s height. One role of statistical inference is to answer the following question: Is there good reason to claim that the evidence provided by the data rule out a level-line model?</p>
+</div>
+<div id="proportions-and-indicator-variables" class="section level2">
+<h2><span class="header-section-number">4.3</span> Proportions and indicator variables</h2>
+<p>The previous examples involved models where the response variable is numeric. In this section, we look at the special case of the numerical response variable being an <em>indicator</em> variable.</p>
+<p>Recall that a single indicator variable can be used to encode a two-level categorical variable, for instance yes/no, alive/dead, succeed/fail, etc.</p>
+<p>To illustrate, consider some data from another approach to quantifying genetics by <em>experimental manipulation</em>. This tradition started with Gregor Mendel in the 1860s, who famously cross-bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.</p>
+<p>In one experiment, Punnett cross-bred sweet peas and observed the offspring’s flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data are graphed in Figure 4.3, below.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/punnett-1-1.png" alt="Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape." width="80%" />
+<p class="caption">
+Figure 4.3: Punnett’s data from cross breeding peas, along with a model of flower color versus pollen shape.
+</p>
+</div>
+<p>There are only four possible combinations of white/other and long/round. To avoid plotting the rows directly on top of one another, the dots have been <em>jittered</em>. You can see that peas with “other” color and long pollen grains are the most common.</p>
+<p>The model here is very similar to that of Figure 4.1. The response variable, flower color, has been translated into an indicator variable taking on only the values zero or one. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number between zero and one.</p>
+<p>For models with an indicator response variable, the output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is 0.24. When the pollen is round, the model output is 0.25. We interpret a model output of 0.25–that is, 25%– as meaning that a quarter of the offspring will have white flowers. Comparing the model-output for long-pollen plants to that for round-pollen plants suggests that the probability of white flowers might be somewhat higher for round-pollen plants than long-pollen plants. The previous sentence uses some qualifying word: “suggests,” “might be,” “somewhat.” That’s to indicate that the statistical claim has not yet been vetted using the tools of statistical inference.</p>
+<p>You can pretty much draw functions like this by hand if you keep in mind some simple rules. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> It might help to understand the impact of these rules by comparing functions that do and don’t follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
+<p class="caption">
+Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form – a straight line – but is a legitimate match to the data.
+</p>
+</div>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/fig-4-3-2.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
+<p class="caption">
+Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form – a straight line – but is a legitimate match to the data.
+</p>
+</div>
+<p>Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don’t accomplish this.</p>
+</div>
+<div id="taxonomy" class="section level2">
+<h2><span class="header-section-number">4.4</span> A taxonomy of simple models</h2>
+<p>Recall that the response variables covered in this book are quantitative, which includes both regular numerical variables (like height) and indicator variables (like that for sex). Explanatory variables can be either quantitative or categorical. This suggests that models with one response and one explanatory variables fall into one of four types:</p>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="27%" />
+<col width="33%" />
+<col width="17%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Setting</th>
+<th>response variable</th>
+<th>explanatory variable</th>
+<th align="center">Figure</th>
+<th>conventional name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td>quantitative</td>
+<td>categorical</td>
+<td align="center">4.1</td>
+<td>groupwise means / t test</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td>quantitative</td>
+<td>quantitative</td>
+<td align="center">4.2</td>
+<td>linear regression / slope test</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td>categorical (indicator)</td>
+<td>categorical</td>
+<td align="center">4.3</td>
+<td>groupwise proportions / p test</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td>categorical (indicator)</td>
+<td>quantitative</td>
+<td align="center">4.4</td>
+<td>not usually included in introductory statistics</td>
+</tr>
+</tbody>
+</table>
+<p>Figures 4.1, 4.2, and 4.3 show the first three settings.
+Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.</p>
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.4: A model with an indicator response variable and a numerical explanatory variable." width="80%" />
+<p class="caption">
+Figure 4.4: A model with an indicator response variable and a numerical explanatory variable.
+</p>
+</div>
+<p>Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. Common sense suggests that a baby’s sex is not influenced by the mother’s height. Correspondingly, the model output is around 50% regardless of the mother’s height.</p>
+<p>Perhaps you’re surprised to see that there is any slope at all to the function. Don’t be surprised yet, because we haven’t shown that such a statement is justified by the data: we have a setting for inference but have not yet carried out the inference calculations to tell us if the statement is justified.</p>
+<p>For purposes of inference, conventional texts treat settings 1, 2, and 3 as different. (They don’t handle setting 4 at all.) I’ve added to the table the conventional name assigned to the different inferential tests in each setting.</p>
+<p>But in all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> In this book, rather than introduce four different inferential procedures, we’ll have just one. That’s a major factor behind the ability to describe classical inference concisely.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Technically, the function form has to include an intercept.<a href="modeling-variation.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>for the conventionally-trained reader, I acknowledge that the term <em>linear regression</em> is conventionally applied only to setting 2. But there is no good reason for this: all four settings can be handled with exactly the same modeling process. In some situations, setting 4 cannot be handled with linear regression. The problem with using linear regression to build a model with an indicator response variable is that a straight-line function, if not exactly level, will eventually extend outside the range zero to one. But it’s not meaningful to talk about probabilities greater than one or less than zero. A simple workaround is to treat any value greater than one as 1, and any value less than zero as 0. A refinement to this brusque treatment is accomplished by a technique called <em>logistic regression</em> which effectively turns the sharp bend into a gradual curve. See Figure 5.7 for an example.<a href="modeling-variation.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="measuring-variation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Compact_inference.pdf", "Compact_inference.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
