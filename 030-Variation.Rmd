@@ -43,7 +43,7 @@ Sometimes it's sensible to translate the levels  of a categorical variable into 
 
 Without a sense of *inbetweenness* of levels, it's arbitrary to assign numbers to the various levels. Except in one situation.
 
-Often, categorical variables have only two levels. Yes or no. Dead or alive. Accepted or rejected. Treatment and control. Such variables are sometimes called *binary* (like the 0/1 of computer bits) or *dicotomous*  or  *binomial* (meaning, having two names) or even  *two-level*. In the previous chapter, we called them *indicator* variables.
+Often, categorical variables have only two levels. Yes or no. Dead or alive. Accepted or rejected. Treatment and control. Such variables are sometimes called *binary* (like the 0/1 of computer bits) or *dichotomous*  or  *binomial* (meaning, having two names) or even  *two-level*. In the previous chapter, we called them *indicator* variables.
 
 When dealing with an indicator variable, there's no level to be inbetween; there are only two levels and the idea of "in between" requires at least three distinct things. So we can easily agree, regardless of our opinions about how the world works, that the  difference is zero between labels that  are the same (say, *yes* and *yes* or  between *no* and *no*). And when the labels are different (say, *yes* and *no*) we just need to assign a non-zero number to the difference.
 
