@@ -5,7 +5,7 @@
 
 The presentation  of classical inferene in this compact guide does not  follow the historical flow of how inferential concepts were developed, largely over  the half century from 1880 to 1925. Instead we started  with F, which dates from 1925, introducing it in the context of models, an even more recent concept. Models provide a means to address contemporary uses of data.
 
-Historically, inference started with very simple questions involving a single variable. For instance, after observing a mental-health patient's sleep over several days, a reasonable presentation of how much sleep the patient got is the the mean over those days. Or, in a more contemporary context, imagine being interested in the trend toward self-driving cars. A reasonable summary of the deployment of the technology could be the  proportion  of cars on  the road with self-driving features such as lane-keeping or automatic collision-avoidance braking.
+Historically, inference started with very simple-sounding questions involving a single variable. For instance, after observing a mental-health patient's sleep over several days, a reasonable presentation of how much sleep the patient got is the the mean over those days. Or, in a more contemporary context, imagine being interested in the trend toward self-driving cars. A reasonable summary of the deployment of the technology could be the  proportion  of cars on  the road with self-driving features such as lane-keeping or automatic collision-avoidance braking.
 
 Very often, behind the interest in a mean or proportion is a different interest: a change in mean or a change in proportion. For such questions, models and F are the way to go. But in this chapter we'll journey into means and proportions themselves.
 

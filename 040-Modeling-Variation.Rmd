@@ -86,11 +86,14 @@ For models with an indicator response variable, the output is usually interprete
 You can pretty much draw functions like this by hand if you keep in mind some simple  rules. First, the function has to stay as close to the data as possible.  Second, the function has to stay centered on the data.^[Technically, the function form has to include an intercept.] It might help to understand the impact of these rules by comparing functions that do and don't follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.
 
 
-```{r fig-4-3, echo = FALSE, fig.cap="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data."}
+```{r fig-4-3, echo = FALSE, fig.cap="Figure 4.3: The red function is a bad match to the data. The large majority of points are far below the function.   The blue function has the same form -- a straight line -- but is a legitimate match to the data, with data points more or less evenly balanced between being above and being below the blue line."}
 gf_jitter(height ~ mother, data = Galton, alpha = 0.15) %>%
   gf_abline(slope = 0.32, intercept = 49,  color = "red", size = 1.5) %>%
   gf_lm(color = "blue", width = 0.5) %>%
   gf_labs(y = "Child's height (inches)", x = "Mother's height  (inches)")
+```
+
+```{r fig-4-4, echo = FALSE, fig.cap="Figure  4.4: The red function is a bad match to the data. At heights below 63 inches, almost all the data points are above the red line."}
 gf_jitter(height ~ mother, data = Galton, alpha = 0.15) %>%
   gf_abline(slope = 1.03, intercept = 0,  color = "red", size = 1.5) %>%
   gf_lm(size = 0.5, color = "blue") %>%
@@ -98,7 +101,7 @@ gf_jitter(height ~ mother, data = Galton, alpha = 0.15) %>%
 ```
   
 
-Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
+Note that the blue functions in Figures 4.3 and 4.4 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
 
 ## A taxonomy of simple models {#taxonomy}
 
@@ -109,12 +112,12 @@ Setting | response variable | explanatory variable | Figure  |  conventional na
 1 | quantitative | categorical     |   4.1   | groupwise means / t test
 2 | quantitative | quantitative    |   4.2   | linear regression / slope test
 3 | categorical (indicator) | categorical | 4.3  | groupwise proportions / p test
-4 | categorical (indicator) | quantitative| 4.4 | not usually included in introductory statistics
+4 | categorical (indicator) | quantitative| 4.5 | not usually included in introductory statistics
 
 Figures 4.1, 4.2, and 4.3 show the first three settings.
- Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.
+ Figure 4.5 shows the fourth setting, a categorical response variable and a numerical explanatory variable.
 
-```{r galton-logistic, echo=FALSE, fig.cap = "Figure 4.4: A model with an indicator response variable and a numerical explanatory variable."}
+```{r galton-logistic, echo=FALSE, fig.cap = "Figure 4.5: A model with an indicator response variable and a numerical explanatory variable."}
 mod <- glm(sex == "F" ~ mother, data  = Galton,  family  = "binomial")
 
 mod_plot(mod, size = 1.5) %>%
