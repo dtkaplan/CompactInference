@@ -8,7 +8,7 @@ library(splines)
 
 The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex  of the person: women *tend to be* slightly shorter than men. Some of the variation in  height relates to genes and genetic variation, some to differing nutrition and general health, etc.
 
-Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at  the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
+Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at  the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuverability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
 
 ## Statistical models
 
@@ -57,7 +57,7 @@ Recall that a single indicator variable can be used to encode a two-level catego
 
 To illustrate, consider some data from another approach to quantifying genetics by *experimental manipulation*. This tradition started with Gregor Mendel in the 1860s, who famously cross-bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.
 
-In one experiment, Punnett cross-bred sweet peas and observed the offspring's flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data  are graphed in Figure 4.3, below. 
+In one experiment, Punnett cross-bred sweet peas and observed the offspring's flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 2.2 in Chapter 2. The complete data  are graphed in Figure 4.3, below. 
 
 ```{r punnett-1, echo=FALSE, fig.cap = "Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape."}
 load("data/Punnett.rda")

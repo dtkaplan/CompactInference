@@ -187,6 +187,8 @@ Finally, a fifth star when the result has been independently confirmed.
 With this scale, the kinds of non-experimental results often found in typical introductory statistics book won't earn even a single star, simply because they lack the minimal connection to the real world created by establishing the smallest effect worth mentioning. 
 
 
+----
 
+[Stepped-wedge design](https://www.bmj.com/content/350/bmj.h391)
 
 

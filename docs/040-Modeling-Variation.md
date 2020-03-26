@@ -4,7 +4,7 @@
 
 The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex  of the person: women *tend to be* slightly shorter than men. Some of the variation in  height relates to genes and genetic variation, some to differing nutrition and general health, etc.
 
-Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at  the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
+Statistical models attempt to use the variation in explanatory variables -- sex, genetic traits -- to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What's behind the variation? It could be the weather conditions at  the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuverability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant. 
 
 ## Statistical models
 
@@ -49,7 +49,7 @@ Recall that a single indicator variable can be used to encode a two-level catego
 
 To illustrate, consider some data from another approach to quantifying genetics by *experimental manipulation*. This tradition started with Gregor Mendel in the 1860s, who famously cross-bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.
 
-In one experiment, Punnett cross-bred sweet peas and observed the offspring's flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data  are graphed in Figure 4.3, below. 
+In one experiment, Punnett cross-bred sweet peas and observed the offspring's flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 2.2 in Chapter 2. The complete data  are graphed in Figure 4.3, below. 
 
 <div class="figure" style="text-align: FALSE">
 <img src="040-Modeling-Variation_files/figure-html/punnett-1-1.png" alt="Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape." width="80%" />
@@ -66,15 +66,17 @@ You can pretty much draw functions like this by hand if you keep in mind some si
 
 
 <div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-Variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
-<p class="caption">Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.</p>
-</div><div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-Variation_files/figure-html/fig-4-3-2.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
-<p class="caption">Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data.</p>
+<img src="040-Modeling-Variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The red function is a bad match to the data. The large majority of points are far below the function.   The blue function has the same form -- a straight line -- but is a legitimate match to the data, with data points more or less evenly balanced between being above and being below the blue line." width="80%" />
+<p class="caption">Figure 4.3: The red function is a bad match to the data. The large majority of points are far below the function.   The blue function has the same form -- a straight line -- but is a legitimate match to the data, with data points more or less evenly balanced between being above and being below the blue line.</p>
+</div>
+
+<div class="figure" style="text-align: FALSE">
+<img src="040-Modeling-Variation_files/figure-html/fig-4-4-1.png" alt="Figure  4.4: The red function is a bad match to the data. At heights below 63 inches, almost all the data points are above the red line." width="80%" />
+<p class="caption">Figure  4.4: The red function is a bad match to the data. At heights below 63 inches, almost all the data points are above the red line.</p>
 </div>
   
 
-Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
+Note that the blue functions in Figures 4.3 and 4.4 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don't accomplish this.
 
 ## A taxonomy of simple models {#taxonomy}
 
@@ -85,14 +87,14 @@ Setting | response variable | explanatory variable | Figure  |  conventional na
 1 | quantitative | categorical     |   4.1   | groupwise means / t test
 2 | quantitative | quantitative    |   4.2   | linear regression / slope test
 3 | categorical (indicator) | categorical | 4.3  | groupwise proportions / p test
-4 | categorical (indicator) | quantitative| 4.4 | not usually included in introductory statistics
+4 | categorical (indicator) | quantitative| 4.5 | not usually included in introductory statistics
 
 Figures 4.1, 4.2, and 4.3 show the first three settings.
- Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.
+ Figure 4.5 shows the fourth setting, a categorical response variable and a numerical explanatory variable.
 
 <div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-Variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.4: A model with an indicator response variable and a numerical explanatory variable." width="80%" />
-<p class="caption">Figure 4.4: A model with an indicator response variable and a numerical explanatory variable.</p>
+<img src="040-Modeling-Variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.5: A model with an indicator response variable and a numerical explanatory variable." width="80%" />
+<p class="caption">Figure 4.5: A model with an indicator response variable and a numerical explanatory variable.</p>
 </div>
 
 Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. Common sense suggests that a baby's sex is not influenced by the mother's height. Correspondingly, the model output is around 50% regardless of the mother's height.  
