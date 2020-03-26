@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Model values | A Compact Guide to Classical Inference</title>
-  <meta name="description" content="Chapter 5 Model values | A Compact Guide to Classical Inference" />
+  <title>Chapter 12 Comparing models | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 12 Comparing models | A Compact Guide to Classical Inference" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Model values | A Compact Guide to Classical Inference" />
+  <meta property="og:title" content="Chapter 12 Comparing models | A Compact Guide to Classical Inference" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Model values | A Compact Guide to Classical Inference" />
+  <meta name="twitter:title" content="Chapter 12 Comparing models | A Compact Guide to Classical Inference" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="modeling-variation.html"/>
-<link rel="next" href="degrees-of-flexibility.html"/>
+<link rel="prev" href="simple-means-and-proportions.html"/>
+<link rel="next" href="remember-inference-isnt-everything.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -229,79 +229,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="model-values" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Model values</h1>
-<p>It’s now time to talk a bit about the way that statistical models are constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the previous chapter and asked to draw a straight-line function relating the explanatory variable to the response variable. Naturally, some students’ models will be better than others. How can we determine which model is the best?</p>
-<div id="model-fitting-a-contest-between-candidate-models" class="section level2">
-<h2><span class="header-section-number">5.1</span> Model fitting: A contest between candidate models</h2>
-<p>To illustrate, let’s take a small data set and look at two models that students might draw. (Figure 5.1)</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 5.1: Two candidates for straight-line models of a handful of data points." width="50%" /><img src="050-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 5.1: Two candidates for straight-line models of a handful of data points." width="50%" />
-<p class="caption">
-Figure 5.1: Two candidates for straight-line models of a handful of data points.
-</p>
-</div>
-<p>Who has drawn the better model: Linus or Curly?</p>
-<p>The instructor takes out a blue pen and draws a * for every data point, as in Figure 5.2. The star marks the output of the model when given the input (mother’s height) for that point. The position of each * on the vertical axis marks the <em>model value</em> for that data point.</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/drawn-train2-1.png" alt="Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the model values, marked with a \(\star\).." width="50%" /><img src="050-Model-values_files/figure-html/drawn-train2-2.png" alt="Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the model values, marked with a \(\star\).." width="50%" />
-<p class="caption">
-Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the <em>model values</em>, marked with a <span class="math inline">\(\star\)</span>..
-</p>
-</div>
-<p>Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.</p>
-<p>Now to determine whether Linus or Curly has the better model. The instructor takes out her red pen to mark the “error,” as in Figure 5.3. The error (marked as a red line) is the difference between the actual value of the response variable (vertical position of black dot) and the model value (blue <span class="math inline">\(\star\)</span>).</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/drawn-train3-1.png" alt="Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue \(\star\))." width="50%" /><img src="050-Model-values_files/figure-html/drawn-train3-2.png" alt="Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue \(\star\))." width="50%" />
-<p class="caption">
-Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue <span class="math inline">\(\star\)</span>).
-</p>
-</div>
-<p>The magnitude of the error is the length of the red line. In statistics, model candidates are graded according to the sum of square errorsk, as in Figure 5.4. (There is a good reason for this, analogous to the Pythagorean Theorem for the sides of a right triangle, but that needn’t concern us here.)</p>
-<p>So Linus’s and Curly’s models are graded according to the total amount of red ink used in drawing the squares.</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="images/linus-squares.png" alt="Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink." width="50%" /><img src="images/curly-squares.png" alt="Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink." width="50%" />
-<p class="caption">
-Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink.
-</p>
-</div>
-<p>The less red ink, the better. Linus wins.</p>
-<p>The process of constructing a statistical model reflects the contest just described between Linus and Curly and the judgement made by the teacher. But rather than looking at just two candidates, grades are assigned to a very large set of candidate models. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
-<p>In practice, for straight-line models (and more general forms, called “linear models”), there are equations that can be solved to find the best model, so there’s no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.</p>
-</div>
-<div id="variance-of-model-values" class="section level2">
-<h2><span class="header-section-number">5.2</span> Variance of model values</h2>
-<p>There is something important to notice about the model values for the winning model:</p>
+<div id="comparing-models" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> Comparing models</h1>
+<p>Up to now, we have looked at models individually. It’s time now to examine models in <em>pairs</em>. Such a perspective gives insight into <em>constructing</em> models, for example by including a new explanatory variable in addition to the old ones, or increasing the curvature used in a model function.</p>
+<p>The basic strategy is simple. Start with an existing model, which we might call <span class="math inline">\(\hbox{mod}_1\)</span>. Then extend or elaborate <span class="math inline">\(\hbox{mod}_1\)</span> in some way, perhaps by including a new explanatory variable to produce <span class="math inline">\(\hbox{mod}_2\)</span>. We can then examine the <em>increase</em> in the variance of the model values from what it was under <span class="math inline">\(\hbox{mod}_1\)</span> to what it will be under <span class="math inline">\(\hbox{mod}_2\)</span>.</p>
+<p>Since we are working with two models, it’s helpful to modify the notation a bit. Before, we had <span class="math inline">\(\hbox{v}_r\)</span> and <span class="math inline">\(\hbox{v}_m\)</span>, the variance of the response variable and of the model values respectively. We also had R<sup>2</sup>, which is simply <span class="math inline">\(\hbox{v}_m\)</span> divided by <span class="math inline">\(\hbox{v}_r\)</span>. We’ll keep <span class="math inline">\(\hbox{v}_r\)</span> as standing for the variance of the response variable but write <span class="math inline">\(\hbox{v}_1\)</span> and <span class="math inline">\(\hbox{v}_2\)</span> as the variance of the model values from <span class="math inline">\(\hbox{mod}_1\)</span> and <span class="math inline">\(\hbox{mod}_2\)</span> respectively.</p>
+<p>Likewise, it’s useful to construct the R-squared ratios for the two models, which we’ll denote <span class="math inline">\(\hbox{R}^2_1\)</span> and <span class="math inline">\(\hbox{R}^2_2\)</span>, and which are simply <span class="math inline">\(\hbox{v}_1 / \hbox{v}_r\)</span> and <span class="math inline">\(\hbox{v}_2 / \hbox{v}_r\)</span> respectively.</p>
+<div id="complexity-and-cost" class="section level2">
+<h2><span class="header-section-number">12.1</span> Complexity and cost</h2>
+<p>A central question when considering an extending <span class="math inline">\(\hbox{mod}_1\)</span> into <span class="math inline">\(\hbox{mod}_2\)</span> is whether the resulting increase in variances, <span class="math inline">\(\Delta \mbox{v} = \hbox{v}_2 - \hbox{v}_1\)</span> is large enough to justify concluding that extending <span class="math inline">\(\hbox{mod}_1\)</span> to <span class="math inline">\(\hbox{mod}_2\)</span> is worth the cost.</p>
+<p>The “cost?” What cost? Computing the new model <span class="math inline">\(\hbox{mod}_2\)</span> and its model values is, with a computer, trivial and costs nothing. Rather, the cost of concern is the added <em>complexity</em> of <span class="math inline">\(\hbox{mod}_2\)</span> compared to <span class="math inline">\(\hbox{mod}_1\)</span>.</p>
+<p>There is a tradition in science of assuming that, all other things being equal, simpler models are better than more complicated models. Sometimes this tradition is expressed as the “law of parsimony,” as if it were a physical principle (which it is not, until you get very deep into things as in quantum electrodynamics). Sometimes it is given the name “Occams’s Razor” in honor of William of Ockham (c. 1287–1347). Occam’s Latin statement is</p>
 <blockquote>
-<p><em>Model values will have a lower variance than the response variable.</em></p>
+<p>“<em>Numquam ponenda est pluralitas sine necessitate.</em>”</p>
 </blockquote>
-<p>We’ll use the symbol <span class="math inline">\(v_m\)</span> to stand for the variance of the model values.</p>
-<p>To illustrate this, let’s look at a couple of models from the previous chapter. In each, you can see that the response values (black dots) are spread out, while the model values stay in toward the center of data. This is a natural consequence of our using <em>central</em> models, that is, models where the function has roughly equal numbers of data points above it and below it.</p>
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/unnamed-chunk-5-1.png" alt="Figure 5.5: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
+<p>The English translation is scarcely better: “Plurality must never be posited without necessity.” A somewhat earlier formulation might be clearer:</p>
+<blockquote>
+<p><em>“It is superfluous to suppose that what can be accounted for by a few principles has been produced by many.”</em> – Thomas Aquinas (1225–1274)</p>
+</blockquote>
+<p>It’s deeply ironic that opinions from the 13th century be quoted as support for scientific principles. At the start of the 20th century, however, some relevant mathematics started to emerge, the mathematics of random walks. This new mathematics provided insight into how complexity of a model might be measured and a criterion for judging whether adding complexity is worthwhile.</p>
+<p>We’ll put the mathematical theory in a framework that we’ve already developed in earlier chapters. The ingredients are</p>
+<ul>
+<li>n, the number of rows in the data used to construct the model</li>
+<li><span class="math inline">\(^\circ\!{\cal{F}}_1\)</span> and <span class="math inline">\(^\circ\!{\cal{F}}_0\)</span> the degrees of flexibility of <span class="math inline">\(\hbox{mod}_2\)</span> and <span class="math inline">\(\hbox{mod}_1\)</span> respectively.</li>
+<li><span class="math inline">\(\hbox{R}^2_2\)</span> and <span class="math inline">\(\hbox{R}^2_1\)</span></li>
+</ul>
+<p>Here are some relevant facts resulting from the mathematical theory of random walks.</p>
+<ul>
+<li><p>Fact 1: If <span class="math inline">\(\hbox{mod}_2\)</span> is an <em>extension</em> of <span class="math inline">\(\hbox{mod}_1\)</span> (for instance, one created by including an additional explanatory variable) then <span class="math inline">\(\hbox{v}_2 \geq \hbox{v}_1\)</span>.</p>
+<p>Justification: Reach back to Chapter 5 where we considered the process of creating a model function. Recall that the “best” model function is one that comes as close to the response variable as possible, given the selected set of explanatory variables. In extending <span class="math inline">\(\hbox{mod}_1\)</span>, we are giving the process an additional variable to work with. Likely, there will be some way to use that additional variable so that <span class="math inline">\(\hbox{mod}_2\)</span> gets even closer to the response variable than <span class="math inline">\(\hbox{mod}_1\)</span>. But simply by <em>ignoring</em> the additional variable, <span class="math inline">\(\hbox{mod}_2\)</span> can at least as close as <span class="math inline">\(\hbox{mod}_2\)</span>.</p></li>
+<li><p>Fact 2: Suppose that all of the explanatory variables are unrelated to the response variable, for instance, they have been created at random. Then a model constructed with n-1 degrees of flexibility will have <span class="math inline">\(\hbox{v}_m = \hbox{v}_r\)</span>. What’s more, a model with <span class="math inline">\(p &lt; n-1\)</span> degrees of freedom will, on average, have <span class="math inline">\(\hbox{v}_m \approx \frac{p}{n-1} \hbox{v}_r\)</span>. Another way of stating this is that
+<span class="math display">\[R^2 = \frac{\hbox{v}_m}{\hbox{v}_r} \approx \frac{p}{n-1}\]</span></p>
+<p>In support of Fact 2, we’ll do some simulations. In each trial, we’ll generate a small data set with <span class="math inline">\(n=11\)</span>. The response variable will come from a random number generator. Similarly we’ll make up p=5 explanatory variables, each of which is also from a random number generator. Then we’ll calculate R<sup>2</sup> from each model and look at the distribution. According to the principle, on average</p>
+<p><span class="math inline">\(R^2 = \frac{p}{n-1} = \frac{5}{10}\)</span>.</p></li>
+</ul>
+<p>We’ll do the simulation using R software and the <code>mosaic</code> package. I provide the code so that anyone who wants to carry out their own simulation can do so. We’ll do 1000 trials.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="comparing-models.html#cb1-1"></a><span class="kw">library</span>(mosaic)</span>
+<span id="cb1-2"><a href="comparing-models.html#cb1-2"></a></span>
+<span id="cb1-3"><a href="comparing-models.html#cb1-3"></a>Trials &lt;-<span class="st">  </span><span class="kw">do</span>(<span class="dv">1000</span>) <span class="op">*</span><span class="st"> </span>(</span>
+<span id="cb1-4"><a href="comparing-models.html#cb1-4"></a>  <span class="kw">data.frame</span>(<span class="dt">y  =</span> <span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">11</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb1-5"><a href="comparing-models.html#cb1-5"></a><span class="st">    </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">rand</span>(<span class="dv">5</span>), <span class="dt">data =</span> .) <span class="op">%&gt;%</span></span>
+<span id="cb1-6"><a href="comparing-models.html#cb1-6"></a><span class="st">    </span><span class="kw">rsquared</span>()</span>
+<span id="cb1-7"><a href="comparing-models.html#cb1-7"></a>)</span>
+<span id="cb1-8"><a href="comparing-models.html#cb1-8"></a><span class="kw">mean</span>( <span class="op">~</span><span class="st"> </span>result,  <span class="dt">data =</span> Trials)</span></code></pre></div>
+<pre><code>## [1] 0.498377</code></pre>
+<p>You can repeat the simulation with any n and p that you like to confirm that, on average, <span class="math inline">\(R^2 \approx \frac{p}{n-1}\)</span>.</p>
+<pre><code>## Warning: `data_frame()` is deprecated, use `tibble()`.
+## This warning is displayed once per session.</code></pre>
+</div>
+<div id="why-f" class="section level2">
+<h2><span class="header-section-number">12.2</span> Why F?</h2>
+<p>We can use Fact 2 to explain why it makes sense for the F-statistic to be defined the way it is. Consider a graph of the average R<sup>2</sup> versus <span class="math inline">\(^\circ\!{\cal{F}}\)</span> when all the explanatory variables are made with a random number generator</p>
+
+<div class="figure"><span id="fig:randomR"></span>
+<img src="120-Comparing-models_files/figure-html/randomR-1.png" alt="(ref:RandomR-cap)" width="672" />
 <p class="caption">
-Figure 5.5: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
+Figure 12.1: (ref:RandomR-cap)
 </p>
 </div>
+<p>In Figure 12.1, the blue point falls at R<sup>2</sup>=0.65 and <span class="math inline">\(^\circ\!{\cal{F}} = 3\)</span>. Referring to the individual random trials with <span class="math inline">\(^\circ\!{\cal{F}} = 3\)</span> (the black dots), you can see that a very small percentage have R<sup>2</sup> &gt; 0.65. This alone would cause one to doubt that the explanatory variables used in making the blue dot were purely random. In fact, a p-value for the blue dot could be calculated simply by counting the proportion of black dots that have R-squared larger than the blue dot (for <span class="math inline">\(^\circ\!{\cal{F}} = 3\)</span>).</p>
+<p>This book is about <em>classical inference</em>, so the use of simulation, a computer-era technique, is out of place. Classical inference resorts to a different observation. In Figure 12.1, there are two blue segments. One connects the origin to the blue dot, the other connects the blue dot to the upper-right corner of the plot. We’ll call the left-most segment the “model segment,” since it reflects Clearly the slope of segment one is larger than the slope of segment two. This will happen whenever the blue dot is above the vertical range of the random trials. But for the random trials, on average, the two slopes would be about the same. So, under the Null Hypothesis that the explanatory variables are unrelated to the response variable, the ratio of slopes will be about 1.</p>
+<p>Fisher suggested using the ratio of slopes in the R<sup>2</sup> versus <span class="math inline">\(^\circ\!{\cal{F}} = 3\)</span> graph as a test statistic. Given a blue dot with its R<sup>2</sup> and <span class="math inline">\(^\circ\!{\cal{F}} = 3\)</span>, the slope of segment one is <span class="math inline">\(\mbox{R}^2_1 / ^\circ\!{\cal{F}}\)</span>. Similarly, the slope of segment two is
+<span class="math inline">\((1 - \mbox{R}^2_2) / (n - (^\circ\!{\cal{F}} +1))\)</span>. The ratio of slope one to slope two is F.</p>
 
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
+<div class="figure"><span id="fig:F-vs-df"></span>
+<img src="120-Comparing-models_files/figure-html/F-vs-df-1.png" alt="Figure 12.2. Translating the \(R^2\) and \(^\circ\!{\cal{F}}\) values from Figure 12.1 into the corresponding F value shows a much simpler version. On average, the F values from the random simulation are about \(F=1\) regardless of \(^\circ\!{\cal{F}}\). Similarly, almost all the random trials produce \(F &lt; 4\). Fisher deduced these facts using algebra and calculus with the mathematics of random walks, a remarkable achievement. Today, it takes only a moderate amount of computer-programming skill to confirm them." width="672" />
 <p class="caption">
-Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
+Figure 12.2: Figure 12.2. Translating the <span class="math inline">\(R^2\)</span> and <span class="math inline">\(^\circ\!{\cal{F}}\)</span> values from Figure 12.1 into the corresponding F value shows a much simpler version. On average, the F values from the random simulation are about <span class="math inline">\(F=1\)</span> regardless of <span class="math inline">\(^\circ\!{\cal{F}}\)</span>. Similarly, almost all the random trials produce <span class="math inline">\(F &lt; 4\)</span>. Fisher deduced these facts using algebra and calculus with the mathematics of random walks, a remarkable achievement. Today, it takes only a moderate amount of computer-programming skill to confirm them.
 </p>
 </div>
+</div>
+<div id="analysis-of-variance" class="section level2">
+<h2><span class="header-section-number">12.3</span> Analysis of variance</h2>
+<p>The word “analysis” refers to the process of breaking something down into its constituent components. (The antonym is “synthesis,” the process of bringinging components together to form a whole.)</p>
+<p>The phrase “analysis of variance” concisely describes the strategy for examining a model that consists of components. For example, we’ve described <span class="math inline">\(\hbox{mod}_2\)</span> as being an extension of <span class="math inline">\(\hbox{mod}_1\)</span> – mod_2 consists of <span class="math inline">\(\hbox{mod}_1\)</span> plus some additional component.</p>
+<p>In undertaking analysis of variance, the quantity that is being broken down is the variance <em>r</em> of the response variable. When working with a single model, the variance is broken down into two components:</p>
+<ul>
+<li><em>m</em>, the variance accounted for by the model</li>
+<li>what’s left over, the residual variance, which is simply <em>r</em> - <em>m</em>.</li>
+</ul>
+<p>In the previous section, I’ve chosen to report not the variance itself, but the <em>proportion</em> of the variance of the response variable:</p>
+<ul>
+<li><span class="math inline">\(R^2 = \hbox{v}_m / \hbox{v}_r\)</span>, the proportion accounted for by the model</li>
+<li><span class="math inline">\(1 - R^2 = (\hbox{v}_r - \hbox{v}_m) / \hbox{v}_r\)</span>, the residual proportion of the variance.</li>
+</ul>
+<p>The idea of analysis of variance can be extended to the situation of a model <span class="math inline">\(\hbox{mod}_2\)</span> which has been built as an extension to a model <span class="math inline">\(\hbox{mod}_1\)</span>. The situation is sketched in Figure 12.3. First, calculate <span class="math inline">\(\hbox{R}^2_1\)</span>, the proportion of the variance accounted for by <span class="math inline">\(\hbox{mod}_1\)</span>. Second, calculate <span class="math inline">\(\hbox{R}^2_2\)</span>, the proportion of the variance captured by <span class="math inline">\(\hbox{mod}_2\)</span>. In Figure 12.3, <span class="math inline">\(\hbox{R}^2_1\)</span> is the left-most blue dot, while <span class="math inline">\(\hbox{R}^2_2\)</span> is the other blue dot.</p>
+<p>The two blue dots divide the domain of the graph into three components: the model-one segment, the model-two segment, and the residual segment.</p>
+<p>To address the question of whether <span class="math inline">\(\hbox{mod}_2\)</span> meaningfully extends <span class="math inline">\(\hbox{mod}_1\)</span>, we compare the slope of the model-two segment to that of the residual segment. This ratio of slopes, which we can call <span class="math inline">\(\Delta \hbox{F}\)</span>, is the test statistic. If <span class="math inline">\(Delta\hbox{F} \gtrapprox 4\)</span>, it’s fair to conclude that the extension to <span class="math inline">\(\hbox{mod}_1\)</span> is discernably different from an extension that would have been concocted from random explanatory variables unrelated to the response variable.</p>
 
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 5.7: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
+<div class="figure"><span id="fig:two-models"></span>
+<img src="120-Comparing-models_files/figure-html/two-models-1.png" alt="Figure 12.3: looking at how the extensions to \(\hbox{mod}_1\) contained in \(\hbox{mod}_2\) increase \(\mbox{R}^2_2\) compared to \(\mbox{R}^2_1\)" width="672" />
 <p class="caption">
-Figure 5.7: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
+Figure 12.3: Figure 12.3: looking at how the extensions to <span class="math inline">\(\hbox{mod}_1\)</span> contained in <span class="math inline">\(\hbox{mod}_2\)</span> increase <span class="math inline">\(\mbox{R}^2_2\)</span> compared to <span class="math inline">\(\mbox{R}^2_1\)</span>
 </p>
 </div>
-
+<p>As a formula, the ratio of the slopes of the model-two segment to the model-one segment is:</p>
+<p><span class="math display">\[\Delta \mbox{F} = \frac{n - (^\circ\!{\cal F}_{2} + 1)}{^\circ\!{\cal F}_{2} - ^\circ\!\!{\cal F}_{1}}  \cdot \frac{\hbox{R}^2_{2} - \hbox{R}^2_{1}}{1 - \hbox{R}^2_{2}}\]</span></p>
+</div>
+<div id="analysis-of-co-variance" class="section level2">
+<h2><span class="header-section-number">12.4</span> Analysis of co-variance</h2>
+<p>It sometimes happens that <span class="math inline">\(\hbox{mod}_1\)</span> contains all the explanatory variables of direct interest and the point of building <span class="math inline">\(\hbox{mod}_2\)</span> is to include those covariates which ought to be taken into consideration but are not of direct interest. In this situation, the ratio of interest is the slope of the model-one segment to the slope of the residual segment. This is called “analysis of co-variance.”</p>
+<p>I like to describe the purpose of including the covariates in <span class="math inline">\(\hbox{mod}2\)</span> as “<em>eating variance</em>.” That is, the covariates can reduce the slope of the residual segment, making it easier for the model-one segment to look steep by comparison.</p>
 
 </div>
 </div>
@@ -310,8 +338,8 @@ Figure 5.7: Model values for a model of sex, with mother’s height as the expla
           </div>
         </div>
       </div>
-<a href="modeling-variation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="degrees-of-flexibility.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="simple-means-and-proportions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="remember-inference-isnt-everything.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

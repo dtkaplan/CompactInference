@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2020-01-10" />
+<meta name="date" content="2020-03-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,70 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -132,15 +196,19 @@
 <li class="chapter" data-level="11.2" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#equivalencies-with-b-f-and-v_m"><i class="fa fa-check"></i><b>11.2</b> Equivalencies with B, F, and v_m</a></li>
 <li class="chapter" data-level="11.3" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#t-and-z"><i class="fa fa-check"></i><b>11.3</b> t and z</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
-<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
-<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
-<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>14.1</b> Confounding</a></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a><ul>
+<li class="chapter" data-level="12.1" data-path="comparing-models.html"><a href="comparing-models.html#complexity-and-cost"><i class="fa fa-check"></i><b>12.1</b> Complexity and cost</a></li>
+<li class="chapter" data-level="12.2" data-path="comparing-models.html"><a href="comparing-models.html#why-f"><i class="fa fa-check"></i><b>12.2</b> Why F?</a></li>
+<li class="chapter" data-level="12.3" data-path="comparing-models.html"><a href="comparing-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>12.3</b> Analysis of variance</a></li>
+<li class="chapter" data-level="12.4" data-path="comparing-models.html"><a href="comparing-models.html#analysis-of-co-variance"><i class="fa fa-check"></i><b>12.4</b> Analysis of co-variance</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="some-history.html"><a href="some-history.html"><i class="fa fa-check"></i><b>15</b> Some history</a><ul>
-<li class="chapter" data-level="15.1" data-path="some-history.html"><a href="some-history.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>15.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+<li class="chapter" data-level="13" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>13</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="13.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#substantiality"><i class="fa fa-check"></i><b>13.1</b> Substantiality</a></li>
+<li class="chapter" data-level="13.2" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#causal-reasoning"><i class="fa fa-check"></i><b>13.2</b> Causal reasoning</a></li>
+<li class="chapter" data-level="13.3" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>13.3</b> Confounding</a></li>
+<li class="chapter" data-level="13.4" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#the-stars-of-statistical-inference"><i class="fa fa-check"></i><b>13.4</b> The stars of statistical inference</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>16</b> Getting started in your classroom</a></li>
+<li class="chapter" data-level="14" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>14</b> Getting started in your classroom</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
@@ -163,7 +231,7 @@
             <section class="normal" id="section-">
 <div id="data-and-variables" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Data and variables</h1>
-<p>Only in the second half of the twentieth century was the organization of data treated as a serious topic. Classical inference, emerging mainly in the period 1880-1925, was developed without reference to standard formats for data. Without automated methods of data handling, each researcher was confronted with the “oppressive necessity of reducing his results to a more convenient bulk.”<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Only in the second half of the twentieth century was the organization of data treated as a serious topic. Classical inference, emerging mainly in the period 1880-1925, was developed without reference to standard formats for data. Without automated methods of data handling, each researcher was confronted with the “oppressive necessity of reducing his results to a more convenient bulk.”<a href="getting-started-in-your-classroom.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p>Although this book is a guide to classical inference, we will work with data in a contemporary, standard format. This simplifies inference since we do not need to develop different statistical methodologies to deal with the diverse ways in which raw data can be reduced to a “convenient bulk.”</p>
 <p>This chapter is about the organization of data. Later, we’ll work with a standard form for reducing data: statistical model functions.</p>
 <div id="data-frames" class="section level2">
@@ -412,7 +480,7 @@ F
 </div>
 <div id="tabulations" class="section level2">
 <h2><span class="header-section-number">2.2</span> Tabulations</h2>
-<p>Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as <em>tabulations</em>. For instance, one of the very early (<span class="citation">Bateson, Saunders, and Punnett (<a href="#ref-punnett-1905">1905</a>)</span>, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.</p>
+<p>Historically, when data was shared by printing it and when calculations were tedious, data would often be presented as <em>tabulations</em>. For instance, one of the very early (<span class="citation">Bateson, Saunders, and Punnett (<a href="#ref-punnett-1905" role="doc-biblioref">1905</a>)</span>, p. 93) investigations of cross-linkage in genetics examined 799 sweet pea plants, recording the color of the flower and whether the pollen was round or elongated.</p>
 <div class="figure" style="text-align: FALSE">
 <img src="images/Punnet-page-93.png" alt="Figure 2.2: Genetics data from 1905" width="80%" />
 <p class="caption">
@@ -440,18 +508,7 @@ pollen_shape
 <tbody>
 <tr>
 <td>
-SP6460
-</td>
-<td>
-white
-</td>
-<td>
-long
-</td>
-</tr>
-<tr>
-<td>
-SP2200
+SP790
 </td>
 <td>
 other
@@ -462,7 +519,7 @@ long
 </tr>
 <tr>
 <td>
-SP4480
+SP50
 </td>
 <td>
 other
@@ -473,7 +530,7 @@ long
 </tr>
 <tr>
 <td>
-SP3370
+SP4550
 </td>
 <td>
 other
@@ -484,7 +541,18 @@ long
 </tr>
 <tr>
 <td>
-SP1780
+SP5830
+</td>
+<td>
+other
+</td>
+<td>
+round
+</td>
+</tr>
+<tr>
+<td>
+SP2710
 </td>
 <td>
 other
@@ -495,7 +563,7 @@ long
 </tr>
 <tr>
 <td>
-SP330
+SP530
 </td>
 <td>
 other
@@ -584,14 +652,8 @@ long
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-punnett-1905">
-<p>Bateson, W., E.R. Saunders, and R.C. Punnett. 1905. “Experimental Studies in the Physiology of Heredity.” <em>Reports to the Evolution Committee of the Royal Society</em> 2: 1–55, 80–99.</p>
+<p>Bateson, W., E. R. Saunders, and R. C. Punnett. 1905. “Experimental Studies in the Physiology of Heredity.” <em>Reports to the Evolution Committee of the Royal Society</em> 2: 1–55, 80–99.</p>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Fisher (1934) p.6<a href="data-and-variables.html#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 

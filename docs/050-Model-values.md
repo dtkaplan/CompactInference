@@ -49,9 +49,9 @@ So Linus's and Curly's  models are graded according to the total amount of red i
 (ref:drawn-train4-cap) Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink.
 
 <div class="figure" style="text-align: FALSE">
-<img src="images/linus-squares.png" alt="(ref:drawn-train4-cap)" width="50%" />
+<img src="images/linus-squares.png" alt="(ref:drawn-train4-cap)" width="50%" /><img src="images/curly-squares.png" alt="(ref:drawn-train4-cap)" width="50%" />
 <p class="caption">(ref:drawn-train4-cap)</p>
-</div><img src="images/curly-squares.png" alt="(ref:drawn-train4-cap)" width="50%" />
+</div>
 
 The less red ink, the better. Linus wins. 
 

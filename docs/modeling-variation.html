@@ -24,7 +24,7 @@
 <meta name="author" content="Daniel Kaplan" />
 
 
-<meta name="date" content="2020-01-10" />
+<meta name="date" content="2020-03-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,70 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -132,15 +196,19 @@
 <li class="chapter" data-level="11.2" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#equivalencies-with-b-f-and-v_m"><i class="fa fa-check"></i><b>11.2</b> Equivalencies with B, F, and v_m</a></li>
 <li class="chapter" data-level="11.3" data-path="simple-means-and-proportions.html"><a href="simple-means-and-proportions.html#t-and-z"><i class="fa fa-check"></i><b>11.3</b> t and z</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a></li>
-<li class="chapter" data-level="13" data-path="outside-of-the-normal.html"><a href="outside-of-the-normal.html"><i class="fa fa-check"></i><b>13</b> Outside of the normal</a></li>
-<li class="chapter" data-level="14" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>14</b> Remember, inference isn’t everything</a><ul>
-<li class="chapter" data-level="14.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>14.1</b> Confounding</a></li>
+<li class="chapter" data-level="12" data-path="comparing-models.html"><a href="comparing-models.html"><i class="fa fa-check"></i><b>12</b> Comparing models</a><ul>
+<li class="chapter" data-level="12.1" data-path="comparing-models.html"><a href="comparing-models.html#complexity-and-cost"><i class="fa fa-check"></i><b>12.1</b> Complexity and cost</a></li>
+<li class="chapter" data-level="12.2" data-path="comparing-models.html"><a href="comparing-models.html#why-f"><i class="fa fa-check"></i><b>12.2</b> Why F?</a></li>
+<li class="chapter" data-level="12.3" data-path="comparing-models.html"><a href="comparing-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>12.3</b> Analysis of variance</a></li>
+<li class="chapter" data-level="12.4" data-path="comparing-models.html"><a href="comparing-models.html#analysis-of-co-variance"><i class="fa fa-check"></i><b>12.4</b> Analysis of co-variance</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="some-history.html"><a href="some-history.html"><i class="fa fa-check"></i><b>15</b> Some history</a><ul>
-<li class="chapter" data-level="15.1" data-path="some-history.html"><a href="some-history.html#techniques-when-degrees-of-freedom-are-unknown-as-with-machine-learning-methods."><i class="fa fa-check"></i><b>15.1</b> Techniques when “degrees of freedom” are unknown, as with machine learning methods.</a></li>
+<li class="chapter" data-level="13" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html"><i class="fa fa-check"></i><b>13</b> Remember, inference isn’t everything</a><ul>
+<li class="chapter" data-level="13.1" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#substantiality"><i class="fa fa-check"></i><b>13.1</b> Substantiality</a></li>
+<li class="chapter" data-level="13.2" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#causal-reasoning"><i class="fa fa-check"></i><b>13.2</b> Causal reasoning</a></li>
+<li class="chapter" data-level="13.3" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#confounding"><i class="fa fa-check"></i><b>13.3</b> Confounding</a></li>
+<li class="chapter" data-level="13.4" data-path="remember-inference-isnt-everything.html"><a href="remember-inference-isnt-everything.html#the-stars-of-statistical-inference"><i class="fa fa-check"></i><b>13.4</b> The stars of statistical inference</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>16</b> Getting started in your classroom</a></li>
+<li class="chapter" data-level="14" data-path="getting-started-in-your-classroom.html"><a href="getting-started-in-your-classroom.html"><i class="fa fa-check"></i><b>14</b> Getting started in your classroom</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/dtkaplan/Compact_inference" target="blank">Published with bookdown</a></li>
 
@@ -164,7 +232,7 @@
 <div id="modeling-variation" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Modeling variation</h1>
 <p>The point of statistics is to understand how things vary. For instance, human height varies from one person to another. Some of that variation is associated with the sex of the person: women <em>tend to be</em> slightly shorter than men. Some of the variation in height relates to genes and genetic variation, some to differing nutrition and general health, etc.</p>
-<p>Statistical models attempt to use the variation in explanatory variables – sex, genetic traits – to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What’s behind the variation? It could be the weather conditions at the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuvrability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.</p>
+<p>Statistical models attempt to use the variation in explanatory variables – sex, genetic traits – to account for the variation in a response variable. To offer a contemporary example, some automobiles are involved in fatal accidents and some (the vast majority, thankfully!) are not. It varies. What’s behind the variation? It could be the weather conditions at the time. It also be human driver fatique, inebriation, incompetence, distraction, etc. It could also be characteristics of the vehicle itself: size, weight, maneuverability, breaking power, physical wear, automatic breaking, etc. And a lot of the variation is a matter of chance: for instance, the arrival of another car at an intersection at a particular instant.</p>
 <div id="statistical-models" class="section level2">
 <h2><span class="header-section-number">4.1</span> Statistical models</h2>
 <p>For our purposes, a statistical model is a mathematical function that takes values of the explanatory variables as input and produces a corresponding output. For instance, a model of a person’s height might take the person’s age, sex, mother’s height and father’s height as inputs and give as output a specific number that we interpret as height. It might happen, by accident, that the model output is exactly on target for any particular person. More likely, though, the model output will be somewhat off: the person is somewhat shorter or taller than the model says. This is to be expected since the model can’t take into account every factor that influences height and because chance also plays a role.</p>
@@ -198,7 +266,7 @@ Figure 4.2: Child’s height versus the mother’s height. A conventional form o
 <p>The previous examples involved models where the response variable is numeric. In this section, we look at the special case of the numerical response variable being an <em>indicator</em> variable.</p>
 <p>Recall that a single indicator variable can be used to encode a two-level categorical variable, for instance yes/no, alive/dead, succeed/fail, etc.</p>
 <p>To illustrate, consider some data from another approach to quantifying genetics by <em>experimental manipulation</em>. This tradition started with Gregor Mendel in the 1860s, who famously cross-bred peas. Students of genetics know the name Mendel. Another famous name is Reginald Punnett (as in the Punnett square), whose cross-breeding work was done around 1905.</p>
-<p>In one experiment, Punnett cross-bred sweet peas and observed the offspring’s flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 1.4 in Chapter 1. The complete data are graphed in Figure 4.3, below.</p>
+<p>In one experiment, Punnett cross-bred sweet peas and observed the offspring’s flower color (binary levels white/other) and the shape of pollen granules (binary levels round/long). A few rows of data (translated to a modern format) from this experiment are shown in Figure 2.2 in Chapter 2. The complete data are graphed in Figure 4.3, below.</p>
 <div class="figure" style="text-align: FALSE">
 <img src="040-Modeling-variation_files/figure-html/punnett-1-1.png" alt="Figure 4.3: Punnett's data from cross breeding peas, along with a model of flower color versus pollen shape." width="80%" />
 <p class="caption">
@@ -208,20 +276,20 @@ Figure 4.3: Punnett’s data from cross breeding peas, along with a model of flo
 <p>There are only four possible combinations of white/other and long/round. To avoid plotting the rows directly on top of one another, the dots have been <em>jittered</em>. You can see that peas with “other” color and long pollen grains are the most common.</p>
 <p>The model here is very similar to that of Figure 4.1. The response variable, flower color, has been translated into an indicator variable taking on only the values zero or one. The model provides an output for each level of the explanatory variable, pollen shape. Notice that the model output is not set in terms of white/other, but as a number between zero and one.</p>
 <p>For models with an indicator response variable, the output is usually interpreted as a probability. For instance, when the pollen shape is long, the model output is 0.24. When the pollen is round, the model output is 0.25. We interpret a model output of 0.25–that is, 25%– as meaning that a quarter of the offspring will have white flowers. Comparing the model-output for long-pollen plants to that for round-pollen plants suggests that the probability of white flowers might be somewhat higher for round-pollen plants than long-pollen plants. The previous sentence uses some qualifying word: “suggests,” “might be,” “somewhat.” That’s to indicate that the statistical claim has not yet been vetted using the tools of statistical inference.</p>
-<p>You can pretty much draw functions like this by hand if you keep in mind some simple rules. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> It might help to understand the impact of these rules by comparing functions that do and don’t follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.</p>
+<p>You can pretty much draw functions like this by hand if you keep in mind some simple rules. First, the function has to stay as close to the data as possible. Second, the function has to stay centered on the data.<a href="getting-started-in-your-classroom.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> It might help to understand the impact of these rules by comparing functions that do and don’t follow the rules. In Figures 4.3 and 4.4, the blue function follows the rules; the red ones do not.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
+<img src="040-Modeling-variation_files/figure-html/fig-4-3-1.png" alt="Figure 4.3: The red function is a bad match to the data. The large majority of points are far below the function.   The blue function has the same form -- a straight line -- but is a legitimate match to the data, with data points more or less evenly balanced between being above and being below the blue line." width="80%" />
 <p class="caption">
-Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form – a straight line – but is a legitimate match to the data.
+Figure 4.3: The red function is a bad match to the data. The large majority of points are far below the function. The blue function has the same form – a straight line – but is a legitimate match to the data, with data points more or less evenly balanced between being above and being below the blue line.
 </p>
 </div>
 <div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-variation_files/figure-html/fig-4-3-2.png" alt="Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form -- a straight line -- but is a legitimate match to the data." width="80%" />
+<img src="040-Modeling-variation_files/figure-html/fig-4-4-1.png" alt="Figure  4.4: The red function is a bad match to the data. At heights below 63 inches, almost all the data points are above the red line." width="80%" />
 <p class="caption">
-Figure 4.3: The function in red is a bad match to the data. It strays from the data at the extremes. The blue function has the same form – a straight line – but is a legitimate match to the data.
+Figure 4.4: The red function is a bad match to the data. At heights below 63 inches, almost all the data points are above the red line.
 </p>
 </div>
-<p>Note that the blue functions in Figure 4.3 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don’t accomplish this.</p>
+<p>Note that the blue functions in Figures 4.3 and 4.4 are centered in the sense that whatever value for the explanatory variable you look at, the data points are just about evenly distributed above and below the function. The red functions don’t accomplish this.</p>
 </div>
 <div id="taxonomy" class="section level2">
 <h2><span class="header-section-number">4.4</span> A taxonomy of simple models</h2>
@@ -269,32 +337,25 @@ Figure 4.3: The function in red is a bad match to the data. It strays from the d
 <td align="right">4</td>
 <td>categorical (indicator)</td>
 <td>quantitative</td>
-<td align="center">4.4</td>
+<td align="center">4.5</td>
 <td>not usually included in introductory statistics</td>
 </tr>
 </tbody>
 </table>
 <p>Figures 4.1, 4.2, and 4.3 show the first three settings.
-Figure 4.4 shows the fourth setting, a categorical response variable and a numerical explanatory variable.</p>
+Figure 4.5 shows the fourth setting, a categorical response variable and a numerical explanatory variable.</p>
 <div class="figure" style="text-align: FALSE">
-<img src="040-Modeling-variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.4: A model with an indicator response variable and a numerical explanatory variable." width="80%" />
+<img src="040-Modeling-variation_files/figure-html/galton-logistic-1.png" alt="Figure 4.5: A model with an indicator response variable and a numerical explanatory variable." width="80%" />
 <p class="caption">
-Figure 4.4: A model with an indicator response variable and a numerical explanatory variable.
+Figure 4.5: A model with an indicator response variable and a numerical explanatory variable.
 </p>
 </div>
 <p>Again, the model output is numeric, in the form of the probability that the child is female. The model suggests that 60-inch tall mothers are slightly less likely to bear girls and 68-inch tall mothers. Common sense suggests that a baby’s sex is not influenced by the mother’s height. Correspondingly, the model output is around 50% regardless of the mother’s height.</p>
 <p>Perhaps you’re surprised to see that there is any slope at all to the function. Don’t be surprised yet, because we haven’t shown that such a statement is justified by the data: we have a setting for inference but have not yet carried out the inference calculations to tell us if the statement is justified.</p>
 <p>For purposes of inference, conventional texts treat settings 1, 2, and 3 as different. (They don’t handle setting 4 at all.) I’ve added to the table the conventional name assigned to the different inferential tests in each setting.</p>
-<p>But in all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> In this book, rather than introduce four different inferential procedures, we’ll have just one. That’s a major factor behind the ability to describe classical inference concisely.</p>
+<p>But in all settings, exactly the same technique, called <em>linear regression</em>, has been used to match the model to the data.<a href="getting-started-in-your-classroom.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> In this book, rather than introduce four different inferential procedures, we’ll have just one. That’s a major factor behind the ability to describe classical inference concisely.</p>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>Technically, the function form has to include an intercept.<a href="modeling-variation.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>for the conventionally-trained reader, I acknowledge that the term <em>linear regression</em> is conventionally applied only to setting 2. But there is no good reason for this: all four settings can be handled with exactly the same modeling process. In some situations, setting 4 cannot be handled with linear regression. The problem with using linear regression to build a model with an indicator response variable is that a straight-line function, if not exactly level, will eventually extend outside the range zero to one. But it’s not meaningful to talk about probabilities greater than one or less than zero. A simple workaround is to treat any value greater than one as 1, and any value less than zero as 0. A refinement to this brusque treatment is accomplished by a technique called <em>logistic regression</em> which effectively turns the sharp bend into a gradual curve. See Figure 5.7 for an example.<a href="modeling-variation.html#fnref3" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 

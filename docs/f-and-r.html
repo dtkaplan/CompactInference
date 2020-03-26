@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Model values | A Compact Guide to Classical Inference</title>
-  <meta name="description" content="Chapter 5 Model values | A Compact Guide to Classical Inference" />
+  <title>Chapter 8 F and R | A Compact Guide to Classical Inference</title>
+  <meta name="description" content="Chapter 8 F and R | A Compact Guide to Classical Inference" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Model values | A Compact Guide to Classical Inference" />
+  <meta property="og:title" content="Chapter 8 F and R | A Compact Guide to Classical Inference" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Model values | A Compact Guide to Classical Inference" />
+  <meta name="twitter:title" content="Chapter 8 F and R | A Compact Guide to Classical Inference" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="modeling-variation.html"/>
-<link rel="next" href="degrees-of-flexibility.html"/>
+<link rel="prev" href="effect-size.html"/>
+<link rel="next" href="confidence-intervals.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -229,79 +229,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="model-values" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Model values</h1>
-<p>It’s now time to talk a bit about the way that statistical models are constructed. To do this, imagine that we have a classroom full of students, each of whom is given data in the form of the graphs of the previous chapter and asked to draw a straight-line function relating the explanatory variable to the response variable. Naturally, some students’ models will be better than others. How can we determine which model is the best?</p>
-<div id="model-fitting-a-contest-between-candidate-models" class="section level2">
-<h2><span class="header-section-number">5.1</span> Model fitting: A contest between candidate models</h2>
-<p>To illustrate, let’s take a small data set and look at two models that students might draw. (Figure 5.1)</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/drawn-train-1.png" alt="Figure 5.1: Two candidates for straight-line models of a handful of data points." width="50%" /><img src="050-Model-values_files/figure-html/drawn-train-2.png" alt="Figure 5.1: Two candidates for straight-line models of a handful of data points." width="50%" />
+<div id="f-and-r" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> F and R</h1>
+<p><span class="math inline">\(\newcommand{\flex}[]{^\circ\!{\cal{F}}}\)</span></p>
+<p>We now have the pieces we need to assemble the central quantity which informs statistical inference. These are:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(n\)</span>, the sample size (or, more concretely, the number of rows in out data frame)</li>
+<li><span class="math inline">\(v_r\)</span>, the variance of the response variable. <span class="math inline">\(v_r\)</span> for binary categorical response variables is based on the 0-1 encoding.</li>
+<li><span class="math inline">\(v_m\)</span>, the variance of the model values.</li>
+<li><span class="math inline">\(\flex\)</span>, the <em>degree of flexibility</em>.<a href="getting-started-in-your-classroom.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+</ol>
+<p>We’ll put these together to form a quantity called F.</p>
+<div id="the-f-statistic" class="section level2">
+<h2><span class="header-section-number">8.1</span> The F statistic</h2>
+<p>The name, F, is in honor of Ronald Fisher, one of the leading statisticians of the first half of the 20th. The formula for F is pretty simple, so I’ll present it right here for ready reference.</p>
+<p><span class="math display">\[F \equiv \frac{n - (1 + \flex)}{\flex} \frac{v_m}{v_r - v_m}\]</span>
+For almost all the settings considered in introductory statistics courses, <span class="math inline">\(\flex\)</span> is 1, so the formula simplifies to:
+<span class="math display">\[F =  (n-2) \frac{v_m}{v_r - v_m}\]</span>
+Example: Figure 4.1 shows a model of child’s height with respect to sex. The variance of the response variable (child’s height) is <span class="math inline">\(v_r =\)</span> 12.84 inches<sup>2</sup>. The variance of the model values is <span class="math inline">\(v_m =\)</span> 6.55 inches<sup>2</sup>. The data used to construct the model have <span class="math inline">\(n = 898\)</span>, giving</p>
+<p><span class="math display">\[F = 896 \frac{6.55}{12.84-6.55} \approx 897 \times 1.04 \approx 934 .\]</span></p>
+</div>
+<div id="whats-the-meaning-of-f" class="section level2">
+<h2><span class="header-section-number">8.2</span> What’s the meaning of F?</h2>
+<p>F combines the four quantities <span class="math inline">\(n\)</span>, <span class="math inline">\(v_r\)</span>, <span class="math inline">\(v_m\)</span>, and <span class="math inline">\(\flex\)</span>. To get a notion why the combination works, keep these basic ideas in mind concerning what it means to have “more evidence.”</p>
+<ul>
+<li>The larger <span class="math inline">\(n\)</span>, the more evidence. That’s why F is more-or-less proportional to <span class="math inline">\(n\)</span>. (Strictly speaking, F is proportional to <span class="math inline">\(n - (\flex + 1)\)</span>.)</li>
+<li>The more complicated the model – e.g. the number of explanatory variables or levels in an explanatory categorical variable – the less evidence. Or, put another way, we would want more evidence from data to justify a complicated model than a simple model. The division by <span class="math inline">\(\flex\)</span> in the formula for F implements this idea.</li>
+<li>The closer the model values come to capturing the actual response variable, the greater the evidence that there is a relationship. An obvious
+way to quantify this closeness are with the difference <span class="math inline">\(v_r - v_m\)</span>. We want the size of F to increase as <span class="math inline">\(v_m\)</span> gets closer to <span class="math inline">\(v_r\)</span>. So F is proportional to <span class="math inline">\(\frac{1}{v_r - v_m}\)</span>.</li>
+<li>But the numerical value of the difference <span class="math inline">\(v_r - v_m\)</span> depends on the units in which the response variable is measured. For instance, we could express the running times in Chapter 1 in minutes or in seconds. But the difference <span class="math inline">\(v_r - v_m\)</span> would be <span class="math inline">\(60^2 = 3600\)</span> times larger if we used seconds than minutes. Obviously we don’t want our F value to depend on the units used. To avoid that, we divide <span class="math inline">\(v_r - v_m\)</span> by <span class="math inline">\(v_m\)</span>, getting the <span class="math inline">\(v_m / (v_r - v_m)\)</span> in the formula for F.</li>
+</ul>
+</div>
+<div id="r-squared" class="section level2">
+<h2><span class="header-section-number">8.3</span> R-squared</h2>
+<p>Many people prefer to look at a ratio <span class="math inline">\(v_m / v_r\)</span> to quantify how close the model values are to the values of the response variable. If the model does a good job accounting for the response variable, then <span class="math inline">\(v_m\)</span> will be close to <span class="math inline">\(v_r\)</span>. That is, the ratio will be close to 1. On the other hand, if the model tells us little or nothing about the response variable, <span class="math inline">\(v_m\)</span> will be close to zero and the ratio itself will be zero.</p>
+<p>The ratio has a famous name: <em>R-squared</em>, that is:</p>
+<p><span class="math display">\[R^2 = v_m / v_r\]</span>
+A more obscure name for <span class="math inline">\(R^2\)</span> is <em>coefficient of determination</em>, which is awkward but does express the point that <span class="math inline">\(R^2\)</span> is about the extent to which the explanatory variables, when passed through the model, determine the response variable. <span class="math inline">\(R^2\)</span> is, literally, the faction of the variance of the response variable that has been captured by the model.</p>
+<p><span class="math inline">\(R^2\)</span> can never be bigger than one and can never be negative. When <span class="math inline">\(R^2 = 1\)</span>, the model values are exactly the same as the values of the response variable.</p>
+<p>When there is no connection between the r esponse and explanatory variables, <span class="math inline">\(R^2\)</span> will be small. Ideally, it would be zero, but the process of random sampling generally pushes it a little away from zero. One way to think about F is as indicating when there is so little data that a small but non-zero R<sup>2</sup> is consistent with the hypothesis that there is no connection between the response and explanatory variables.</p>
+<p>Example: Figure 4.1 shows a model of child’s height with respect to sex. The variance of the response variable (child’s height) is 12.84 inches<sup>2</sup>. The variance of the model values is 6.55 inches<sup>2</sup>. Thus:
+<span class="math display">\[R^2 = 6.55 /  12.84 = 0.51 = 51\%\]</span></p>
+</div>
+<div id="f-in-statistics-books" class="section level2">
+<h2><span class="header-section-number">8.4</span> F in statistics books</h2>
+<p>In most statistics book, F is not written in the form above but in one of a couple of alternative – but equivalent – forms. There’s no particular reason to use these forms. Knowing what they look like will help you make sense of traditional statistical reports.</p>
+<p>Since <span class="math inline">\(R^2\)</span> summarizes the relationship between <span class="math inline">\(v_m\)</span> and <span class="math inline">\(v_r\)</span>, the formula for F can be written in terms of <span class="math inline">\(R^2\)</span>. This is the first of the alternative forms.</p>
+<p><span class="math display">\[F = \frac{n - (\flex+1)}{\flex} \frac{R^2}{1 - R^2}\]</span></p>
+<p>Another alternative form comes from using an intermediate in the calculation of <span class="math inline">\(v_m\)</span> and <span class="math inline">\(v_r\)</span>. Recall how the variance is calculated by calculating square differences and averaging. To average, of course, you add together the quantities and then divide by the number of quantities being averaged.</p>
+<p>Suppose you didn’t bother to average, and stopped after adding up the square differences. The name for this intermediate is the <em>sum of squares</em>.
+F is often written in terms of the sum of squares of the response variable SS_r_ and of the model values SS_m_. Something like this:</p>
+<p><span class="math display">\[F = \frac{n - (\flex+1)}{\flex} \frac{\mbox{SS}_m}{\mbox{SS}_r - \mbox{SS}_m}\]</span></p>
+<p>More typically, instead instead of looking at the model values directly, the tradition in classical inference is to consider what’s called the <em>sum of squares of the residuals</em>, which is simply SSR = <span class="math inline">\(\mbox{SS}_r - \mbox{SS}_m\)</span> and the formula is re-written like this:</p>
+<p><span class="math display">\[F = \frac{\mbox{SS}_m / \flex}{SSR / (n -  (\flex + 1))}.\]</span>
+Both the numerator and the denominator of this ratio have the form of a sum of squares divided by a count. In the terminology of classical inference, such things are called <em>mean squares</em>.</p>
+<p>In this book, we’ll just use the formula for F given at the start of this chapter. The others give exactly the same value, but let’s avoid having ton work with potentially confusing vocabulary such as the mean square and sum of squares.</p>
+</div>
+<div id="another-explanation-of-f" class="section level2">
+<h2><span class="header-section-number">8.5</span> Another explanation of F</h2>
+<p>First, I’ll give the explanation in the form of a parable. Imagine that your model is a automobile. You are going to drive it a distance of 100 miles. There are two gas companies, EXPLANATORY Fuel and RANDOM Fuel. You put in 2 liters of EXPLANATORY gas and drive as far as you can get, say 44 miles. Your fuel economy on the EXPLANATORY part of the trip is thus 22 miles per liter. You’re out of fuel, but conveniently there is a RANDOM gas station close at hand. You fill up your tank with RANDOM gas and continue driving. You drive the rest of the way using the random gas. Looking at the fuel gauge, you see that you have used up 8 liters of RANDOM gas, the fuel economy is 56 miles (that is, 100-44) per 8 liters of RANDOM gas, so the fuel economy is only 7 miles per gallon of RANDOM gas.</p>
+<p>Now a skeptic asks you, “The EXPLANATORY gas company has a good name for marketing, but do you have any good reason to think that EXPLANATORY gas is better than RANDOM gas?” Of course, the answer is yes, but how to summarize your findings? One way is to compare the fuel economies of the different kinds of gas: 22 miles per gallon for EXPLANATORY and 7 for RANDOM. More concisely, you could say that EXPLANATORY gas is more than 3 times (22/7) as efficient as RANDOM gas.</p>
+<p>The miles travelled using EXPLANATORY gas corresponds to R<sup>2</sup>. The fuel itself is whatever explanatory variables (and nonlinearities and whatever) are in your model. The amount of EXPLANATORY gas is <span class="math inline">\(\flex\)</span>.</p>
+<p>RANDOM gas is not manufactured from genuine explanatory variables. Instead it is synthesized purely from random numbers. You don’t expect RANDOM gas to be very good. But it serves as a point of comparison for the effectiveness of EXPLANATORY gas.</p>
+<p>To conduct the comparison, you’ll look at the ratio of the fuel economies: EXPLANATORY fuel economy divided by RANDOM fuel economy. That ratio of fuel economies corresponds exactly to F.</p>
+<p>Perhaps you’re thinking, “RANDOM gas won’t get you anywhere.” That’s not true. You can confirm this by creating a dataset that consists only of random numbers then modeling one of the variables by the others. You’ll find that R<sup>2</sup> is not zero. Indeed, if you use <span class="math inline">\(n-1\)</span> random explanatory variables in your model, you’re guaranteed to reach <span class="math inline">\(\mbox{R}^2 = 1\)</span>.</p>
+<p>Figure 6.13 shows simulations of R<sup>2</sup> versus <span class="math inline">\(\flex\)</span> for RANDOM gas. (Not every gallon of RANDOM gas is the same, it’s random!)</p>
+<p>(ref:R-path-cap) Figure 6.13: The dark path shows one trial in which the car is fueled entirely with
+RANDOM gas. The graph shows how far the car gets (in terms of R<sup>2</sup>) as it uses more and more fuel (in terms of <span class="math inline">\(\flex\)</span>).</p>
+<div class="figure"><span id="fig:R-path"></span>
+<img src="images/14-R2-vs-m.png" alt="(ref:R-path-cap)" width="250" />
 <p class="caption">
-Figure 5.1: Two candidates for straight-line models of a handful of data points.
+Figure 8.1: (ref:R-path-cap)
 </p>
 </div>
-<p>Who has drawn the better model: Linus or Curly?</p>
-<p>The instructor takes out a blue pen and draws a * for every data point, as in Figure 5.2. The star marks the output of the model when given the input (mother’s height) for that point. The position of each * on the vertical axis marks the <em>model value</em> for that data point.</p>
+<p>Figure 6.14 shows schematically the general form of distance R<sup>2</sup> versus fuel consumption when the first 10 units of fuel (that is to say, <span class="math inline">\(\flex = 10\)</span>) are EXPLANATORY gas. As you can see, the EXPLANATORY gas got you to R<sup>2</sup> = 65%. So the fuel economy for EXPLANATORY gas is about 6.5% per unit of fuel.</p>
 
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/drawn-train2-1.png" alt="Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the model values, marked with a \(\star\).." width="50%" /><img src="050-Model-values_files/figure-html/drawn-train2-2.png" alt="Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the model values, marked with a \(\star\).." width="50%" />
+<div class="figure"><span id="fig:R-path2"></span>
+<img src="images/14-model-walk-example.png" alt="Figure 6.14: \(\mbox{R}^2\) versus \(\flex\). For the first 10 units of fuel, EXPLANATORY gas was used. Then the car switched over to RANDOM fuel for the rest of the journey to \(\mbox{R}^2 = 1\). Note that the path upward to the blue dot (using EXPLANATORY gas) is much steeper than for the rest of the journey using RANDOM gas. The slope of each segment is the fuel economy." width="250" />
 <p class="caption">
-Figure 5.2: Applying the model function (blue line) to the values of the explanatory variable (mother’s height, on the horizontal axis) produces the <em>model values</em>, marked with a <span class="math inline">\(\star\)</span>..
+Figure 8.2: Figure 6.14: <span class="math inline">\(\mbox{R}^2\)</span> versus <span class="math inline">\(\flex\)</span>. For the first 10 units of fuel, EXPLANATORY gas was used. Then the car switched over to RANDOM fuel for the rest of the journey to <span class="math inline">\(\mbox{R}^2 = 1\)</span>. Note that the path upward to the blue dot (using EXPLANATORY gas) is much steeper than for the rest of the journey using RANDOM gas. The slope of each segment is the fuel economy.
 </p>
 </div>
-<p>Think of the model values as a kind of stand-in for the response variable, one that stays strictly in line with the model.</p>
-<p>Now to determine whether Linus or Curly has the better model. The instructor takes out her red pen to mark the “error,” as in Figure 5.3. The error (marked as a red line) is the difference between the actual value of the response variable (vertical position of black dot) and the model value (blue <span class="math inline">\(\star\)</span>).</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/drawn-train3-1.png" alt="Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue \(\star\))." width="50%" /><img src="050-Model-values_files/figure-html/drawn-train3-2.png" alt="Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue \(\star\))." width="50%" />
-<p class="caption">
-Figure 5.3: The model error for each data point (shown as red line segments) is the distance between the response value (vertical position of black dot) and the corresponding model value (blue <span class="math inline">\(\star\)</span>).
-</p>
-</div>
-<p>The magnitude of the error is the length of the red line. In statistics, model candidates are graded according to the sum of square errorsk, as in Figure 5.4. (There is a good reason for this, analogous to the Pythagorean Theorem for the sides of a right triangle, but that needn’t concern us here.)</p>
-<p>So Linus’s and Curly’s models are graded according to the total amount of red ink used in drawing the squares.</p>
-
-<div class="figure" style="text-align: FALSE">
-<img src="images/linus-squares.png" alt="Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink." width="50%" /><img src="images/curly-squares.png" alt="Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink." width="50%" />
-<p class="caption">
-Figure 5.4: Each candidate model is given a grade that is the sum of the square errors, represented here by the total amount of red ink.
-</p>
-</div>
-<p>The less red ink, the better. Linus wins.</p>
-<p>The process of constructing a statistical model reflects the contest just described between Linus and Curly and the judgement made by the teacher. But rather than looking at just two candidates, grades are assigned to a very large set of candidate models. Once the explanatory and response variables have been selected, and a shape for the function chosen (here, a straight line), the computer tries out all the possibilities and picks the one that gives the least error between the <em>model values</em> and the actual response values.</p>
-<p>In practice, for straight-line models (and more general forms, called “linear models”), there are equations that can be solved to find the best model, so there’s no need for the computer to try out lots of candidates. But the result is no different than if it had been found by trial and error.</p>
-</div>
-<div id="variance-of-model-values" class="section level2">
-<h2><span class="header-section-number">5.2</span> Variance of model values</h2>
-<p>There is something important to notice about the model values for the winning model:</p>
-<blockquote>
-<p><em>Model values will have a lower variance than the response variable.</em></p>
-</blockquote>
-<p>We’ll use the symbol <span class="math inline">\(v_m\)</span> to stand for the variance of the model values.</p>
-<p>To illustrate this, let’s look at a couple of models from the previous chapter. In each, you can see that the response values (black dots) are spread out, while the model values stay in toward the center of data. This is a natural consequence of our using <em>central</em> models, that is, models where the function has roughly equal numbers of data points above it and below it.</p>
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/unnamed-chunk-5-1.png" alt="Figure 5.5: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52" width="80%" />
-<p class="caption">
-Figure 5.5: Model values (blue dots) for a straight-line model of child’s height with mother’s height as the explanatory variable. Response variance: 12.84; Model value variance: 0.52
-</p>
-</div>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091" width="80%" />
-<p class="caption">
-Figure 5.6: Model values for the probability that a pea has a flower colored white, with pollen shape as the explanatory variable. Response variance: 0.17; Model value variance: 0.000091
-</p>
-</div>
-
-<div class="figure" style="text-align: FALSE">
-<img src="050-Model-values_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 5.7: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14" width="80%" />
-<p class="caption">
-Figure 5.7: Model values for a model of sex, with mother’s height as the explanatory variable. Response variance: 0.25; Model value variance: 0.14
-</p>
-</div>
-
+<p>With enough RANDOM gas, you’ll get the rest of the way to R<sup>2</sup> = 100%. How much is enough? <span class="math inline">\(n - (\flex + 1)\)</span> units of fuel. Since <span class="math inline">\(n=50\)</span> and <span class="math inline">\(\flex = 10\)</span>, the RANDOM gas fuel economy is 35% (that is, 100% - 65%) divided by 39, or just under 1% per unit of fuel. The F statistic is therefore 6.5% / 1% = 6.5.</p>
+<p>Is 6.5 a big enough F to convince us that the EXPLANATORY gas is clearly not just RANDOM gas in disguise? We can find that out by doing a simulation where we use only RANDOM gas in the car, comparing how far we get with the first <span class="math inline">\(\flex = 10\)</span> liters to how much addition RANDOM fuel to get to our eventual destination of R<sup>2</sup> = 100%. That’s what Figure 6.13 is about. You can mark on any of those random paths the value of R<sup>2</sup> reached with the first <span class="math inline">\(\flex = 10\)</span> liters of fuel. Then draw in the equivalent of the blue slope and the red slope. For the large majority of trials, the ratio of slopes will be less than 4. So <span class="math inline">\(F = 6.5\)</span> is not a plausible outcome when using only RANDOM fuel in the car.</p>
+<p>Note the expression for F in terms of R<sup>2</sup>:</p>
+<p><span class="math display">\[F \equiv \frac{\mbox{R}^2}{\flex} \div \frac{1 - \mbox{R}^2}{n - (\flex + 1)}\]</span></p>
+<p>The first ratio in the above is the slope of the blue line segment in Figure 6.14. The second ratio in the above is the slope of the red line segment in Figure 6.14.</p>
 
 </div>
 </div>
@@ -310,8 +323,8 @@ Figure 5.7: Model values for a model of sex, with mother’s height as the expla
           </div>
         </div>
       </div>
-<a href="modeling-variation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="degrees-of-flexibility.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="effect-size.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="confidence-intervals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

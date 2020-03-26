@@ -1,7 +1,7 @@
 --- 
 title: "A Compact Guide to Classical Inference"
 author: "Daniel Kaplan"
-date: "2020-01-10"
+date: "2020-03-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -28,7 +28,7 @@ In many traditional, formula-based curricula, computers are not used: a calculat
 
 I hope that this little book can help instructors see that statistical inference can be handled as one topic among the many needed for modern statistics. Inference, important though it be, does not need to be such a sprawling set of methods and details taking  up  so much of the introductory  course that other essential topics get neglected.
 
-*Daniel Kaplan, December 2019, Saint Paul, Minnesota*
+*Daniel Kaplan, March 2020, Saint Paul, Minnesota*
  
 
 
